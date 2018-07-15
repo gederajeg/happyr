@@ -4,10 +4,10 @@
 \alias{scaps}
 \title{Small-capital}
 \usage{
-scaps(concept = NULL)
+scaps(x = NULL)
 }
 \arguments{
-\item{concept}{}
+\item{x}{A character strings to be turned into small capitals}
 }
 \value{
 A character vector
