@@ -5,7 +5,7 @@
 \title{Multiple distinctive collexeme analysis (MDCA)}
 \usage{
 mdca(df = NULL, cxn_var = "synonyms", coll_var = "metaphors",
-  already_count_table = FALSE, collstr_digits = 3, correct_holm = TRUE,
+  already_count_table = FALSE, assocstr_digits = 3L, correct_holm = TRUE,
   concise_output = TRUE)
 }
 \arguments{
@@ -24,7 +24,7 @@ When it is \code{TRUE}, it expects tidy co-occurrence count between values of \c
      ... \tab ... \tab ...
 }}
 
-\item{collstr_digits}{integer for the floating points/digits of the \emph{Collostruction Strength}. The default is \code{3}.}
+\item{assocstr_digits}{integer for the floating points/digits of the \emph{Association Strength}. The default is \code{3L}.}
 
 \item{correct_holm}{logical; the default is \code{TRUE} for performing Holm's correction method of the \emph{p}-value (cf. Gries, 2009, p. 249).}
 
@@ -34,9 +34,9 @@ When it is \code{TRUE}, it expects tidy co-occurrence count between values of \c
     \item \code{synonyms}
     \item \code{n} (for the \emph{observed} co-occurrence frequency between \code{metaphors} and the \code{synonyms}).
     \item \code{exp} (for the \emph{expected} co-occurrence frequency between \code{metaphors} and the \code{synonyms}).
-    \item \code{p.bin} (the one-tailed \emph{p}-value of the \emph{Binomial Test}).
-    \item \code{coll.str} (the log10 transformed values of the \emph{p}-value of the \emph{Binomial Test}. The \code{coll.str} values are \emph{positive} when \code{n} is higher than the \code{exp} frequency, and they are \emph{negative} when otherwise.).
-    \item \code{p.holm} (when \code{correct_holm} is \code{TRUE})
+    \item \code{p_binomial} (the one-tailed \emph{p}-value of the \emph{Binomial Test}).
+    \item \code{assocstr} (the log10 transformed values of the \emph{p}-value of the \emph{Binomial Test}. The \code{assocstr} values are \emph{positive} when \code{n} is higher than the \code{exp} frequency, and they are \emph{negative} when otherwise.).
+    \item \code{p_holm} (when \code{correct_holm} is \code{TRUE})
     \item \code{dec} (significance decision after Holm's correction) (when \code{correct_holm} is \code{TRUE})
 }}
 }
@@ -48,7 +48,7 @@ Function to perform \emph{Multiple Distinctive Collexeme Analysis} (MDCA) in Raj
 }
 \details{
 The \code{mdca} function is built on top of the core members of the \code{tidyverse} suit of packages.
-    The computation of the \emph{Collostruction Strength} is based on the \code{\link[stats]{binom.test}} function (cf. Hilpert, 2006).
+    The computation of the \emph{Association Strength} is based on the \code{\link[stats]{binom.test}} function (cf. Hilpert, 2006).
     The computation of the corrected \emph{p}-value of the one-tailed Binomial Test with Holm's method is performed using \code{\link[stats]{p.adjust}}.
 }
 \examples{
@@ -59,7 +59,7 @@ mdca_res <- mdca(df = phd_data_metaphor,
                  correct_holm = TRUE,
                  concise_output = TRUE,
                  already_count_table = FALSE,
-                 collstr_digits = 3)
+                 assocstr_digits = 3L)
 \dontrun{
 # for distinctive 4-window span collocates
 data("colloc_input_data")
@@ -69,7 +69,7 @@ mdca_colloc <- mdca(df = colloc_input_data,
                     correct_holm = TRUE,
                     concise_output = TRUE,
                     already_count_table = FALSE,
-                    collstr_digits = 3)
+                    assocstr_digits = 3L)
 }
 }
 \references{

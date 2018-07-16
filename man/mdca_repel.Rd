@@ -5,13 +5,13 @@
 \title{Repelled items from MDCA}
 \usage{
 mdca_repel(df = NULL, filter_by = "cxn", cxn_var = "synonyms",
-  cxn_type = NULL, coll_var = NULL, coll_type = NULL, min_collstr = -2)
+  cxn_type = NULL, coll_var = NULL, coll_type = NULL, min_assocstr = -2)
 }
 \arguments{
 \item{df}{output data frame from \code{link{mdca}}.}
 
 \item{filter_by}{character string indicating whether the output of \code{link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
-If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_collstr} argument.}
+If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_assocstr} argument.}
 
 \item{cxn_var}{character string for the column name of the construction variable (i.e., \code{"synonyms"}).}
 
@@ -21,7 +21,7 @@ If it is left \code{NULL} (the default), the data is filtered according to the v
 
 \item{coll_type}{character strings of regular expressions for the conceptual metaphors.}
 
-\item{min_collstr}{numeric threshold for the minimum collostruction strength. By default it is set to \code{-2}.}
+\item{min_assocstr}{numeric threshold for the minimum collostruction strength. By default it is set to \code{-2}.}
 }
 \value{
 A tibble/data frame
@@ -37,12 +37,12 @@ mdca_res <- mdca(df = phd_data_metaphor,
                  correct_holm = TRUE,
                  concise_output = TRUE,
                  already_count_table = FALSE,
-                 collstr_digits = 3)
+                 assocstr_digits = 3)
 # retrieve the repelled metaphors for "kebahagiaan".
 mdca_repel(df = mdca_res,
           filter_by = "cxn",
           cxn_var = "synonyms",
           cxn_type = "kebahagiaan",
-          min_collstr = -2)
+          min_assocstr = -2)
 
 }
