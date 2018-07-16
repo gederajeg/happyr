@@ -3,12 +3,12 @@
 #' @description A function to retrieve list of \emph{attracted} items for a construction from the results of \code{\link{mdca}}.
 #' @param df output data frame from \code{link{mdca}}.
 #' @param filter_by character string indicating whether the output of \code{link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
-#'     If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_collstr} argument.
+#'     If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_assocstr} argument.
 #' @param cxn_var character string for the column name of the construction variable (i.e., \code{"synonyms"}).
 #' @param cxn_type character strings of regular expressions for the HAPPINESS synonyms.
 #' @param coll_var character string for the column name of the metaphor variable (i.e., \code{"metaphors"}).
 #' @param coll_type character strings of regular expressions for the conceptual metaphors.
-#' @param min_collstr numeric threshold for the minimum collostruction strength. By default it is set to \code{2}.
+#' @param min_assocstr numeric threshold for the minimum collostruction strength. By default it is set to \code{2}.
 #'
 #' @return A tibble/data frame
 #' @export
@@ -21,13 +21,13 @@
 #'                  correct_holm = TRUE,
 #'                  concise_output = TRUE,
 #'                  already_count_table = FALSE,
-#'                  collstr_digits = 3)
+#'                  assocstr_digits = 3)
 #' # retrieve distinctive/attracted metaphors for "kebahagiaan".
 #' mdca_attr(df = mdca_res,
 #'           filter_by = "cxn",
 #'           cxn_var = "synonyms",
 #'           cxn_type = "kebahagiaan",
-#'           min_collstr = 2)
+#'           min_assocstr = 2)
 #'
 mdca_attr <- function(df = NULL,
                       filter_by = "cxn",
@@ -35,11 +35,11 @@ mdca_attr <- function(df = NULL,
                       cxn_type = NULL,
                       coll_var = NULL,
                       coll_type = NULL,
-                      min_collstr = 2) {
+                      min_assocstr = 2) {
   if (is.null(filter_by)) {
     cat("Filtered by the given minimun CollStr threshold!\n")
     x <- df %>%
-      dplyr::filter(.data$coll.str >= min_collstr)
+      dplyr::filter(.data$assocstr >= min_assocstr)
     return(x)
   } else if (filter_by == 'cxn') {
     if (is.null(cxn_var)) {
@@ -49,9 +49,9 @@ mdca_attr <- function(df = NULL,
         cat("NO input for 'cxn.type' argument!\n")
       } else if (is.null(cxn_type) == FALSE) {
         x <- df %>%
-          dplyr::filter(.data$coll.str >= min_collstr,
+          dplyr::filter(.data$assocstr >= min_assocstr,
                         stringr::str_detect(!!rlang::sym(cxn_var), cxn_type)) %>%
-          dplyr::arrange(!!rlang::sym(cxn_var), dplyr::desc(.data$coll.str)) %>%
+          dplyr::arrange(!!rlang::sym(cxn_var), dplyr::desc(.data$assocstr)) %>%
           as.data.frame()
       }
     }
@@ -63,9 +63,9 @@ mdca_attr <- function(df = NULL,
         cat("NO input for 'colloc.type' argument!\n")
       } else if (is.null(coll_type) == FALSE) {
         x <- df %>%
-          dplyr::filter(.data$coll.str >= min_collstr,
+          dplyr::filter(.data$assocstr >= min_assocstr,
                         stringr::str_detect(!!rlang::sym(coll_var), coll_type)) %>%
-          dplyr::arrange(!!rlang::sym(cxn_var), dplyr::desc(.data$coll.str)) %>%
+          dplyr::arrange(!!rlang::sym(cxn_var), dplyr::desc(.data$assocstr)) %>%
           as.data.frame()
       }
     }
@@ -79,12 +79,12 @@ mdca_attr <- function(df = NULL,
 #' @description A function to retrieve list of \emph{repelled} items for a construction from the results of \code{\link{mdca}}.
 #' @param df output data frame from \code{link{mdca}}.
 #' @param filter_by character string indicating whether the output of \code{link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
-#'     If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_collstr} argument.
+#'     If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_assocstr} argument.
 #' @param cxn_var character string for the column name of the construction variable (i.e., \code{"synonyms"}).
 #' @param cxn_type character strings of regular expressions for the HAPPINESS synonyms.
 #' @param coll_var character string for the column name of the metaphor variable (i.e., \code{"metaphors"}).
 #' @param coll_type character strings of regular expressions for the conceptual metaphors.
-#' @param min_collstr numeric threshold for the minimum collostruction strength. By default it is set to \code{-2}.
+#' @param min_assocstr numeric threshold for the minimum collostruction strength. By default it is set to \code{-2}.
 #'
 #' @return A tibble/data frame
 #' @export
@@ -97,13 +97,13 @@ mdca_attr <- function(df = NULL,
 #'                  correct_holm = TRUE,
 #'                  concise_output = TRUE,
 #'                  already_count_table = FALSE,
-#'                  collstr_digits = 3)
+#'                  assocstr_digits = 3)
 #' # retrieve the repelled metaphors for "kebahagiaan".
 #' mdca_repel(df = mdca_res,
 #'           filter_by = "cxn",
 #'           cxn_var = "synonyms",
 #'           cxn_type = "kebahagiaan",
-#'           min_collstr = -2)
+#'           min_assocstr = -2)
 #'
 mdca_repel <- function(df = NULL,
                       filter_by = "cxn",
@@ -111,11 +111,11 @@ mdca_repel <- function(df = NULL,
                       cxn_type = NULL,
                       coll_var = NULL,
                       coll_type = NULL,
-                      min_collstr = -2) {
+                      min_assocstr = -2) {
   if (is.null(filter_by)) {
     cat("Filtered by the given minimun CollStr threshold!\n")
     x <- df %>%
-      dplyr::filter(.data$coll.str <= min_collstr)
+      dplyr::filter(.data$assocstr <= min_assocstr)
     return(x)
   } else if (filter_by == 'cxn') {
     if (is.null(cxn_var)) {
@@ -125,9 +125,9 @@ mdca_repel <- function(df = NULL,
         cat("NO input for 'cxn.type' argument!\n")
       } else if (is.null(cxn_type) == FALSE) {
         x <- df %>%
-          dplyr::filter(.data$coll.str <= min_collstr,
+          dplyr::filter(.data$assocstr <= min_assocstr,
                         stringr::str_detect(!!rlang::sym(cxn_var), cxn_type)) %>%
-          dplyr::arrange(!!rlang::sym(cxn_var), .data$coll.str) %>%
+          dplyr::arrange(!!rlang::sym(cxn_var), .data$assocstr) %>%
           as.data.frame()
       }
     }
@@ -139,9 +139,9 @@ mdca_repel <- function(df = NULL,
         cat("NO input for 'colloc.type' argument!\n")
       } else if (is.null(coll_type) == FALSE) {
         x <- df %>%
-          dplyr::filter(.data$coll.str <= min_collstr,
+          dplyr::filter(.data$assocstr <= min_assocstr,
                         stringr::str_detect(!!rlang::sym(coll_var), coll_type)) %>%
-          dplyr::arrange(!!rlang::sym(cxn_var), .data$coll.str) %>%
+          dplyr::arrange(!!rlang::sym(cxn_var), .data$assocstr) %>%
           as.data.frame()
       }
     }
