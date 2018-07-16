@@ -3,6 +3,11 @@
 #' The metaphor data for TTR analysis in Ch. 5 & Ch. 6, and for the MDCA analysis in Ch. 7.
 "phd_data_metaphor"
 
+#' Gloss for the distinctive collocates
+#'
+#' A tibble/data frame containing gloss for the distinctive collocates
+"dist_colloc_gloss"
+
 #' Distinctive collocates data
 #'
 #' The input data for collocational analysis (4-window span collocates of the synonyms).
