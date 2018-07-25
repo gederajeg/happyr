@@ -1,12 +1,12 @@
 Package: happyr
 Type: Package
-Title: Scripts and data for Rajeg (2018)
+Title: Accompanying R codes and data for Rajeg (2018)
 Date: 2018-06-03
 Version: 0.1.0
 Authors@R: person("Gede Primahadi Wijaya", "Rajeg", email = "primahadiwijaya@gmail.com",
-               role = c("aut", "cre"))
+               role = c("aut", "cre"), comment = c(ORCID = "0000-0002-2047-8621"))
 Description: Provides the R functions and data for the quantitative analysis in Chapter 3, 5, 6, and 7 in Rajeg (2018).
-License: GPL-3
+License: GPL-2
 Depends: R (>= 2.10)
 Encoding: UTF-8
 Imports:

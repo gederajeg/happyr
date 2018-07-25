@@ -1,9 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+**Authors:** [Gede Primahadi Wijaya Rajeg](https://figshare.com/authors/Gede_Primahadi_Wijaya_Rajeg/1234749)<br/> **License:** [GPL-2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)<br/>
+
 happyr
 ======
 
-The goal of happyr is to provide the R functionalities and required dataset for the quantitative analyses in Rajeg's (2018) PhD thesis on metaphors for happiness near-synonyms in Indonesian. The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
+The goal of `happyr` is to provide the R functionalities and the required dataset for the quantitative analyses in Rajeg (2018). The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
 
 Installation
 ------------
@@ -194,7 +196,7 @@ The column `Perc_overall` indicates the percentage of a given LU from the total 
 
 ### Computing distinctive metaphors and distinctive collocates for Chapter 7
 
-The *Multiple Distinctive Collexeme Analysis* (e.g., Hilpert, 2006; Stefanowitsch, 2013, pp. 299–300) for the synonyms with the metaphors and the window-span collocates are performed with `happyr::mdca()`. The metaphors data is in `happyr::phd_data_metaphor`.
+The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the *Multiple Distinctive Collexeme Analysis* (MDCA) (cf., e.g., Hilpert, 2006; Stefanowitsch, 2013, pp. 299–300). The MDCA function is available as `happyr::mdca()`.
 
 ``` r
 # MDCA for metaphor * synonyms with concise output
@@ -227,7 +229,7 @@ mdca_res %>%
 | 3   | <span style="font-variant:small-caps;">happiness is a possessable object</span>            |  181|  141.029|     3.767| 1.711e-04   | 1.011e-01 | ns     |
 | 4   | <span style="font-variant:small-caps;">happiness is a moving object to a goal</span>       |   19|    9.979|     2.577| 2.650e-03   | 1.000e+00 | ns     |
 
-The `p_holm` column provides the Holm's corrected significance level of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
+The `p_holm` column provides the Holm's corrected significance level \[gries\_statistics\_2009, pp. 249, 251\] of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) (cf. Stefanowitsch, 2013, p. 305), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
 
 The following code shows how to use `happyr::mdca_repel()` for *kebahagiaan* 'happiness' data:
 
@@ -250,7 +252,7 @@ mdca_res %>%
 | 6   | <span style="font-variant:small-caps;">happiness is a liquid in a container</span>  |   17|  29.373|    -2.286| 5.171e-03   | 1.000e+00 | ns     |
 | 7   | <span style="font-variant:small-caps;">happiness is a location</span>               |   20|  31.821|    -2.001| 9.974e-03   | 1.000e+00 | ns     |
 
-Finally, here is the code to retrieve the top-20 most distinctive collocates co-occurring with *kebahagiaan* 'happiness' in the corpus within the span of 4 words to the left and right of *kebahagiaan*.
+Finally, below is the code to retrieve the top-20 most distinctive collocates co-occurring with *kebahagiaan* 'happiness' within the span of 4 words to the left and right of *kebahagiaan*.
 
 ``` r
 # present the result table for collocational analysis for *kebahagiaan*
