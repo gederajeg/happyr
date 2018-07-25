@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^\.Rhistory$
 ^\.httr-oauth$
+^README\.Rmd$
+^citation_README\.bib$

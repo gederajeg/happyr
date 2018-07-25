@@ -1,0 +1,190 @@
+---
+output: github_document
+bibliography: 'citation_README.bib'
+csl: '/Users/Primahadi/Google Drive/MONASH PhD Journey/3rd Year (mid 2017-mid 2018)/ch6/apa-old-doi-prefix.csl'
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# happyr
+
+The goal of happyr is to provide the R functionalities and required dataset for the quantitative analyses in Rajeg's [-@rajeg_metaphorical_2018] PhD thesis on metaphors for happiness near-synonyms in Indonesian. The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
+
+## Installation
+
+You can install the released version of `happyr` from [GitHub](https://github.com/gederajeg/happyr) with the [`remotes`](https://github.com/r-lib/remotes) package:
+
+``` r
+# install the `remotes` package
+install.packages("remotes") 
+
+# install the `happyr` package
+remotes::install_github("gederajeg/happyr@v0.1.0") 
+```
+
+## Examples
+
+### Interrater-agreement computation in Chapter 3
+
+All codes for the Kappa's calculation in the interrater agreement trial are presented in the *Examples* section of the documentation of the `happyr::kappa_tidy()` function. Type `?happyr::kappa_tidy()` to see them.
+
+### Token frequency, type frequency, and type/token ratio analyses in Chapter 5 and 6
+
+The main metaphor data for Chapter 5, 6, and 7 is stored as a tibble in `happyr::phd_data_metaphor`. The relevant function is `happyr::ttr()`. 
+
+```{r ttr, warning = FALSE, message = FALSE}
+library(tidyverse)
+
+# calculation for the token, type, and type/token ratios data
+ttr_metaphor <- happyr::ttr(df = happyr::phd_data_metaphor,
+                            metaphor_var = "metaphors",
+                            lexunit_var = "lu",
+                            float_digits = 2)
+```
+
+The following code retrieve the top-10 metaphors sorted according to their token frequencies.
+
+```{r most-frequent-metaphors}
+top_n(x = ttr_metaphor, n = 10L, wt = token) %>% 
+  mutate(metaphors = happyr::scaps(metaphors)) %>% # render the metaphors into small capitals
+  knitr::kable(caption = "Top-10 most frequent metaphors", row.names = TRUE)
+```
+
+From the output of `happyr::ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies [@rajeg_metaphorical_2018, Ch. 6] with the following codes:
+
+```{r top-10-productive-metaphors}
+# sort by type frequency
+productive_metaphor <- ttr_metaphor %>% 
+  arrange(desc(type_lu)) %>% # sort in descending order for the type frequency
+  top_n(10, type_lu) %>% # get the top-10 rows
+  mutate(metaphors = happyr::scaps(metaphors)) # small-caps the metaphors
+
+# print as table
+productive_metaphor %>% 
+select(Metaphors = metaphors,
+       Token = token,
+       `%Token` = perc_token,
+       Type = type_lu,
+       `%Type` = perc_type_lu) %>% 
+  knitr::kable(caption = 'Top-10 metaphors sorted on their type frequency.', row.names = TRUE)
+```
+
+I design a helper function called `happyr::get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors [@rajeg_metaphorical_2018, Ch. 6]. These metaphors are those having relatively high type/token ratios (normalised as percentage) and occurring at least three tokens in the sample.
+
+```{r creative-metaphors}
+min_freq <- 3L
+ttr_metaphor %>% 
+  happyr::get_lexically_diverse_metaphors(min_token = min_freq, top_n_limit = 10L) %>% 
+  mutate(metaphors = happyr::scaps(metaphors)) %>% 
+  select(Metaphors = metaphors,
+         Token = token,
+         Type = type_lu,
+         `Type/token ratio (in%)` = type_per_token_lu) %>% 
+  knitr::kable(caption = paste('Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least ', happyr::numbers2words(min_freq), ' tokens.', sep = ""), row.names = TRUE)
+```
+
+
+### Retrieving the frequency of submappings, semantic source frames, and metaphorical lexical units of metaphors
+
+The data is contained within `happyr::phd_data_metaphor`. Among the relevant functions are `happyr::get_submappings()`, `happyr::get_frames()`, and `happyr::get_lu_table()`. The illustration is based on data for the `r happyr::scaps("happiness is liquid in a container")` metaphor.
+
+```{r submappings-liquid-in-container}
+# get the submappings for the liquid in a container
+happyr::get_submappings(metaphor = "liquid in a container", df = happyr::phd_data_metaphor) %>% 
+  mutate(submappings = happyr::scaps(submappings)) %>% 
+  knitr::kable(caption = paste("Submappings for ", happyr::scaps("happiness is liquid in a container."), sep = ""), row.names = TRUE)
+```
+
+Column `n` shows the 'token frequency' of the submappings (with `perc` indicates the token's percentage). Meanwhile `type` shows the 'type frequency' of the submappings (i.e., the number of different lexical unit types evoking the corresponding submappings of a given metaphor).
+
+Use `happyr::get_frames()` to retrieve frequency profiles of the source frames for a given metaphor:
+
+```{r frames-liquid-in-container}
+# get the source frames evoked by the metaphorical expressions for the liquid in a container
+happyr::get_frames(metaphor = "liquid in a container", df = happyr::phd_data_metaphor) %>% 
+  mutate(frames = happyr::scaps(frames)) %>% 
+  knitr::kable(caption = paste("Source frames for ", happyr::scaps("happiness is liquid in a container."), sep = ""), row.names = TRUE)
+```
+
+To print the source frame *lexical units* in the metaphorical expressions, use `happyr::get_lu_table()`:
+
+```{r lu-liquid-in-container}
+# print the top-10 Lexical Units of liquid in a container metaphor
+happyr::get_lu_table(metaphor = "liquid in a container", 
+                     top_n_only = TRUE, 
+                     top_n_limit = 10L, 
+                     df = happyr::phd_data_metaphor) %>% 
+  knitr::kable(caption = paste("Top-10 most frequent lexical units for ", happyr::scaps("happiness is liquid in a container."), sep = ""),
+               row.names = TRUE)
+```
+
+The column `Perc_overall` indicates the percentage of a given LU from the total tokens of the given metaphor.
+
+
+
+### Computing distinctive metaphors and distinctive collocates for Chapter 7
+
+The *Multiple Distinctive Collexeme Analysis* [e.g., @hilpert_distinctive_2006; @hoffmann_collostructional_2013, pp. 299-300] for the synonyms with the metaphors and the window-span collocates are performed with `happyr::mdca()`. The metaphors data is in `happyr::phd_data_metaphor`.
+
+```{r mdca-metaphors}
+# MDCA for metaphor * synonyms with concise output
+mdca_res <- happyr::mdca(df = happyr::phd_data_metaphor, coll_var = "metaphors", concise_output = TRUE)
+```
+
+The data for the collocates are available in the `happyr::colloc_input_data`. The English gloss/translation for the distinctive collocates are stored in `happyr::dist_colloc_gloss`. 
+
+```{r mdca-collocates}
+# mdca for window-span collocational data
+mdca_colloc <- happyr::mdca(df = happyr::colloc_input_data, coll_var = "collocates", concise_output = TRUE)
+```
+
+Two related functions are available to retrieve the *attracted*/*distinctive* and the *repelled* items from the results of MDCA for the metaphors and collocates. They are `happyr::mdca_attr()` and `happyr::mdca_repel()`. The following example shows how to get the distinctive metaphors for *kebahagiaan* 'happiness' having the association strength of equal to, or greater than, two (i.e. *p*~binomial~ < 0.01):
+
+```{r dist-for-kebahagiaan}
+mdca_res %>%
+  happyr::mdca_attr(cxn_type = "kebahagiaan", min_assocstr = 2) %>% 
+  mutate(exp = round(exp, 3L), # round the expected co-occurrence frequency
+         metaphors = happyr::scaps(metaphors)) %>% 
+  select(-synonyms) %>%
+  as.data.frame() %>% 
+  knitr::kable(caption = "Distinctive metaphors for *kebahagiaan* 'happiness'", row.names = TRUE)
+```
+
+The `p_holm` column provides the Holm's corrected significance level of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`), which is derived via the log-transformed *p*~Binomial~-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
+
+The following code shows how to use `happyr::mdca_repel()` for *kebahagiaan* 'happiness' data:
+
+```{r repel-by-kebahagiaan}
+mdca_res %>%
+  happyr::mdca_repel(cxn_type = "kebahagiaan", min_assocstr = -2) %>% 
+  mutate(exp = round(exp, 3L),
+         metaphors = happyr::scaps(metaphors)) %>% 
+  select(-synonyms) %>%
+  knitr::kable(caption = "Repelled metaphors for *kebahagiaan* 'happiness'", row.names = TRUE)
+```
+
+Finally, here is the code to retrieve the top-20 most distinctive collocates co-occurring with *kebahagiaan* 'happiness' in the corpus within the span of 4 words to the left and right of *kebahagiaan*.
+
+```{r colloc-res-kebahagiaan}
+# present the result table for collocational analysis for *kebahagiaan*
+happyr::mdca_attr(mdca_colloc, cxn_type = '^kebahagiaan') %>% 
+  top_n(20, assocstr) %>% 
+  left_join(happyr::dist_colloc_gloss, by = "collocates") %>% # left-join the gloss for the distinctive collocates
+  select(-synonyms) %>%
+  select(collocates, gloss, everything()) %>%
+  mutate(exp = round(exp, 3), 
+         collocates = paste("*", collocates, "*", sep = "")) %>%
+  knitr::kable(caption="The 20 most distinctive, 4-window span collocates for *kebahagiaan* 'happiness' in the whole Indonesian Leipzig Corpora collection.", row.names = TRUE)
+```
+
+## References
+
+
