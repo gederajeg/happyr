@@ -229,7 +229,7 @@ mdca_res %>%
 | 3   | <span style="font-variant:small-caps;">happiness is a possessable object</span>            |  181|  141.029|     3.767| 1.711e-04   | 1.011e-01 | ns     |
 | 4   | <span style="font-variant:small-caps;">happiness is a moving object to a goal</span>       |   19|    9.979|     2.577| 2.650e-03   | 1.000e+00 | ns     |
 
-The `p_holm` column provides the Holm's corrected significance level \[gries\_statistics\_2009, pp. 249, 251\] of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) (cf. Stefanowitsch, 2013, p. 305), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
+The `p_holm` column provides the Holm's corrected significance level (Gries, 2009, pp. 249, 251) of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) (cf. Stefanowitsch, 2013, p. 305), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
 
 The following code shows how to use `happyr::mdca_repel()` for *kebahagiaan* 'happiness' data:
 
@@ -291,6 +291,8 @@ happyr::mdca_attr(mdca_colloc, cxn_type = '^kebahagiaan') %>%
 
 References
 ----------
+
+Gries, S. T. (2009). *Statistics for linguistics with R: A practical introduction*. Berlin: Mouton de Gruyter.
 
 Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. *Corpus Linguistics and Linguistic Theory*, *2*(2), 243–256.
 

@@ -161,7 +161,7 @@ mdca_res %>%
   knitr::kable(caption = "Distinctive metaphors for *kebahagiaan* 'happiness'", row.names = TRUE)
 ```
 
-The `p_holm` column provides the Holm's corrected significance level [gries_statistics_2009, pp. 249, 251] of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) [cf. @hoffmann_collostructional_2013, p. 305], which is derived via the log-transformed *p*~Binomial~-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
+The `p_holm` column provides the Holm's corrected significance level [@gries_statistics_2009, pp. 249, 251] of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) [cf. @hoffmann_collostructional_2013, p. 305], which is derived via the log-transformed *p*~Binomial~-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
 
 The following code shows how to use `happyr::mdca_repel()` for *kebahagiaan* 'happiness' data:
 
