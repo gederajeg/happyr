@@ -4,3 +4,7 @@
 ^\.httr-oauth$
 ^README\.Rmd$
 ^citation_README\.bib$
+^\.travis\.yml$
+^codecov\.yml$
+^_pkgdown\.yml$
+^docs$

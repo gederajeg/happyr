@@ -1,0 +1,8 @@
+pandoc: 1.19.2.1
+pkgdown: 1.1.0
+pkgdown_sha: ~
+articles: []
+urls:
+  reference: https://gederajeg.github.io/happyr//reference
+  article: https://gederajeg.github.io/happyr//articles
+
