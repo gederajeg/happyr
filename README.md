@@ -1,11 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-**Authors:** [Gede Primahadi Wijaya Rajeg](https://figshare.com/authors/Gede_Primahadi_Wijaya_Rajeg/1234749)<br/> **License:** [GPL-2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)<br/>
+[![Travis build status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr) [![Coverage status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master)
 
 happyr
 ======
 
-The goal of `happyr` is to provide the R functionalities and the required dataset for the quantitative analyses in Rajeg (2018). The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
+The goal of `happyr` is to provide the R functionalities and the required dataset for the quantitative analyses in Rajeg ([2018](#ref-rajeg_metaphorical_2018)). The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
 
 Installation
 ------------
@@ -64,7 +64,7 @@ top_n(x = ttr_metaphor, n = 10L, wt = token) %>%
 | 9   | <span style="font-variant:small-caps;">happiness is food</span>                            |    108|        17|         2.97|            2.11|                 15.74|
 | 10  | <span style="font-variant:small-caps;">happiness is a submerged entity</span>              |     99|        12|         2.72|            1.49|                 12.12|
 
-From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies (Rajeg, 2018, Ch. 6) with the following codes:
+From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6) with the following codes:
 
 ``` r
 # sort by type frequency
@@ -96,7 +96,7 @@ select(Metaphors = metaphors,
 | 9   | <span style="font-variant:small-caps;">happiness is an (un)veiled object</span>            |    211|    5.80|    23|   2.86|
 | 10  | <span style="font-variant:small-caps;">happiness is an imperilled entity</span>            |     32|    0.88|    21|   2.61|
 
-I design a helper function called `get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors (Rajeg, 2018, Ch. 6). These metaphors are those having relatively high type/token ratios (normalised as percentage) and occurring at least three tokens in the sample.
+I design a helper function called `get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6). These metaphors are those having relatively high type/token ratios (normalised as percentage) and occurring at least three tokens in the sample.
 
 ``` r
 min_freq <- 3L
@@ -251,7 +251,7 @@ The column `perc_expr_overall` indicates the percentages of the token frequencie
 
 ### Computing the distinctive metaphors and the distinctive collocates in Chapter 7
 
-The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the *Multiple Distinctive Collexeme Analysis* (MDCA) (cf., e.g., Hilpert, 2006; Stefanowitsch, 2013, pp. 299–300). The MDCA function is available as `mdca()`.
+The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the *Multiple Distinctive Collexeme Analysis* (MDCA) (cf., e.g., Hilpert, [2006](#ref-hilpert_distinctive_2006); Stefanowitsch, [2013](#ref-hoffmann_collostructional_2013), pp. 299–300). The MDCA function is available as `mdca()`.
 
 ``` r
 # MDCA for metaphor * synonyms with concise output
@@ -284,7 +284,7 @@ mdca_res %>%
 | 3   | <span style="font-variant:small-caps;">happiness is a possessable object</span>            |  181|  141.029|     3.767| 1.711e-04   | 1.011e-01 | ns     |
 | 4   | <span style="font-variant:small-caps;">happiness is a moving object to a goal</span>       |   19|    9.979|     2.577| 2.650e-03   | 1.000e+00 | ns     |
 
-The `p_holm` column provides the Holm's corrected significance level (Gries, 2009, pp. 249, 251) of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) (cf. Stefanowitsch, 2013, p. 305), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
+The `p_holm` column provides the Holm's corrected significance level (Gries, [2009](#ref-gries_statistics_2009), pp. 249, 251) of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) (cf. Stefanowitsch, [2013](#ref-hoffmann_collostructional_2013), p. 305), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
 
 The following code shows how to use `mdca_repel()` for *kebahagiaan* 'happiness' data:
 

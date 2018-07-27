@@ -1,13 +1,13 @@
 ---
 output: github_document
+link-citations: TRUE
 bibliography: 'citation_README.bib'
 csl: '/Users/Primahadi/Google Drive/MONASH PhD Journey/3rd Year (mid 2017-mid 2018)/ch6/apa-old-doi-prefix.csl'
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-**Authors:** [Gede Primahadi Wijaya Rajeg](https://figshare.com/authors/Gede_Primahadi_Wijaya_Rajeg/1234749)<br/>
-**License:** [GPL-2](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)<br/>
+[![Travis build status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr) [![Coverage status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master)
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
