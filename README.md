@@ -17,7 +17,7 @@ You can install the released version of `happyr` from [GitHub](https://github.co
 install.packages("remotes") 
 
 # install the `happyr` package
-remotes::install_github("gederajeg/happyr@v0.1.0") 
+remotes::install_github("gederajeg/happyr@v0.1.0")
 ```
 
 Examples
@@ -25,27 +25,29 @@ Examples
 
 ### Interrater-agreement computation in Chapter 3
 
-All codes for the Kappa's calculation in the interrater agreement trial are presented in the *Examples* section of the documentation of the `happyr::kappa_tidy()` function. Type `?happyr::kappa_tidy()` to see them.
+All codes for the Kappa's calculation in the interrater agreement trial are presented in the *Examples* section of the documentation of the `kappa_tidy()` function. Type `?kappa_tidy()` to see them.
 
 ### Token frequency, type frequency, and type/token ratio analyses in Chapter 5 and 6
 
-The main metaphor data for Chapter 5, 6, and 7 is stored as a tibble in `happyr::phd_data_metaphor`. The relevant function is `happyr::ttr()`.
+The main metaphor data for Chapter 5, 6, and 7 is stored as a tibble in `phd_data_metaphor`. The relevant function for the token, type, and type/token ratios analyses in Chapter 5 and 6 is `ttr()`.
 
 ``` r
+# load the required packages
+library(happyr)
 library(tidyverse)
 
 # calculation for the token, type, and type/token ratios data
-ttr_metaphor <- happyr::ttr(df = happyr::phd_data_metaphor,
-                            metaphor_var = "metaphors",
-                            lexunit_var = "lu",
-                            float_digits = 2)
+ttr_metaphor <- ttr(df = phd_data_metaphor,
+                    metaphor_var = "metaphors",
+                    lexunit_var = "lu",
+                    float_digits = 2)
 ```
 
-The following code retrieve the top-10 metaphors sorted according to their token frequencies.
+The following code retrieve the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as `scaps()`.
 
 ``` r
 top_n(x = ttr_metaphor, n = 10L, wt = token) %>% 
-  mutate(metaphors = happyr::scaps(metaphors)) %>% # render the metaphors into small capitals
+  mutate(metaphors = scaps(metaphors)) %>% # render the metaphors into small capitals to be printed in MS Word output
   knitr::kable(caption = "Top-10 most frequent metaphors", row.names = TRUE)
 ```
 
@@ -62,14 +64,14 @@ top_n(x = ttr_metaphor, n = 10L, wt = token) %>%
 | 9   | <span style="font-variant:small-caps;">happiness is food</span>                            |    108|        17|         2.97|            2.11|                 15.74|
 | 10  | <span style="font-variant:small-caps;">happiness is a submerged entity</span>              |     99|        12|         2.72|            1.49|                 12.12|
 
-From the output of `happyr::ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies (Rajeg, 2018, Ch. 6) with the following codes:
+From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies (Rajeg, 2018, Ch. 6) with the following codes:
 
 ``` r
 # sort by type frequency
 productive_metaphor <- ttr_metaphor %>% 
   arrange(desc(type_lu)) %>% # sort in descending order for the type frequency
   top_n(10, type_lu) %>% # get the top-10 rows
-  mutate(metaphors = happyr::scaps(metaphors)) # small-caps the metaphors
+  mutate(metaphors = scaps(metaphors)) # small-caps the metaphors texts
 
 # print as table
 productive_metaphor %>% 
@@ -94,13 +96,13 @@ select(Metaphors = metaphors,
 | 9   | <span style="font-variant:small-caps;">happiness is an (un)veiled object</span>            |    211|    5.80|    23|   2.86|
 | 10  | <span style="font-variant:small-caps;">happiness is an imperilled entity</span>            |     32|    0.88|    21|   2.61|
 
-I design a helper function called `happyr::get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors (Rajeg, 2018, Ch. 6). These metaphors are those having relatively high type/token ratios (normalised as percentage) and occurring at least three tokens in the sample.
+I design a helper function called `get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors (Rajeg, 2018, Ch. 6). These metaphors are those having relatively high type/token ratios (normalised as percentage) and occurring at least three tokens in the sample.
 
 ``` r
 min_freq <- 3L
 ttr_metaphor %>% 
-  happyr::get_lexically_diverse_metaphors(min_token = min_freq, top_n_limit = 10L) %>% 
-  mutate(metaphors = happyr::scaps(metaphors)) %>% 
+  get_lexically_diverse_metaphors(min_token = min_freq, top_n_limit = 10L) %>% 
+  mutate(metaphors = scaps(metaphors)) %>% 
   select(Metaphors = metaphors,
          Token = token,
          Type = type_lu,
@@ -121,15 +123,15 @@ ttr_metaphor %>%
 | 9   | <span style="font-variant:small-caps;">happiness is a deceiver</span>            |     20|    16|                   80.00|
 | 10  | <span style="font-variant:small-caps;">happiness is an adversary</span>          |     24|    19|                   79.17|
 
-### Retrieving the frequency of submappings, semantic source frames, and metaphorical lexical units of metaphors
+#### Retrieving the frequency of submappings, semantic source frames, and metaphorical lexical units of metaphors
 
-The data is contained within `happyr::phd_data_metaphor`. Among the relevant functions are `happyr::get_submappings()`, `happyr::get_frames()`, and `happyr::get_lu_table()`. The illustration is based on data for the <span style="font-variant:small-caps;">happiness is liquid in a container</span> metaphor.
+The data for retrieving the information on the submappings, source frames, and the lexical units is contained within `phd_data_metaphor`. Among the relevant functions for retrieving these information are `get_submappings()`, `get_frames()`, and `get_lu_table()`. The illustration is based on data for the <span style="font-variant:small-caps;">happiness is liquid in a container</span> metaphor.
 
 ``` r
 # get the submappings for the liquid in a container
-happyr::get_submappings(metaphor = "liquid in a container", df = happyr::phd_data_metaphor) %>% 
-  mutate(submappings = happyr::scaps(submappings)) %>% 
-  knitr::kable(caption = paste("Submappings for ", happyr::scaps("happiness is liquid in a container."), sep = ""), row.names = TRUE)
+get_submappings(metaphor = "liquid in a container", df = phd_data_metaphor) %>% 
+  mutate(submappings = scaps(submappings)) %>% 
+  knitr::kable(caption = paste("Submappings for ", scaps("happiness is liquid in a container."), sep = ""), row.names = TRUE)
 ```
 
 |     | submappings                                                                                                    |    n|  type|   perc|  type\_perc|
@@ -143,13 +145,13 @@ happyr::get_submappings(metaphor = "liquid in a container", df = happyr::phd_dat
 
 Column `n` shows the 'token frequency' of the submappings (with `perc` indicates the token's percentage). Meanwhile `type` shows the 'type frequency' of the submappings (i.e., the number of different lexical unit types evoking the corresponding submappings of a given metaphor).
 
-Use `happyr::get_frames()` to retrieve frequency profiles of the source frames for a given metaphor:
+Use `get_frames()` to retrieve frequency profiles of the source frames for a given metaphor:
 
 ``` r
 # get the source frames evoked by the metaphorical expressions for the liquid in a container
-happyr::get_frames(metaphor = "liquid in a container", df = happyr::phd_data_metaphor) %>% 
-  mutate(frames = happyr::scaps(frames)) %>% 
-  knitr::kable(caption = paste("Source frames for ", happyr::scaps("happiness is liquid in a container."), sep = ""), row.names = TRUE)
+get_frames(metaphor = "liquid in a container", df = phd_data_metaphor) %>% 
+  mutate(frames = scaps(frames)) %>% 
+  knitr::kable(caption = paste("Source frames for ", scaps("happiness is liquid in a container."), sep = ""), row.names = TRUE)
 ```
 
 |     | frames                                                               |    n|  type|   perc|  type\_perc|
@@ -160,15 +162,16 @@ happyr::get_frames(metaphor = "liquid in a container", df = happyr::phd_data_met
 | 4   | <span style="font-variant:small-caps;">stop flow of substance</span> |    5|     2|   3.21|        5.41|
 | 5   | <span style="font-variant:small-caps;">fluid motion</span>           |    4|     4|   2.56|       10.81|
 
-To print the source frame *lexical units* in the metaphorical expressions, use `happyr::get_lu_table()`:
+To print the source frame *lexical units* in the metaphorical expressions of the metaphor, use `get_lu_table()`:
 
 ``` r
 # print the top-10 Lexical Units of liquid in a container metaphor
-happyr::get_lu_table(metaphor = "liquid in a container", 
-                     top_n_only = TRUE, 
-                     top_n_limit = 10L, 
-                     df = happyr::phd_data_metaphor) %>% 
-  knitr::kable(caption = paste("Top-10 most frequent lexical units for ", happyr::scaps("happiness is liquid in a container."), sep = ""),
+get_lu_table(metaphor = "liquid in a container", 
+             top_n_only = TRUE, 
+             top_n_limit = 10L, 
+             df = phd_data_metaphor) %>% 
+  knitr::kable(caption = paste("Top-10 most frequent lexical units for ",
+                               scaps("happiness is liquid in a container."), sep = ""),
                row.names = TRUE)
 ```
 
@@ -192,31 +195,83 @@ happyr::get_lu_table(metaphor = "liquid in a container",
 | 16  | *tertuang*      | to be poured out          |    2|           1.28|
 | 17  | *tuangkan*      | to pour out sth.          |    2|           1.28|
 
-The column `Perc_overall` indicates the percentage of a given LU from the total tokens of the given metaphor.
+The column `Perc_overall` indicates the percentage of a given LU from the total tokens of the given metaphor. Based on the same data, it is also possible to retrieve a frequency table for the lexical units and the submappings they evoke for a given metaphor. Use `get_lu_submappings_table()` for this purpose.
 
-### Computing distinctive metaphors and distinctive collocates for Chapter 7
+``` r
+get_lu_submappings_table(metaphor = "liquid in a container",
+                         df = phd_data_metaphor) %>% 
+  mutate(submappings = scaps(submappings), # small-cap the submapping
+         lu = paste("*", lu, "*", sep = "")) %>% # italicised the printed lexical units 
+  knitr::kable(caption = paste("Evoked submappings for the lexical units of the ",
+                               scaps("happiness is liquid in a container"), " metaphor.", sep = ""),
+               row.names = TRUE)
+```
 
-The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the *Multiple Distinctive Collexeme Analysis* (MDCA) (cf., e.g., Hilpert, 2006; Stefanowitsch, 2013, pp. 299–300). The MDCA function is available as `happyr::mdca()`.
+|     | submappings                                                                                                    | lu                       | lu\_gloss                    |    n|  perc\_expr\_overall|  perc\_expr\_by\_submappings|
+|-----|:---------------------------------------------------------------------------------------------------------------|:-------------------------|:-----------------------------|----:|--------------------:|----------------------------:|
+| 1   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *terpancar*              | to be spurted out            |   43|                27.56|                        43.00|
+| 2   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *luapan*                 | overflow                     |   25|                16.03|                        25.00|
+| 3   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *pancarkan*              | to spurt sth.                |    9|                 5.77|                         9.00|
+| 4   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *salurkan*               | to funnel sth.               |    4|                 2.56|                         4.00|
+| 5   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *pancaran*               | a spurting-out               |    3|                 1.92|                         3.00|
+| 6   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *curahan*                | outpouring                   |    2|                 1.28|                         2.00|
+| 7   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *tertuang*               | to be poured out             |    2|                 1.28|                         2.00|
+| 8   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *tuangkan*               | to pour out sth.             |    2|                 1.28|                         2.00|
+| 9   | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *air bah*                | flood                        |    1|                 0.64|                         1.00|
+| 10  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *alirkan*                | to flow and drain sth.       |    1|                 0.64|                         1.00|
+| 11  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *lampiaskan*             | to gush sth. out             |    1|                 0.64|                         1.00|
+| 12  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *memancar*               | to spurt                     |    1|                 0.64|                         1.00|
+| 13  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *membual*                | to overflow/spurt out        |    1|                 0.64|                         1.00|
+| 14  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *pelampiasan*            | to spurt out sth.            |    1|                 0.64|                         1.00|
+| 15  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *tercurah*               | to be poured out             |    1|                 0.64|                         1.00|
+| 16  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *teteskan*               | to drip sth.                 |    1|                 0.64|                         1.00|
+| 17  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *titikkan*               | to drip sth.                 |    1|                 0.64|                         1.00|
+| 18  | <span style="font-variant:small-caps;">expression of happiness is released liquid</span>                       | *tumpahkan*              | to spill sth.                |    1|                 0.64|                         1.00|
+| 19  | <span style="font-variant:small-caps;">happiness is a fluidic motion</span>                                    | *mengalir*               | to flow                      |    1|                 0.64|                        25.00|
+| 20  | <span style="font-variant:small-caps;">happiness is a fluidic motion</span>                                    | *resap.v*                | to seep into sth.            |    1|                 0.64|                        25.00|
+| 21  | <span style="font-variant:small-caps;">happiness is a fluidic motion</span>                                    | *terlarut*               | to be washed-and-drawn away  |    1|                 0.64|                        25.00|
+| 22  | <span style="font-variant:small-caps;">happiness is a fluidic motion</span>                                    | *terserap*               | to be soaked up/absorbed     |    1|                 0.64|                        25.00|
+| 23  | <span style="font-variant:small-caps;">happiness is a liquid in a container</span>                             | *tampung*                | to collect-in (of liquid)    |    2|                 1.28|                        50.00|
+| 24  | <span style="font-variant:small-caps;">happiness is a liquid in a container</span>                             | *dicarikan jalan keluar* | to be searched for a way out |    1|                 0.64|                        25.00|
+| 25  | <span style="font-variant:small-caps;">happiness is a liquid in a container</span>                             | *mendarah daging*        | to be internalised           |    1|                 0.64|                        25.00|
+| 26  | <span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span> | *limpahkan*              | to brim liquid onto sth.     |    4|                 2.56|                        36.36|
+| 27  | <span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span> | *berlimpah*              | to be brimming/aboundant     |    2|                 1.28|                        18.18|
+| 28  | <span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span> | *limpahi*                | to brim sth. with liquid     |    2|                 1.28|                        18.18|
+| 29  | <span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span> | *aliri*                  | to overflow sth. with liquid |    1|                 0.64|                         9.09|
+| 30  | <span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span> | *kelimpahan*             | the brimming of sth.         |    1|                 0.64|                         9.09|
+| 31  | <span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span> | *limpahan*               | the brimming of sth.         |    1|                 0.64|                         9.09|
+| 32  | <span style="font-variant:small-caps;">intensified happiness is heated liquid</span>                           | *luapkan*                | to boil sth. over            |   21|                13.46|                        65.62|
+| 33  | <span style="font-variant:small-caps;">intensified happiness is heated liquid</span>                           | *meluap(-luap)*          | to boil over                 |    8|                 5.13|                        25.00|
+| 34  | <span style="font-variant:small-caps;">intensified happiness is heated liquid</span>                           | *meruap*                 | to boil to froth/bubble      |    2|                 1.28|                         6.25|
+| 35  | <span style="font-variant:small-caps;">intensified happiness is heated liquid</span>                           | *membludak*              | to boil over to overflow     |    1|                 0.64|                         3.12|
+| 36  | <span style="font-variant:small-caps;">preventing happiness is impeding flowing substance</span>               | *bendung*                | to dam up sth.               |    3|                 1.92|                        60.00|
+| 37  | <span style="font-variant:small-caps;">preventing happiness is impeding flowing substance</span>               | *sumbat*                 | to clog sth.                 |    2|                 1.28|                        40.00|
+
+The column `perc_expr_overall` indicates the percentages of the token frequencies the lexical units for the given metaphor. Meanwhile `perc_expr_by_submappings` indicates the percentages of the lexical units for each submapping of the given metaphor.
+
+### Computing the distinctive metaphors and the distinctive collocates in Chapter 7
+
+The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the *Multiple Distinctive Collexeme Analysis* (MDCA) (cf., e.g., Hilpert, 2006; Stefanowitsch, 2013, pp. 299–300). The MDCA function is available as `mdca()`.
 
 ``` r
 # MDCA for metaphor * synonyms with concise output
-mdca_res <- happyr::mdca(df = happyr::phd_data_metaphor, coll_var = "metaphors", concise_output = TRUE)
+mdca_res <- mdca(df = phd_data_metaphor, coll_var = "metaphors", concise_output = TRUE)
 ```
 
-The data for the collocates are available in the `happyr::colloc_input_data`. The English gloss/translation for the distinctive collocates are stored in `happyr::dist_colloc_gloss`.
+The data for the collocates are available in the `colloc_input_data`. The English gloss/translation for the distinctive collocates are stored in `dist_colloc_gloss`.
 
 ``` r
 # mdca for window-span collocational data
-mdca_colloc <- happyr::mdca(df = happyr::colloc_input_data, coll_var = "collocates", concise_output = TRUE)
+mdca_colloc <- mdca(df = colloc_input_data, coll_var = "collocates", concise_output = TRUE)
 ```
 
-Two related functions are available to retrieve the *attracted*/*distinctive* and the *repelled* items from the results of MDCA for the metaphors and collocates. They are `happyr::mdca_attr()` and `happyr::mdca_repel()`. The following example shows how to get the distinctive metaphors for *kebahagiaan* 'happiness' having the association strength of equal to, or greater than, two (i.e. *p*<sub>binomial</sub> &lt; 0.01):
+The package also provides two related functions to retrieve the *attracted*/*distinctive* and the *repelled* items from the results of MDCA for the metaphors and collocates. They are `mdca_attr()` and `mdca_repel()`. The following example shows how to get the distinctive metaphors for *kebahagiaan* 'happiness' having the association strength of equal to, or greater than, two (i.e. *p*<sub>binomial</sub> &lt; 0.01):
 
 ``` r
 mdca_res %>%
-  happyr::mdca_attr(cxn_type = "kebahagiaan", min_assocstr = 2) %>% 
+  mdca_attr(cxn_type = "kebahagiaan", min_assocstr = 2) %>% 
   mutate(exp = round(exp, 3L), # round the expected co-occurrence frequency
-         metaphors = happyr::scaps(metaphors)) %>% 
+         metaphors = scaps(metaphors)) %>% 
   select(-synonyms) %>%
   as.data.frame() %>% 
   knitr::kable(caption = "Distinctive metaphors for *kebahagiaan* 'happiness'", row.names = TRUE)
@@ -231,13 +286,13 @@ mdca_res %>%
 
 The `p_holm` column provides the Holm's corrected significance level (Gries, 2009, pp. 249, 251) of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) (cf. Stefanowitsch, 2013, p. 305), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
 
-The following code shows how to use `happyr::mdca_repel()` for *kebahagiaan* 'happiness' data:
+The following code shows how to use `mdca_repel()` for *kebahagiaan* 'happiness' data:
 
 ``` r
 mdca_res %>%
-  happyr::mdca_repel(cxn_type = "kebahagiaan", min_assocstr = -2) %>% 
+  mdca_repel(cxn_type = "kebahagiaan", min_assocstr = -2) %>% 
   mutate(exp = round(exp, 3L),
-         metaphors = happyr::scaps(metaphors)) %>% 
+         metaphors = scaps(metaphors)) %>% 
   select(-synonyms) %>%
   knitr::kable(caption = "Repelled metaphors for *kebahagiaan* 'happiness'", row.names = TRUE)
 ```
@@ -256,9 +311,9 @@ Finally, below is the code to retrieve the top-20 most distinctive collocates co
 
 ``` r
 # present the result table for collocational analysis for *kebahagiaan*
-happyr::mdca_attr(mdca_colloc, cxn_type = '^kebahagiaan') %>% 
+mdca_attr(mdca_colloc, cxn_type = '^kebahagiaan') %>% 
   top_n(20, assocstr) %>% 
-  left_join(happyr::dist_colloc_gloss, by = "collocates") %>% # left-join the gloss for the distinctive collocates
+  left_join(dist_colloc_gloss, by = "collocates") %>% # left-join the gloss for the distinctive collocates
   select(-synonyms) %>%
   select(collocates, gloss, everything()) %>%
   mutate(exp = round(exp, 3), 
