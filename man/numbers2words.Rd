@@ -7,7 +7,7 @@
 numbers2words(x)
 }
 \arguments{
-\item{x}{Numeric integer to be converted into text/strings}
+\item{x}{Integer number to be converted into text/strings}
 }
 \value{
 Character strings representing numbers

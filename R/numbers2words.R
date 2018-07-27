@@ -1,7 +1,7 @@
 #' Turn numbers into words
 #'
 #' @description A function for turning numeric input into its corresponding character string.
-#' @param x Numeric integer to be converted into text/strings
+#' @param x Integer number to be converted into text/strings
 #'
 #' @return Character strings representing numbers
 #' @export

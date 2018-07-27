@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_meta_freq_profile.R
 \name{get_meta_freq_profiles}
 \alias{get_meta_freq_profiles}
-\title{Select a (set of) frequency profile columns for a metaphor}
+\title{Select a (set of) frequency profile column(s) for a metaphor}
 \usage{
 get_meta_freq_profiles(metaphor = NULL, ..., metaphor_var = "metaphors",
   df = NULL)
@@ -20,7 +20,7 @@ get_meta_freq_profiles(metaphor = NULL, ..., metaphor_var = "metaphors",
 A tibble data frame
 }
 \description{
-Select a (set of) frequency profile columns for a metaphor
+Select a (set of) frequency profile column(s) for a metaphor
 }
 \examples{
 # perform ttr

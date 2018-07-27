@@ -1,4 +1,4 @@
-#' Select a (set of) frequency profile columns for a metaphor
+#' Select a (set of) frequency profile column(s) for a metaphor
 #'
 #' @param metaphor character string of regular expressions for the metaphors.
 #' @param ... any bare variable/column name of the frequency profiles from \code{ttr} function.
