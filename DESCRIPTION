@@ -9,6 +9,8 @@ Description: Provides the R functions and data for the quantitative analysis in 
 License: GPL-2
 Depends: R (>= 2.10)
 Encoding: UTF-8
+URL: https://gederajeg.github.io/happyr/, https://github.com/gederajeg/happyr
+BugReports: https://github.com/gederajeg/happyr/issues
 Imports:
     dplyr (>= 0.7.4),
     stringr (>= 1.2.0),
@@ -20,3 +22,6 @@ Imports:
     irr (>= 0.84)
 LazyData: true
 RoxygenNote: 6.0.1
+Suggests: 
+    testthat,
+    covr
