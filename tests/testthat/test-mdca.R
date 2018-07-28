@@ -15,7 +15,7 @@ test_that("`mdca()` outputs Holm's correction column when `correct_holm = TRUE`"
 })
 
 test_that("`mdca()` throws error when data frame is not specified", {
-  expect_error(mdca(), "no applicable method for 'groups'")
+  expect_error(mdca(), "The `df` argument is NULL")
 })
 
 repelled <- subset(mdca_res, n < exp)[["assocstr"]]

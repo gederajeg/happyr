@@ -13,3 +13,7 @@ test_that("the perc data type is double and the other numeric data is integer", 
   expect_type(ttr(phd_data_metaphor)[["perc_token"]], "double")
   expect_type(ttr(phd_data_metaphor)[["token"]], "integer")
 })
+
+test_that("`ttr()` produces error message when `df` is still NULL", {
+  expect_error(ttr(), "The `df` argument is NULL")
+})
