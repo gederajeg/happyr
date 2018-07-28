@@ -11,15 +11,19 @@ csl: '/Users/Primahadi/Google Drive/MONASH PhD Journey/3rd Year (mid 2017-mid 20
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
+  fig.width = 6,
+  fig.asp = 0.618,
+  fig.align = "center",
+  dpi = 300,
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "90%"
 )
 ```
 # happyr
 
-The goal of `happyr` is to provide the R functionalities and the required dataset for the quantitative analyses in Rajeg [-@rajeg_metaphorical_2018]. The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
+The goal of `happyr` is to document the R functionalities and the required dataset for the quantitative analyses in Rajeg [-@rajeg_metaphorical_2018]. The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
 
 ## Installation
 
@@ -35,19 +39,40 @@ remotes::install_github("gederajeg/happyr@v0.1.0")
 
 ## Examples
 
+```{r load-packages}
+# load the required packages
+library(happyr)
+library(tidyverse)
+```
+
+
 ### Interrater-agreement computation in Chapter 3
 
 All codes for the Kappa's calculation in the interrater agreement trial are presented in the *Examples* section of the documentation of the `kappa_tidy()` function. Type `?kappa_tidy()` to see them.
+
+The `ggplot2` code for producing Figure 3.1 in Rajeg [-@rajeg_metaphorical_2018, Ch. 3] is wrapped into a function called `plot_cxn_interrater()`. The input data frame is `top_cxn_data`.
+
+```{r cxn-interrater-figure}
+# prepare plot title and caption
+plot_title <- expression(paste("Distribution of the constructional patterns for the agreed cases (", N["patterns"] >= "5)", sep = ""))
+
+plot_caption <- "The values inside the bars are the token frequency of the patterns"
+  
+plot_cxn_interrater(df = top_cxn_data) +
+  # add plot title and caption
+  labs(title = plot_title,
+       caption = plot_caption) +
+  # adjust the size of the plot title and caption
+  theme(plot.title = element_text(size = 10),
+        plot.caption = element_text(size = 7))
+```
+
 
 ### Token frequency, type frequency, and type/token ratio analyses in Chapter 5 and 6
 
 The main metaphor data for Chapter 5, 6, and 7 is stored as a tibble in `phd_data_metaphor`. The relevant function for the token, type, and type/token ratios analyses in Chapter 5 and 6 is `ttr()`. 
 
 ```{r ttr, warning = FALSE, message = FALSE}
-# load the required packages
-library(happyr)
-library(tidyverse)
-
 # calculation for the token, type, and type/token ratios data
 ttr_metaphor <- ttr(df = phd_data_metaphor,
                     metaphor_var = "metaphors",
@@ -55,7 +80,7 @@ ttr_metaphor <- ttr(df = phd_data_metaphor,
                     float_digits = 2)
 ```
 
-The following code retrieve the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as `scaps()`.
+The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as `scaps()`.
 
 ```{r most-frequent-metaphors}
 top_n(x = ttr_metaphor, n = 10L, wt = token) %>% 
@@ -145,6 +170,36 @@ get_lu_submappings_table(metaphor = "liquid in a container",
 ```
 
 The column `perc_expr_overall` indicates the percentages of the token frequencies the lexical units for the given metaphor. Meanwhile `perc_expr_by_submappings` indicates the percentages of the lexical units for each submapping of the given metaphor.
+
+#### Generating the frequency figure for the body-part terms in the metaphorical expressions
+
+The function for generating Figure 5.1 in Chapter 5 is `plot_body_part()` with `phd_data_metaphor` as the only input argument:
+
+```{r body-part-figure}
+plot_body_part(df = phd_data_metaphor)
+```
+
+The following codes are used to generate the most-frequent co-occurrence of body-part terms and certain metaphors in Chapter 5:
+
+```{r body-metaphors-frequency-table}
+# body-part gloss
+bp_gloss <- tibble(gloss = c('chest/bosom', 'self', 'liver', 'eyes', 'face; lit. front', 'body', 'face', 'face; lit. surface of a sandstone', 'deepest part of the heart', 'lips', 'mouth', 'body; bodily'), 
+                   body_part_terms = c('dada', 'diri', 'hati', 'mata', 'muka', 'tubuh', 'wajah', 'paras', 'lubuk kalbu', 'bibir', 'mulut', 'jasmani'))
+
+# generate the table
+phd_data_metaphor %>% 
+  filter(body_part_inclusion %in% c('y')) %>% 
+  count(body_part_terms, metaphors) %>% 
+  arrange(desc(n)) %>% 
+  left_join(bp_gloss, by = 'body_part_terms') %>% # join the glossing tibble
+  select(metaphors, body_part_terms, gloss, n) %>% 
+  mutate(metaphors = scaps(metaphors), 
+         body_part_terms = paste("*", body_part_terms, "* '", gloss, "'", sep = "")) %>%
+  select(Body_parts = body_part_terms, Metaphors = metaphors, N = n) %>%
+  top_n(10, N) %>%
+  knitr::kable(caption = 'The ten most frequent <span style="font-variant:small-caps;">Body-part</span>`*`<span style="font-variant:small-caps;">Metaphors</span> co-occurrence for <span style="font-variant:small-caps;">Happiness</span> in Indonesian.', row.names = TRUE)
+```
+
 
 ### Computing the distinctive metaphors and the distinctive collocates in Chapter 7
 
