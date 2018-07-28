@@ -164,16 +164,13 @@ If it is left <code>NULL</code> (the default), the data is filtered according to
           <span class='kw'>filter_by</span> <span class='kw'>=</span> <span class='st'>"cxn"</span>,
           <span class='kw'>cxn_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>,
           <span class='kw'>cxn_type</span> <span class='kw'>=</span> <span class='st'>"kebahagiaan"</span>,
-          <span class='kw'>min_assocstr</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt;                                      metaphors    synonyms   n        exp
-#&gt; 1                  happiness is a desired goal kebahagiaan 125  55.169049
-#&gt; 2 intensity of happiness is object's dimension kebahagiaan  23  10.732545
-#&gt; 3            happiness is a possessable object kebahagiaan 181 141.029412
-#&gt; 4       happiness is a moving object to a goal kebahagiaan  19   9.979384
-#&gt;   assocstr p_binomial    p_holm dec
-#&gt; 1   20.208  6.190e-21 3.838e-18 ***
-#&gt; 2    3.867  1.357e-04 8.032e-02  ms
-#&gt; 3    3.767  1.711e-04 1.011e-01  ns
-#&gt; 4    2.577  2.650e-03 1.000e+00  ns</div><div class='input'>
+          <span class='kw'>min_assocstr</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; # A tibble: 4 x 8
+#&gt;   metaphors             synonyms      n    exp assocstr p_binomial p_holm dec  
+#&gt;   &lt;chr&gt;                 &lt;chr&gt;     &lt;int&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;
+#&gt; 1 happiness is a desir… kebahagi…   125  55.2     20.2  6.190e-21  3.838… ***  
+#&gt; 2 intensity of happine… kebahagi…    23  10.7      3.87 1.357e-04  8.032… ms   
+#&gt; 3 happiness is a posse… kebahagi…   181 141.       3.77 1.711e-04  1.011… ns   
+#&gt; 4 happiness is a movin… kebahagi…    19   9.98     2.58 2.650e-03  1.000… ns   </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

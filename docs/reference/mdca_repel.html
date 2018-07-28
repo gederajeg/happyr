@@ -164,22 +164,16 @@ If it is left <code>NULL</code> (the default), the data is filtered according to
           <span class='kw'>filter_by</span> <span class='kw'>=</span> <span class='st'>"cxn"</span>,
           <span class='kw'>cxn_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>,
           <span class='kw'>cxn_type</span> <span class='kw'>=</span> <span class='st'>"kebahagiaan"</span>,
-          <span class='kw'>min_assocstr</span> <span class='kw'>=</span> -<span class='fl'>2</span>)</div><div class='output co'>#&gt;                               metaphors    synonyms  n       exp assocstr
-#&gt; 1     happiness is an (un)veiled object kebahagiaan 14 39.729247   -6.440
-#&gt; 2       happiness is a contained entity kebahagiaan 34 67.407916   -6.099
-#&gt; 3       happiness is a submerged entity kebahagiaan  5 18.640737   -4.183
-#&gt; 4      happiness is (un)mixed substance kebahagiaan  3 10.544255   -2.427
-#&gt; 5 happiness is a restrained/tied entity kebahagiaan  0  4.895547   -2.356
-#&gt; 6  happiness is a liquid in a container kebahagiaan 17 29.373282   -2.286
-#&gt; 7               happiness is a location kebahagiaan 20 31.821056   -2.001
-#&gt;   p_binomial    p_holm dec
-#&gt; 1  3.629e-07 2.203e-04 ***
-#&gt; 2  7.959e-07 4.815e-04 ***
-#&gt; 3  6.566e-05 3.913e-02   *
-#&gt; 4  3.739e-03 1.000e+00  ns
-#&gt; 5  4.410e-03 1.000e+00  ns
-#&gt; 6  5.171e-03 1.000e+00  ns
-#&gt; 7  9.974e-03 1.000e+00  ns</div><div class='input'>
+          <span class='kw'>min_assocstr</span> <span class='kw'>=</span> -<span class='fl'>2</span>)</div><div class='output co'>#&gt; # A tibble: 7 x 8
+#&gt;   metaphors             synonyms      n   exp assocstr p_binomial p_holm  dec  
+#&gt;   &lt;chr&gt;                 &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;
+#&gt; 1 happiness is an (un)… kebahagi…    14 39.7     -6.44 3.629e-07  2.203e… ***  
+#&gt; 2 happiness is a conta… kebahagi…    34 67.4     -6.10 7.959e-07  4.815e… ***  
+#&gt; 3 happiness is a subme… kebahagi…     5 18.6     -4.18 6.566e-05  3.913e… *    
+#&gt; 4 happiness is (un)mix… kebahagi…     3 10.5     -2.43 3.739e-03  1.000e… ns   
+#&gt; 5 happiness is a restr… kebahagi…     0  4.90    -2.36 4.410e-03  1.000e… ns   
+#&gt; 6 happiness is a liqui… kebahagi…    17 29.4     -2.29 5.171e-03  1.000e… ns   
+#&gt; 7 happiness is a locat… kebahagi…    20 31.8     -2.00 9.974e-03  1.000e… ns   </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
