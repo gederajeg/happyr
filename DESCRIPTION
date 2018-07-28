@@ -19,7 +19,8 @@ Imports:
     tidyr (>= 0.8.0),
     purrr (>= 0.2.4),
     ggplot2 (>= 2.2.1),
-    irr (>= 0.84)
+    irr (>= 0.84),
+    assertthat (>= 0.2.0)
 LazyData: true
 RoxygenNote: 6.0.1
 Suggests: 
