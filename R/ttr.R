@@ -29,6 +29,9 @@
 #' @importFrom rlang sym
 #' @export
 ttr <- function(df = NULL, metaphor_var = "metaphors", lexunit_var = "lu", float_digits = 2) {
+
+  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with `phd_data_metaphor`!")
+
   metaphor_q <- rlang::sym(metaphor_var)
   lu_q <- rlang::sym(lexunit_var)
 

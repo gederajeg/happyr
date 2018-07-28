@@ -44,6 +44,8 @@ get_submappings <- function(metaphor = NULL,
                             synonym_var = "synonyms",
                             lexunit_var = "lu") {
 
+  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with `phd_data_metaphor`!")
+
   # generate symbols for string-input variables
   meta_q <- rlang::sym(metaphor_var)
   syn_q <- rlang::sym(synonym_var)

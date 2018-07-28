@@ -19,21 +19,21 @@
 #' @examples
 #'
 #' # for aggregated data across all synonyms
-#' get_frames(metaphor = "destination",
+#' get_frames(metaphor = "desired goal",
 #'            df = phd_data_metaphor)
 #'
 #' # for a synonym
-#' get_frames(metaphor = "destination",
+#' get_frames(metaphor = "desired goal",
 #'            word = "^kesenangan",
 #'            df = phd_data_metaphor)
 #'
 #' # for synonyms with the same root (e.g. "senang" and "kesenangan")
-#' get_frames(metaphor = "destination",
+#' get_frames(metaphor = "desired goal",
 #'            word = "senang",
 #'            df = phd_data_metaphor)
 #'
 #' # for synonyms in the nominalised forms
-#' get_frames(metaphor = "destination",
+#' get_frames(metaphor = "desired goal",
 #'            word = "^(kesenangan|kegembiraan)",
 #'            df = phd_data_metaphor)
 #'
@@ -54,6 +54,7 @@
 #' @importFrom rlang :=
 #' @importFrom purrr is_null
 #' @importFrom stringr str_detect
+#' @importFrom assertthat assert_that
 get_frames <- function(metaphor = NULL,
                        word = NULL,
                        df = NULL,
@@ -61,6 +62,8 @@ get_frames <- function(metaphor = NULL,
                        metaphor_var = "metaphors",
                        synonym_var = "synonyms",
                        lexunit_var = "lu") {
+
+  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with `phd_data_metaphor`!")
 
   # generate symbols for string-input variables
   lu_q <- rlang::sym(lexunit_var)

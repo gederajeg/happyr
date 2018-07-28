@@ -37,21 +37,21 @@ A utility function to get the descriptive data for the source frames of a metaph
 \examples{
 
 # for aggregated data across all synonyms
-get_frames(metaphor = "destination",
+get_frames(metaphor = "desired goal",
            df = phd_data_metaphor)
 
 # for a synonym
-get_frames(metaphor = "destination",
+get_frames(metaphor = "desired goal",
            word = "^kesenangan",
            df = phd_data_metaphor)
 
 # for synonyms with the same root (e.g. "senang" and "kesenangan")
-get_frames(metaphor = "destination",
+get_frames(metaphor = "desired goal",
            word = "senang",
            df = phd_data_metaphor)
 
 # for synonyms in the nominalised forms
-get_frames(metaphor = "destination",
+get_frames(metaphor = "desired goal",
            word = "^(kesenangan|kegembiraan)",
            df = phd_data_metaphor)
 

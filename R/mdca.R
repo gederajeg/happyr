@@ -86,6 +86,9 @@ mdca <- function(df = NULL,
                  assocstr_digits = 3L,
                  correct_holm = TRUE,
                  concise_output = TRUE) {
+
+  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with `phd_data_metaphor`!")
+
   # quiets concerns of R CMD check re: the .'s that appear in pipelines
   . <- "shut_up"
 

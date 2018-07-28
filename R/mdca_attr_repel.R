@@ -36,37 +36,40 @@ mdca_attr <- function(df = NULL,
                       coll_var = NULL,
                       coll_type = NULL,
                       min_assocstr = 2) {
+
+  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with the data frame output from `mdca()`!")
+
   if (is.null(filter_by)) {
-    cat("Filtered by the given minimun CollStr threshold!\n")
+    message("The output of `mdca()` is filtered by the given minimum AssocStr threshold (specified in the `min_assocstr` argument), but not according to the Construction or Collocation/Collexeme variables!\nIf you want to filter it according to the Construction, specify `filter_by` with 'cxn' (or 'colloc' for Collocation/Collexeme) and `cxn_type` with the character name of the Construction (e.g., 'kebahagiaan')\nFor Collocation filtering, specify the `coll_type` argument with the character name of a collocate/collexeme!\n")
     x <- df %>%
       dplyr::filter(.data$assocstr >= min_assocstr)
     return(x)
   } else if (filter_by == 'cxn') {
+    # message("Filtering the output of `mdca()` by the value of the Construction variable (e.g., those in the 'synonyms' column)...\n")
     if (is.null(cxn_var)) {
-      cat("NO input for 'cxn.var' argument!\n")
+      stop("NO input for `cxn_var` argument! Specify it with the column name of the Construction variable (e.g., 'synonyms') from the `mdca()` output!\n")
     } else if (is.null(cxn_var) == FALSE) {
       if (is.null(cxn_type)) {
-        cat("NO input for 'cxn.type' argument!\n")
+        stop("NO input for `cxn_type` argument! Specify it with the name of the Construction (e.g., the values in the 'synonyms' column from the `mdca()` output)!\n")
       } else if (is.null(cxn_type) == FALSE) {
         x <- df %>%
           dplyr::filter(.data$assocstr >= min_assocstr,
                         stringr::str_detect(!!rlang::sym(cxn_var), cxn_type)) %>%
-          dplyr::arrange(!!rlang::sym(cxn_var), dplyr::desc(.data$assocstr)) %>%
-          as.data.frame()
+          dplyr::arrange(!!rlang::sym(cxn_var), dplyr::desc(.data$assocstr))
       }
     }
   } else if (filter_by == 'colloc') {
+    # message("Filtering the output of `mdca()` by the value of the Collocation/Collexeme variable (e.g., those in the 'metaphors' column)...\n")
     if (is.null(coll_var)) {
-      cat("NO input for 'colloc.var' argument!\n")
+      stop("NO input for `coll_var` argument! Specify it with the column name of the Collocation/Collexeme variable (e.g., 'metaphors') from the `mdca()` output!\n")
     } else if (is.null(coll_var) == FALSE) {
       if (is.null(coll_type)) {
-        cat("NO input for 'colloc.type' argument!\n")
+        stop("NO input for `coll_type` argument! Specify it with the name of the Collocation/Collexeme (e.g., the values in the 'metaphors' column from the `mdca()` output)!\n")
       } else if (is.null(coll_type) == FALSE) {
         x <- df %>%
           dplyr::filter(.data$assocstr >= min_assocstr,
                         stringr::str_detect(!!rlang::sym(coll_var), coll_type)) %>%
-          dplyr::arrange(!!rlang::sym(cxn_var), dplyr::desc(.data$assocstr)) %>%
-          as.data.frame()
+          dplyr::arrange(!!rlang::sym(cxn_var), dplyr::desc(.data$assocstr))
       }
     }
   }
@@ -112,37 +115,40 @@ mdca_repel <- function(df = NULL,
                       coll_var = NULL,
                       coll_type = NULL,
                       min_assocstr = -2) {
+
+  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with the data frame output from `mdca()`!")
+
   if (is.null(filter_by)) {
-    cat("Filtered by the given minimun CollStr threshold!\n")
+    message("The output of `mdca()` is filtered by the given minimum AssocStr threshold (specified in the `min_assocstr` argument), but not according to the Construction or Collocation/Collexeme variables!\nIf you want to filter it according to the Construction, specify `filter_by` with 'cxn' (or 'colloc' for Collocation/Collexeme) and `cxn_type` with the character name of the Construction (e.g., 'kebahagiaan')\nFor Collocation filtering, specify the `coll_type` argument with the character name of a collocate/collexeme!\n")
     x <- df %>%
       dplyr::filter(.data$assocstr <= min_assocstr)
     return(x)
   } else if (filter_by == 'cxn') {
+    # message("Filtering the output of `mdca()` by the value of the Construction variable (e.g., those in the 'synonyms' column)...\n")
     if (is.null(cxn_var)) {
-      cat("NO input for 'cxn.var' argument!\n")
+      stop("NO input for `cxn_var` argument! Specify it with the column name of the Construction variable (e.g., 'synonyms') from the `mdca()` output!\n")
     } else if (is.null(cxn_var) == FALSE) {
       if (is.null(cxn_type)) {
-        cat("NO input for 'cxn.type' argument!\n")
+        stop("NO input for `cxn_type` argument! Specify it with the name of the Construction (e.g., the values in the 'synonyms' column from the `mdca()` output)!\n")
       } else if (is.null(cxn_type) == FALSE) {
         x <- df %>%
           dplyr::filter(.data$assocstr <= min_assocstr,
                         stringr::str_detect(!!rlang::sym(cxn_var), cxn_type)) %>%
-          dplyr::arrange(!!rlang::sym(cxn_var), .data$assocstr) %>%
-          as.data.frame()
+          dplyr::arrange(!!rlang::sym(cxn_var), .data$assocstr)
       }
     }
   } else if (filter_by == 'colloc') {
+    # message("Filtering the output of `mdca()` by the value of the Collocation/Collexeme variable (e.g., those in the 'metaphors' column)...\n")
     if (is.null(coll_var)) {
-      cat("NO input for 'colloc.var' argument!\n")
+      stop("NO input for `coll_var` argument! Specify it with the column name of the Collocation/Collexeme variable (e.g., 'metaphors') from the `mdca()` output!\n")
     } else if (is.null(coll_var) == FALSE) {
       if (is.null(coll_type)) {
-        cat("NO input for 'colloc.type' argument!\n")
+        stop("NO input for `coll_type` argument! Specify it with the name of the Collocation/Collexeme (e.g., the values in the 'metaphors' column from the `mdca()` output)!\n")
       } else if (is.null(coll_type) == FALSE) {
         x <- df %>%
           dplyr::filter(.data$assocstr <= min_assocstr,
                         stringr::str_detect(!!rlang::sym(coll_var), coll_type)) %>%
-          dplyr::arrange(!!rlang::sym(cxn_var), .data$assocstr) %>%
-          as.data.frame()
+          dplyr::arrange(!!rlang::sym(cxn_var), .data$assocstr)
       }
     }
   }

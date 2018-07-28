@@ -28,6 +28,7 @@
 #' @importFrom rlang .data
 #' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
 get_lexically_diverse_metaphors <- function(df_ttr_out = NULL, min_token = 3, top_n_limit = 10) {
+  assertthat::assert_that(!is.null(df_ttr_out), msg = "The `df_ttr_out` argument is NULL; please specify it with the data frame output of `ttr()`!")
   creative_df <- dplyr::filter(df_ttr_out, .data$token >= min_token)
   creative_df <- dplyr::arrange(creative_df, dplyr::desc(.data$type_per_token_lu))
   creative_df <- dplyr::top_n(creative_df, top_n_limit, .data$type_per_token_lu)

@@ -26,6 +26,8 @@
 #' @export
 #' @references Vergara Wilson, D. (2014). \emph{Categorization and Constructional Change in Spanish Expressions of "becoming"}. Leiden: Brill.
 get_cic_meta_lu <- function(metaphor = NULL, df_ttr_out = NULL) {
+
+  assertthat::assert_that(!is.null(df_ttr_out), msg = "The `df_ttr_out` argument is NULL; please specify it with the data frame output of `ttr()`!")
   token_per_type_lu <- dplyr::quo(token_per_type_lu)
   cic_lu_limit <- dplyr::quo(cic_lu_limit)
   df_cic_out <- df_ttr_out %>%

@@ -26,6 +26,8 @@ get_lu_table <- function(metaphor = "regular expressions",
                          submapping_perc = FALSE,
                          incl_submappings = FALSE) {
 
+  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with `phd_data_metaphor`!")
+
   perc_overall <- dplyr::quo(perc_overall)
   perc_by_submappings <- dplyr::quo(perc_by_submappings)
 
