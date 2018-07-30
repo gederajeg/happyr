@@ -2,7 +2,7 @@
 output: github_document
 link-citations: TRUE
 bibliography: 'citation_README.bib'
-csl: '/Users/Primahadi/Google Drive/MONASH PhD Journey/3rd Year (mid 2017-mid 2018)/ch6/apa-old-doi-prefix.csl'
+csl: 'apa-old-doi-prefix.csl'
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->

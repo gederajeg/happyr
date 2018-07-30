@@ -1,11 +1,11 @@
 Package: happyr
 Type: Package
-Title: Accompanying R codes and data for Rajeg (2018)
+Title: The accompanying R package for Rajeg (2018)
 Date: 2018-06-03
 Version: 0.1.0
 Authors@R: person(given = "Gede Primahadi Wijaya", family = "Rajeg", email = "primahadiwijaya@gmail.com",
                role = c("aut", "cre"), comment = c(ORCID = "0000-0002-2047-8621"))
-Description: A packaged documentation of the R functions and data for the quantitative analysis in Chapter 3, 5, 6, and 7 in Rajeg (2018).
+Description: An accompanying package containing the R functions and data for the quantitative analysis in Chapter 3, 5, 6, and 7 in Rajeg (2018).
 License: MIT + file LICENSE
 Depends: R (>= 2.10)
 Encoding: UTF-8
