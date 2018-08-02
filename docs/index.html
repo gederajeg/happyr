@@ -72,16 +72,21 @@
 <div id="happyr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#happyr" class="anchor"></a>happyr</h1></div>
-<p>The goal of <code>happyr</code> is to document the R functionalities and the required dataset for the quantitative analyses in Rajeg <span class="citation">(<a href="#ref-rajeg_metaphorical_2018">2018</a>)</span>. The underlying codes within the package are based on most of the core packages of the <a href="https://www.tidyverse.org"><code>tidyverse</code></a>.</p>
+<p>The goal of <code>happyr</code> is to document the R codes and the required dataset for the quantitative analyses in Rajeg’s <span class="citation">(<a href="#ref-rajeg_metaphorical_2018">2018</a>)</span> PhD thesis on metaphors for <span style="font-variant: small-caps;">happiness</span> near-synonyms in Indonesian (to be submitted for examination on 28 September 2018). The corpus data for the thesis is based on the <em>Indonesian Leipzig Corpora Collection</em> <span class="citation">(Biemann, Heyer, Quasthoff, &amp; Richter, <a href="#ref-biemann_leipzig_2007">2007</a>; Goldhahn, Eckart, &amp; Quasthoff, <a href="#ref-goldhahn_building_2012">2012</a>; Quasthoff &amp; Goldhahn, <a href="#ref-quasthoff_indonesian_2013">2013</a>)</span>. The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details). The underlying codes within the <code>happyr</code> package are based on most of the core packages in the <a href="https://www.tidyverse.org"><code>tidyverse</code></a>.</p>
+<div id="acknowledgement" class="section level2">
+<h2 class="hasAnchor">
+<a href="#acknowledgement" class="anchor"></a>Acknowledgement</h2>
+<p>The thesis is supervised by Dr. <a href="http://profiles.arts.monash.edu.au/alice-gaby/">Alice Gaby</a>, Dr. <a href="http://profiles.arts.monash.edu.au/howard-manns/">Howard Manns</a>, and Dr. <a href="http://profiles.arts.monash.edu.au/simon-musgrave/">Simon Musgrave</a>, and it is fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a>.</p>
+</div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of <code>happyr</code> from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://github.com/r-lib/remotes"><code>remotes</code></a> package:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install the `remotes` package</span>
-<span class="kw">install.packages</span>(<span class="st">"remotes"</span>) 
+<p>The released version of <code>happyr</code> can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/package=devtools"><code>devtools</code></a> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install the `devtools` package</span>
+<span class="kw">install.packages</span>(<span class="st">"devtools"</span>) 
 
 <span class="co"># install the `happyr` package</span>
-remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"gederajeg/happyr@v0.1.0"</span>)</code></pre></div>
+devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"gederajeg/happyr@v0.1.0"</span>)</code></pre></div>
 </div>
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
@@ -89,12 +94,12 @@ remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumenta
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the required packages</span>
 <span class="kw">library</span>(happyr)
 <span class="kw">library</span>(tidyverse)
-<span class="co">#&gt; ── Attaching packages ────────────────────── tidyverse 1.2.1 ──</span>
+<span class="co">#&gt; ── Attaching packages ────────────────────────── tidyverse 1.2.1 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.0.0     ✔ purrr   0.2.5</span>
 <span class="co">#&gt; ✔ tibble  1.4.2     ✔ dplyr   0.7.6</span>
 <span class="co">#&gt; ✔ tidyr   0.8.1     ✔ stringr 1.3.1</span>
 <span class="co">#&gt; ✔ readr   1.1.1     ✔ forcats 0.3.0</span>
-<span class="co">#&gt; ── Conflicts ───────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; ── Conflicts ───────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <div id="interrater-agreement-computation-in-chapter-3" class="section level3">
@@ -1584,11 +1589,20 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h2>
 <div id="refs" class="references">
+<div id="ref-biemann_leipzig_2007">
+<p>Biemann, C., Heyer, G., Quasthoff, U., &amp; Richter, M. (2007). The Leipzig Corpora Collection: Monolingual corpora of standard size. In M. Davies, P. Rayson, S. Hunston, &amp; P. Danielsson (Eds.), <em>Proceedings of the Corpus Linguistics Conference</em>. University of Birmingham, UK. Retrieved from <a href="http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf" class="uri">http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf</a></p>
+</div>
+<div id="ref-goldhahn_building_2012">
+<p>Goldhahn, D., Eckart, T., &amp; Quasthoff, U. (2012). Building large monolingual dictionaries at the Leipzig Corpora Collection: From 100 to 200 languages. In <em>Proceedings of the 8th Language Resources and Evaluation Conference (LREC) 2012</em> (pp. 759–765). Istanbul. Retrieved from <a href="http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf" class="uri">http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf</a></p>
+</div>
 <div id="ref-gries_statistics_2009">
 <p>Gries, S. T. (2009). <em>Statistics for linguistics with R: A practical introduction</em>. Berlin: Mouton de Gruyter.</p>
 </div>
 <div id="ref-hilpert_distinctive_2006">
 <p>Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. <em>Corpus Linguistics and Linguistic Theory</em>, <em>2</em>(2), 243–256.</p>
+</div>
+<div id="ref-quasthoff_indonesian_2013">
+<p>Quasthoff, U., &amp; Goldhahn, D. (2013). <em>Indonesian corpora</em> (Technical report series on corpus building No. 7). Leipzig, Germany: Abteilung Automatische Sprachverarbeitung, Institut für Informatik, Universität Leipzig. Retrieved from <a href="http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf" class="uri">http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf</a></p>
 </div>
 <div id="ref-rajeg_metaphorical_2018">
 <p>Rajeg, G. P. W. (2018). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for <span style="font-variant: small-caps;">Happiness</span></em> (PhD thesis). Monash University, Australia, Clayton, VIC.</p>
@@ -1637,6 +1651,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/gederajeg/happyr"><img src="https://travis-ci.org/gederajeg/happyr.svg?branch=master" alt="Travis build status"></a></li>
+<li><a href="https://ci.appveyor.com/project/gederajeg/happyr"><img src="https://ci.appveyor.com/api/projects/status/github/gederajeg/happyr?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
 <li><a href="https://codecov.io/github/gederajeg/happyr?branch=master"><img src="https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
 </ul>
 </div>

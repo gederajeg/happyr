@@ -1,23 +1,28 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Travis build status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr) [![Coverage status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master)
+[![Travis build status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/gederajeg/happyr?branch=master&svg=true)](https://ci.appveyor.com/project/gederajeg/happyr) [![Coverage status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master)
 
 happyr
 ======
 
-The goal of `happyr` is to document the R functionalities and the required dataset for the quantitative analyses in Rajeg ([2018](#ref-rajeg_metaphorical_2018)). The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
+The goal of `happyr` is to document the R codes and the required dataset for the quantitative analyses in Rajeg's ([2018](#ref-rajeg_metaphorical_2018)) PhD thesis on metaphors for <span style="font-variant:small-caps;">happiness</span> near-synonyms in Indonesian (to be submitted for examination on 28 September 2018). The corpus data for the thesis is based on the *Indonesian Leipzig Corpora Collection* (Biemann, Heyer, Quasthoff, & Richter, [2007](#ref-biemann_leipzig_2007); Goldhahn, Eckart, & Quasthoff, [2012](#ref-goldhahn_building_2012); Quasthoff & Goldhahn, [2013](#ref-quasthoff_indonesian_2013)). The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details). The underlying codes within the `happyr` package are based on most of the core packages in the [`tidyverse`](https://www.tidyverse.org).
+
+Acknowledgement
+---------------
+
+The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/), and it is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
 
 Installation
 ------------
 
-You can install the released version of `happyr` from [GitHub](https://github.com/gederajeg/happyr) with the [`remotes`](https://github.com/r-lib/remotes) package:
+The released version of `happyr` can be installed from [GitHub](https://github.com/gederajeg/happyr) with the [`devtools`](https://cran.r-project.org/package=devtools) package:
 
 ``` r
-# install the `remotes` package
-install.packages("remotes") 
+# install the `devtools` package
+install.packages("devtools") 
 
 # install the `happyr` package
-remotes::install_github("gederajeg/happyr@v0.1.0")
+devtools::install_github("gederajeg/happyr@v0.1.0")
 ```
 
 Examples
@@ -27,12 +32,12 @@ Examples
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ────────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 #> ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 #> ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 #> ✔ readr   1.1.1     ✔ forcats 0.3.0
-#> ── Conflicts ───────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ───────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -420,9 +425,15 @@ mdca_attr(mdca_colloc, cxn_type = '^kebahagiaan') %>%
 References
 ----------
 
+Biemann, C., Heyer, G., Quasthoff, U., & Richter, M. (2007). The Leipzig Corpora Collection: Monolingual corpora of standard size. In M. Davies, P. Rayson, S. Hunston, & P. Danielsson (Eds.), *Proceedings of the Corpus Linguistics Conference*. University of Birmingham, UK. Retrieved from <http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf>
+
+Goldhahn, D., Eckart, T., & Quasthoff, U. (2012). Building large monolingual dictionaries at the Leipzig Corpora Collection: From 100 to 200 languages. In *Proceedings of the 8th Language Resources and Evaluation Conference (LREC) 2012* (pp. 759–765). Istanbul. Retrieved from <http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf>
+
 Gries, S. T. (2009). *Statistics for linguistics with R: A practical introduction*. Berlin: Mouton de Gruyter.
 
 Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. *Corpus Linguistics and Linguistic Theory*, *2*(2), 243–256.
+
+Quasthoff, U., & Goldhahn, D. (2013). *Indonesian corpora* (Technical report series on corpus building No. 7). Leipzig, Germany: Abteilung Automatische Sprachverarbeitung, Institut für Informatik, Universität Leipzig. Retrieved from <http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf>
 
 Rajeg, G. P. W. (2018). *Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for <span style="font-variant:small-caps;">Happiness</span>* (PhD thesis). Monash University, Australia, Clayton, VIC.
 

@@ -7,7 +7,7 @@ csl: 'apa-old-doi-prefix.csl'
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Travis build status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr) [![Coverage status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master)
+[![Travis build status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/gederajeg/happyr?branch=master&svg=true)](https://ci.appveyor.com/project/gederajeg/happyr) [![Coverage status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master)
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
@@ -23,18 +23,22 @@ knitr::opts_chunk$set(
 ```
 # happyr
 
-The goal of `happyr` is to document the R functionalities and the required dataset for the quantitative analyses in Rajeg [-@rajeg_metaphorical_2018]. The underlying codes within the package are based on most of the core packages of the [`tidyverse`](https://www.tidyverse.org).
+The goal of `happyr` is to document the R codes and the required dataset for the quantitative analyses in Rajeg's [-@rajeg_metaphorical_2018] PhD thesis on metaphors for `r scapr::scaps("happiness")` near-synonyms in Indonesian (to be submitted for examination on 28 September 2018). The corpus data for the thesis is based on the *Indonesian Leipzig Corpora Collection* [@quasthoff_indonesian_2013; @goldhahn_building_2012; @biemann_leipzig_2007]. The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details). The underlying codes within the `happyr` package are based on most of the core packages in the [`tidyverse`](https://www.tidyverse.org).
+
+## Acknowledgement
+
+The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/), and it is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
 
 ## Installation
 
-You can install the released version of `happyr` from [GitHub](https://github.com/gederajeg/happyr) with the [`remotes`](https://github.com/r-lib/remotes) package:
+The released version of `happyr` can be installed from [GitHub](https://github.com/gederajeg/happyr) with the [`devtools`](https://cran.r-project.org/package=devtools) package:
 
 ``` r
-# install the `remotes` package
-install.packages("remotes") 
+# install the `devtools` package
+install.packages("devtools") 
 
 # install the `happyr` package
-remotes::install_github("gederajeg/happyr@v0.1.0")
+devtools::install_github("gederajeg/happyr@v0.1.0")
 ```
 
 ## Examples
