@@ -9,6 +9,10 @@ test_that("`incl_submappings = TRUE` outputs submapping perc. info when `submapp
   expect_equal(dim(get_lu_table("desired goal", df = phd_data_metaphor, incl_submappings = T, submapping_perc = T))[2], 6L)
 })
 
+test_that("`incl_submappings = FALSE` still outputs submapping perc. info when `submapping_perc = TRUE`", {
+  expect_output(str(get_lu_table("desired goal", df = phd_data_metaphor, incl_submappings = F, submapping_perc = TRUE, top_n_only = FALSE)), "(\\$ Perc_by_submappings|5 variables)", all = TRUE)
+})
+
 test_that("`get_lu_table()` produces error message when `df` argument is still NULL", {
   expect_error(get_lu_table("liquid in a container"), "The `df` argument is NULL")
 })
