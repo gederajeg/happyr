@@ -10,3 +10,4 @@
 ^docs$
 ^happyr_to_do$
 ^apa-old-doi.*\.csl$
+^appveyor\.yml$
