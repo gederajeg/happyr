@@ -5,17 +5,17 @@
 happyr
 ======
 
-The goal of `happyr` is to document the R codes and the required dataset for the quantitative analyses in Rajeg's ([2018](#ref-rajeg_metaphorical_2018)) PhD thesis on metaphors for <span style="font-variant:small-caps;">happiness</span> near-synonyms in Indonesian (to be submitted for examination on 28 September 2018). The corpus data for the thesis is based on the *Indonesian Leipzig Corpora Collection* (Biemann, Heyer, Quasthoff, & Richter, [2007](#ref-biemann_leipzig_2007); Goldhahn, Eckart, & Quasthoff, [2012](#ref-goldhahn_building_2012); Quasthoff & Goldhahn, [2013](#ref-quasthoff_indonesian_2013)). The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details). The underlying codes within the `happyr` package are based on most of the core packages in the [`tidyverse`](https://www.tidyverse.org).
+The goal of `happyr` is to document the R codes and the required dataset for the quantitative analyses in Rajeg's ([2018](#ref-rajeg_metaphorical_2018)) PhD thesis (submitted for examination on 28 September 2018). The study focuses on metaphors for <span style="font-variant:small-caps;">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the *Indonesian Leipzig Corpora Collection* (Biemann, Heyer, Quasthoff, & Richter, [2007](#ref-biemann_leipzig_2007); Goldhahn, Eckart, & Quasthoff, [2012](#ref-goldhahn_building_2012); Quasthoff & Goldhahn, [2013](#ref-quasthoff_indonesian_2013)). The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details). The underlying codes within the `happyr` package are based on most of the core packages in the [`tidyverse`](https://www.tidyverse.org).
 
 Acknowledgement
 ---------------
 
-The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/), and it is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
+The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
 
 Installation
 ------------
 
-The released version of `happyr` can be installed from [GitHub](https://github.com/gederajeg/happyr) with the [`devtools`](https://cran.r-project.org/package=devtools) package:
+The `happyr` package can be installed from [GitHub](https://github.com/gederajeg/happyr) with the [`devtools`](https://cran.r-project.org/package=devtools) package:
 
 ``` r
 # install the `devtools` package
@@ -32,12 +32,12 @@ Examples
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ──────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ──────────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 #> ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 #> ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 #> ✔ readr   1.1.1     ✔ forcats 0.3.0
-#> ── Conflicts ─────────────── tidyverse_conflicts() ──
+#> ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -283,7 +283,7 @@ get_lu_submappings_table(metaphor = "liquid in a container",
 
 The column `perc_expr_overall` indicates the percentages of the token frequencies the lexical units for the given metaphor. Meanwhile `perc_expr_by_submappings` indicates the percentages of the lexical units for each submapping of the given metaphor.
 
-#### Generating the frequency figure for the body-part terms in the metaphorical expressions
+#### Visualising the frequency of occurrences for the body-part terms in the metaphorical expressions
 
 The function for generating Figure 5.1 in Chapter 5 is `plot_body_part()` with `phd_data_metaphor` as the only input argument:
 
@@ -293,11 +293,11 @@ plot_body_part(df = phd_data_metaphor)
 
 <img src="man/figures/README-body-part-figure-1.png" width="90%" style="display: block; margin: auto;" />
 
-The following codes are used to generate the most-frequent co-occurrence of body-part terms and certain metaphors in Chapter 5:
+The following codes are used to generate the most-frequent co-occurrence of body-part terms and metaphors in Chapter 5:
 
 ``` r
 # body-part gloss
-bp_gloss <- tibble(gloss = c('chest/bosom', 'self', 'liver', 'eyes', 'face; lit. front', 'body', 'face', 'face; lit. surface of a sandstone', 'deepest part of the heart', 'lips', 'mouth', 'body; bodily'), 
+bp_gloss <- tibble(gloss = c('chest/bosom', 'self', 'liver', 'eyes', 'face', 'body', 'face', 'face', 'deepest part of the heart', 'lips', 'mouth', 'body; bodily'), 
                    body_part_terms = c('dada', 'diri', 'hati', 'mata', 'muka', 'tubuh', 'wajah', 'paras', 'lubuk kalbu', 'bibir', 'mulut', 'jasmani'))
 
 # generate the table
@@ -327,7 +327,7 @@ phd_data_metaphor %>%
 | 9   | *mata* 'eyes'        | <span style="font-variant:small-caps;">happiness is a liquid in a container</span> |    7|
 | 10  | *wajah* 'face'       | <span style="font-variant:small-caps;">happiness is a drawing</span>               |    7|
 
-### Computing the distinctive metaphors and the distinctive collocates in Chapter 7
+### Identifying the distinctive metaphors and the distinctive collocates in Chapter 7
 
 The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the *Multiple Distinctive Collexeme Analysis* (MDCA) (cf., e.g., Hilpert, [2006](#ref-hilpert_distinctive_2006); Stefanowitsch, [2013](#ref-hoffmann_collostructional_2013), pp. 299–300). The MDCA function is available as `mdca()`.
 

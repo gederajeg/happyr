@@ -23,15 +23,15 @@ knitr::opts_chunk$set(
 ```
 # happyr
 
-The goal of `happyr` is to document the R codes and the required dataset for the quantitative analyses in Rajeg's [-@rajeg_metaphorical_2018] PhD thesis on metaphors for `r scapr::scaps("happiness")` near-synonyms in Indonesian (to be submitted for examination on 28 September 2018). The corpus data for the thesis is based on the *Indonesian Leipzig Corpora Collection* [@quasthoff_indonesian_2013; @goldhahn_building_2012; @biemann_leipzig_2007]. The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details). The underlying codes within the `happyr` package are based on most of the core packages in the [`tidyverse`](https://www.tidyverse.org).
+The goal of `happyr` is to document the R codes and the required dataset for the quantitative analyses in Rajeg's [-@rajeg_metaphorical_2018] PhD thesis (submitted for examination on 28 September 2018). The study focuses on metaphors for `r scapr::scaps("happiness")` near-synonyms in Indonesian. The corpus data for the study mainly come from the *Indonesian Leipzig Corpora Collection* [@quasthoff_indonesian_2013; @goldhahn_building_2012; @biemann_leipzig_2007]. The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details). The underlying codes within the `happyr` package are based on most of the core packages in the [`tidyverse`](https://www.tidyverse.org).
 
 ## Acknowledgement
 
-The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/), and it is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
+The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
 
 ## Installation
 
-The released version of `happyr` can be installed from [GitHub](https://github.com/gederajeg/happyr) with the [`devtools`](https://cran.r-project.org/package=devtools) package:
+The `happyr` package can be installed from [GitHub](https://github.com/gederajeg/happyr) with the [`devtools`](https://cran.r-project.org/package=devtools) package:
 
 ``` r
 # install the `devtools` package
@@ -56,7 +56,7 @@ All codes for the Kappa's calculation in the interrater agreement trial are pres
 
 The `ggplot2` code for producing Figure 3.1 in Rajeg [-@rajeg_metaphorical_2018, Ch. 3] is wrapped into a function called `plot_cxn_interrater()`. The input data frame is `top_cxn_data`.
 
-```{r cxn-interrater-figure}
+```{r cxn-interrater-figure, fig.asp = 0.75, fig.width = 6.5}
 # prepare plot title and caption
 plot_title <- expression(paste("Distribution of the constructional patterns for the agreed cases (", N["patterns"] >= "5)", sep = ""))
 
@@ -175,19 +175,19 @@ get_lu_submappings_table(metaphor = "liquid in a container",
 
 The column `perc_expr_overall` indicates the percentages of the token frequencies the lexical units for the given metaphor. Meanwhile `perc_expr_by_submappings` indicates the percentages of the lexical units for each submapping of the given metaphor.
 
-#### Generating the frequency figure for the body-part terms in the metaphorical expressions
+#### Visualising the frequency of occurrences for the body-part terms in the metaphorical expressions
 
 The function for generating Figure 5.1 in Chapter 5 is `plot_body_part()` with `phd_data_metaphor` as the only input argument:
 
-```{r body-part-figure}
+```{r body-part-figure, fig.asp = 0.7, fig.width = 6.5}
 plot_body_part(df = phd_data_metaphor)
 ```
 
-The following codes are used to generate the most-frequent co-occurrence of body-part terms and certain metaphors in Chapter 5:
+The following codes are used to generate the most-frequent co-occurrence of body-part terms and metaphors in Chapter 5:
 
 ```{r body-metaphors-frequency-table}
 # body-part gloss
-bp_gloss <- tibble(gloss = c('chest/bosom', 'self', 'liver', 'eyes', 'face; lit. front', 'body', 'face', 'face; lit. surface of a sandstone', 'deepest part of the heart', 'lips', 'mouth', 'body; bodily'), 
+bp_gloss <- tibble(gloss = c('chest/bosom', 'self', 'liver', 'eyes', 'face', 'body', 'face', 'face', 'deepest part of the heart', 'lips', 'mouth', 'body; bodily'), 
                    body_part_terms = c('dada', 'diri', 'hati', 'mata', 'muka', 'tubuh', 'wajah', 'paras', 'lubuk kalbu', 'bibir', 'mulut', 'jasmani'))
 
 # generate the table
@@ -205,7 +205,7 @@ phd_data_metaphor %>%
 ```
 
 
-### Computing the distinctive metaphors and the distinctive collocates in Chapter 7
+### Identifying the distinctive metaphors and the distinctive collocates in Chapter 7
 
 The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the *Multiple Distinctive Collexeme Analysis* (MDCA) [cf., e.g., @hilpert_distinctive_2006; @hoffmann_collostructional_2013, pp. 299-300]. The MDCA function is available as `mdca()`.
 

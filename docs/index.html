@@ -72,16 +72,16 @@
 <div id="happyr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#happyr" class="anchor"></a>happyr</h1></div>
-<p>The goal of <code>happyr</code> is to document the R codes and the required dataset for the quantitative analyses in Rajeg’s <span class="citation">(<a href="#ref-rajeg_metaphorical_2018">2018</a>)</span> PhD thesis on metaphors for <span style="font-variant: small-caps;">happiness</span> near-synonyms in Indonesian (to be submitted for examination on 28 September 2018). The corpus data for the thesis is based on the <em>Indonesian Leipzig Corpora Collection</em> <span class="citation">(Biemann, Heyer, Quasthoff, &amp; Richter, <a href="#ref-biemann_leipzig_2007">2007</a>; Goldhahn, Eckart, &amp; Quasthoff, <a href="#ref-goldhahn_building_2012">2012</a>; Quasthoff &amp; Goldhahn, <a href="#ref-quasthoff_indonesian_2013">2013</a>)</span>. The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details). The underlying codes within the <code>happyr</code> package are based on most of the core packages in the <a href="https://www.tidyverse.org"><code>tidyverse</code></a>.</p>
+<p>The goal of <code>happyr</code> is to document the R codes and the required dataset for the quantitative analyses in Rajeg’s <span class="citation">(<a href="#ref-rajeg_metaphorical_2018">2018</a>)</span> PhD thesis (submitted for examination on 28 September 2018). The study focuses on metaphors for <span style="font-variant: small-caps;">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> <span class="citation">(Biemann, Heyer, Quasthoff, &amp; Richter, <a href="#ref-biemann_leipzig_2007">2007</a>; Goldhahn, Eckart, &amp; Quasthoff, <a href="#ref-goldhahn_building_2012">2012</a>; Quasthoff &amp; Goldhahn, <a href="#ref-quasthoff_indonesian_2013">2013</a>)</span>. The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details). The underlying codes within the <code>happyr</code> package are based on most of the core packages in the <a href="https://www.tidyverse.org"><code>tidyverse</code></a>.</p>
 <div id="acknowledgement" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgement" class="anchor"></a>Acknowledgement</h2>
-<p>The thesis is supervised by Dr. <a href="http://profiles.arts.monash.edu.au/alice-gaby/">Alice Gaby</a>, Dr. <a href="http://profiles.arts.monash.edu.au/howard-manns/">Howard Manns</a>, and Dr. <a href="http://profiles.arts.monash.edu.au/simon-musgrave/">Simon Musgrave</a>, and it is fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a>.</p>
+<p>The thesis is supervised by Dr. <a href="http://profiles.arts.monash.edu.au/alice-gaby/">Alice Gaby</a> (main), Dr. <a href="http://profiles.arts.monash.edu.au/howard-manns/">Howard Manns</a> (associate), and Dr. <a href="http://profiles.arts.monash.edu.au/simon-musgrave/">Simon Musgrave</a> (associate). It is fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a>.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The released version of <code>happyr</code> can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/package=devtools"><code>devtools</code></a> package:</p>
+<p>The <code>happyr</code> package can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/package=devtools"><code>devtools</code></a> package:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install the `devtools` package</span>
 <span class="kw">install.packages</span>(<span class="st">"devtools"</span>) 
 
@@ -94,12 +94,12 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the required packages</span>
 <span class="kw">library</span>(happyr)
 <span class="kw">library</span>(tidyverse)
-<span class="co">#&gt; ── Attaching packages ──────────── tidyverse 1.2.1 ──</span>
+<span class="co">#&gt; ── Attaching packages ──────────────────────────────── tidyverse 1.2.1 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.0.0     ✔ purrr   0.2.5</span>
 <span class="co">#&gt; ✔ tibble  1.4.2     ✔ dplyr   0.7.6</span>
 <span class="co">#&gt; ✔ tidyr   0.8.1     ✔ stringr 1.3.1</span>
 <span class="co">#&gt; ✔ readr   1.1.1     ✔ forcats 0.3.0</span>
-<span class="co">#&gt; ── Conflicts ─────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <div id="interrater-agreement-computation-in-chapter-3" class="section level3">
@@ -1066,15 +1066,15 @@ ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 </table>
 <p>The column <code>perc_expr_overall</code> indicates the percentages of the token frequencies the lexical units for the given metaphor. Meanwhile <code>perc_expr_by_submappings</code> indicates the percentages of the lexical units for each submapping of the given metaphor.</p>
 </div>
-<div id="generating-the-frequency-figure-for-the-body-part-terms-in-the-metaphorical-expressions" class="section level4">
+<div id="visualising-the-frequency-of-occurrences-for-the-body-part-terms-in-the-metaphorical-expressions" class="section level4">
 <h4 class="hasAnchor">
-<a href="#generating-the-frequency-figure-for-the-body-part-terms-in-the-metaphorical-expressions" class="anchor"></a>Generating the frequency figure for the body-part terms in the metaphorical expressions</h4>
+<a href="#visualising-the-frequency-of-occurrences-for-the-body-part-terms-in-the-metaphorical-expressions" class="anchor"></a>Visualising the frequency of occurrences for the body-part terms in the metaphorical expressions</h4>
 <p>The function for generating Figure 5.1 in Chapter 5 is <code><a href="reference/plot_body_part.html">plot_body_part()</a></code> with <code>phd_data_metaphor</code> as the only input argument:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_body_part.html">plot_body_part</a></span>(<span class="dt">df =</span> phd_data_metaphor)</code></pre></div>
 <p><img src="reference/figures/README-body-part-figure-1.png" width="90%" style="display: block; margin: auto;"></p>
-<p>The following codes are used to generate the most-frequent co-occurrence of body-part terms and certain metaphors in Chapter 5:</p>
+<p>The following codes are used to generate the most-frequent co-occurrence of body-part terms and metaphors in Chapter 5:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># body-part gloss</span>
-bp_gloss &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">gloss =</span> <span class="kw">c</span>(<span class="st">'chest/bosom'</span>, <span class="st">'self'</span>, <span class="st">'liver'</span>, <span class="st">'eyes'</span>, <span class="st">'face; lit. front'</span>, <span class="st">'body'</span>, <span class="st">'face'</span>, <span class="st">'face; lit. surface of a sandstone'</span>, <span class="st">'deepest part of the heart'</span>, <span class="st">'lips'</span>, <span class="st">'mouth'</span>, <span class="st">'body; bodily'</span>), 
+bp_gloss &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">gloss =</span> <span class="kw">c</span>(<span class="st">'chest/bosom'</span>, <span class="st">'self'</span>, <span class="st">'liver'</span>, <span class="st">'eyes'</span>, <span class="st">'face'</span>, <span class="st">'body'</span>, <span class="st">'face'</span>, <span class="st">'face'</span>, <span class="st">'deepest part of the heart'</span>, <span class="st">'lips'</span>, <span class="st">'mouth'</span>, <span class="st">'body; bodily'</span>), 
                    <span class="dt">body_part_terms =</span> <span class="kw">c</span>(<span class="st">'dada'</span>, <span class="st">'diri'</span>, <span class="st">'hati'</span>, <span class="st">'mata'</span>, <span class="st">'muka'</span>, <span class="st">'tubuh'</span>, <span class="st">'wajah'</span>, <span class="st">'paras'</span>, <span class="st">'lubuk kalbu'</span>, <span class="st">'bibir'</span>, <span class="st">'mulut'</span>, <span class="st">'jasmani'</span>))
 
 <span class="co"># generate the table</span>
@@ -1172,9 +1172,9 @@ phd_data_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 </table>
 </div>
 </div>
-<div id="computing-the-distinctive-metaphors-and-the-distinctive-collocates-in-chapter-7" class="section level3">
+<div id="identifying-the-distinctive-metaphors-and-the-distinctive-collocates-in-chapter-7" class="section level3">
 <h3 class="hasAnchor">
-<a href="#computing-the-distinctive-metaphors-and-the-distinctive-collocates-in-chapter-7" class="anchor"></a>Computing the distinctive metaphors and the distinctive collocates in Chapter 7</h3>
+<a href="#identifying-the-distinctive-metaphors-and-the-distinctive-collocates-in-chapter-7" class="anchor"></a>Identifying the distinctive metaphors and the distinctive collocates in Chapter 7</h3>
 <p>The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the <em>Multiple Distinctive Collexeme Analysis</em> (MDCA) <span class="citation">(cf., e.g., Hilpert, <a href="#ref-hilpert_distinctive_2006">2006</a>; Stefanowitsch, <a href="#ref-hoffmann_collostructional_2013">2013</a>, pp. 299–300)</span>. The MDCA function is available as <code><a href="reference/mdca.html">mdca()</a></code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># MDCA for metaphor * synonyms with concise output</span>
 mdca_res &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> phd_data_metaphor, <span class="dt">coll_var =</span> <span class="st">"metaphors"</span>, <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
