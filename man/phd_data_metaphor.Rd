@@ -4,7 +4,7 @@
 \name{phd_data_metaphor}
 \alias{phd_data_metaphor}
 \title{The metaphor data frame}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3638 rows and 12 columns.}
+\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3638 rows and 15 columns.}
 \usage{
 phd_data_metaphor
 }
