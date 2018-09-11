@@ -10,7 +10,7 @@ The goal of `happyr` is to document the R codes and the required dataset for the
 Acknowledgement
 ---------------
 
-The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
+The thesis is supervised by Dr. [Alice Gaby](https://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](https://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](https://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
 
 Installation
 ------------
@@ -32,12 +32,12 @@ Examples
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ──────────────────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ─────────────────────────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 #> ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 #> ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 #> ✔ readr   1.1.1     ✔ forcats 0.3.0
-#> ── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ────────────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -70,10 +70,10 @@ plot_cxn_interrater(df = top_cxn_data) +
 The main metaphor data for Chapter 5, 6, and 7 is stored as a tibble in `phd_data_metaphor`. The relevant function for the token, type, and type/token ratios analyses in Chapter 5 and 6 is `ttr()`.
 
 ``` r
-# calculation for the token, type, and type/token ratios data
+# calculation for the token, type, and type/token ratios
 ttr_metaphor <- ttr(df = phd_data_metaphor,
-                    metaphor_var = "metaphors",
-                    lexunit_var = "lu",
+                    metaphor_var = "metaphors", # specify col.name of the metaphor variable
+                    lexunit_var = "lu", # specify col.name of the lexical unit variable
                     float_digits = 2)
 ```
 
@@ -153,11 +153,11 @@ ttr_metaphor %>%
 | 5   | <span style="font-variant:small-caps;">happiness is an accompanied object</span> |      3|     3|                  100.00|
 | 6   | <span style="font-variant:small-caps;">happiness is being soaked</span>          |      9|     8|                   88.89|
 | 7   | <span style="font-variant:small-caps;">happiness is a resource</span>            |      8|     7|                   87.50|
-| 8   | <span style="font-variant:small-caps;">happiness is motion impediments</span>    |      6|     5|                   83.33|
+| 8   | <span style="font-variant:small-caps;">happiness is impediment to motion</span>  |      6|     5|                   83.33|
 | 9   | <span style="font-variant:small-caps;">happiness is a deceiver</span>            |     20|    16|                   80.00|
 | 10  | <span style="font-variant:small-caps;">happiness is an adversary</span>          |     24|    19|                   79.17|
 
-#### Retrieving the frequency of submappings, semantic source frames, and metaphorical lexical units of metaphors
+#### Retrieving the frequency of submappings, semantic source frames, and lexical units of metaphors
 
 The data for retrieving the information on the submappings, source frames, and the lexical units is contained within `phd_data_metaphor`. Among the relevant functions for retrieving these information are `get_submappings()`, `get_frames()`, and `get_lu_table()`. The illustration is based on data for the <span style="font-variant:small-caps;">happiness is liquid in a container</span> metaphor.
 
