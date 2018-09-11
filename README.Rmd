@@ -260,6 +260,12 @@ mdca_attr(mdca_colloc, cxn_type = '^kebahagiaan') %>%
   knitr::kable(caption="The 20 most distinctive, 4-window span collocates for *kebahagiaan* 'happiness' in the whole Indonesian Leipzig Corpora collection.", row.names = TRUE)
 ```
 
+## Session info
+```{r sess-info}
+devtools::session_info()
+```
+
+
 ## References
 
 
