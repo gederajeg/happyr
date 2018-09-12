@@ -12,7 +12,7 @@ The `happyr` package is based on the core packages in the [`tidyverse`](https://
 Acknowledgement
 ---------------
 
-The thesis is supervised by Dr. [Alice Gaby](https://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](https://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](https://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. *Monash International Postgraduate Research Scholarships* (MIPRS, now MITS) and *Monash Graduate Scholarships* (MGS)).
+The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. *Monash International Postgraduate Research Scholarships* (MIPRS, now MITS) and *Monash Graduate Scholarships* (MGS)).
 
 Installation
 ------------
@@ -34,12 +34,12 @@ Examples
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ───────────────────────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 #> ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 #> ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 #> ✔ readr   1.1.1     ✔ forcats 0.3.0
-#> ── Conflicts ──────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ──────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -283,7 +283,7 @@ get_lu_submappings_table(metaphor = "liquid in a container",
 | 36  | <span style="font-variant:small-caps;">preventing happiness is impeding flowing substance</span>               | *bendung*                | to dam up sth.               |    3|                 1.92|                        60.00|
 | 37  | <span style="font-variant:small-caps;">preventing happiness is impeding flowing substance</span>               | *sumbat*                 | to clog sth.                 |    2|                 1.28|                        40.00|
 
-The column `perc_expr_overall` indicates the percentages of the token frequencies the lexical units for the given metaphor. Meanwhile `perc_expr_by_submappings` indicates the percentages of the lexical units for each submapping of the given metaphor.
+The column `perc_expr_overall` indicates the percentages of the token frequencies of the lexical units for the given metaphor. Meanwhile `perc_expr_by_submappings` indicates the percentages of the lexical units for each submapping of the given metaphor.
 
 #### Visualising the frequency of occurrences for the body-part terms in the metaphorical expressions
 
@@ -331,7 +331,7 @@ phd_data_metaphor %>%
 
 ### Identifying the distinctive metaphors and the distinctive collocates in Chapter 7
 
-The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using the *Multiple Distinctive Collexeme Analysis* (MDCA) (cf., e.g., Hilpert, [2006](#ref-hilpert_distinctive_2006); Stefanowitsch, [2013](#ref-hoffmann_collostructional_2013), pp. 299–300). The MDCA function is available as `mdca()`.
+The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using *Multiple Distinctive Collexeme Analysis* (MDCA) (cf., e.g., Hilpert, [2006](#ref-hilpert_distinctive_2006); Stefanowitsch, [2013](#ref-hoffmann_collostructional_2013), pp. 299–300). The MDCA function is available as `mdca()`.
 
 ``` r
 # MDCA for metaphor * synonyms with concise output
@@ -345,7 +345,7 @@ The data for the collocates are available in the `colloc_input_data`. The Englis
 mdca_colloc <- mdca(df = colloc_input_data, coll_var = "collocates", concise_output = TRUE)
 ```
 
-The package also provides two related functions to retrieve the *attracted*/*distinctive* and the *repelled* items from the results of MDCA for the metaphors and collocates. They are `mdca_attr()` and `mdca_repel()`. The following example shows how to get the distinctive metaphors for *kebahagiaan* 'happiness' having the association strength of equal to, or greater than, two (i.e. *p*<sub>binomial</sub> &lt; 0.01):
+The package also provides two related functions to retrieve the *attracted*/*distinctive* and the *repelled* items from the results of MDCA. They are `mdca_attr()` and `mdca_repel()`. The following example shows how to get the distinctive metaphors for *kebahagiaan* 'happiness' having the association strength of equal to, or greater than, two (i.e. *p*<sub>binomial</sub> &lt; 0.01):
 
 ``` r
 mdca_res %>%
@@ -364,9 +364,9 @@ mdca_res %>%
 | 3   | <span style="font-variant:small-caps;">happiness is a possessable object</span>            |  181|  141.029|     3.767| 1.711e-04   | 1.011e-01 | ns     |
 | 4   | <span style="font-variant:small-caps;">happiness is a moving object to a goal</span>       |   19|    9.979|     2.577| 2.650e-03   | 1.000e+00 | ns     |
 
-The `p_holm` column provides the Holm's corrected significance level (Gries, [2009](#ref-gries_statistics_2009), pp. 249, 251) of the Binomial Test *p*-value (`p_binomial`) used as the basis for the association strength value (`assocstr`) (cf. Stefanowitsch, [2013](#ref-hoffmann_collostructional_2013), p. 305), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
+The `p_holm` column provides the Holm's corrected significance level (Gries, [2009](#ref-gries_statistics_2009), pp. 249, 251) of the Binomial Test *p*-value (`p_binomial`). The Binomial *p*-value is used as the basis for the association strength value (`assocstr`) (cf. Stefanowitsch, [2013](#ref-hoffmann_collostructional_2013), p. 305), which is derived via the log-transformed *p*<sub>Binomial</sub>-value to the base of 10. The `dec` column indicates the significane of the association between the metaphor and *kebahagiaan* 'happiness' at the corrected level. Column `exp` shows the 'expected' co-occurrence frequency of the metaphor with *kebahagiaan* while `n` is the 'observed' co-occurrence frequency in the sample.
 
-The following code shows how to use `mdca_repel()` for *kebahagiaan* 'happiness' data:
+The following code shows how to use `mdca_repel()` for retrieving the repelled metaphors by *kebahagiaan* 'happiness':
 
 ``` r
 mdca_res %>%
@@ -390,7 +390,7 @@ mdca_res %>%
 Finally, below is the code to retrieve the top-20 most distinctive collocates co-occurring with *kebahagiaan* 'happiness' within the span of 4 words to the left and right of *kebahagiaan*.
 
 ``` r
-# present the result table for collocational analysis for *kebahagiaan*
+# present the result table for collocational analysis of *kebahagiaan*
 mdca_attr(mdca_colloc, cxn_type = '^kebahagiaan') %>% 
   top_n(20, assocstr) %>% 
   left_join(dist_colloc_gloss, by = "collocates") %>% # left-join the gloss for the distinctive collocates
