@@ -5,12 +5,14 @@
 happyr
 ======
 
-The goal of `happyr` is to document the R codes and the required dataset for the quantitative analyses in Rajeg's ([2018](#ref-rajeg_metaphorical_2018)) PhD thesis (submitted for examination on 28 September 2018). The study focuses on metaphors for <span style="font-variant:small-caps;">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the *Indonesian Leipzig Corpora Collection* (Biemann, Heyer, Quasthoff, & Richter, [2007](#ref-biemann_leipzig_2007); Goldhahn, Eckart, & Quasthoff, [2012](#ref-goldhahn_building_2012); Quasthoff & Goldhahn, [2013](#ref-quasthoff_indonesian_2013)). The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details). The underlying codes within the `happyr` package are based on most of the core packages in the [`tidyverse`](https://www.tidyverse.org).
+The goal of `happyr` is to document the R codes and the required dataset for the quantitative analyses in Rajeg's ([2018](#ref-rajeg_metaphorical_2018)) PhD thesis (submitted for examination on 28 September 2018). The study focuses on metaphors for <span style="font-variant:small-caps;">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the *Indonesian Leipzig Corpora Collection* (Biemann, Heyer, Quasthoff, & Richter, [2007](#ref-biemann_leipzig_2007); Goldhahn, Eckart, & Quasthoff, [2012](#ref-goldhahn_building_2012); Quasthoff & Goldhahn, [2013](#ref-quasthoff_indonesian_2013)). The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details).
+
+The `happyr` package is based on the core packages in the [`tidyverse`](https://www.tidyverse.org), and is built under R version 3.5.1 (2018-07-02) -- "Feather Spray" (see the **Session Info** section at the bottom of the page for further details on the dependencies).
 
 Acknowledgement
 ---------------
 
-The thesis is supervised by Dr. [Alice Gaby](https://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](https://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](https://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships).
+The thesis is supervised by Dr. [Alice Gaby](https://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](https://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](https://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. *Monash International Postgraduate Research Scholarships* (MIPRS, now MITS) and *Monash Graduate Scholarships* (MGS)).
 
 Installation
 ------------
@@ -32,12 +34,12 @@ Examples
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ───────────────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 #> ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 #> ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 #> ✔ readr   1.1.1     ✔ forcats 0.3.0
-#> ── Conflicts ──────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ──────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -435,7 +437,7 @@ devtools::session_info()
 #>  language (EN)                        
 #>  collate  en_US.UTF-8                 
 #>  tz       Australia/Melbourne         
-#>  date     2018-09-11
+#>  date     2018-09-12
 #> Packages -----------------------------------------------------------------
 #>  package    * version date       source                          
 #>  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)                  
