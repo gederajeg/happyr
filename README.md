@@ -12,7 +12,7 @@ The `happyr` package is based on the core packages in the [`tidyverse`](https://
 Acknowledgement
 ---------------
 
-The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. *Monash International Postgraduate Research Scholarships* (MIPRS, now MITS) and *Monash Graduate Scholarships* (MGS)).
+The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). The panel members during the author's candidature milestones consist of Dr. [Anna Margetts](http://profiles.arts.monash.edu.au/anna-margetts/), Dr. [Réka Benczes](https://www.researchgate.net/profile/Reka_Benczes), and Prof. [John Newman](http://profiles.arts.monash.edu.au/john-newman/). The thesis is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. *Monash International Postgraduate Research Scholarships* (MIPRS, now MITS) and *Monash Graduate Scholarships* (MGS)).
 
 Installation
 ------------
@@ -34,12 +34,12 @@ Examples
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ─── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 #> ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 #> ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 #> ✔ readr   1.1.1     ✔ forcats 0.3.0
-#> ── Conflicts ──────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -100,7 +100,7 @@ top_n(x = ttr_metaphor, n = 10L, wt = token) %>%
 | 9   | <span style="font-variant:small-caps;">happiness is food</span>                            |    108|        17|         2.97|            2.11|                 15.74|
 | 10  | <span style="font-variant:small-caps;">happiness is a submerged entity</span>              |     99|        12|         2.72|            1.49|                 12.12|
 
-From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6) with the following codes:
+The original values of the `type_per_token_lu` are normalised so that they range from 1 (where every token of a metaphor is of the same type) to 100 (where every token of the metaphor is of a different type). From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6) with the following codes:
 
 ``` r
 # sort by type frequency
@@ -132,7 +132,7 @@ select(Metaphors = metaphors,
 | 9   | <span style="font-variant:small-caps;">happiness is an (un)veiled object</span>            |    211|    5.80|    23|   2.86|
 | 10  | <span style="font-variant:small-caps;">happiness is an imperilled entity</span>            |     32|    0.88|    21|   2.61|
 
-I design a helper function called `get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6). These metaphors are those having relatively high type/token ratios (normalised as percentage) and occurring at least three tokens in the sample.
+I design a helper function called `get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6). These metaphors are those having relatively high type/token ratios and occurring at least three tokens in the sample.
 
 ``` r
 min_freq <- 3L
@@ -142,22 +142,22 @@ ttr_metaphor %>%
   select(Metaphors = metaphors,
          Token = token,
          Type = type_lu,
-         `Type/token ratio (in%)` = type_per_token_lu) %>% 
+         `Type/token ratio` = type_per_token_lu) %>% 
   knitr::kable(caption = paste('Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least ', happyr::numbers2words(min_freq), ' tokens.', sep = ""), row.names = TRUE)
 ```
 
-|     | Metaphors                                                                        |  Token|  Type|  Type/token ratio (in%)|
-|-----|:---------------------------------------------------------------------------------|------:|-----:|-----------------------:|
-| 1   | <span style="font-variant:small-caps;">happiness is a harmful agent</span>       |     11|    11|                  100.00|
-| 2   | <span style="font-variant:small-caps;">happiness is drugs</span>                 |      6|     6|                  100.00|
-| 3   | <span style="font-variant:small-caps;">happiness is a moved entity</span>        |      4|     4|                  100.00|
-| 4   | <span style="font-variant:small-caps;">happiness is a treatment tool</span>      |      3|     3|                  100.00|
-| 5   | <span style="font-variant:small-caps;">happiness is an accompanied object</span> |      3|     3|                  100.00|
-| 6   | <span style="font-variant:small-caps;">happiness is being soaked</span>          |      9|     8|                   88.89|
-| 7   | <span style="font-variant:small-caps;">happiness is a resource</span>            |      8|     7|                   87.50|
-| 8   | <span style="font-variant:small-caps;">happiness is impediment to motion</span>  |      6|     5|                   83.33|
-| 9   | <span style="font-variant:small-caps;">happiness is a deceiver</span>            |     20|    16|                   80.00|
-| 10  | <span style="font-variant:small-caps;">happiness is an adversary</span>          |     24|    19|                   79.17|
+|     | Metaphors                                                                        |  Token|  Type|  Type/token ratio|
+|-----|:---------------------------------------------------------------------------------|------:|-----:|-----------------:|
+| 1   | <span style="font-variant:small-caps;">happiness is a harmful agent</span>       |     11|    11|            100.00|
+| 2   | <span style="font-variant:small-caps;">happiness is drugs</span>                 |      6|     6|            100.00|
+| 3   | <span style="font-variant:small-caps;">happiness is a moved entity</span>        |      4|     4|            100.00|
+| 4   | <span style="font-variant:small-caps;">happiness is a treatment tool</span>      |      3|     3|            100.00|
+| 5   | <span style="font-variant:small-caps;">happiness is an accompanied object</span> |      3|     3|            100.00|
+| 6   | <span style="font-variant:small-caps;">happiness is being soaked</span>          |      9|     8|             88.89|
+| 7   | <span style="font-variant:small-caps;">happiness is a resource</span>            |      8|     7|             87.50|
+| 8   | <span style="font-variant:small-caps;">happiness is impediment to motion</span>  |      6|     5|             83.33|
+| 9   | <span style="font-variant:small-caps;">happiness is a deceiver</span>            |     20|    16|             80.00|
+| 10  | <span style="font-variant:small-caps;">happiness is an adversary</span>          |     24|    19|             79.17|
 
 #### Retrieving the frequency of submappings, semantic source frames, and lexical units of metaphors
 
@@ -437,78 +437,78 @@ devtools::session_info()
 #>  language (EN)                        
 #>  collate  en_US.UTF-8                 
 #>  tz       Australia/Melbourne         
-#>  date     2018-09-12
+#>  date     2018-09-17
 #> Packages -----------------------------------------------------------------
-#>  package    * version date       source                          
-#>  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)                  
-#>  backports    1.1.2   2017-12-13 CRAN (R 3.5.0)                  
-#>  base       * 3.5.1   2018-07-05 local                           
-#>  bindr        0.1.1   2018-03-13 cran (@0.1.1)                   
-#>  bindrcpp   * 0.2.2   2018-03-29 CRAN (R 3.5.0)                  
-#>  broom        0.5.0   2018-07-17 CRAN (R 3.5.0)                  
-#>  cellranger   1.1.0   2016-07-27 CRAN (R 3.4.0)                  
-#>  cli          1.0.0   2017-11-05 CRAN (R 3.4.2)                  
-#>  colorspace   1.3-2   2016-12-14 CRAN (R 3.5.0)                  
-#>  compiler     3.5.1   2018-07-05 local                           
-#>  crayon       1.3.4   2017-09-16 CRAN (R 3.4.1)                  
-#>  datasets   * 3.5.1   2018-07-05 local                           
-#>  devtools     1.13.6  2018-06-27 CRAN (R 3.5.0)                  
-#>  digest       0.6.15  2018-01-28 CRAN (R 3.5.0)                  
-#>  dplyr      * 0.7.6   2018-06-29 CRAN (R 3.5.1)                  
-#>  evaluate     0.11    2018-07-17 CRAN (R 3.5.0)                  
-#>  forcats    * 0.3.0   2018-02-19 CRAN (R 3.5.0)                  
-#>  ggplot2    * 3.0.0   2018-07-03 CRAN (R 3.5.0)                  
-#>  glue         1.3.0   2018-07-17 CRAN (R 3.5.0)                  
-#>  graphics   * 3.5.1   2018-07-05 local                           
-#>  grDevices  * 3.5.1   2018-07-05 local                           
-#>  grid         3.5.1   2018-07-05 local                           
-#>  gtable       0.2.0   2016-02-26 CRAN (R 3.4.0)                  
-#>  happyr     * 0.1.0   2018-09-11 local                           
-#>  haven        1.1.2   2018-06-27 CRAN (R 3.5.0)                  
-#>  highr        0.7     2018-06-09 cran (@0.7)                     
-#>  hms          0.4.2   2018-03-10 cran (@0.4.2)                   
-#>  htmltools    0.3.6   2017-04-28 CRAN (R 3.5.0)                  
-#>  httr         1.3.1   2017-08-20 CRAN (R 3.4.1)                  
-#>  irr          0.84    2012-07-16 CRAN (R 3.5.0)                  
-#>  jsonlite     1.5     2017-06-01 CRAN (R 3.5.0)                  
-#>  knitr        1.20    2018-02-20 CRAN (R 3.5.0)                  
-#>  labeling     0.3     2014-08-23 CRAN (R 3.4.0)                  
-#>  lattice      0.20-35 2017-03-25 CRAN (R 3.5.1)                  
-#>  lazyeval     0.2.1   2017-10-29 CRAN (R 3.5.0)                  
-#>  lpSolve      5.6.13  2015-09-19 CRAN (R 3.5.0)                  
-#>  lubridate    1.7.4   2018-04-11 CRAN (R 3.5.0)                  
-#>  magrittr     1.5     2014-11-22 CRAN (R 3.4.0)                  
-#>  memoise      1.1.0   2017-04-21 CRAN (R 3.4.0)                  
-#>  methods    * 3.5.1   2018-07-05 local                           
-#>  modelr       0.1.2   2018-05-11 CRAN (R 3.5.0)                  
-#>  munsell      0.5.0   2018-06-12 CRAN (R 3.5.0)                  
-#>  nlme         3.1-137 2018-04-07 CRAN (R 3.5.1)                  
-#>  pillar       1.3.0   2018-07-14 CRAN (R 3.5.0)                  
-#>  pkgconfig    2.0.1   2017-03-21 CRAN (R 3.4.0)                  
-#>  plyr         1.8.4   2016-06-08 CRAN (R 3.5.0)                  
-#>  purrr      * 0.2.5   2018-05-29 CRAN (R 3.5.0)                  
-#>  R6           2.2.2   2017-06-17 CRAN (R 3.4.0)                  
-#>  Rcpp         0.12.18 2018-07-23 CRAN (R 3.5.1)                  
-#>  readr      * 1.1.1   2017-05-16 CRAN (R 3.5.0)                  
-#>  readxl       1.1.0   2018-04-20 CRAN (R 3.5.0)                  
-#>  rlang        0.2.1   2018-05-30 CRAN (R 3.5.0)                  
-#>  rmarkdown    1.10    2018-06-11 CRAN (R 3.5.0)                  
-#>  rprojroot    1.3-2   2018-01-03 CRAN (R 3.4.3)                  
-#>  rstudioapi   0.7     2017-09-07 CRAN (R 3.4.1)                  
-#>  rvest        0.3.2   2016-06-17 CRAN (R 3.4.0)                  
-#>  scales       0.5.0   2017-08-24 CRAN (R 3.5.0)                  
-#>  scapr        0.2.1   2018-07-31 Github (gederajeg/scapr@330abf5)
-#>  stats      * 3.5.1   2018-07-05 local                           
-#>  stringi      1.2.4   2018-07-20 CRAN (R 3.5.0)                  
-#>  stringr    * 1.3.1   2018-05-10 cran (@1.3.1)                   
-#>  tibble     * 1.4.2   2018-01-22 CRAN (R 3.5.0)                  
-#>  tidyr      * 0.8.1   2018-05-18 CRAN (R 3.5.0)                  
-#>  tidyselect   0.2.4   2018-02-26 CRAN (R 3.5.0)                  
-#>  tidyverse  * 1.2.1   2017-11-14 CRAN (R 3.5.0)                  
-#>  tools        3.5.1   2018-07-05 local                           
-#>  utils      * 3.5.1   2018-07-05 local                           
-#>  withr        2.1.2   2018-03-15 cran (@2.1.2)                   
-#>  xml2         1.2.0   2018-01-24 CRAN (R 3.5.0)                  
+#>  package    * version date       source                           
+#>  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)                   
+#>  backports    1.1.2   2017-12-13 CRAN (R 3.5.0)                   
+#>  base       * 3.5.1   2018-07-05 local                            
+#>  bindr        0.1.1   2018-03-13 cran (@0.1.1)                    
+#>  bindrcpp   * 0.2.2   2018-03-29 CRAN (R 3.5.0)                   
+#>  broom        0.5.0   2018-07-17 CRAN (R 3.5.0)                   
+#>  cellranger   1.1.0   2016-07-27 CRAN (R 3.4.0)                   
+#>  cli          1.0.0   2017-11-05 CRAN (R 3.4.2)                   
+#>  colorspace   1.3-2   2016-12-14 CRAN (R 3.5.0)                   
+#>  compiler     3.5.1   2018-07-05 local                            
+#>  crayon       1.3.4   2017-09-16 CRAN (R 3.4.1)                   
+#>  datasets   * 3.5.1   2018-07-05 local                            
+#>  devtools     1.13.6  2018-06-27 CRAN (R 3.5.0)                   
+#>  digest       0.6.15  2018-01-28 CRAN (R 3.5.0)                   
+#>  dplyr      * 0.7.6   2018-06-29 CRAN (R 3.5.1)                   
+#>  evaluate     0.11    2018-07-17 CRAN (R 3.5.0)                   
+#>  forcats    * 0.3.0   2018-02-19 CRAN (R 3.5.0)                   
+#>  ggplot2    * 3.0.0   2018-07-03 CRAN (R 3.5.0)                   
+#>  glue         1.3.0   2018-07-17 CRAN (R 3.5.0)                   
+#>  graphics   * 3.5.1   2018-07-05 local                            
+#>  grDevices  * 3.5.1   2018-07-05 local                            
+#>  grid         3.5.1   2018-07-05 local                            
+#>  gtable       0.2.0   2016-02-26 CRAN (R 3.4.0)                   
+#>  happyr     * 0.1.0   2018-09-12 Github (gederajeg/happyr@22b9e1e)
+#>  haven        1.1.2   2018-06-27 CRAN (R 3.5.0)                   
+#>  highr        0.7     2018-06-09 cran (@0.7)                      
+#>  hms          0.4.2   2018-03-10 cran (@0.4.2)                    
+#>  htmltools    0.3.6   2017-04-28 CRAN (R 3.5.0)                   
+#>  httr         1.3.1   2017-08-20 CRAN (R 3.4.1)                   
+#>  irr          0.84    2012-07-16 CRAN (R 3.5.0)                   
+#>  jsonlite     1.5     2017-06-01 CRAN (R 3.5.0)                   
+#>  knitr        1.20    2018-02-20 CRAN (R 3.5.0)                   
+#>  labeling     0.3     2014-08-23 CRAN (R 3.4.0)                   
+#>  lattice      0.20-35 2017-03-25 CRAN (R 3.5.1)                   
+#>  lazyeval     0.2.1   2017-10-29 CRAN (R 3.5.0)                   
+#>  lpSolve      5.6.13  2015-09-19 CRAN (R 3.5.0)                   
+#>  lubridate    1.7.4   2018-04-11 CRAN (R 3.5.0)                   
+#>  magrittr     1.5     2014-11-22 CRAN (R 3.4.0)                   
+#>  memoise      1.1.0   2017-04-21 CRAN (R 3.4.0)                   
+#>  methods    * 3.5.1   2018-07-05 local                            
+#>  modelr       0.1.2   2018-05-11 CRAN (R 3.5.0)                   
+#>  munsell      0.5.0   2018-06-12 CRAN (R 3.5.0)                   
+#>  nlme         3.1-137 2018-04-07 CRAN (R 3.5.1)                   
+#>  pillar       1.3.0   2018-07-14 CRAN (R 3.5.0)                   
+#>  pkgconfig    2.0.1   2017-03-21 CRAN (R 3.4.0)                   
+#>  plyr         1.8.4   2016-06-08 CRAN (R 3.5.0)                   
+#>  purrr      * 0.2.5   2018-05-29 CRAN (R 3.5.0)                   
+#>  R6           2.2.2   2017-06-17 CRAN (R 3.4.0)                   
+#>  Rcpp         0.12.18 2018-07-23 CRAN (R 3.5.1)                   
+#>  readr      * 1.1.1   2017-05-16 CRAN (R 3.5.0)                   
+#>  readxl       1.1.0   2018-04-20 CRAN (R 3.5.0)                   
+#>  rlang        0.2.2   2018-08-16 cran (@0.2.2)                    
+#>  rmarkdown    1.10    2018-06-11 CRAN (R 3.5.0)                   
+#>  rprojroot    1.3-2   2018-01-03 CRAN (R 3.4.3)                   
+#>  rstudioapi   0.7     2017-09-07 CRAN (R 3.4.1)                   
+#>  rvest        0.3.2   2016-06-17 CRAN (R 3.4.0)                   
+#>  scales       0.5.0   2017-08-24 CRAN (R 3.5.0)                   
+#>  scapr        0.2.1   2018-07-31 Github (gederajeg/scapr@330abf5) 
+#>  stats      * 3.5.1   2018-07-05 local                            
+#>  stringi      1.2.4   2018-07-20 CRAN (R 3.5.0)                   
+#>  stringr    * 1.3.1   2018-05-10 cran (@1.3.1)                    
+#>  tibble     * 1.4.2   2018-01-22 CRAN (R 3.5.0)                   
+#>  tidyr      * 0.8.1   2018-05-18 CRAN (R 3.5.0)                   
+#>  tidyselect   0.2.4   2018-02-26 CRAN (R 3.5.0)                   
+#>  tidyverse  * 1.2.1   2017-11-14 CRAN (R 3.5.0)                   
+#>  tools        3.5.1   2018-07-05 local                            
+#>  utils      * 3.5.1   2018-07-05 local                            
+#>  withr        2.1.2   2018-03-15 cran (@2.1.2)                    
+#>  xml2         1.2.0   2018-01-24 CRAN (R 3.5.0)                   
 #>  yaml         2.1.19  2018-05-01 CRAN (R 3.5.0)
 ```
 

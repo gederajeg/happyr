@@ -77,7 +77,7 @@
 <div id="acknowledgement" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgement" class="anchor"></a>Acknowledgement</h2>
-<p>The thesis is supervised by Dr. <a href="http://profiles.arts.monash.edu.au/alice-gaby/">Alice Gaby</a> (main), Dr. <a href="http://profiles.arts.monash.edu.au/howard-manns/">Howard Manns</a> (associate), and Dr. <a href="http://profiles.arts.monash.edu.au/simon-musgrave/">Simon Musgrave</a> (associate). It is fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a> schemes (i.e. <em>Monash International Postgraduate Research Scholarships</em> (MIPRS, now MITS) and <em>Monash Graduate Scholarships</em> (MGS)).</p>
+<p>The thesis is supervised by Dr. <a href="http://profiles.arts.monash.edu.au/alice-gaby/">Alice Gaby</a> (main), Dr. <a href="http://profiles.arts.monash.edu.au/howard-manns/">Howard Manns</a> (associate), and Dr. <a href="http://profiles.arts.monash.edu.au/simon-musgrave/">Simon Musgrave</a> (associate). The panel members during the author’s candidature milestones consist of Dr. <a href="http://profiles.arts.monash.edu.au/anna-margetts/">Anna Margetts</a>, Dr. <a href="https://www.researchgate.net/profile/Reka_Benczes">Réka Benczes</a>, and Prof. <a href="http://profiles.arts.monash.edu.au/john-newman/">John Newman</a>. The thesis is fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a> schemes (i.e. <em>Monash International Postgraduate Research Scholarships</em> (MIPRS, now MITS) and <em>Monash Graduate Scholarships</em> (MGS)).</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -95,12 +95,12 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the required packages</span>
 <span class="kw">library</span>(happyr)
 <span class="kw">library</span>(tidyverse)
-<span class="co">#&gt; ── Attaching packages ───────────────────────────────────────────────────────────── tidyverse 1.2.1 ──</span>
+<span class="co">#&gt; ── Attaching packages ─── tidyverse 1.2.1 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.0.0     ✔ purrr   0.2.5</span>
 <span class="co">#&gt; ✔ tibble  1.4.2     ✔ dplyr   0.7.6</span>
 <span class="co">#&gt; ✔ tidyr   0.8.1     ✔ stringr 1.3.1</span>
 <span class="co">#&gt; ✔ readr   1.1.1     ✔ forcats 0.3.0</span>
-<span class="co">#&gt; ── Conflicts ──────────────────────────────────────────────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; ── Conflicts ────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <div id="interrater-agreement-computation-in-chapter-3" class="section level3">
@@ -239,7 +239,7 @@ ttr_metaphor &lt;-<span class="st"> </span><span class="kw"><a href="reference/t
 </tr>
 </tbody>
 </table>
-<p>From the output of <code><a href="reference/ttr.html">ttr()</a></code> above (i.e. the <code>ttr_metaphor</code> table), we can retrieve the top-10 metaphors with high type frequencies <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6)</span> with the following codes:</p>
+<p>The original values of the <code>type_per_token_lu</code> are normalised so that they range from 1 (where every token of a metaphor is of the same type) to 100 (where every token of the metaphor is of a different type). From the output of <code><a href="reference/ttr.html">ttr()</a></code> above (i.e. the <code>ttr_metaphor</code> table), we can retrieve the top-10 metaphors with high type frequencies <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6)</span> with the following codes:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sort by type frequency</span>
 productive_metaphor &lt;-<span class="st"> </span>ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(type_lu)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># sort in descending order for the type frequency</span>
@@ -347,7 +347,7 @@ productive_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 </tr>
 </tbody>
 </table>
-<p>I design a helper function called <code><a href="reference/get_lexically_diverse_metaphors.html">get_lexically_diverse_metaphors()</a></code> to retrieve the top-10 lexically diverse or creative metaphors <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6)</span>. These metaphors are those having relatively high type/token ratios (normalised as percentage) and occurring at least three tokens in the sample.</p>
+<p>I design a helper function called <code><a href="reference/get_lexically_diverse_metaphors.html">get_lexically_diverse_metaphors()</a></code> to retrieve the top-10 lexically diverse or creative metaphors <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6)</span>. These metaphors are those having relatively high type/token ratios and occurring at least three tokens in the sample.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">min_freq &lt;-<span class="st"> </span>3L
 ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="reference/get_lexically_diverse_metaphors.html">get_lexically_diverse_metaphors</a></span>(<span class="dt">min_token =</span> min_freq, <span class="dt">top_n_limit =</span> 10L) <span class="op">%&gt;%</span><span class="st"> </span>
@@ -355,7 +355,7 @@ ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">select</span>(<span class="dt">Metaphors =</span> metaphors,
          <span class="dt">Token =</span> token,
          <span class="dt">Type =</span> type_lu,
-         <span class="st">`</span><span class="dt">Type/token ratio (in%)</span><span class="st">`</span> =<span class="st"> </span>type_per_token_lu) <span class="op">%&gt;%</span><span class="st"> </span>
+         <span class="st">`</span><span class="dt">Type/token ratio</span><span class="st">`</span> =<span class="st"> </span>type_per_token_lu) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="kw">paste</span>(<span class="st">'Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least '</span>, happyr<span class="op">::</span><span class="kw"><a href="https://gederajeg.github.io/happyr//reference/numbers2words.html">numbers2words</a></span>(min_freq), <span class="st">' tokens.'</span>, <span class="dt">sep =</span> <span class="st">""</span>), <span class="dt">row.names =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <table class="table">
 <caption>Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least three tokens.</caption>
@@ -364,7 +364,7 @@ ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 <th align="left">Metaphors</th>
 <th align="right">Token</th>
 <th align="right">Type</th>
-<th align="right">Type/token ratio (in%)</th>
+<th align="right">Type/token ratio</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -1598,84 +1598,84 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <span class="co">#&gt;  language (EN)                        </span>
 <span class="co">#&gt;  collate  en_US.UTF-8                 </span>
 <span class="co">#&gt;  tz       Australia/Melbourne         </span>
-<span class="co">#&gt;  date     2018-09-12</span>
+<span class="co">#&gt;  date     2018-09-17</span>
 <span class="co">#&gt; Packages -----------------------------------------------------------------</span>
-<span class="co">#&gt;  package    * version date       source                          </span>
-<span class="co">#&gt;  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  backports    1.1.2   2017-12-13 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  base       * 3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  bindr        0.1.1   2018-03-13 cran (@0.1.1)                   </span>
-<span class="co">#&gt;  bindrcpp   * 0.2.2   2018-03-29 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  broom        0.5.0   2018-07-17 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  cellranger   1.1.0   2016-07-27 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  cli          1.0.0   2017-11-05 CRAN (R 3.4.2)                  </span>
-<span class="co">#&gt;  colorspace   1.3-2   2016-12-14 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  commonmark   1.5     2018-04-28 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  compiler     3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  crayon       1.3.4   2017-09-16 CRAN (R 3.4.1)                  </span>
-<span class="co">#&gt;  datasets   * 3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  desc         1.2.0   2018-05-01 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  devtools     1.13.6  2018-06-27 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  digest       0.6.15  2018-01-28 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  dplyr      * 0.7.6   2018-06-29 CRAN (R 3.5.1)                  </span>
-<span class="co">#&gt;  evaluate     0.11    2018-07-17 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  forcats    * 0.3.0   2018-02-19 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  fs           1.2.3   2018-06-08 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  ggplot2    * 3.0.0   2018-07-03 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  glue         1.3.0   2018-07-17 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  graphics   * 3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  grDevices  * 3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  grid         3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  gtable       0.2.0   2016-02-26 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  happyr     * 0.1.0   2018-09-11 local                           </span>
-<span class="co">#&gt;  haven        1.1.2   2018-06-27 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  highr        0.7     2018-06-09 cran (@0.7)                     </span>
-<span class="co">#&gt;  hms          0.4.2   2018-03-10 cran (@0.4.2)                   </span>
-<span class="co">#&gt;  htmltools    0.3.6   2017-04-28 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  httr         1.3.1   2017-08-20 CRAN (R 3.4.1)                  </span>
-<span class="co">#&gt;  irr          0.84    2012-07-16 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  jsonlite     1.5     2017-06-01 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  knitr        1.20    2018-02-20 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  labeling     0.3     2014-08-23 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  lattice      0.20-35 2017-03-25 CRAN (R 3.5.1)                  </span>
-<span class="co">#&gt;  lazyeval     0.2.1   2017-10-29 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  lpSolve      5.6.13  2015-09-19 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  lubridate    1.7.4   2018-04-11 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  magrittr     1.5     2014-11-22 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  MASS         7.3-50  2018-04-30 CRAN (R 3.5.1)                  </span>
-<span class="co">#&gt;  memoise      1.1.0   2017-04-21 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  methods    * 3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  modelr       0.1.2   2018-05-11 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  munsell      0.5.0   2018-06-12 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  nlme         3.1-137 2018-04-07 CRAN (R 3.5.1)                  </span>
-<span class="co">#&gt;  pillar       1.3.0   2018-07-14 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  pkgconfig    2.0.1   2017-03-21 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  pkgdown      1.1.0   2018-06-02 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  plyr         1.8.4   2016-06-08 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  purrr      * 0.2.5   2018-05-29 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  R6           2.2.2   2017-06-17 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  Rcpp         0.12.18 2018-07-23 CRAN (R 3.5.1)                  </span>
-<span class="co">#&gt;  readr      * 1.1.1   2017-05-16 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  readxl       1.1.0   2018-04-20 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  rlang        0.2.1   2018-05-30 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  rmarkdown    1.10    2018-06-11 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  roxygen2     6.0.1   2017-02-06 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  rprojroot    1.3-2   2018-01-03 CRAN (R 3.4.3)                  </span>
-<span class="co">#&gt;  rstudioapi   0.7     2017-09-07 CRAN (R 3.4.1)                  </span>
-<span class="co">#&gt;  rvest        0.3.2   2016-06-17 CRAN (R 3.4.0)                  </span>
-<span class="co">#&gt;  scales       0.5.0   2017-08-24 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  scapr        0.2.1   2018-07-31 Github (gederajeg/scapr@330abf5)</span>
-<span class="co">#&gt;  stats      * 3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  stringi      1.2.4   2018-07-20 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  stringr    * 1.3.1   2018-05-10 cran (@1.3.1)                   </span>
-<span class="co">#&gt;  tibble     * 1.4.2   2018-01-22 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  tidyr      * 0.8.1   2018-05-18 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  tidyselect   0.2.4   2018-02-26 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  tidyverse  * 1.2.1   2017-11-14 CRAN (R 3.5.0)                  </span>
-<span class="co">#&gt;  tools        3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  utils      * 3.5.1   2018-07-05 local                           </span>
-<span class="co">#&gt;  withr        2.1.2   2018-03-15 cran (@2.1.2)                   </span>
-<span class="co">#&gt;  xml2         1.2.0   2018-01-24 CRAN (R 3.5.0)                  </span>
+<span class="co">#&gt;  package    * version date       source                           </span>
+<span class="co">#&gt;  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  backports    1.1.2   2017-12-13 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  base       * 3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  bindr        0.1.1   2018-03-13 cran (@0.1.1)                    </span>
+<span class="co">#&gt;  bindrcpp   * 0.2.2   2018-03-29 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  broom        0.5.0   2018-07-17 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  cellranger   1.1.0   2016-07-27 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  cli          1.0.0   2017-11-05 CRAN (R 3.4.2)                   </span>
+<span class="co">#&gt;  colorspace   1.3-2   2016-12-14 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  commonmark   1.5     2018-04-28 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  compiler     3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  crayon       1.3.4   2017-09-16 CRAN (R 3.4.1)                   </span>
+<span class="co">#&gt;  datasets   * 3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  desc         1.2.0   2018-05-01 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  devtools     1.13.6  2018-06-27 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  digest       0.6.15  2018-01-28 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  dplyr      * 0.7.6   2018-06-29 CRAN (R 3.5.1)                   </span>
+<span class="co">#&gt;  evaluate     0.11    2018-07-17 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  forcats    * 0.3.0   2018-02-19 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  fs           1.2.3   2018-06-08 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  ggplot2    * 3.0.0   2018-07-03 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  glue         1.3.0   2018-07-17 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  graphics   * 3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  grDevices  * 3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  grid         3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  gtable       0.2.0   2016-02-26 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  happyr     * 0.1.0   2018-09-12 Github (gederajeg/happyr@22b9e1e)</span>
+<span class="co">#&gt;  haven        1.1.2   2018-06-27 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  highr        0.7     2018-06-09 cran (@0.7)                      </span>
+<span class="co">#&gt;  hms          0.4.2   2018-03-10 cran (@0.4.2)                    </span>
+<span class="co">#&gt;  htmltools    0.3.6   2017-04-28 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  httr         1.3.1   2017-08-20 CRAN (R 3.4.1)                   </span>
+<span class="co">#&gt;  irr          0.84    2012-07-16 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  jsonlite     1.5     2017-06-01 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  knitr        1.20    2018-02-20 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  labeling     0.3     2014-08-23 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  lattice      0.20-35 2017-03-25 CRAN (R 3.5.1)                   </span>
+<span class="co">#&gt;  lazyeval     0.2.1   2017-10-29 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  lpSolve      5.6.13  2015-09-19 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  lubridate    1.7.4   2018-04-11 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  magrittr     1.5     2014-11-22 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  MASS         7.3-50  2018-04-30 CRAN (R 3.5.1)                   </span>
+<span class="co">#&gt;  memoise      1.1.0   2017-04-21 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  methods    * 3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  modelr       0.1.2   2018-05-11 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  munsell      0.5.0   2018-06-12 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  nlme         3.1-137 2018-04-07 CRAN (R 3.5.1)                   </span>
+<span class="co">#&gt;  pillar       1.3.0   2018-07-14 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  pkgconfig    2.0.1   2017-03-21 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  pkgdown      1.1.0   2018-06-02 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  plyr         1.8.4   2016-06-08 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  purrr      * 0.2.5   2018-05-29 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  R6           2.2.2   2017-06-17 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  Rcpp         0.12.18 2018-07-23 CRAN (R 3.5.1)                   </span>
+<span class="co">#&gt;  readr      * 1.1.1   2017-05-16 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  readxl       1.1.0   2018-04-20 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  rlang        0.2.2   2018-08-16 cran (@0.2.2)                    </span>
+<span class="co">#&gt;  rmarkdown    1.10    2018-06-11 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  roxygen2     6.0.1   2017-02-06 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  rprojroot    1.3-2   2018-01-03 CRAN (R 3.4.3)                   </span>
+<span class="co">#&gt;  rstudioapi   0.7     2017-09-07 CRAN (R 3.4.1)                   </span>
+<span class="co">#&gt;  rvest        0.3.2   2016-06-17 CRAN (R 3.4.0)                   </span>
+<span class="co">#&gt;  scales       0.5.0   2017-08-24 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  scapr        0.2.1   2018-07-31 Github (gederajeg/scapr@330abf5) </span>
+<span class="co">#&gt;  stats      * 3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  stringi      1.2.4   2018-07-20 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  stringr    * 1.3.1   2018-05-10 cran (@1.3.1)                    </span>
+<span class="co">#&gt;  tibble     * 1.4.2   2018-01-22 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  tidyr      * 0.8.1   2018-05-18 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  tidyselect   0.2.4   2018-02-26 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  tidyverse  * 1.2.1   2017-11-14 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  tools        3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  utils      * 3.5.1   2018-07-05 local                            </span>
+<span class="co">#&gt;  withr        2.1.2   2018-03-15 cran (@2.1.2)                    </span>
+<span class="co">#&gt;  xml2         1.2.0   2018-01-24 CRAN (R 3.5.0)                   </span>
 <span class="co">#&gt;  yaml         2.1.19  2018-05-01 CRAN (R 3.5.0)</span></code></pre></div>
 </div>
 <div id="references" class="section level2 unnumbered">

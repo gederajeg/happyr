@@ -29,7 +29,7 @@ The `happyr` package is based on the core packages in the [`tidyverse`](https://
 
 ## Acknowledgement
 
-The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). It is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. _Monash International Postgraduate Research Scholarships_ (MIPRS, now MITS) and _Monash Graduate Scholarships_ (MGS)).
+The thesis is supervised by Dr. [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). The panel members during the author's candidature milestones consist of Dr. [Anna Margetts](http://profiles.arts.monash.edu.au/anna-margetts/), Dr. [Réka Benczes](https://www.researchgate.net/profile/Reka_Benczes), and Prof. [John Newman](http://profiles.arts.monash.edu.au/john-newman/). The thesis is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. _Monash International Postgraduate Research Scholarships_ (MIPRS, now MITS) and _Monash Graduate Scholarships_ (MGS)).
 
 ## Installation
 
@@ -94,7 +94,7 @@ top_n(x = ttr_metaphor, n = 10L, wt = token) %>%
   knitr::kable(caption = "Top-10 most frequent metaphors", row.names = TRUE)
 ```
 
-From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies [@rajeg_metaphorical_2018, Ch. 6] with the following codes:
+The original values of the `type_per_token_lu` are normalised so that they range from 1 (where every token of a metaphor is of the same type) to 100 (where every token of the metaphor is of a different type). From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies [@rajeg_metaphorical_2018, Ch. 6] with the following codes:
 
 ```{r top-10-productive-metaphors}
 # sort by type frequency
@@ -113,7 +113,7 @@ select(Metaphors = metaphors,
   knitr::kable(caption = 'Top-10 metaphors sorted on their type frequency.', row.names = TRUE)
 ```
 
-I design a helper function called `get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors [@rajeg_metaphorical_2018, Ch. 6]. These metaphors are those having relatively high type/token ratios (normalised as percentage) and occurring at least three tokens in the sample.
+I design a helper function called `get_lexically_diverse_metaphors()` to retrieve the top-10 lexically diverse or creative metaphors [@rajeg_metaphorical_2018, Ch. 6]. These metaphors are those having relatively high type/token ratios and occurring at least three tokens in the sample.
 
 ```{r creative-metaphors}
 min_freq <- 3L
@@ -123,7 +123,7 @@ ttr_metaphor %>%
   select(Metaphors = metaphors,
          Token = token,
          Type = type_lu,
-         `Type/token ratio (in%)` = type_per_token_lu) %>% 
+         `Type/token ratio` = type_per_token_lu) %>% 
   knitr::kable(caption = paste('Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least ', happyr::numbers2words(min_freq), ' tokens.', sep = ""), row.names = TRUE)
 ```
 
