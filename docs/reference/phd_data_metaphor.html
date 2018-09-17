@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>The metaphor data frame — phd_data_metaphor • happyr</title>
+<title>The main metaphor data frame — phd_data_metaphor • happyr</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -30,9 +30,25 @@
 
 
 
-<meta property="og:title" content="The metaphor data frame — phd_data_metaphor" />
+<meta property="og:title" content="The main metaphor data frame — phd_data_metaphor" />
 
-<meta property="og:description" content="The metaphor data for TTR analysis in Ch. 5 &amp;amp; Ch. 6, and for the MDCA analysis in Ch. 7." />
+<meta property="og:description" content="This data is used for the token frequency, type frequency and type-per-token ratio analyses in Rajeg (2018, Ch. 5 and Ch. 6), and for the Multiple Distinctive Collexeme Analysis in Rajeg (2018, Ch. 7). The data consists of the following variables:
+corpusName of the corpus files
+sentence_idCharacter strings of the sentence id (or line id for WebCorp and Sketch Engine data) in which the happiness synonyms are found in the corpus
+synonymsCharacter strings of the synonyms
+m_exprMetaphorical expressions containing the synonyms, that is, the metaphorical patterns
+m_expr_glossEnglish gloss of the metaphorical patterns
+luSource-frame lexical units (henceforth, LUs) in the metaphorical patterns
+lu_glossEnglish gloss of the source-frame LUs
+lu_phrase_typeSyntactic category of the source-frame LUs (e.g., verb, adjective)
+voice_verbal_luGrammatical voice of the verbal, source-frame LUs in the metaphorical patterns
+source_framesThe source frame categories evoked by the source-frame LUs in the metaphorical patterns
+metaphorsConceptual metaphors evoked by the metaphorical patterns. This is based on grouping similar frame-role-mapping of the target-frame words in the source-frames
+submappingsSubmappings of the metaphors
+body_part_inclusionCharacter strings indicating whether the metaphorical patterns include/mention body-part terms (&quot;y&quot; for 'yes'), person (&quot;person&quot;), others type (&quot;others&quot;), or none (&quot;NA&quot;)
+body_part_termsCharacter strings of the body-part terms
+sentence_matchThe sentence-match from which the metaphorical patterns of the synonyms are extracted
+" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -97,14 +113,30 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>The metaphor data frame</h1>
+    <h1>The main metaphor data frame</h1>
     <small class="dont-index">Source: <a href='https://github.com/gederajeg/happyr/blob/master/R/data.R'><code>R/data.R</code></a></small>
     <div class="hidden name"><code>phd_data_metaphor.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>The metaphor data for TTR analysis in Ch. 5 &amp; Ch. 6, and for the MDCA analysis in Ch. 7.</p>
+    <p>This data is used for the <em>token frequency</em>, <em>type frequency</em> and <em>type-per-token ratio</em> analyses in Rajeg (2018, Ch. 5 and Ch. 6), and for the <em>Multiple Distinctive Collexeme Analysis</em> in Rajeg (2018, Ch. 7). The data consists of the following variables:</p><dl class='dl-horizontal'>
+<dt>corpus</dt><dd><p>Name of the corpus files</p></dd>
+<dt>sentence_id</dt><dd><p>Character strings of the sentence id (or line id for <em>WebCorp</em> and <em>Sketch Engine</em> data) in which the happiness synonyms are found in the corpus</p></dd>
+<dt>synonyms</dt><dd><p>Character strings of the synonyms</p></dd>
+<dt>m_expr</dt><dd><p>Metaphorical expressions containing the synonyms, that is, the metaphorical patterns</p></dd>
+<dt>m_expr_gloss</dt><dd><p>English gloss of the metaphorical patterns</p></dd>
+<dt>lu</dt><dd><p>Source-frame lexical units (henceforth, LUs) in the metaphorical patterns</p></dd>
+<dt>lu_gloss</dt><dd><p>English gloss of the source-frame LUs</p></dd>
+<dt>lu_phrase_type</dt><dd><p>Syntactic category of the source-frame LUs (e.g., verb, adjective)</p></dd>
+<dt>voice_verbal_lu</dt><dd><p>Grammatical voice of the verbal, source-frame LUs in the metaphorical patterns</p></dd>
+<dt>source_frames</dt><dd><p>The source frame categories evoked by the source-frame LUs in the metaphorical patterns</p></dd>
+<dt>metaphors</dt><dd><p>Conceptual metaphors evoked by the metaphorical patterns. This is based on grouping similar frame-role-mapping of the target-frame words in the source-frames</p></dd>
+<dt>submappings</dt><dd><p>Submappings of the metaphors</p></dd>
+<dt>body_part_inclusion</dt><dd><p>Character strings indicating whether the metaphorical patterns include/mention body-part terms (<code>"y"</code> for 'yes'), person (<code>"person"</code>), others type (<code>"others"</code>), or none (<code>"NA"</code>)</p></dd>
+<dt>body_part_terms</dt><dd><p>Character strings of the body-part terms</p></dd>
+<dt>sentence_match</dt><dd><p>The sentence-match from which the metaphorical patterns of the synonyms are extracted</p></dd>
+</dl>
     
     </div>
 
@@ -114,6 +146,10 @@
 
     <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 3638 rows and 15 columns.</p>
     
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Rajeg, G. P. W. (2018). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness</em> (PhD Thesis). Monash University. Melbourne, Australia.</p>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -121,6 +157,8 @@
     <ul class="nav nav-pills nav-stacked">
       
       <li><a href="#format">Format</a></li>
+
+      <li><a href="#references">References</a></li>
           </ul>
 
   </div>
