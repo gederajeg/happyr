@@ -60,7 +60,7 @@ mdca_res <- mdca(df = phd_data_metaphor,
                  concise_output = TRUE,
                  already_count_table = FALSE,
                  assocstr_digits = 3L)
-\dontrun{
+
 # for distinctive 4-window span collocates
 data("colloc_input_data")
 mdca_colloc <- mdca(df = colloc_input_data,
@@ -70,7 +70,6 @@ mdca_colloc <- mdca(df = colloc_input_data,
                     concise_output = TRUE,
                     already_count_table = FALSE,
                     assocstr_digits = 3L)
-}
 }
 \references{
 \itemize{
