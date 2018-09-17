@@ -9,6 +9,20 @@
 colloc_input_data
 }
 \description{
-The input data for collocational analysis (4-window span collocates of the synonyms).
+The input data for distinctive collocates analysis in Rajeg (2018, Ch.7). The collocates data are words co-occurring within the span of 4 words to the right and left of the happiness near-synonyms. Following Gevaert (2007, p. 197), the collocates that are part of the studied synonyms are excluded because they may neutralise the distinctive features of the near-synonyms when the goal is to find semantic differences between these near-synonyms.
+}
+\details{
+The data consists of the following two variables:
+\describe{
+\item{synonyms}{The ten near-synonyms under studied. Note that only results of the nominalised, \emph{ke- -an} forms are presented in the thesis, but not the root forms.}
+\item{collocates}{The window-span collocates of the synonyms}
+}
+}
+\references{
+\itemize{
+\item{Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.}
+\item{Gevaert, C. (2007). \emph{The history of ANGER: The lexical field of ANGER from Old to Early Modern English} (PhD thesis). Katholieke Universiteit Leuven, Leuven.
+}
+}
 }
 \keyword{datasets}

@@ -3,12 +3,32 @@
 \docType{data}
 \name{phd_data_metaphor}
 \alias{phd_data_metaphor}
-\title{The metaphor data frame}
+\title{The main metaphor data frame}
 \format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 3638 rows and 15 columns.}
 \usage{
 phd_data_metaphor
 }
 \description{
-The metaphor data for TTR analysis in Ch. 5 & Ch. 6, and for the MDCA analysis in Ch. 7.
+This data is used for the \emph{token frequency}, \emph{type frequency} and \emph{type-per-token ratio} analyses in Rajeg (2018, Ch. 5 and Ch. 6), and for the \emph{Multiple Distinctive Collexeme Analysis} in Rajeg (2018, Ch. 7). The data consists of the following variables:
+\describe{
+\item{corpus}{Name of the corpus files}
+\item{sentence_id}{Character strings of the sentence id (or line id for \emph{WebCorp} and \emph{Sketch Engine} data) in which the happiness synonyms are found in the corpus}
+\item{synonyms}{Character strings of the synonyms}
+\item{m_expr}{Metaphorical expressions containing the synonyms, that is, the metaphorical patterns}
+\item{m_expr_gloss}{English gloss of the metaphorical patterns}
+\item{lu}{Source-frame lexical units (henceforth, LUs) in the metaphorical patterns}
+\item{lu_gloss}{English gloss of the source-frame LUs}
+\item{lu_phrase_type}{Syntactic category of the source-frame LUs (e.g., verb, adjective)}
+\item{voice_verbal_lu}{Grammatical voice of the verbal, source-frame LUs in the metaphorical patterns}
+\item{source_frames}{The source frame categories evoked by the source-frame LUs in the metaphorical patterns}
+\item{metaphors}{Conceptual metaphors evoked by the metaphorical patterns. This is based on grouping similar frame-role-mapping of the target-frame words in the source-frames}
+\item{submappings}{Submappings of the metaphors}
+\item{body_part_inclusion}{Character strings indicating whether the metaphorical patterns include/mention body-part terms (\code{"y"} for 'yes'), person (\code{"person"}), others type (\code{"others"}), or none (\code{"NA"})}
+\item{body_part_terms}{Character strings of the body-part terms}
+\item{sentence_match}{The sentence-match from which the metaphorical patterns of the synonyms are extracted}
+}
+}
+\references{
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
 }
 \keyword{datasets}
