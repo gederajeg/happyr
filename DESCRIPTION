@@ -1,6 +1,6 @@
 Package: happyr
 Type: Package
-Title: The Accompanying R Package for Rajeg's (2018) PhD Thesis Entitled "Metaphorical Profiles and Near Synonyms: A Corpus-based Study of Indonesian Words for Happiness"
+Title: The Accompanying R Package for Rajeg's (2018) PhD Thesis Titled "Metaphorical Profiles and Near Synonyms: A Corpus-based Study of Indonesian Words for Happiness"
 Date: 2018-09-27
 Version: 0.1.0
 Authors@R: person(given = "Gede Primahadi Wijaya", family = "Rajeg", email = "primahadiwijaya@gmail.com",
