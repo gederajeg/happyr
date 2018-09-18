@@ -31,3 +31,6 @@ The function is designed to easily retrieve a tibble data frame of the top-n mos
 \examples{
 get_lu_table(metaphor = "destination", df = phd_data_metaphor)
 }
+\references{
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+}

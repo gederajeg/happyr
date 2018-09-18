@@ -24,7 +24,11 @@
 #' @importFrom rlang .data
 #' @importFrom utils data
 #' @export
-#' @references Vergara Wilson, D. (2014). \emph{Categorization and Constructional Change in Spanish Expressions of "becoming"}. Leiden: Brill.
+#' @references
+#' \itemize{
+#' \item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#' \item Vergara Wilson, D. (2014). \emph{Categorization and Constructional Change in Spanish Expressions of "becoming"}. Leiden: Brill.
+#' }
 get_cic_meta_lu <- function(metaphor = NULL, df_ttr_out = NULL) {
 
   assertthat::assert_that(!is.null(df_ttr_out), msg = "The `df_ttr_out` argument is NULL; please specify it with the data frame output of `ttr()`!")

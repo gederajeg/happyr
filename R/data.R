@@ -19,14 +19,14 @@
 #' \item{sentence_match}{The sentence-match from which the metaphorical patterns of the synonyms are extracted}
 #' }
 #' @references
-#' Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
+#' Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
 "phd_data_metaphor"
 
 #' Gloss for the distinctive collocates
 #'
 #' A tibble data frame containing gloss for the distinctive collocates of the synonyms presented in Rajeg (2018, Ch.7).
 #' @references
-#' Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
+#' Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
 "dist_colloc_gloss"
 
 #' Distinctive collocates data
@@ -40,7 +40,7 @@
 #' }
 #' @references
 #' \itemize{
-#' \item{Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.}
+#' \item{Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.}
 #' \item{Gevaert, C. (2007). \emph{The history of ANGER: The lexical field of ANGER from Old to Early Modern English} (PhD thesis). Katholieke Universiteit Leuven, Leuven.
 #'}
 #'}
@@ -75,7 +75,7 @@
 #'
 #' The input data for \emph{Figure 3-1} in Rajeg (2018).
 #' The barplot shows the distribution of constructional patterns during interrater agreement trial whose frequency of occurrences are at least five (5).
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness}. PhD Thesis. Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
 "top_cxn_data"
 
 

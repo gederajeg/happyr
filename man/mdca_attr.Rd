@@ -8,9 +8,9 @@ mdca_attr(df = NULL, filter_by = "cxn", cxn_var = "synonyms",
   cxn_type = NULL, coll_var = NULL, coll_type = NULL, min_assocstr = 2)
 }
 \arguments{
-\item{df}{output data frame from \code{link{mdca}}.}
+\item{df}{output data frame from \code{\link{mdca}}.}
 
-\item{filter_by}{character string indicating whether the output of \code{link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
+\item{filter_by}{character string indicating whether the output of \code{\link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
 If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_assocstr} argument.}
 
 \item{cxn_var}{character string for the column name of the construction variable (i.e., \code{"synonyms"}).}
@@ -27,7 +27,7 @@ If it is left \code{NULL} (the default), the data is filtered according to the v
 A tibble/data frame
 }
 \description{
-A function to retrieve list of \emph{attracted} items for a construction from the results of \code{\link{mdca}}.
+A function to retrieve list of \emph{distinctive} or \emph{attracted} items for a construction from the results of \code{\link{mdca}}.
 }
 \examples{
 # for distinctive metaphors
@@ -45,4 +45,7 @@ mdca_attr(df = mdca_res,
           cxn_type = "kebahagiaan",
           min_assocstr = 2)
 
+}
+\references{
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
 }

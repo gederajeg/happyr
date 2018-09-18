@@ -12,6 +12,6 @@ dist_colloc_gloss
 A tibble data frame containing gloss for the distinctive collocates of the synonyms presented in Rajeg (2018, Ch.7).
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
 }
 \keyword{datasets}

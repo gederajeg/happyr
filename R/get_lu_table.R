@@ -18,7 +18,8 @@
 #' @importFrom rlang .data
 #' @importFrom rlang :=
 #' @export
-
+#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+#'
 get_lu_table <- function(metaphor = "regular expressions",
                          top_n_only = TRUE,
                          top_n_limit = 10,

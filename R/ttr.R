@@ -11,7 +11,7 @@
 #'                     metaphor_var = "metaphors",
 #'                     lexunit_var = "lu",
 #'                     float_digits = 2)
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness}. PhD Thesis. Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
 #' @importFrom dplyr enquo
 #' @importFrom dplyr n
 #' @importFrom dplyr n_distinct

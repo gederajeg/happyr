@@ -51,3 +51,6 @@ get_lu_submappings_table(metaphor = "liquid in a container",
                          word = "kegembiraan",
                          df = phd_data_metaphor)
 }
+\references{
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+}

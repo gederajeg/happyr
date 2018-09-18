@@ -31,7 +31,7 @@ A tibble/data frame of the descriptive statistics of the frames,
     for calculating the token and type frequencies, while percentages of these are summarised per word.
 }
 \description{
-A utility function to get the descriptive data for the source frames of a metaphor (for the aggregated synonyms data or for a given synonym, if specified).
+A utility function to get the descriptive statistics for the source frames of a metaphor (for the aggregated synonyms data or for a given synonym, if specified).
    This function is used in Rajeg's (2018, Chapter 5 & 6).
 }
 \examples{
@@ -57,5 +57,5 @@ get_frames(metaphor = "desired goal",
 
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
 }

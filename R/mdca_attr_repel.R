@@ -1,8 +1,8 @@
 #' Attracted items from MDCA
 #'
-#' @description A function to retrieve list of \emph{attracted} items for a construction from the results of \code{\link{mdca}}.
-#' @param df output data frame from \code{link{mdca}}.
-#' @param filter_by character string indicating whether the output of \code{link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
+#' @description A function to retrieve list of \emph{distinctive} or \emph{attracted} items for a construction from the results of \code{\link{mdca}}.
+#' @param df output data frame from \code{\link{mdca}}.
+#' @param filter_by character string indicating whether the output of \code{\link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
 #'     If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_assocstr} argument.
 #' @param cxn_var character string for the column name of the construction variable (i.e., \code{"synonyms"}).
 #' @param cxn_type character strings of regular expressions for the HAPPINESS synonyms.
@@ -12,7 +12,7 @@
 #'
 #' @return A tibble/data frame
 #' @export
-#'
+#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
 #' @examples
 #' # for distinctive metaphors
 #' mdca_res <- mdca(df = phd_data_metaphor,
@@ -80,8 +80,8 @@ mdca_attr <- function(df = NULL,
 #' Repelled items from MDCA
 #'
 #' @description A function to retrieve list of \emph{repelled} items for a construction from the results of \code{\link{mdca}}.
-#' @param df output data frame from \code{link{mdca}}.
-#' @param filter_by character string indicating whether the output of \code{link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
+#' @param df output data frame from \code{\link{mdca}}.
+#' @param filter_by character string indicating whether the output of \code{\link{mdca}} is filtered according to the \emph{construction} variable (i.e. \code{"cxn"}) or the \emph{collexemes/collocates} variable (i.e. \code{"colloc"}).
 #'     If it is left \code{NULL} (the default), the data is filtered according to the value specified in the \code{min_assocstr} argument.
 #' @param cxn_var character string for the column name of the construction variable (i.e., \code{"synonyms"}).
 #' @param cxn_type character strings of regular expressions for the HAPPINESS synonyms.
@@ -91,7 +91,7 @@ mdca_attr <- function(df = NULL,
 #'
 #' @return A tibble/data frame
 #' @export
-#'
+#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
 #' @examples
 #' # for distinctive metaphors
 #' mdca_res <- mdca(df = phd_data_metaphor,

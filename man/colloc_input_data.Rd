@@ -20,7 +20,7 @@ The data consists of the following two variables:
 }
 \references{
 \itemize{
-\item{Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.}
+\item{Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.}
 \item{Gevaert, C. (2007). \emph{The history of ANGER: The lexical field of ANGER from Old to Early Modern English} (PhD thesis). Katholieke Universiteit Leuven, Leuven.
 }
 }

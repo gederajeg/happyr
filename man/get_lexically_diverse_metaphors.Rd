@@ -18,8 +18,8 @@ get_lexically_diverse_metaphors(df_ttr_out = NULL, min_token = 3,
 A tibble data frame.
 }
 \description{
-This function calls the script to output the top-10 metaphors that have high percentage of lexical diversity in their linguistic manifestation.
-    The lexical diversity is derived from the \code{type-per-token ratio (TTR)} measure (Rajeg, 2018, Chapter 6).
+This function calls the script to output the top-10 metaphors that have high index of lexical creativity in their linguistic manifestation.
+    The lexical creativity is derived from the \code{type-per-token ratio (TTR)} measure (Rajeg, 2018, Chapter 6).
 }
 \examples{
 # get the ttr table
@@ -34,5 +34,5 @@ get_lexically_diverse_metaphors(df_ttr_out = ttr_metaphor,
                                 top_n_limit = 10)
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
 }

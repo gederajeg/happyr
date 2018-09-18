@@ -13,6 +13,6 @@ The input data for \emph{Figure 3-1} in Rajeg (2018).
 The barplot shows the distribution of constructional patterns during interrater agreement trial whose frequency of occurrences are at least five (5).
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness}. PhD Thesis. Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
 }
 \keyword{datasets}

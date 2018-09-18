@@ -22,6 +22,8 @@
 #' @importFrom ggplot2 position_fill
 #' @importFrom stats reorder
 #'
+#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+
 plot_cxn_interrater <- function(df = NULL) {
   synonyms <- dplyr::quo(synonyms)
   cxn_pattern <- dplyr::quo(cxn_pattern)

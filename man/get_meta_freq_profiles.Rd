@@ -14,7 +14,7 @@ get_meta_freq_profiles(metaphor = NULL, ..., metaphor_var = "metaphors",
 
 \item{metaphor_var}{character string for the column name of the metaphor variable (i.e., \code{"metaphors"}).}
 
-\item{df}{data frame storing the results of \code{ttr}.}
+\item{df}{data frame storing the results of \code{\link{ttr}}.}
 }
 \value{
 A tibble data frame
@@ -36,5 +36,5 @@ get_meta_freq_profiles("food", # regex for the metaphor
                        df = ttr_metaphor)
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
 }

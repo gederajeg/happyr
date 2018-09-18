@@ -31,7 +31,7 @@
 #'                    top_n = TRUE,
 #'                    limit = 20,
 #'                    df = phd_data_metaphor)
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
 get_lu_frame_table <- function(metaphor = NULL,
                                word = NULL,
                                print_all = FALSE,

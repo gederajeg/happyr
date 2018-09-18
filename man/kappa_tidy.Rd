@@ -70,6 +70,6 @@ sd(irr_cm_2[["kappa"]]) # SD
 \references{
 \itemize{
         \item Gamer, M., Lemon, J., & Singh, P. (2012). irr: Various Coefficients of Interrater Reliability and Agreement. R package version 0.84.
-        \item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for happiness} (PhD Thesis). Monash University. Melbourne, Australia.
+        \item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
     }
 }
