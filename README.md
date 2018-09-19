@@ -34,12 +34,12 @@ Examples
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ─── tidyverse 1.2.1 ──
+#> ── Attaching packages ────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 #> ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 #> ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 #> ✔ readr   1.1.1     ✔ forcats 0.3.0
-#> ── Conflicts ────── tidyverse_conflicts() ──
+#> ── Conflicts ───────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -79,7 +79,7 @@ ttr_metaphor <- ttr(df = phd_data_metaphor,
                     float_digits = 2)
 ```
 
-The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as `scaps()`.
+The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as `scaps()`; keyboard shortcut to produce the so-called "pipe" `%>%` is `Ctrl + Shift + M` (on Windows) or `Cmd + Shift + M` (on macOS).
 
 ``` r
 top_n(x = ttr_metaphor, n = 10L, wt = token) %>% 
@@ -100,7 +100,7 @@ top_n(x = ttr_metaphor, n = 10L, wt = token) %>%
 | 9   | <span style="font-variant:small-caps;">happiness is food</span>                            |    108|        17|         2.97|            2.11|                 15.74|
 | 10  | <span style="font-variant:small-caps;">happiness is a submerged entity</span>              |     99|        12|         2.72|            1.49|                 12.12|
 
-The original values of the `type_per_token_lu` are normalised so that they range from 1 (where every token of a metaphor is of the same type) to 100 (where every token of the metaphor is of a different type). From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6) with the following codes:
+The column `token` shows the token frequency of a metaphor meanwhile the column `type_lu` represents the number of different lexical-unit types evoking the source domain frames of the metaphor in the metaphorical expressions. The original values of the `type_per_token_lu` are normalised into the number of type per 100 tokens (cf. Oster, [2018](#ref-oster_emotions_2018), pp. 206–207). Thus, the closer the TTR of a metaphor to 100, the higher the rate of different lexical-unit type per 100 tokens of the metaphor (see further below) (Oster, [2010](#ref-oster_using_2010), pp. 748–749, [2018](#ref-oster_emotions_2018), p. 206; Stefanowitsch, [2017](#ref-stefanowitsch_corpus_2017), p. 282; Stefanowitsch & Flach, [2016](#ref-stefanowitsch_corpus-based_2016), pp. 118–120). From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies with the following codes (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6):
 
 ``` r
 # sort by type frequency
@@ -158,6 +158,8 @@ ttr_metaphor %>%
 | 8   | <span style="font-variant:small-caps;">happiness is impediment to motion</span>  |      6|     5|             83.33|
 | 9   | <span style="font-variant:small-caps;">happiness is a deceiver</span>            |     20|    16|             80.00|
 | 10  | <span style="font-variant:small-caps;">happiness is an adversary</span>          |     24|    19|             79.17|
+
+One way to interpret the values in the `Type/token ratio` (TTR) column is to conceive them as representing the number of unique lexical-unit types per 100 tokens of a metaphor. The higher the ratio, the more creative a given metaphor is linguistically expressed. For instance, the TTR value of <span style="font-variant:small-caps;">happiness is an adversary</span> (i.e. 79.17) indicates that there are about 79.17 unique types per 100 tokens of the <span style="font-variant:small-caps;">happiness is an adversary</span>, which is much higher than the TTR value of <span style="font-variant:small-caps;">happiness is a possessable object</span> (i.e. 8.41). The TTR value of a metaphor is used to represent the *creativity ratio* of a metaphor in its linguistic manifestation (Oster, [2010](#ref-oster_using_2010), pp. 748–749, cf. [2018](#ref-oster_emotions_2018), p. 206).
 
 #### Retrieving the frequency of submappings, semantic source frames, and lexical units of metaphors
 
@@ -335,14 +337,14 @@ The distinctiveness of a given metaphor and collocate with each happiness synony
 
 ``` r
 # MDCA for metaphor * synonyms with concise output
-mdca_res <- mdca(df = phd_data_metaphor, coll_var = "metaphors", concise_output = TRUE)
+mdca_res <- mdca(df = phd_data_metaphor, cxn_var = "synonyms", coll_var = "metaphors", concise_output = TRUE)
 ```
 
 The data for the collocates are available in the `colloc_input_data`. The English gloss/translation for the distinctive collocates are stored in `dist_colloc_gloss`.
 
 ``` r
 # mdca for window-span collocational data
-mdca_colloc <- mdca(df = colloc_input_data, coll_var = "collocates", concise_output = TRUE)
+mdca_colloc <- mdca(df = colloc_input_data, cxn_var = "synonyms", coll_var = "collocates", concise_output = TRUE)
 ```
 
 The package also provides two related functions to retrieve the *attracted*/*distinctive* and the *repelled* items from the results of MDCA. They are `mdca_attr()` and `mdca_repel()`. The following example shows how to get the distinctive metaphors for *kebahagiaan* 'happiness' having the association strength of equal to, or greater than, two (i.e. *p*<sub>binomial</sub> &lt; 0.01):
@@ -437,7 +439,7 @@ devtools::session_info()
 #>  language (EN)                        
 #>  collate  en_US.UTF-8                 
 #>  tz       Australia/Melbourne         
-#>  date     2018-09-17
+#>  date     2018-09-19
 #> Packages -----------------------------------------------------------------
 #>  package    * version date       source                           
 #>  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)                   
@@ -523,8 +525,16 @@ Gries, S. T. (2009). *Statistics for linguistics with R: A practical introductio
 
 Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. *Corpus Linguistics and Linguistic Theory*, *2*(2), 243–256.
 
+Oster, U. (2010). Using corpus methodology for semantic and pragmatic analyses: What can corpora tell us about the linguistic expression of emotions? *Cognitive Linguistics*, *21*(4), 727–763. doi:[10.1515/COGL.2010.023](https://doi.org/10.1515/COGL.2010.023)
+
+Oster, U. (2018). Emotions in motion: Towards a corpus-based description of the diachronic evolution of anger words. *Review of Cognitive Linguistics*, *16*(1), 191–228. doi:[10.1075/rcl.00008.ost](https://doi.org/10.1075/rcl.00008.ost)
+
 Quasthoff, U., & Goldhahn, D. (2013). *Indonesian corpora* (Technical report series on corpus building No. 7). Leipzig, Germany: Abteilung Automatische Sprachverarbeitung, Institut für Informatik, Universität Leipzig. Retrieved from <http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf>
 
 Rajeg, G. P. W. (2018). *Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for <span style="font-variant:small-caps;">Happiness</span>* (PhD thesis). Monash University, Australia, Clayton, VIC.
 
 Stefanowitsch, A. (2013). Collostructional analysis. In T. Hoffmann & G. Trousdale (Eds.), *The Oxford handbook of Construction Grammar* (pp. 290–306). Oxford: Oxford University Press. doi:[10.1093/oxfordhb/9780195396683.013.0016](https://doi.org/10.1093/oxfordhb/9780195396683.013.0016)
+
+Stefanowitsch, A. (2017). *Corpus linguistics: A guide to the methodology*. Book manuscript, Freie Universität Berlin: Book manuscript. Retrieved from <http://stefanowitsch.net/clm/clmbook-draft.pdf>
+
+Stefanowitsch, A., & Flach, S. (2016). The corpus-based perspective on entrenchment. In H.-J. Schmid (Ed.), *Entrenchment and the psychology of language learning: How we reorganize and adapt linguistic knowledge* (pp. 101–128). Berlin, Boston: De Gruyter. doi:[10.1515/9783110341423-006](https://doi.org/10.1515/9783110341423-006)

@@ -86,7 +86,7 @@ ttr_metaphor <- ttr(df = phd_data_metaphor,
                     float_digits = 2)
 ```
 
-The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as `scaps()`.
+The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as `scaps()`; keyboard shortcut to produce the so-called "pipe" `%>%` is `Ctrl + Shift + M` (on Windows) or `Cmd + Shift + M` (on macOS).
 
 ```{r most-frequent-metaphors}
 top_n(x = ttr_metaphor, n = 10L, wt = token) %>% 
@@ -94,7 +94,7 @@ top_n(x = ttr_metaphor, n = 10L, wt = token) %>%
   knitr::kable(caption = "Top-10 most frequent metaphors", row.names = TRUE)
 ```
 
-The original values of the `type_per_token_lu` are normalised so that they range from 1 (where every token of a metaphor is of the same type) to 100 (where every token of the metaphor is of a different type). From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies [@rajeg_metaphorical_2018, Ch. 6] with the following codes:
+The column `token` shows the token frequency of a metaphor meanwhile the column `type_lu` represents the number of different lexical-unit types evoking the source domain frames of the metaphor in the metaphorical expressions. The original values of the `type_per_token_lu` are normalised into the number of type per 100 tokens [cf. @oster_emotions_2018, pp. 206-207]. Thus, the closer the TTR of a metaphor to 100, the higher the rate of different lexical-unit type per 100 tokens of the metaphor (see further below) [@stefanowitsch_corpus-based_2016, pp. 118-120; @stefanowitsch_corpus_2017, p. 282; @oster_emotions_2018, p. 206; @oster_using_2010, pp. 748-749]. From the output of `ttr()` above (i.e. the `ttr_metaphor` table), we can retrieve the top-10 metaphors with high type frequencies with the following codes [@rajeg_metaphorical_2018, Ch. 6]:
 
 ```{r top-10-productive-metaphors}
 # sort by type frequency
@@ -127,6 +127,7 @@ ttr_metaphor %>%
   knitr::kable(caption = paste('Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least ', happyr::numbers2words(min_freq), ' tokens.', sep = ""), row.names = TRUE)
 ```
 
+One way to interpret the values in the `Type/token ratio` (TTR) column is to conceive them as representing the number of unique lexical-unit types per 100 tokens of a metaphor. The higher the ratio, the more creative a given metaphor is linguistically expressed. For instance, the TTR value of `r happyr::scaps("happiness is an adversary")` (i.e. `r unlist(ttr_metaphor[ttr_metaphor$metaphors=="happiness is an adversary", "type_per_token_lu"])`) indicates that there are about `r unlist(ttr_metaphor[ttr_metaphor$metaphors=="happiness is an adversary", "type_per_token_lu"])` unique types per 100 tokens of the `r happyr::scaps("happiness is an adversary")`, which is much higher than the TTR value of `r scaps("happiness is a possessable object")` (i.e. `r unlist(ttr_metaphor[ttr_metaphor$metaphors=="happiness is a possessable object", "type_per_token_lu"])`). The TTR value of a metaphor is used to represent the *creativity ratio* of a metaphor in its linguistic manifestation [cf. @oster_emotions_2018, p. 206; @oster_using_2010, pp. 748-749].
 
 #### Retrieving the frequency of submappings, semantic source frames, and lexical units of metaphors
 
@@ -213,14 +214,14 @@ The distinctiveness of a given metaphor and collocate with each happiness synony
 
 ```{r mdca-metaphors}
 # MDCA for metaphor * synonyms with concise output
-mdca_res <- mdca(df = phd_data_metaphor, coll_var = "metaphors", concise_output = TRUE)
+mdca_res <- mdca(df = phd_data_metaphor, cxn_var = "synonyms", coll_var = "metaphors", concise_output = TRUE)
 ```
 
 The data for the collocates are available in the `colloc_input_data`. The English gloss/translation for the distinctive collocates are stored in `dist_colloc_gloss`. 
 
 ```{r mdca-collocates}
 # mdca for window-span collocational data
-mdca_colloc <- mdca(df = colloc_input_data, coll_var = "collocates", concise_output = TRUE)
+mdca_colloc <- mdca(df = colloc_input_data, cxn_var = "synonyms", coll_var = "collocates", concise_output = TRUE)
 ```
 
 The package also provides two related functions to retrieve the *attracted*/*distinctive* and the *repelled* items from the results of MDCA. They are `mdca_attr()` and `mdca_repel()`. The following example shows how to get the distinctive metaphors for *kebahagiaan* 'happiness' having the association strength of equal to, or greater than, two (i.e. *p*~binomial~ < 0.01):

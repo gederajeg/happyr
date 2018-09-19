@@ -95,12 +95,12 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the required packages</span>
 <span class="kw">library</span>(happyr)
 <span class="kw">library</span>(tidyverse)
-<span class="co">#&gt; ── Attaching packages ───────────── tidyverse 1.2.1 ──</span>
+<span class="co">#&gt; ── Attaching packages ────────────────────────── tidyverse 1.2.1 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.0.0     ✔ purrr   0.2.5</span>
 <span class="co">#&gt; ✔ tibble  1.4.2     ✔ dplyr   0.7.6</span>
 <span class="co">#&gt; ✔ tidyr   0.8.1     ✔ stringr 1.3.1</span>
 <span class="co">#&gt; ✔ readr   1.1.1     ✔ forcats 0.3.0</span>
-<span class="co">#&gt; ── Conflicts ──────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; ── Conflicts ───────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <div id="interrater-agreement-computation-in-chapter-3" class="section level3">
@@ -131,7 +131,7 @@ ttr_metaphor &lt;-<span class="st"> </span><span class="kw"><a href="reference/t
                     <span class="dt">metaphor_var =</span> <span class="st">"metaphors"</span>, <span class="co"># specify col.name of the metaphor variable</span>
                     <span class="dt">lexunit_var =</span> <span class="st">"lu"</span>, <span class="co"># specify col.name of the lexical unit variable</span>
                     <span class="dt">float_digits =</span> <span class="dv">2</span>)</code></pre></div>
-<p>The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as <code><a href="reference/scaps.html">scaps()</a></code>.</p>
+<p>The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as <code><a href="reference/scaps.html">scaps()</a></code>; keyboard shortcut to produce the so-called “pipe” <code>%&gt;%</code> is <code>Ctrl + Shift + M</code> (on Windows) or <code>Cmd + Shift + M</code> (on macOS).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">top_n</span>(<span class="dt">x =</span> ttr_metaphor, <span class="dt">n =</span> 10L, <span class="dt">wt =</span> token) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">metaphors =</span> <span class="kw"><a href="reference/scaps.html">scaps</a></span>(metaphors)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># render the metaphors into small capitals to be printed in MS Word output</span>
 <span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="st">"Top-10 most frequent metaphors"</span>, <span class="dt">row.names =</span> <span class="ot">TRUE</span>)</code></pre></div>
@@ -239,7 +239,7 @@ ttr_metaphor &lt;-<span class="st"> </span><span class="kw"><a href="reference/t
 </tr>
 </tbody>
 </table>
-<p>The original values of the <code>type_per_token_lu</code> are normalised so that they range from 1 (where every token of a metaphor is of the same type) to 100 (where every token of the metaphor is of a different type). From the output of <code><a href="reference/ttr.html">ttr()</a></code> above (i.e. the <code>ttr_metaphor</code> table), we can retrieve the top-10 metaphors with high type frequencies <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6)</span> with the following codes:</p>
+<p>The column <code>token</code> shows the token frequency of a metaphor meanwhile the column <code>type_lu</code> represents the number of different lexical-unit types evoking the source domain frames of the metaphor in the metaphorical expressions. The original values of the <code>type_per_token_lu</code> are normalised into the number of type per 100 tokens <span class="citation">(cf. Oster, <a href="#ref-oster_emotions_2018">2018</a>, pp. 206–207)</span>. Thus, the closer the TTR of a metaphor to 100, the higher the rate of different lexical-unit type per 100 tokens of the metaphor (see further below) <span class="citation">(Oster, <a href="#ref-oster_using_2010">2010</a>, pp. 748–749, <a href="#ref-oster_emotions_2018">2018</a>, p. 206; Stefanowitsch, <a href="#ref-stefanowitsch_corpus_2017">2017</a>, p. 282; Stefanowitsch &amp; Flach, <a href="#ref-stefanowitsch_corpus-based_2016">2016</a>, pp. 118–120)</span>. From the output of <code><a href="reference/ttr.html">ttr()</a></code> above (i.e. the <code>ttr_metaphor</code> table), we can retrieve the top-10 metaphors with high type frequencies with the following codes <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6)</span>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sort by type frequency</span>
 productive_metaphor &lt;-<span class="st"> </span>ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(type_lu)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># sort in descending order for the type frequency</span>
@@ -439,6 +439,7 @@ ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 </tr>
 </tbody>
 </table>
+<p>One way to interpret the values in the <code>Type/token ratio</code> (TTR) column is to conceive them as representing the number of unique lexical-unit types per 100 tokens of a metaphor. The higher the ratio, the more creative a given metaphor is linguistically expressed. For instance, the TTR value of <span style="font-variant: small-caps;">happiness is an adversary</span> (i.e. 79.17) indicates that there are about 79.17 unique types per 100 tokens of the <span style="font-variant: small-caps;">happiness is an adversary</span>, which is much higher than the TTR value of <span style="font-variant: small-caps;">happiness is a possessable object</span> (i.e. 8.41). The TTR value of a metaphor is used to represent the <em>creativity ratio</em> of a metaphor in its linguistic manifestation <span class="citation">(Oster, <a href="#ref-oster_using_2010">2010</a>, pp. 748–749, cf. <a href="#ref-oster_emotions_2018">2018</a>, p. 206)</span>.</p>
 <div id="retrieving-the-frequency-of-submappings-semantic-source-frames-and-lexical-units-of-metaphors" class="section level4">
 <h4 class="hasAnchor">
 <a href="#retrieving-the-frequency-of-submappings-semantic-source-frames-and-lexical-units-of-metaphors" class="anchor"></a>Retrieving the frequency of submappings, semantic source frames, and lexical units of metaphors</h4>
@@ -1178,10 +1179,10 @@ phd_data_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 <a href="#identifying-the-distinctive-metaphors-and-the-distinctive-collocates-in-chapter-7" class="anchor"></a>Identifying the distinctive metaphors and the distinctive collocates in Chapter 7</h3>
 <p>The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using <em>Multiple Distinctive Collexeme Analysis</em> (MDCA) <span class="citation">(cf., e.g., Hilpert, <a href="#ref-hilpert_distinctive_2006">2006</a>; Stefanowitsch, <a href="#ref-hoffmann_collostructional_2013">2013</a>, pp. 299–300)</span>. The MDCA function is available as <code><a href="reference/mdca.html">mdca()</a></code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># MDCA for metaphor * synonyms with concise output</span>
-mdca_res &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> phd_data_metaphor, <span class="dt">coll_var =</span> <span class="st">"metaphors"</span>, <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
+mdca_res &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> phd_data_metaphor, <span class="dt">cxn_var =</span> <span class="st">"synonyms"</span>, <span class="dt">coll_var =</span> <span class="st">"metaphors"</span>, <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p>The data for the collocates are available in the <code>colloc_input_data</code>. The English gloss/translation for the distinctive collocates are stored in <code>dist_colloc_gloss</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mdca for window-span collocational data</span>
-mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> colloc_input_data, <span class="dt">coll_var =</span> <span class="st">"collocates"</span>, <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
+mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> colloc_input_data, <span class="dt">cxn_var =</span> <span class="st">"synonyms"</span>, <span class="dt">coll_var =</span> <span class="st">"collocates"</span>, <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p>The package also provides two related functions to retrieve the <em>attracted</em>/<em>distinctive</em> and the <em>repelled</em> items from the results of MDCA. They are <code><a href="reference/mdca_attr.html">mdca_attr()</a></code> and <code><a href="reference/mdca_repel.html">mdca_repel()</a></code>. The following example shows how to get the distinctive metaphors for <em>kebahagiaan</em> ‘happiness’ having the association strength of equal to, or greater than, two (i.e. <em>p</em><sub>binomial</sub> &lt; 0.01):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mdca_res <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw"><a href="reference/mdca_attr.html">mdca_attr</a></span>(<span class="dt">cxn_type =</span> <span class="st">"kebahagiaan"</span>, <span class="dt">min_assocstr =</span> <span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span>
@@ -1598,7 +1599,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <span class="co">#&gt;  language (EN)                        </span>
 <span class="co">#&gt;  collate  en_US.UTF-8                 </span>
 <span class="co">#&gt;  tz       Australia/Melbourne         </span>
-<span class="co">#&gt;  date     2018-09-18</span>
+<span class="co">#&gt;  date     2018-09-19</span>
 <span class="co">#&gt; Packages -----------------------------------------------------------------</span>
 <span class="co">#&gt;  package    * version date       source                           </span>
 <span class="co">#&gt;  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)                   </span>
@@ -1694,6 +1695,12 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <div id="ref-hilpert_distinctive_2006">
 <p>Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. <em>Corpus Linguistics and Linguistic Theory</em>, <em>2</em>(2), 243–256.</p>
 </div>
+<div id="ref-oster_using_2010">
+<p>Oster, U. (2010). Using corpus methodology for semantic and pragmatic analyses: What can corpora tell us about the linguistic expression of emotions? <em>Cognitive Linguistics</em>, <em>21</em>(4), 727–763. doi:<a href="https://doi.org/10.1515/COGL.2010.023">10.1515/COGL.2010.023</a></p>
+</div>
+<div id="ref-oster_emotions_2018">
+<p>Oster, U. (2018). Emotions in motion: Towards a corpus-based description of the diachronic evolution of anger words. <em>Review of Cognitive Linguistics</em>, <em>16</em>(1), 191–228. doi:<a href="https://doi.org/10.1075/rcl.00008.ost">10.1075/rcl.00008.ost</a></p>
+</div>
 <div id="ref-quasthoff_indonesian_2013">
 <p>Quasthoff, U., &amp; Goldhahn, D. (2013). <em>Indonesian corpora</em> (Technical report series on corpus building No. 7). Leipzig, Germany: Abteilung Automatische Sprachverarbeitung, Institut für Informatik, Universität Leipzig. Retrieved from <a href="http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf" class="uri">http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf</a></p>
 </div>
@@ -1702,6 +1709,12 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 </div>
 <div id="ref-hoffmann_collostructional_2013">
 <p>Stefanowitsch, A. (2013). Collostructional analysis. In T. Hoffmann &amp; G. Trousdale (Eds.), <em>The Oxford handbook of Construction Grammar</em> (pp. 290–306). Oxford: Oxford University Press. doi:<a href="https://doi.org/10.1093/oxfordhb/9780195396683.013.0016">10.1093/oxfordhb/9780195396683.013.0016</a></p>
+</div>
+<div id="ref-stefanowitsch_corpus_2017">
+<p>Stefanowitsch, A. (2017). <em>Corpus linguistics: A guide to the methodology</em>. Book manuscript, Freie Universität Berlin: Book manuscript. Retrieved from <a href="http://stefanowitsch.net/clm/clmbook-draft.pdf" class="uri">http://stefanowitsch.net/clm/clmbook-draft.pdf</a></p>
+</div>
+<div id="ref-stefanowitsch_corpus-based_2016">
+<p>Stefanowitsch, A., &amp; Flach, S. (2016). The corpus-based perspective on entrenchment. In H.-J. Schmid (Ed.), <em>Entrenchment and the psychology of language learning: How we reorganize and adapt linguistic knowledge</em> (pp. 101–128). Berlin, Boston: De Gruyter. doi:<a href="https://doi.org/10.1515/9783110341423-006">10.1515/9783110341423-006</a></p>
 </div>
 </div>
 </div>
