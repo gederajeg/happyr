@@ -1,14 +1,15 @@
 #' Perform the frequency profile measures in Chapter 5 and Chapter 6
 #'
-#' @description Generate a set of basic frequency profiles for the metaphors: (i) token frequency, (ii) type frequency, and (iii) type per token ratio (TTR).
-#' @param df the data frame for the database of the thesis (\code{phd_data_metaphor.rda}).
-#' @param metaphor_var character string of the column name for the metaphor variable in the data frame (i.e., \code{"metaphors"}).
-#' @param lexunit_var character string of the column name for the lexical unit variable in the data frame (i.e., \code{"lu"}).
+#' @description Generate a set of basic frequency profiles of (i) token frequency, (ii) type frequency, and (iii) type per token ratio (TTR) of a particular schema (e.g., conceptual metaphor as a conceptual schema, or word-formation pattern as a morphological, constructional schema).
+#' @param df the raw data frame containing the schemas and their linguistic instantiations (e.g., the \code{phd_data_metaphor.rda} in the case of the thesis).
+#' @param schema_var character string of the column name for the schema variable in the data frame (i.e., \code{"metaphors"} in the \code{phd_data_metaphor.rda}).
+#' @param lexunit_var character string of the column name for the lexical unit variable realising the schema in the data frame (i.e., \code{"lu"} in the \code{phd_data_metaphor.rda}).
 #' @param float_digits integer indicating the retained floating points from the calculation. The default is \code{2}.
-#' @return A tibble data frame (\code{tbl_df}) sorted in decreasing order of the \code{token} frequency of the metaphors.
+#' @return A tibble data frame (\code{tbl_df}) sorted in decreasing order of the \code{token} frequency of the schemas.
+#' @details As mentioned above, the \code{ttr()} function can be extended beyond its use for the thesis in Rajeg (2018). It can be used to generate the three frequency profiles of a set of morphological constructional schemas in relation to their manifesting words. For instance, we can use \code{ttr()} to determine the type and type/token ratio of two word-formation patterns, contrasting their productivity. This can be done as long as the input \code{df} contains raw data with two columns: one representing the morphological schema and the other one representing the linguistic instantiations of each of the schema.
 #' @examples
 #' ttr_metaphor <- ttr(df = phd_data_metaphor,
-#'                     metaphor_var = "metaphors",
+#'                     schema_var = "metaphors",
 #'                     lexunit_var = "lu",
 #'                     float_digits = 2)
 #' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
@@ -28,15 +29,15 @@
 #' @importFrom rlang .data
 #' @importFrom rlang sym
 #' @export
-ttr <- function(df = NULL, metaphor_var = "metaphors", lexunit_var = "lu", float_digits = 2) {
+ttr <- function(df = NULL, schema_var = "metaphors", lexunit_var = "lu", float_digits = 2) {
 
   assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with `phd_data_metaphor`!")
 
-  metaphor_q <- rlang::sym(metaphor_var)
+  schema_q <- rlang::sym(schema_var)
   lu_q <- rlang::sym(lexunit_var)
 
   df_out <- df %>%
-    dplyr::group_by(!!metaphor_q) %>%
+    dplyr::group_by(!!schema_q) %>%
     dplyr::summarise(token = n(),
                      type_lu = dplyr::n_distinct(!!lu_q))
   df_out <- dplyr::ungroup(df_out) %>%

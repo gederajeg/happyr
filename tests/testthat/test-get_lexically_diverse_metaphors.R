@@ -5,7 +5,7 @@ test_that("`get_lexically_diverse_metaphors()` throws error message when `df_ttr
 })
 
 ttr_metaphor <- ttr(df = phd_data_metaphor,
-                    metaphor_var = "metaphors",
+                    schema_var = "metaphors",
                     lexunit_var = "lu",
                     float_digits = 2)
 creative_metaphors <- get_lexically_diverse_metaphors(df_ttr_out = ttr_metaphor,

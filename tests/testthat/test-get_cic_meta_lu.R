@@ -5,7 +5,7 @@ test_that("`get_cic_meta_lu()` throws error message when `df_ttr_out` argument i
 })
 
 ttr_metaphor <- ttr(df = phd_data_metaphor,
-                    metaphor_var = "metaphors",
+                    schema_var = "metaphors",
                     lexunit_var = "lu",
                     float_digits = 2)
 cic <- get_cic_meta_lu("desired goal", df_ttr_out = ttr_metaphor)

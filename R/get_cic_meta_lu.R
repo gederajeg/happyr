@@ -8,7 +8,7 @@
 #'
 #' @examples
 #' ttr_metaphor <- ttr(df = phd_data_metaphor,
-#'                     metaphor_var = "metaphors",
+#'                     schema_var = "metaphors",
 #'                     lexunit_var = "lu",
 #'                     float_digits = 2)
 #'

@@ -11,7 +11,7 @@
 #' @examples
 #' # perform ttr
 #' ttr_metaphor <- ttr(phd_data_metaphor,
-#'                     metaphor_var = "metaphors",
+#'                     schema_var = "metaphors",
 #'                     lexunit_var = "lu",
 #'                     float_digits = 2)
 #'
