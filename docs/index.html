@@ -10,7 +10,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="The Accompanying R Package for Rajeg's (2018) PhD Thesis Titled " metaphorical profiles and near synonyms: a corpus-based study of indonesian words for happiness>
-<meta property="og:description" content="An accompanying package containing the R functions and data for the quantitative analysis in Chapter 3, 5, 6, and 7 in Rajeg's (2018) PhD thesis. The thesis is submitted for examination on 28 September 2018 at Monash University, Australia. ">
+<meta property="og:description" content="An accompanying package containing the R functions and data for the quantitative analyses in Chapter 3, 5, 6, and 7 in Rajeg's (2018) PhD thesis. The thesis is submitted for examination on 28 September 2018 at Monash University, Australia. ">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -72,21 +72,21 @@
 <div id="happyr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#happyr" class="anchor"></a>happyr</h1></div>
-<p>The goal of <code>happyr</code> is to document the R codes and the required dataset for the quantitative analyses in Rajeg’s <span class="citation">(<a href="#ref-rajeg_metaphorical_2018">2018</a>)</span> PhD thesis (submitted for examination on 28 September 2018). The study focuses on metaphors for <span style="font-variant: small-caps;">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> <span class="citation">(Biemann, Heyer, Quasthoff, &amp; Richter, <a href="#ref-biemann_leipzig_2007">2007</a>; Goldhahn, Eckart, &amp; Quasthoff, <a href="#ref-goldhahn_building_2012">2012</a>; Quasthoff &amp; Goldhahn, <a href="#ref-quasthoff_indonesian_2013">2013</a>)</span>. The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details).</p>
-<p>The <code>happyr</code> package is based on the core packages in the <a href="https://www.tidyverse.org"><code>tidyverse</code></a>, and is built under R version 3.5.1 (2018-07-02) – “Feather Spray” (see the <strong>Session Info</strong> section at the bottom of the page for further details on the dependencies).</p>
+<p>The goal of happyr is to document the R codes and the required dataset for the quantitative analyses in Rajeg’s <span class="citation">(<a href="#ref-rajeg_metaphorical_2018">2018</a>)</span> PhD thesis (submitted for examination on 28 September 2018). The study focuses on metaphors for <span style="font-variant: small-caps;">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> <span class="citation">(Biemann, Heyer, Quasthoff, &amp; Richter, <a href="#ref-biemann_leipzig_2007">2007</a>; Goldhahn, Eckart, &amp; Quasthoff, <a href="#ref-goldhahn_building_2012">2012</a>; Quasthoff &amp; Goldhahn, <a href="#ref-quasthoff_indonesian_2013">2013</a>)</span>. The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details).</p>
+<p>The happyr package is based on the core packages in the <a href="https://www.tidyverse.org">tidyverse</a>, and is built under R version 3.5.1 (2018-07-02) – “Feather Spray” (see the <a href="#session-info"><strong>Session Info</strong></a> section at the bottom of the page for further details on the dependencies).</p>
 <div id="acknowledgement" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgement" class="anchor"></a>Acknowledgement</h2>
-<p>The thesis is supervised by Dr. <a href="http://profiles.arts.monash.edu.au/alice-gaby/">Alice Gaby</a> (main), Dr. <a href="http://profiles.arts.monash.edu.au/howard-manns/">Howard Manns</a> (associate), and Dr. <a href="http://profiles.arts.monash.edu.au/simon-musgrave/">Simon Musgrave</a> (associate). The panel members during the author’s candidature milestones consist of Dr. <a href="http://profiles.arts.monash.edu.au/anna-margetts/">Anna Margetts</a>, Dr. <a href="https://www.researchgate.net/profile/Reka_Benczes">Réka Benczes</a>, and Prof. <a href="http://profiles.arts.monash.edu.au/john-newman/">John Newman</a>. The thesis is fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a> schemes (i.e. <em>Monash International Postgraduate Research Scholarships</em> (MIPRS, now MITS) and <em>Monash Graduate Scholarships</em> (MGS)).</p>
+<p>The thesis is supervised by Dr. <a href="http://profiles.arts.monash.edu.au/alice-gaby/">Alice Gaby</a> (main), Dr. <a href="http://profiles.arts.monash.edu.au/howard-manns/">Howard Manns</a> (associate), and Dr. <a href="http://profiles.arts.monash.edu.au/simon-musgrave/">Simon Musgrave</a> (associate). The panel members during the author’s candidature milestones consist of Dr. <a href="http://profiles.arts.monash.edu.au/anna-margetts/">Anna Margetts</a>, Dr. <a href="https://www.researchgate.net/profile/Reka_Benczes">Réka Benczes</a>, and Prof. <a href="http://profiles.arts.monash.edu.au/john-newman/">John Newman</a>. The thesis is fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a> schemes (i.e. <em>Monash International Postgraduate Research Scholarships</em> (MIPRS, now MITS) and <em>Monash Graduate Scholarships</em> (MGS)). The author also benefits from generous research and travel fundings from the <a href="https://arts.monash.edu/graduate-research/">Monash Arts Graduate Research</a> and the <a href="https://www.monash.edu/graduate-research">Monash Graduate Research Office</a>.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The <code>happyr</code> package can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/package=devtools"><code>devtools</code></a> package:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install the `devtools` package</span>
+<p>The happyr package can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/package=devtools">devtools</a> package:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># install the devtools package</span>
 <span class="kw">install.packages</span>(<span class="st">"devtools"</span>) 
 
-<span class="co"># install the `happyr` package</span>
+<span class="co"># install the happyr package</span>
 devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"gederajeg/happyr"</span>)</code></pre></div>
 </div>
 <div id="examples" class="section level2">
@@ -95,19 +95,19 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the required packages</span>
 <span class="kw">library</span>(happyr)
 <span class="kw">library</span>(tidyverse)
-<span class="co">#&gt; ── Attaching packages ────────────────────────── tidyverse 1.2.1 ──</span>
+<span class="co">#&gt; ── Attaching packages ───────────────── tidyverse 1.2.1 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.0.0     ✔ purrr   0.2.5</span>
 <span class="co">#&gt; ✔ tibble  1.4.2     ✔ dplyr   0.7.6</span>
 <span class="co">#&gt; ✔ tidyr   0.8.1     ✔ stringr 1.3.1</span>
 <span class="co">#&gt; ✔ readr   1.1.1     ✔ forcats 0.3.0</span>
-<span class="co">#&gt; ── Conflicts ───────────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; ── Conflicts ──────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <div id="interrater-agreement-computation-in-chapter-3" class="section level3">
 <h3 class="hasAnchor">
 <a href="#interrater-agreement-computation-in-chapter-3" class="anchor"></a>Interrater-agreement computation in Chapter 3</h3>
-<p>All codes for the Kappa’s calculation in the interrater agreement trial are presented in the <em>Examples</em> section of the documentation of the <code><a href="reference/kappa_tidy.html">kappa_tidy()</a></code> function. Type <code>?kappa_tidy()</code> to see them.</p>
-<p>The <code>ggplot2</code> code for producing Figure 3.1 in Rajeg <span class="citation">(<a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 3)</span> is wrapped into a function called <code><a href="reference/plot_cxn_interrater.html">plot_cxn_interrater()</a></code>. The input data frame is <code>top_cxn_data</code>.</p>
+<p>All codes for the Kappa’s calculation in the interrater agreement trial are presented in the <em>Examples</em> section of the documentation of the <code><a href="reference/kappa_tidy.html">kappa_tidy()</a></code> function. Type <code>?kappa_tidy()</code> in the R console to see them or check the <a href="https://gederajeg.github.io/happyr/reference/kappa_tidy.html">online documentation</a>.</p>
+<p>The ggplot2 codes for producing Figure 3.1 in Rajeg <span class="citation">(<a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 3)</span> is wrapped into a function called <code><a href="reference/plot_cxn_interrater.html">plot_cxn_interrater()</a></code>. The input data frame is <code>top_cxn_data</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># prepare plot title and caption</span>
 plot_title &lt;-<span class="st"> </span><span class="kw">expression</span>(<span class="kw">paste</span>(<span class="st">"Distribution of the constructional patterns for the agreed cases ("</span>, N[<span class="st">"patterns"</span>] <span class="op">&gt;=</span><span class="st"> "5)"</span>, <span class="dt">sep =</span> <span class="st">""</span>))
 
@@ -125,13 +125,13 @@ plot_caption &lt;-<span class="st"> "The values inside the bars are the token fr
 <div id="token-frequency-type-frequency-and-typetoken-ratio-analyses-in-chapter-5-and-6" class="section level3">
 <h3 class="hasAnchor">
 <a href="#token-frequency-type-frequency-and-typetoken-ratio-analyses-in-chapter-5-and-6" class="anchor"></a>Token frequency, type frequency, and type/token ratio analyses in Chapter 5 and 6</h3>
-<p>The main metaphor data for Chapter 5, 6, and 7 is stored as a tibble in <code>phd_data_metaphor</code>. The relevant function for the token, type, and type/token ratios analyses in Chapter 5 and 6 is <code><a href="reference/ttr.html">ttr()</a></code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># calculation for the token, type, and type/token ratios</span>
+<p>The main metaphor data for Chapter 5, 6, and 7 is stored as a tibble in <code>phd_data_metaphor</code>. The relevant function for the token, type, and type/token ratio analyses in Chapter 5 and 6 is <code><a href="reference/ttr.html">ttr()</a></code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># calculation for the token, type, and type/token ratio</span>
 ttr_metaphor &lt;-<span class="st"> </span><span class="kw"><a href="reference/ttr.html">ttr</a></span>(<span class="dt">df =</span> phd_data_metaphor,
-                    <span class="dt">metaphor_var =</span> <span class="st">"metaphors"</span>, <span class="co"># specify col.name of the metaphor variable</span>
+                    <span class="dt">schema_var =</span> <span class="st">"metaphors"</span>, <span class="co"># specify col.name of the metaphor variable</span>
                     <span class="dt">lexunit_var =</span> <span class="st">"lu"</span>, <span class="co"># specify col.name of the lexical unit variable</span>
                     <span class="dt">float_digits =</span> <span class="dv">2</span>)</code></pre></div>
-<p>The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as <code><a href="reference/scaps.html">scaps()</a></code>; keyboard shortcut to produce the so-called “pipe” <code>%&gt;%</code> is <code>Ctrl + Shift + M</code> (on Windows) or <code>Cmd + Shift + M</code> (on macOS).</p>
+<p>The following code retrieves the top-10 metaphors sorted according to their token frequencies. A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as <code><a href="reference/scaps.html">scaps()</a></code>; keyboard shortcut to produce the so-called “pipe” <code>%&gt;%</code> in the code-chunk below is <code>Ctrl + Shift + M</code> (on Windows) or <code>Cmd + Shift + M</code> (on macOS).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">top_n</span>(<span class="dt">x =</span> ttr_metaphor, <span class="dt">n =</span> 10L, <span class="dt">wt =</span> token) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">metaphors =</span> <span class="kw"><a href="reference/scaps.html">scaps</a></span>(metaphors)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># render the metaphors into small capitals to be printed in MS Word output</span>
 <span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="st">"Top-10 most frequent metaphors"</span>, <span class="dt">row.names =</span> <span class="ot">TRUE</span>)</code></pre></div>
@@ -347,16 +347,18 @@ productive_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 </tr>
 </tbody>
 </table>
-<p>I design a helper function called <code><a href="reference/get_lexically_diverse_metaphors.html">get_lexically_diverse_metaphors()</a></code> to retrieve the top-10 lexically diverse or creative metaphors <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6)</span>. These metaphors are those having relatively high type/token ratios and occurring at least three tokens in the sample.</p>
+<p>I design a helper function called <code><a href="reference/get_lexically_diverse_metaphors.html">get_lexically_diverse_metaphors()</a></code> to retrieve the top-10 lexically diverse or creative metaphors <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6)</span>. These metaphors are those having relatively high type/token ratio and occurring at least three tokens in the sample.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">min_freq &lt;-<span class="st"> </span>3L
+table_caption &lt;-<span class="st"> </span><span class="kw">paste</span>(<span class="st">'Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least '</span>, happyr<span class="op">::</span><span class="kw"><a href="https://gederajeg.github.io/happyr//reference/numbers2words.html">numbers2words</a></span>(min_freq), <span class="st">' tokens.'</span>, <span class="dt">sep =</span> <span class="st">""</span>)
 ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw"><a href="reference/get_lexically_diverse_metaphors.html">get_lexically_diverse_metaphors</a></span>(<span class="dt">min_token =</span> min_freq, <span class="dt">top_n_limit =</span> 10L) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="reference/get_lexically_diverse_metaphors.html">get_lexically_diverse_metaphors</a></span>(<span class="dt">min_token =</span> min_freq, 
+                                  <span class="dt">top_n_limit =</span> 10L) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">metaphors =</span> <span class="kw"><a href="reference/scaps.html">scaps</a></span>(metaphors)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">select</span>(<span class="dt">Metaphors =</span> metaphors,
          <span class="dt">Token =</span> token,
          <span class="dt">Type =</span> type_lu,
          <span class="st">`</span><span class="dt">Type/token ratio</span><span class="st">`</span> =<span class="st"> </span>type_per_token_lu) <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="kw">paste</span>(<span class="st">'Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least '</span>, happyr<span class="op">::</span><span class="kw"><a href="https://gederajeg.github.io/happyr//reference/numbers2words.html">numbers2words</a></span>(min_freq), <span class="st">' tokens.'</span>, <span class="dt">sep =</span> <span class="st">""</span>), <span class="dt">row.names =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> table_caption, <span class="dt">row.names =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <table class="table">
 <caption>Top-10 lexically varied metaphors sorted based on the TTR value and occurring at least three tokens.</caption>
 <thead><tr class="header">
@@ -1074,7 +1076,7 @@ ttr_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 <p>The function for generating Figure 5.1 in Chapter 5 is <code><a href="reference/plot_body_part.html">plot_body_part()</a></code> with <code>phd_data_metaphor</code> as the only input argument:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="reference/plot_body_part.html">plot_body_part</a></span>(<span class="dt">df =</span> phd_data_metaphor)</code></pre></div>
 <p><img src="reference/figures/README-body-part-figure-1.png" width="90%" style="display: block; margin: auto;"></p>
-<p>The following codes are used to generate the most-frequent co-occurrence of body-part terms and metaphors in Chapter 5:</p>
+<p>The following codes are used to generate Table 5-12 in Chapter 5 for the top-10 most frequent co-occurrence of body-part terms and the metaphors:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># body-part gloss</span>
 bp_gloss &lt;-<span class="st"> </span><span class="kw">tibble</span>(<span class="dt">gloss =</span> <span class="kw">c</span>(<span class="st">'chest/bosom'</span>, <span class="st">'self'</span>, <span class="st">'liver'</span>, <span class="st">'eyes'</span>, <span class="st">'face'</span>, <span class="st">'body'</span>, <span class="st">'face'</span>, <span class="st">'face'</span>, <span class="st">'deepest part of the heart'</span>, <span class="st">'lips'</span>, <span class="st">'mouth'</span>, <span class="st">'body; bodily'</span>), 
                    <span class="dt">body_part_terms =</span> <span class="kw">c</span>(<span class="st">'dada'</span>, <span class="st">'diri'</span>, <span class="st">'hati'</span>, <span class="st">'mata'</span>, <span class="st">'muka'</span>, <span class="st">'tubuh'</span>, <span class="st">'wajah'</span>, <span class="st">'paras'</span>, <span class="st">'lubuk kalbu'</span>, <span class="st">'bibir'</span>, <span class="st">'mulut'</span>, <span class="st">'jasmani'</span>))
@@ -1179,13 +1181,21 @@ phd_data_metaphor <span class="op">%&gt;%</span><span class="st"> </span>
 <a href="#identifying-the-distinctive-metaphors-and-the-distinctive-collocates-in-chapter-7" class="anchor"></a>Identifying the distinctive metaphors and the distinctive collocates in Chapter 7</h3>
 <p>The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using <em>Multiple Distinctive Collexeme Analysis</em> (MDCA) <span class="citation">(cf., e.g., Hilpert, <a href="#ref-hilpert_distinctive_2006">2006</a>; Stefanowitsch, <a href="#ref-hoffmann_collostructional_2013">2013</a>, pp. 299–300)</span>. The MDCA function is available as <code><a href="reference/mdca.html">mdca()</a></code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># MDCA for metaphor * synonyms with concise output</span>
-mdca_res &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> phd_data_metaphor, <span class="dt">cxn_var =</span> <span class="st">"synonyms"</span>, <span class="dt">coll_var =</span> <span class="st">"metaphors"</span>, <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
+mdca_res &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> phd_data_metaphor, 
+                 <span class="dt">cxn_var =</span> <span class="st">"synonyms"</span>, 
+                 <span class="dt">coll_var =</span> <span class="st">"metaphors"</span>, 
+                 <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p>The data for the collocates are available in the <code>colloc_input_data</code>. The English gloss/translation for the distinctive collocates are stored in <code>dist_colloc_gloss</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># mdca for window-span collocational data</span>
-mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> colloc_input_data, <span class="dt">cxn_var =</span> <span class="st">"synonyms"</span>, <span class="dt">coll_var =</span> <span class="st">"collocates"</span>, <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
+mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> colloc_input_data, 
+                    <span class="dt">cxn_var =</span> <span class="st">"synonyms"</span>, 
+                    <span class="dt">coll_var =</span> <span class="st">"collocates"</span>, 
+                    <span class="dt">concise_output =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p>The package also provides two related functions to retrieve the <em>attracted</em>/<em>distinctive</em> and the <em>repelled</em> items from the results of MDCA. They are <code><a href="reference/mdca_attr.html">mdca_attr()</a></code> and <code><a href="reference/mdca_repel.html">mdca_repel()</a></code>. The following example shows how to get the distinctive metaphors for <em>kebahagiaan</em> ‘happiness’ having the association strength of equal to, or greater than, two (i.e. <em>p</em><sub>binomial</sub> &lt; 0.01):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mdca_res <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="reference/mdca_attr.html">mdca_attr</a></span>(<span class="dt">cxn_type =</span> <span class="st">"kebahagiaan"</span>, <span class="dt">min_assocstr =</span> <span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="reference/mdca_attr.html">mdca_attr</a></span>(<span class="dt">filter_by =</span> <span class="st">"cxn"</span>,
+            <span class="dt">cxn_type =</span> <span class="st">"kebahagiaan"</span>, 
+            <span class="dt">min_assocstr =</span> <span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">exp =</span> <span class="kw">round</span>(exp, 3L), <span class="co"># round the expected co-occurrence frequency</span>
          <span class="dt">metaphors =</span> <span class="kw"><a href="reference/scaps.html">scaps</a></span>(metaphors)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>synonyms) <span class="op">%&gt;%</span>
@@ -1247,9 +1257,11 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 </tbody>
 </table>
 <p>The <code>p_holm</code> column provides the Holm’s corrected significance level <span class="citation">(Gries, <a href="#ref-gries_statistics_2009">2009</a>, pp. 249, 251)</span> of the Binomial Test <em>p</em>-value (<code>p_binomial</code>). The Binomial <em>p</em>-value is used as the basis for the association strength value (<code>assocstr</code>) <span class="citation">(cf. Stefanowitsch, <a href="#ref-hoffmann_collostructional_2013">2013</a>, p. 305)</span>, which is derived via the log-transformed <em>p</em><sub>Binomial</sub>-value to the base of 10. The <code>dec</code> column indicates the significane of the association between the metaphor and <em>kebahagiaan</em> ‘happiness’ at the corrected level. Column <code>exp</code> shows the ‘expected’ co-occurrence frequency of the metaphor with <em>kebahagiaan</em> while <code>n</code> is the ‘observed’ co-occurrence frequency in the sample.</p>
-<p>The following code shows how to use <code><a href="reference/mdca_repel.html">mdca_repel()</a></code> for retrieving the repelled metaphors by <em>kebahagiaan</em> ‘happiness’:</p>
+<p>The following code shows the use of <code><a href="reference/mdca_repel.html">mdca_repel()</a></code> for retrieving the repelled metaphors by <em>kebahagiaan</em> ‘happiness’:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mdca_res <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="reference/mdca_repel.html">mdca_repel</a></span>(<span class="dt">cxn_type =</span> <span class="st">"kebahagiaan"</span>, <span class="dt">min_assocstr =</span> <span class="op">-</span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw"><a href="reference/mdca_repel.html">mdca_repel</a></span>(<span class="dt">filter_by =</span> <span class="st">"cxn"</span>,
+             <span class="dt">cxn_type =</span> <span class="st">"kebahagiaan"</span>, 
+             <span class="dt">min_assocstr =</span> <span class="op">-</span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">exp =</span> <span class="kw">round</span>(exp, 3L),
          <span class="dt">metaphors =</span> <span class="kw"><a href="reference/scaps.html">scaps</a></span>(metaphors)) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>synonyms) <span class="op">%&gt;%</span>
@@ -1599,84 +1611,83 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <span class="co">#&gt;  language (EN)                        </span>
 <span class="co">#&gt;  collate  en_US.UTF-8                 </span>
 <span class="co">#&gt;  tz       Australia/Melbourne         </span>
-<span class="co">#&gt;  date     2018-09-19</span>
+<span class="co">#&gt;  date     2018-09-26</span>
 <span class="co">#&gt; Packages -----------------------------------------------------------------</span>
-<span class="co">#&gt;  package    * version date       source                           </span>
-<span class="co">#&gt;  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  backports    1.1.2   2017-12-13 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  base       * 3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  bindr        0.1.1   2018-03-13 cran (@0.1.1)                    </span>
-<span class="co">#&gt;  bindrcpp   * 0.2.2   2018-03-29 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  broom        0.5.0   2018-07-17 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  cellranger   1.1.0   2016-07-27 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  cli          1.0.0   2017-11-05 CRAN (R 3.4.2)                   </span>
-<span class="co">#&gt;  colorspace   1.3-2   2016-12-14 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  commonmark   1.5     2018-04-28 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  compiler     3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  crayon       1.3.4   2017-09-16 CRAN (R 3.4.1)                   </span>
-<span class="co">#&gt;  datasets   * 3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  desc         1.2.0   2018-05-01 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  devtools     1.13.6  2018-06-27 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  digest       0.6.15  2018-01-28 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  dplyr      * 0.7.6   2018-06-29 CRAN (R 3.5.1)                   </span>
-<span class="co">#&gt;  evaluate     0.11    2018-07-17 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  forcats    * 0.3.0   2018-02-19 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  fs           1.2.3   2018-06-08 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  ggplot2    * 3.0.0   2018-07-03 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  glue         1.3.0   2018-07-17 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  graphics   * 3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  grDevices  * 3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  grid         3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  gtable       0.2.0   2016-02-26 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  happyr     * 0.1.0   2018-09-12 Github (gederajeg/happyr@22b9e1e)</span>
-<span class="co">#&gt;  haven        1.1.2   2018-06-27 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  highr        0.7     2018-06-09 cran (@0.7)                      </span>
-<span class="co">#&gt;  hms          0.4.2   2018-03-10 cran (@0.4.2)                    </span>
-<span class="co">#&gt;  htmltools    0.3.6   2017-04-28 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  httr         1.3.1   2017-08-20 CRAN (R 3.4.1)                   </span>
-<span class="co">#&gt;  irr          0.84    2012-07-16 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  jsonlite     1.5     2017-06-01 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  knitr        1.20    2018-02-20 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  labeling     0.3     2014-08-23 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  lattice      0.20-35 2017-03-25 CRAN (R 3.5.1)                   </span>
-<span class="co">#&gt;  lazyeval     0.2.1   2017-10-29 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  lpSolve      5.6.13  2015-09-19 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  lubridate    1.7.4   2018-04-11 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  magrittr     1.5     2014-11-22 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  MASS         7.3-50  2018-04-30 CRAN (R 3.5.1)                   </span>
-<span class="co">#&gt;  memoise      1.1.0   2017-04-21 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  methods    * 3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  modelr       0.1.2   2018-05-11 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  munsell      0.5.0   2018-06-12 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  nlme         3.1-137 2018-04-07 CRAN (R 3.5.1)                   </span>
-<span class="co">#&gt;  pillar       1.3.0   2018-07-14 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  pkgconfig    2.0.1   2017-03-21 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  pkgdown      1.1.0   2018-06-02 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  plyr         1.8.4   2016-06-08 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  purrr      * 0.2.5   2018-05-29 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  R6           2.2.2   2017-06-17 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  Rcpp         0.12.18 2018-07-23 CRAN (R 3.5.1)                   </span>
-<span class="co">#&gt;  readr      * 1.1.1   2017-05-16 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  readxl       1.1.0   2018-04-20 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  rlang        0.2.2   2018-08-16 cran (@0.2.2)                    </span>
-<span class="co">#&gt;  rmarkdown    1.10    2018-06-11 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  roxygen2     6.0.1   2017-02-06 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  rprojroot    1.3-2   2018-01-03 CRAN (R 3.4.3)                   </span>
-<span class="co">#&gt;  rstudioapi   0.7     2017-09-07 CRAN (R 3.4.1)                   </span>
-<span class="co">#&gt;  rvest        0.3.2   2016-06-17 CRAN (R 3.4.0)                   </span>
-<span class="co">#&gt;  scales       0.5.0   2017-08-24 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  scapr        0.2.1   2018-07-31 Github (gederajeg/scapr@330abf5) </span>
-<span class="co">#&gt;  stats      * 3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  stringi      1.2.4   2018-07-20 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  stringr    * 1.3.1   2018-05-10 cran (@1.3.1)                    </span>
-<span class="co">#&gt;  tibble     * 1.4.2   2018-01-22 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  tidyr      * 0.8.1   2018-05-18 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  tidyselect   0.2.4   2018-02-26 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  tidyverse  * 1.2.1   2017-11-14 CRAN (R 3.5.0)                   </span>
-<span class="co">#&gt;  tools        3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  utils      * 3.5.1   2018-07-05 local                            </span>
-<span class="co">#&gt;  withr        2.1.2   2018-03-15 cran (@2.1.2)                    </span>
-<span class="co">#&gt;  xml2         1.2.0   2018-01-24 CRAN (R 3.5.0)                   </span>
+<span class="co">#&gt;  package    * version date       source        </span>
+<span class="co">#&gt;  assertthat   0.2.0   2017-04-11 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  backports    1.1.2   2017-12-13 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  base       * 3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  bindr        0.1.1   2018-03-13 cran (@0.1.1) </span>
+<span class="co">#&gt;  bindrcpp   * 0.2.2   2018-03-29 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  broom        0.5.0   2018-07-17 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  cellranger   1.1.0   2016-07-27 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  cli          1.0.0   2017-11-05 CRAN (R 3.4.2)</span>
+<span class="co">#&gt;  colorspace   1.3-2   2016-12-14 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  commonmark   1.5     2018-04-28 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  compiler     3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  crayon       1.3.4   2017-09-16 CRAN (R 3.4.1)</span>
+<span class="co">#&gt;  datasets   * 3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  desc         1.2.0   2018-05-01 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  devtools     1.13.6  2018-06-27 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  digest       0.6.15  2018-01-28 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  dplyr      * 0.7.6   2018-06-29 CRAN (R 3.5.1)</span>
+<span class="co">#&gt;  evaluate     0.11    2018-07-17 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  forcats    * 0.3.0   2018-02-19 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  fs           1.2.3   2018-06-08 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  ggplot2    * 3.0.0   2018-07-03 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  glue         1.3.0   2018-07-17 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  graphics   * 3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  grDevices  * 3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  grid         3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  gtable       0.2.0   2016-02-26 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  happyr     * 0.1.0   2018-09-25 local         </span>
+<span class="co">#&gt;  haven        1.1.2   2018-06-27 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  highr        0.7     2018-06-09 cran (@0.7)   </span>
+<span class="co">#&gt;  hms          0.4.2   2018-03-10 cran (@0.4.2) </span>
+<span class="co">#&gt;  htmltools    0.3.6   2017-04-28 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  httr         1.3.1   2017-08-20 CRAN (R 3.4.1)</span>
+<span class="co">#&gt;  irr          0.84    2012-07-16 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  jsonlite     1.5     2017-06-01 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  knitr        1.20    2018-02-20 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  labeling     0.3     2014-08-23 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  lattice      0.20-35 2017-03-25 CRAN (R 3.5.1)</span>
+<span class="co">#&gt;  lazyeval     0.2.1   2017-10-29 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  lpSolve      5.6.13  2015-09-19 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  lubridate    1.7.4   2018-04-11 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  magrittr     1.5     2014-11-22 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  MASS         7.3-50  2018-04-30 CRAN (R 3.5.1)</span>
+<span class="co">#&gt;  memoise      1.1.0   2017-04-21 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  methods    * 3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  modelr       0.1.2   2018-05-11 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  munsell      0.5.0   2018-06-12 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  nlme         3.1-137 2018-04-07 CRAN (R 3.5.1)</span>
+<span class="co">#&gt;  pillar       1.3.0   2018-07-14 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  pkgconfig    2.0.1   2017-03-21 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  pkgdown      1.1.0   2018-06-02 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  plyr         1.8.4   2016-06-08 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  purrr      * 0.2.5   2018-05-29 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  R6           2.2.2   2017-06-17 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  Rcpp         0.12.18 2018-07-23 CRAN (R 3.5.1)</span>
+<span class="co">#&gt;  readr      * 1.1.1   2017-05-16 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  readxl       1.1.0   2018-04-20 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  rlang        0.2.2   2018-08-16 cran (@0.2.2) </span>
+<span class="co">#&gt;  rmarkdown    1.10    2018-06-11 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  roxygen2     6.0.1   2017-02-06 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  rprojroot    1.3-2   2018-01-03 CRAN (R 3.4.3)</span>
+<span class="co">#&gt;  rstudioapi   0.7     2017-09-07 CRAN (R 3.4.1)</span>
+<span class="co">#&gt;  rvest        0.3.2   2016-06-17 CRAN (R 3.4.0)</span>
+<span class="co">#&gt;  scales       0.5.0   2017-08-24 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  stats      * 3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  stringi      1.2.4   2018-07-20 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  stringr    * 1.3.1   2018-05-10 cran (@1.3.1) </span>
+<span class="co">#&gt;  tibble     * 1.4.2   2018-01-22 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  tidyr      * 0.8.1   2018-05-18 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  tidyselect   0.2.4   2018-02-26 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  tidyverse  * 1.2.1   2017-11-14 CRAN (R 3.5.0)</span>
+<span class="co">#&gt;  tools        3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  utils      * 3.5.1   2018-07-05 local         </span>
+<span class="co">#&gt;  withr        2.1.2   2018-03-15 cran (@2.1.2) </span>
+<span class="co">#&gt;  xml2         1.2.0   2018-01-24 CRAN (R 3.5.0)</span>
 <span class="co">#&gt;  yaml         2.1.19  2018-05-01 CRAN (R 3.5.0)</span></code></pre></div>
 </div>
 <div id="references" class="section level2 unnumbered">
