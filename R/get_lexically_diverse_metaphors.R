@@ -1,7 +1,7 @@
 #' Retrieve the top-10 lexically diverse metaphors
 #'
 #' @description This function calls the script to output the top-10 metaphors that have high index of lexical creativity in their linguistic manifestation.
-#'     The lexical creativity is derived from the \code{type-per-token ratio (TTR)} measure (Rajeg, 2018, Chapter 6).
+#'     The lexical creativity is derived from the \code{type-per-token ratio (TTR)} measure (Rajeg, 2018, Chapter 6). The alternative function with shorter name is \code{\link{get_creative_metaphors}}.
 #' @param df_ttr_out the tibble as the output of \code{\link{ttr}}.
 #' @param min_token minimum token frequency of the metaphors.
 #' @param top_n_limit limit for presenting the top-n most lexically diverse metaphors.
