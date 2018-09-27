@@ -86,10 +86,10 @@ mdca <- function(df = NULL,
                  correct_holm = TRUE,
                  concise_output = TRUE) {
 
-  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with `phd_data_metaphor`!")
+  assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with the data frame input!")
 
   # quiets concerns of R CMD check re: the .'s that appear in pipelines
-  . <- "shut_up"
+  # . <- "shut_up" not needed as all pipes have been removed
 
   # columns names for tidyeval
   cxn_var <- rlang::sym(cxn_var)
@@ -98,108 +98,130 @@ mdca <- function(df = NULL,
   # function IF MDCA starts here
   # cross-tab the relevant variables
   if (already_count_table == FALSE) {
-    co_occ_tb <- df %>%
-      dplyr::count(!!cxn_var, !!coll_var) %>%
-      tidyr::complete(!!coll_var, !!cxn_var, fill = list(n = 0L))
+    co_occ_tb <- dplyr::count(df, !!cxn_var, !!coll_var)
+    co_occ_tb <- tidyr::complete(co_occ_tb, !!coll_var, !!cxn_var, fill = list(n = 0))
   } else {
-    co_occ_tb <- df %>%
-      tidyr::complete(!!coll_var, !!cxn_var, fill = list(n = 0L))
+    co_occ_tb <- tidyr::complete(df, !!coll_var, !!cxn_var, fill = list(n = 0))
   }
 
   # get the total freq of the CxN
-  cxn_sum <- co_occ_tb %>%
-    dplyr::group_by(!!cxn_var) %>%
-    dplyr::summarise(cxn_sum = sum(.data$n))
+  cxn_sum <- dplyr::summarise(dplyr::group_by(co_occ_tb, !!cxn_var), cxn_sum = sum(.data$n))
 
   # left join the total freq of the CxN to the data base
-  co_occ_tb <- co_occ_tb %>%
-    dplyr::left_join(cxn_sum, by = dplyr::quo_name(cxn_var))
+  co_occ_tb <- dplyr::left_join(co_occ_tb, cxn_sum, by = dplyr::quo_name(cxn_var))
 
   # get the total freq of the COLLOCATES
-  colloc_sum <- co_occ_tb %>%
-    dplyr::group_by(!!coll_var) %>%
-    dplyr::summarise(colloc_sum = sum(.data$n))
+  colloc_sum <- dplyr::summarise(dplyr::group_by(co_occ_tb, !!coll_var), colloc_sum = sum(.data$n))
 
   # left join the total freq of the COLLOCATES to the data base
-  co_occ_tb <- co_occ_tb %>%
-    dplyr::left_join(colloc_sum, by = dplyr::quo_name(coll_var))
+  co_occ_tb <- dplyr::left_join(co_occ_tb, colloc_sum, by = dplyr::quo_name(coll_var))
 
   # get the total database token/sum of the database
   if (already_count_table == FALSE) {
-    co_occ_tb <- co_occ_tb %>%
-      dplyr::mutate(dbase_token = dim(df)[1])
+    co_occ_tb <- dplyr::mutate(co_occ_tb, dbase_token = dim(df)[1])
   } else {
-    co_occ_tb <- co_occ_tb %>%
-      dplyr::mutate(dbase_token = sum(.data$n))
+    co_occ_tb <- dplyr::mutate(co_occ_tb, dbase_token = sum(.data$n))
   }
 
   # get the EXPECTED FREQUENCY, EXPECTED PROBABILITY, OBS_EXP DIFFERENCE, and BINOMIAL ALTERNATIVES
-  co_occ_tb <- co_occ_tb %>%
-    dplyr::mutate(exp = (cxn_sum * colloc_sum)/.data$dbase_token, # exp.freq
-                  exp_prob = exp/colloc_sum, # exp_prob
-                  obs_exp = '=',
-                  obs_exp = dplyr::if_else(n > exp, '>', .data$obs_exp), # obs_exp diff.
-                  obs_exp = dplyr::if_else(n < exp, '<', .data$obs_exp), # obs_exp diff.
-                  alt = dplyr::if_else(n >= exp, 'greater', 'less')) # obs_exp diff.
+  co_occ_tb <- dplyr::mutate(co_occ_tb, exp = (cxn_sum * colloc_sum)/.data$dbase_token, # exp.freq
+                             exp_prob = exp/colloc_sum, # exp_prob
+                             obs_exp = '=',
+                             obs_exp = dplyr::if_else(n > exp, '>', .data$obs_exp), # obs_exp diff.
+                             obs_exp = dplyr::if_else(n < exp, '<', .data$obs_exp), # obs_exp diff.
+                             alt = dplyr::if_else(n >= exp, 'greater', 'less')) # obs_exp diff.
 
   # compute the ONE-TAIL EXACT BINOMIAL TEST and ASSOCIATION STRENGTH VALUE
   p_binomial <- dplyr::quo(p_binomial)
   assocstr <- dplyr::quo(assocstr)
   abs_assocstr <- dplyr::quo(abs_assocstr)
   co_occ_tb <- tidyr::nest(dplyr::group_by(co_occ_tb, !!coll_var, !!cxn_var))
-  co_occ_tb <- dplyr::mutate(co_occ_tb, !!dplyr::quo_name(p_binomial) := purrr::map_dbl(data, binomial_test)) # binomial test
+  co_occ_tb <- dplyr::mutate(co_occ_tb,
+                             !!dplyr::quo_name(p_binomial) := purrr::map_dbl(data, binomial_test)) # binomial test
   co_occ_tb <- tidyr::nest(dplyr::group_by(tidyr::unnest(co_occ_tb), !!coll_var, !!cxn_var))
-  co_occ_tb <- dplyr::mutate(co_occ_tb, !!dplyr::quo_name(assocstr) := purrr::map_dbl(data, assoc_strength, 3L), # association strength
-                                        !!dplyr::quo_name(abs_assocstr) := abs(.data$assocstr))
+  co_occ_tb <- dplyr::mutate(co_occ_tb,
+                             !!dplyr::quo_name(assocstr) := purrr::map_dbl(data, assoc_strength, 3L), # association strength
+                             !!dplyr::quo_name(abs_assocstr) := abs(.data$assocstr))
   co_occ_tb <- tidyr::unnest(co_occ_tb)
 
   # get the sum of absolute deviation
-  co_occ_tb <- co_occ_tb %>%
-    dplyr::left_join(co_occ_tb %>%
-                       dplyr::group_by(!!coll_var) %>%
-                       dplyr::summarise(sum_abs_dev = sum(.data$abs_assocstr)) %>% # generate a sum_abs_dev for the COLLOCATES
-                dplyr::ungroup(),
-              by = dplyr::quo_name(coll_var))
+  dbase_to_left_join <- dplyr::group_by(co_occ_tb, !!coll_var)
+  ## generate a sum_abs_dev for the COLLOCATES
+  dbase_to_left_join <- dplyr::summarise(dbase_to_left_join, sum_abs_dev = sum(.data$abs_assocstr))
+  dbase_to_left_join <- dplyr::ungroup(dbase_to_left_join)
+  co_occ_tb <- dplyr::left_join(co_occ_tb, dbase_to_left_join, by = dplyr::quo_name(coll_var))
 
   ## get the CxN with the largest deviation
-  # largest_dev <- co_occ_tb %>%
-  #   split(.[,1]) %>%
-  #   purrr::map(~dplyr::filter(., .$abs_assocstr == max(.$abs_assocstr))) %>%
-  #   purrr::map_df(~dplyr::ungroup(.) %>%
-  #                   dplyr::select(., dplyr::matches(stringr::str_c(dplyr::quo_name(coll_var), dplyr::quo_name(cxn_var), 'abs_assocstr', sep = '|')))) %>%
-  #   dplyr::rename(largest_dev = !!cxn_var)
+  df_for_largest_dev <- split(co_occ_tb, co_occ_tb[, 1])
+  df_for_largest_dev_res <- purrr::map(df_for_largest_dev, function(lrg_dev) dplyr::filter(lrg_dev, lrg_dev$abs_assocstr == max(lrg_dev$abs_assocstr)))
+  df_for_largest_dev_res <- purrr::map_df(df_for_largest_dev_res, function(lrg_dev) dplyr::ungroup(lrg_dev))
+  vars_to_select <- stringr::str_c(dplyr::quo_name(coll_var), dplyr::quo_name(cxn_var), 'abs_assocstr', sep = '|')
+  df_for_largest_dev_res <- dplyr::select(df_for_largest_dev_res,
+                                          dplyr::matches(vars_to_select))
+  df_for_largest_dev_res <- dplyr::rename(df_for_largest_dev_res, largest_dev = !!cxn_var)
+  df_for_largest_dev_res <- dplyr::select(df_for_largest_dev_res, -!!abs_assocstr)
+  rm(df_for_largest_dev)
 
   ## left_join the largest dev. CxN
-  # co_occ_tb <- co_occ_tb %>%
-  # ungroup() %>%
-  # select(-abs_assocstr) %>%
-  # left_join(largest_dev, by = var_coll)
+  co_occ_tb <- dplyr::ungroup(co_occ_tb)
+  co_occ_tb <- dplyr::select(co_occ_tb, -!!abs_assocstr)
+  co_occ_tb <- dplyr::left_join(co_occ_tb, df_for_largest_dev_res, by = dplyr::quo_name(coll_var))
 
   # compute HOLM'S ADJUSTED P-VALUE
-  co_occ_tb <- co_occ_tb %>%
-    dplyr::mutate(p_holm = stats::p.adjust(p = .data$p_binomial, method = "holm"), # cf. http://rcompanion.org/rcompanion/f_01.html for example with p.adjust()
-                  dec = "ns", # from Gries' (2004) HCFA script
-                  dec = dplyr::if_else(.data$p_holm < 0.1, "ms", .data$dec), # from Gries' (2004) HCFA script
-                  dec = dplyr::if_else(.data$p_holm < 0.05, "*", .data$dec), # from Gries' (2004) HCFA script
-                  dec = dplyr::if_else(.data$p_holm < 0.01, "**", .data$dec), # from Gries' (2004) HCFA script
-                  dec = dplyr::if_else(.data$p_holm < 0.001, "***", .data$dec)) # from Gries' (2004) HCFA script
+  # cf. http://rcompanion.org/rcompanion/f_01.html for example with `p.adjust()`
+  co_occ_tb <- dplyr::mutate(co_occ_tb,
+                             p_holm = stats::p.adjust(p = .data$p_binomial, method = "holm"),
+                             dec = "ns", # from Gries' (2004) HCFA script
+                             dec = dplyr::if_else(.data$p_holm < 0.1, "ms", .data$dec), # from Gries' (2004) HCFA script
+                             dec = dplyr::if_else(.data$p_holm < 0.05, "*", .data$dec), # from Gries' (2004) HCFA script
+                             dec = dplyr::if_else(.data$p_holm < 0.01, "**", .data$dec), # from Gries' (2004) HCFA script
+                             dec = dplyr::if_else(.data$p_holm < 0.001, "***", .data$dec)) # from Gries' (2004) HCFA script
+  # Gries, Stefan Th. 2004. HCFA 3.2. A program for R. URL: <http://www.linguistics.ucsb.edu/faculty/stgries/>
+  # Gries' HCFA script is available from the following book:
+  # Gries, Stefan Th. (2009). Statistics for linguistics with R: A practical introduction. Berlin: Mouton de Gruyter.
 
   # outputting the results
   if (concise_output == TRUE) {
     if (correct_holm == FALSE) {
-      x <- co_occ_tb %>%
-        dplyr::select(!!coll_var, !!cxn_var, !!rlang::sym('n'), !!rlang::sym('exp'), !!rlang::sym('assocstr'), !!rlang::sym('p_binomial')) %>%
-        dplyr::mutate(p_binomial = format(.data$p_binomial, digits = assocstr_digits + 1L))
+      x <- dplyr::select(co_occ_tb,
+                         !!coll_var,
+                         !!cxn_var,
+                         !!rlang::sym('n'),
+                         !!rlang::sym('exp'),
+                         !!rlang::sym('assocstr'),
+                         !!rlang::sym('p_binomial'))
+      x <- dplyr::mutate(x,
+                         p_binomial = format(.data$p_binomial, digits = assocstr_digits + 1L))
       return(x)
     } else {
-      x <- co_occ_tb %>%
-        dplyr::select(!!coll_var, !!cxn_var, !!rlang::sym('n'), !!rlang::sym('exp'), !!rlang::sym('assocstr'), !!rlang::sym('p_binomial'), !!rlang::sym('p_holm'), !!rlang::sym('dec')) %>%
-        dplyr::mutate(p_holm = format(.data$p_holm, digits = assocstr_digits + 1L),
-                      p_binomial = format(.data$p_binomial, digits = assocstr_digits + 1L))
+      x <- dplyr::select(co_occ_tb,
+                         !!coll_var,
+                         !!cxn_var,
+                         !!rlang::sym('n'),
+                         !!rlang::sym('exp'),
+                         !!rlang::sym('assocstr'),
+                         !!rlang::sym('p_binomial'),
+                         !!rlang::sym('p_holm'),
+                         !!rlang::sym('dec'))
+      x <- dplyr::mutate(x, p_holm = format(.data$p_holm, digits = assocstr_digits + 1L),
+                         p_binomial = format(.data$p_binomial, digits = assocstr_digits + 1L))
       return(x)
     }
   } else {
-    return(co_occ_tb)
+    x <- dplyr::select(co_occ_tb,
+                       !!coll_var,
+                       !!cxn_var,
+                       !!rlang::sym('n'),
+                       !!rlang::sym('exp'),
+                       !!rlang::sym('assocstr'),
+                       !!rlang::sym('p_binomial'),
+                       !!rlang::sym('p_holm'),
+                       !!rlang::sym('dec'),
+                       !!rlang::sym('sum_abs_dev'),
+                       !!rlang::sym('largest_dev'),
+                       dplyr::everything()
+    )
+    return(x)
   }
 }
 
