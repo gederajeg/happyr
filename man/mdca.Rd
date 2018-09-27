@@ -29,16 +29,18 @@ When it is \code{TRUE}, it expects tidy co-occurrence count between values of \c
 \item{correct_holm}{logical; the default is \code{TRUE} for performing Holm's correction method of the \emph{p}-value (cf. Gries, 2009, p. 249).}
 
 \item{concise_output}{logical; if \code{TRUE} (the default), \code{mdca} outputs the following columns:
-\itemize{
-    \item \code{metaphors}
-    \item \code{synonyms}
-    \item \code{n} (for the \emph{observed} co-occurrence frequency between \code{metaphors} and the \code{synonyms}).
-    \item \code{exp} (for the \emph{expected} co-occurrence frequency between \code{metaphors} and the \code{synonyms}).
-    \item \code{p_binomial} (the one-tailed \emph{p}-value of the \emph{Binomial Test}).
-    \item \code{assocstr} (the log10 transformed values of the \emph{p}-value of the \emph{Binomial Test}. The \code{assocstr} values are \emph{positive} when \code{n} is higher than the \code{exp} frequency, and they are \emph{negative} when otherwise.).
-    \item \code{p_holm} (when \code{correct_holm} is \code{TRUE})
-    \item \code{dec} (significance decision after Holm's correction) (when \code{correct_holm} is \code{TRUE})
-}}
+    \itemize{
+        \item \code{metaphors}
+        \item \code{synonyms}
+        \item \code{n} (for the \emph{observed} co-occurrence frequency between \code{metaphors} and the \code{synonyms}).
+        \item \code{exp} (for the \emph{expected} co-occurrence frequency between \code{metaphors} and the \code{synonyms}).
+        \item \code{p_binomial} (the one-tailed \emph{p}-value of the \emph{Binomial Test}).
+        \item \code{assocstr} (the log10 transformed values of the \emph{p}-value of the \emph{Binomial Test}. The \code{assocstr} values are \emph{positive} when \code{n} is higher than the \code{exp} frequency, and they are \emph{negative} when otherwise.).
+        \item \code{p_holm} (when \code{correct_holm} is \code{TRUE})
+        \item \code{dec} (significance decision after Holm's correction) (when \code{correct_holm} is \code{TRUE})
+    }
+
+If \code{concise_output} is \code{FALSE}, \code{mdca} returns the total tokens in the data, total frequency of each collexeme/collocate, total frequency of each construction, the sum of absolute deviation of the collexeme/collocate, the construction name, showing the largest deviation from the expected, co-occurrence frequency with the collexeme, expected probability of the co-occurrence, and the direction of the deviation from the expected frequency (i.e., whether a collexeme is attracted or repelled by a construction).}
 }
 \value{
 A tbl_df (cf. the \code{concise_output}).
@@ -48,8 +50,11 @@ Function to perform \emph{Multiple Distinctive Collexeme Analysis} (MDCA) in Raj
 }
 \details{
 The \code{mdca} function is built on top of the core members of the \code{tidyverse} suit of packages.
-    The computation of the \emph{Association Strength} is based on the \code{\link[stats]{binom.test}} function (cf. Hilpert, 2006).
-    The computation of the corrected \emph{p}-value of the one-tailed Binomial Test with Holm's method is performed using \code{\link[stats]{p.adjust}}.
+    The computation of the \emph{Association Strength} is based on the \code{\link[stats]{binom.test}} function (cf. Hilpert, 2006). The computation of the corrected \emph{p}-value of the one-tailed Binomial Test with Holm's method is performed using \code{\link[stats]{p.adjust}}.
+
+    There is a well-known interactive R script to perform MDCA by Stefan Th. Gries that is called \href{http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html}{\emph{Coll.analysis 3.5}} (Gries, 2014). The script includes the other codes to compute the family of methods of \emph{Collostructional Analyses}. The \code{mdca} function in happyr aims to achieve the same analytical goal as that in \emph{Coll.analysis 3.5}, but is designed differently in terms of its usage and the internal codes, as it is based on the \href{https://www.tidyverse.org/}{tidyverse}.
+
+    \code{mdca} allows users to have input and output data frame directly in the R environment, primarily enabling them to write interactive document in R Markdown in relation to MDCA. Moreover, happyr provides two functions dedicated to handle the output of \code{mdca} to retrieve the \emph{distinctive/attracted} and \emph{repelled} collexemes/collocates for a given construction. In contrast, Stefan Gries' script has two options to either print the output into (i) terminal or (ii) into external plain text, which requires post-processing of the results, mostly on a spreadsheet.
 }
 \examples{
 # for distinctive metaphors
@@ -74,6 +79,7 @@ mdca_colloc <- mdca(df = colloc_input_data,
 \references{
 \itemize{
         \item Gries, S. T. (2009). \emph{Statistics for linguistics with R: A practical introduction}. Berlin: Mouton de Gruyter.
+        \item Gries, S. T. (2014). Coll.analysis 3.5. A script for R to compute perform collostructional analyses. \url{http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html}.
         \item Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. \emph{Corpus Linguistics and Linguistic Theory}, \emph{2}(2), 243–256.
         \item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
     }
