@@ -7,7 +7,7 @@ csl: 'apa-old-doi-prefix.csl'
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Travis build status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/gederajeg/happyr?branch=master&svg=true)](https://ci.appveyor.com/project/gederajeg/happyr) [![Coverage status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master)
+[![Travis build status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/gederajeg/happyr?branch=master&svg=true)](https://ci.appveyor.com/project/gederajeg/happyr) [![Coverage status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master) [![DOI](https://zenodo.org/badge/142245688.svg)](https://zenodo.org/badge/latestdoi/142245688)
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(
