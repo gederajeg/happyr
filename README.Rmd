@@ -111,7 +111,7 @@ get_lu_table(metaphor = "is a desired goal$",
                row.names = TRUE)
 ```
 
-The column `Perc_overall` indicates the percentage of a given LU from the total tokens of the <span style="font-variant:small-caps;">happiness is a desired goal</span> metaphor. 
+The column `Perc_overall` indicates the percentage of a given LU from the total tokens of the <span style="font-variant:small-caps;">happiness is a desired goal</span> metaphor. More linguistic citations for the metaphorical expressions are presented in the thesis.
 
 From the output of `ttr()` above, which is stored in the `ttr_metaphor` table, we can retrieve the top-10 metaphors with high type frequencies with the following codes [@rajeg_metaphorical_2018, Ch. 6, Table 6-1]; the type frequency of a metaphor indicates the number of different lexical unit types expressing a given metaphor.
 

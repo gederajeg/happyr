@@ -36,12 +36,12 @@ First, load happyr and tidyverse packages in R.
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ─────────────────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ─────────────────────────────────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.0.0     ✔ purrr   0.2.5
 #> ✔ tibble  1.4.2     ✔ dplyr   0.7.6
 #> ✔ tidyr   0.8.1     ✔ stringr 1.3.1
 #> ✔ readr   1.1.1     ✔ forcats 0.3.0
-#> ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -130,7 +130,7 @@ get_lu_table(metaphor = "is a desired goal$",
 | 9   | *kunci*        | key                                 |    8|           2.73|
 | 10  | *gapai*        | to reach out                        |    6|           2.05|
 
-The column `Perc_overall` indicates the percentage of a given LU from the total tokens of the <span style="font-variant:small-caps;">happiness is a desired goal</span> metaphor.
+The column `Perc_overall` indicates the percentage of a given LU from the total tokens of the <span style="font-variant:small-caps;">happiness is a desired goal</span> metaphor. More linguistic citations for the metaphorical expressions are presented in the thesis.
 
 From the output of `ttr()` above, which is stored in the `ttr_metaphor` table, we can retrieve the top-10 metaphors with high type frequencies with the following codes (Rajeg, [2018](#ref-rajeg_metaphorical_2018), Ch. 6, Table 6-1); the type frequency of a metaphor indicates the number of different lexical unit types expressing a given metaphor.
 
@@ -461,26 +461,26 @@ mdca_attr(mdca_colloc,
 
 |     | collocates    | gloss                  |    n|     exp|  assocstr| p\_binomial | p\_holm   | dec    |
 |-----|:--------------|:-----------------------|----:|-------:|---------:|:------------|:----------|:-------|
-| 1   | *duniawi*     | worldly; earthly       |   52|  10.298|    28.818| 1.520e-29   | 1.108e-24 | \*\*\* |
-| 2   | *pribadi*     | personal               |   30|   5.994|    16.702| 1.985e-17   | 1.446e-12 | \*\*\* |
-| 3   | *mencari*     | to search; to look for |   55|  17.522|    15.757| 1.748e-16   | 1.274e-11 | \*\*\* |
-| 4   | *kenikmatan*  | pleasure; enjoyment    |   37|  11.835|    10.789| 1.624e-11   | 1.184e-06 | \*\*\* |
-| 5   | *hobi*        | hobby                  |   14|   2.306|    10.278| 5.277e-11   | 3.845e-06 | \*\*\* |
-| 6   | *nafsu*       | lust                   |   19|   3.996|    10.114| 7.689e-11   | 5.603e-06 | \*\*\* |
-| 7   | *semata*      | simply; merely         |   14|   2.613|     8.756| 1.756e-09   | 1.279e-04 | \*\*\* |
-| 8   | *keuntungan*  | profit                 |   12|   2.152|     7.934| 1.165e-08   | 8.488e-04 | \*\*\* |
-| 9   | *kepentingan* | interest; concern      |   13|   2.613|     7.464| 3.438e-08   | 2.504e-03 | \*\*   |
-| 10  | *seksual*     | sexual                 |   10|   1.691|     7.157| 6.964e-08   | 5.072e-03 | \*\*   |
-| 11  | *menikmati*   | to taste; to relish    |   42|  18.291|     7.136| 7.312e-08   | 5.326e-03 | \*\*   |
-| 12  | *menunda*     | to delay; to postpone  |    8|   1.230|     6.507| 3.115e-07   | 2.268e-02 | \*     |
-| 13  | *kebutuhan*   | needs                  |   10|   1.998|     5.873| 1.341e-06   | 9.762e-02 | ms     |
-| 14  | *mengejar*    | to chase; to run after |   17|   5.072|     5.844| 1.431e-06   | 1.042e-01 | ns     |
-| 15  | *prinsip*     | principle              |    8|   1.383|     5.616| 2.421e-06   | 1.762e-01 | ns     |
-| 16  | *mendapat*    | to get; to receive     |   22|   7.993|     5.521| 3.016e-06   | 2.196e-01 | ns     |
-| 17  | *berdasarkan* | to be founded/based on |   10|   2.152|     5.394| 4.040e-06   | 2.941e-01 | ns     |
-| 18  | *hawa*        | air                    |    9|   1.844|     5.171| 6.744e-06   | 4.908e-01 | ns     |
-| 19  | *waktu*       | time                   |   18|   6.302|     4.896| 1.270e-05   | 9.242e-01 | ns     |
-| 20  | *dosa*        | sin                    |    6|   0.922|     4.880| 1.319e-05   | 9.594e-01 | ns     |
+| 1   | *duniawi*     | worldly; earthly       |   52|  10.298|    28.818| 1.520e-29   | 1.111e-24 | \*\*\* |
+| 2   | *pribadi*     | personal               |   30|   5.994|    16.702| 1.985e-17   | 1.450e-12 | \*\*\* |
+| 3   | *mencari*     | to search; to look for |   55|  17.522|    15.757| 1.748e-16   | 1.277e-11 | \*\*\* |
+| 4   | *kenikmatan*  | pleasure; enjoyment    |   37|  11.835|    10.789| 1.624e-11   | 1.187e-06 | \*\*\* |
+| 5   | *hobi*        | hobby                  |   14|   2.306|    10.278| 5.277e-11   | 3.855e-06 | \*\*\* |
+| 6   | *nafsu*       | lust                   |   19|   3.996|    10.114| 7.689e-11   | 5.617e-06 | \*\*\* |
+| 7   | *semata*      | simply; merely         |   14|   2.613|     8.756| 1.756e-09   | 1.282e-04 | \*\*\* |
+| 8   | *keuntungan*  | profit                 |   12|   2.152|     7.934| 1.165e-08   | 8.510e-04 | \*\*\* |
+| 9   | *kepentingan* | interest; concern      |   13|   2.613|     7.464| 3.438e-08   | 2.511e-03 | \*\*   |
+| 10  | *seksual*     | sexual                 |   10|   1.691|     7.157| 6.964e-08   | 5.085e-03 | \*\*   |
+| 11  | *menikmati*   | to taste; to relish    |   42|  18.291|     7.136| 7.312e-08   | 5.339e-03 | \*\*   |
+| 12  | *menunda*     | to delay; to postpone  |    8|   1.230|     6.507| 3.115e-07   | 2.274e-02 | \*     |
+| 13  | *kebutuhan*   | needs                  |   10|   1.998|     5.873| 1.341e-06   | 9.787e-02 | ms     |
+| 14  | *mengejar*    | to chase; to run after |   17|   5.072|     5.844| 1.431e-06   | 1.045e-01 | ns     |
+| 15  | *prinsip*     | principle              |    8|   1.383|     5.616| 2.421e-06   | 1.767e-01 | ns     |
+| 16  | *mendapat*    | to get; to receive     |   22|   7.993|     5.521| 3.016e-06   | 2.201e-01 | ns     |
+| 17  | *berdasarkan* | to be founded/based on |   10|   2.152|     5.394| 4.040e-06   | 2.948e-01 | ns     |
+| 18  | *hawa*        | air                    |    9|   1.844|     5.171| 6.744e-06   | 4.921e-01 | ns     |
+| 19  | *waktu*       | time                   |   18|   6.302|     4.896| 1.270e-05   | 9.266e-01 | ns     |
+| 20  | *dosa*        | sin                    |    6|   0.922|     4.880| 1.319e-05   | 9.619e-01 | ns     |
 
 It appears that *kesenangan* 'pleasure' is strongly associated with negative nuance as it more frequently co-occurs with words, such as *dosa* 'sin', *hawa nafsu* 'lust', *nafsu* 'lust', *seksual* 'sexual', and *duniawi* 'worldly; earthly'.
 
@@ -523,7 +523,7 @@ devtools::session_info()
 #>  grDevices  * 3.5.1   2018-07-05 local         
 #>  grid         3.5.1   2018-07-05 local         
 #>  gtable       0.2.0   2016-02-26 CRAN (R 3.4.0)
-#>  happyr     * 0.1.0   2018-09-26 local         
+#>  happyr     * 0.1.0   2018-09-27 local         
 #>  haven        1.1.2   2018-06-27 CRAN (R 3.5.0)
 #>  highr        0.7     2018-06-09 cran (@0.7)   
 #>  hms          0.4.2   2018-03-10 cran (@0.4.2) 

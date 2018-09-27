@@ -97,12 +97,12 @@ devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocument
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the required packages</span>
 <span class="kw">library</span>(happyr)
 <span class="kw">library</span>(tidyverse)
-<span class="co">#&gt; ── Attaching packages ─────────────────────────────── tidyverse 1.2.1 ──</span>
+<span class="co">#&gt; ── Attaching packages ─────────────────────────────────────────────────────── tidyverse 1.2.1 ──</span>
 <span class="co">#&gt; ✔ ggplot2 3.0.0     ✔ purrr   0.2.5</span>
 <span class="co">#&gt; ✔ tibble  1.4.2     ✔ dplyr   0.7.6</span>
 <span class="co">#&gt; ✔ tidyr   0.8.1     ✔ stringr 1.3.1</span>
 <span class="co">#&gt; ✔ readr   1.1.1     ✔ forcats 0.3.0</span>
-<span class="co">#&gt; ── Conflicts ────────────────────────────────── tidyverse_conflicts() ──</span>
+<span class="co">#&gt; ── Conflicts ────────────────────────────────────────────────────────── tidyverse_conflicts() ──</span>
 <span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span>
 <span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></code></pre></div>
 <div id="chapter-3---interrater-agreement-computation" class="section level3">
@@ -334,7 +334,7 @@ ttr_metaphor &lt;-<span class="st"> </span><span class="kw"><a href="reference/t
 </tr>
 </tbody>
 </table>
-<p>The column <code>Perc_overall</code> indicates the percentage of a given LU from the total tokens of the <span style="font-variant: small-caps;">happiness is a desired goal</span> metaphor.</p>
+<p>The column <code>Perc_overall</code> indicates the percentage of a given LU from the total tokens of the <span style="font-variant: small-caps;">happiness is a desired goal</span> metaphor. More linguistic citations for the metaphorical expressions are presented in the thesis.</p>
 <p>From the output of <code><a href="reference/ttr.html">ttr()</a></code> above, which is stored in the <code>ttr_metaphor</code> table, we can retrieve the top-10 metaphors with high type frequencies with the following codes <span class="citation">(Rajeg, <a href="#ref-rajeg_metaphorical_2018">2018</a>, Ch. 6, Table 6-1)</span>; the type frequency of a metaphor indicates the number of different lexical unit types expressing a given metaphor.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># sort by type frequency</span>
 productive_metaphor &lt;-<span class="st"> </span>
@@ -1509,7 +1509,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">10.298</td>
 <td align="right">28.818</td>
 <td align="left">1.520e-29</td>
-<td align="left">1.108e-24</td>
+<td align="left">1.111e-24</td>
 <td align="left">***</td>
 </tr>
 <tr class="even">
@@ -1520,7 +1520,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">5.994</td>
 <td align="right">16.702</td>
 <td align="left">1.985e-17</td>
-<td align="left">1.446e-12</td>
+<td align="left">1.450e-12</td>
 <td align="left">***</td>
 </tr>
 <tr class="odd">
@@ -1531,7 +1531,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">17.522</td>
 <td align="right">15.757</td>
 <td align="left">1.748e-16</td>
-<td align="left">1.274e-11</td>
+<td align="left">1.277e-11</td>
 <td align="left">***</td>
 </tr>
 <tr class="even">
@@ -1542,7 +1542,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">11.835</td>
 <td align="right">10.789</td>
 <td align="left">1.624e-11</td>
-<td align="left">1.184e-06</td>
+<td align="left">1.187e-06</td>
 <td align="left">***</td>
 </tr>
 <tr class="odd">
@@ -1553,7 +1553,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">2.306</td>
 <td align="right">10.278</td>
 <td align="left">5.277e-11</td>
-<td align="left">3.845e-06</td>
+<td align="left">3.855e-06</td>
 <td align="left">***</td>
 </tr>
 <tr class="even">
@@ -1564,7 +1564,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">3.996</td>
 <td align="right">10.114</td>
 <td align="left">7.689e-11</td>
-<td align="left">5.603e-06</td>
+<td align="left">5.617e-06</td>
 <td align="left">***</td>
 </tr>
 <tr class="odd">
@@ -1575,7 +1575,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">2.613</td>
 <td align="right">8.756</td>
 <td align="left">1.756e-09</td>
-<td align="left">1.279e-04</td>
+<td align="left">1.282e-04</td>
 <td align="left">***</td>
 </tr>
 <tr class="even">
@@ -1586,7 +1586,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">2.152</td>
 <td align="right">7.934</td>
 <td align="left">1.165e-08</td>
-<td align="left">8.488e-04</td>
+<td align="left">8.510e-04</td>
 <td align="left">***</td>
 </tr>
 <tr class="odd">
@@ -1597,7 +1597,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">2.613</td>
 <td align="right">7.464</td>
 <td align="left">3.438e-08</td>
-<td align="left">2.504e-03</td>
+<td align="left">2.511e-03</td>
 <td align="left">**</td>
 </tr>
 <tr class="even">
@@ -1608,7 +1608,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">1.691</td>
 <td align="right">7.157</td>
 <td align="left">6.964e-08</td>
-<td align="left">5.072e-03</td>
+<td align="left">5.085e-03</td>
 <td align="left">**</td>
 </tr>
 <tr class="odd">
@@ -1619,7 +1619,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">18.291</td>
 <td align="right">7.136</td>
 <td align="left">7.312e-08</td>
-<td align="left">5.326e-03</td>
+<td align="left">5.339e-03</td>
 <td align="left">**</td>
 </tr>
 <tr class="even">
@@ -1630,7 +1630,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">1.230</td>
 <td align="right">6.507</td>
 <td align="left">3.115e-07</td>
-<td align="left">2.268e-02</td>
+<td align="left">2.274e-02</td>
 <td align="left">*</td>
 </tr>
 <tr class="odd">
@@ -1641,7 +1641,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">1.998</td>
 <td align="right">5.873</td>
 <td align="left">1.341e-06</td>
-<td align="left">9.762e-02</td>
+<td align="left">9.787e-02</td>
 <td align="left">ms</td>
 </tr>
 <tr class="even">
@@ -1652,7 +1652,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">5.072</td>
 <td align="right">5.844</td>
 <td align="left">1.431e-06</td>
-<td align="left">1.042e-01</td>
+<td align="left">1.045e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="odd">
@@ -1663,7 +1663,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">1.383</td>
 <td align="right">5.616</td>
 <td align="left">2.421e-06</td>
-<td align="left">1.762e-01</td>
+<td align="left">1.767e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="even">
@@ -1674,7 +1674,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">7.993</td>
 <td align="right">5.521</td>
 <td align="left">3.016e-06</td>
-<td align="left">2.196e-01</td>
+<td align="left">2.201e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="odd">
@@ -1685,7 +1685,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">2.152</td>
 <td align="right">5.394</td>
 <td align="left">4.040e-06</td>
-<td align="left">2.941e-01</td>
+<td align="left">2.948e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="even">
@@ -1696,7 +1696,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">1.844</td>
 <td align="right">5.171</td>
 <td align="left">6.744e-06</td>
-<td align="left">4.908e-01</td>
+<td align="left">4.921e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="odd">
@@ -1707,7 +1707,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">6.302</td>
 <td align="right">4.896</td>
 <td align="left">1.270e-05</td>
-<td align="left">9.242e-01</td>
+<td align="left">9.266e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="even">
@@ -1718,7 +1718,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <td align="right">0.922</td>
 <td align="right">4.880</td>
 <td align="left">1.319e-05</td>
-<td align="left">9.594e-01</td>
+<td align="left">9.619e-01</td>
 <td align="left">ns</td>
 </tr>
 </tbody>
@@ -1767,7 +1767,7 @@ mdca_colloc &lt;-<span class="st"> </span><span class="kw"><a href="reference/md
 <span class="co">#&gt;  grDevices  * 3.5.1   2018-07-05 local         </span>
 <span class="co">#&gt;  grid         3.5.1   2018-07-05 local         </span>
 <span class="co">#&gt;  gtable       0.2.0   2016-02-26 CRAN (R 3.4.0)</span>
-<span class="co">#&gt;  happyr     * 0.1.0   2018-09-26 local         </span>
+<span class="co">#&gt;  happyr     * 0.1.0   2018-09-27 local         </span>
 <span class="co">#&gt;  haven        1.1.2   2018-06-27 CRAN (R 3.5.0)</span>
 <span class="co">#&gt;  highr        0.7     2018-06-09 cran (@0.7)   </span>
 <span class="co">#&gt;  hms          0.4.2   2018-03-10 cran (@0.4.2) </span>
