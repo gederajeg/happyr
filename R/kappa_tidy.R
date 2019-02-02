@@ -11,6 +11,8 @@
 #' @return A tibble/data frame
 #'
 #' @importFrom tibble enframe
+#' @importFrom dplyr matches
+#' @importFrom dplyr select
 #' @importFrom purrr map_dbl
 #' @importFrom purrr map_int
 #' @importFrom purrr map
@@ -71,7 +73,7 @@ kappa_tidy <- function(
 
   # codes for processing the kappa values per synonyms
   df_split <- split(df, df[[split_by]])
-  df_split <- purrr::map(df_split, function(df) select(df, matches(var_names)))
+  df_split <- purrr::map(df_split, function(df) dplyr::select(df, dplyr::matches(var_names)))
   irr_res <- purrr::map(df_split, function(df) irr::kappa2(df))
   irr_res <- tibble::enframe(irr_res)
 
