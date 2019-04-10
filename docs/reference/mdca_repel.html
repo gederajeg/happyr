@@ -109,7 +109,8 @@
     </div>
 
     <pre class="usage"><span class='fu'>mdca_repel</span>(<span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>filter_by</span> <span class='kw'>=</span> <span class='st'>"cxn"</span>, <span class='kw'>cxn_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>,
-  <span class='kw'>cxn_type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>coll_var</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>coll_type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>min_assocstr</span> <span class='kw'>=</span> -<span class='fl'>2</span>)</pre>
+  <span class='kw'>cxn_type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>coll_var</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>coll_type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>min_assocstr</span> <span class='kw'>=</span> -<span class='fl'>2</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -169,15 +170,15 @@ If it is left <code>NULL</code> (the default), the data is filtered according to
           <span class='kw'>cxn_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>,
           <span class='kw'>cxn_type</span> <span class='kw'>=</span> <span class='st'>"kebahagiaan"</span>,
           <span class='kw'>min_assocstr</span> <span class='kw'>=</span> -<span class='fl'>2</span>)</div><div class='output co'>#&gt; # A tibble: 7 x 8
-#&gt;   metaphors             synonyms      n   exp assocstr p_binomial p_holm  dec  
-#&gt;   &lt;chr&gt;                 &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;
-#&gt; 1 happiness is an (un)… kebahagi…    14 39.7     -6.44 3.629e-07  2.203e… ***  
-#&gt; 2 happiness is a conta… kebahagi…    34 67.4     -6.10 7.959e-07  4.815e… ***  
-#&gt; 3 happiness is a subme… kebahagi…     5 18.6     -4.18 6.566e-05  3.913e… *    
-#&gt; 4 happiness is (un)mix… kebahagi…     3 10.5     -2.43 3.739e-03  1.000e… ns   
-#&gt; 5 happiness is a restr… kebahagi…     0  4.90    -2.36 4.410e-03  1.000e… ns   
-#&gt; 6 happiness is a liqui… kebahagi…    17 29.4     -2.29 5.171e-03  1.000e… ns   
-#&gt; 7 happiness is a locat… kebahagi…    20 31.8     -2.00 9.974e-03  1.000e… ns   </div><div class='input'>
+#&gt;   metaphors              synonyms      n   exp assocstr p_binomial p_holm  dec  
+#&gt;   &lt;chr&gt;                  &lt;chr&gt;     &lt;int&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;
+#&gt; 1 happiness is an (un)v… kebahagi…    14 39.7     -6.44 3.629e-07  2.203e… ***  
+#&gt; 2 happiness is a contai… kebahagi…    34 67.4     -6.10 7.959e-07  4.815e… ***  
+#&gt; 3 happiness is a submer… kebahagi…     5 18.6     -4.18 6.566e-05  3.913e… *    
+#&gt; 4 happiness is (un)mixe… kebahagi…     3 10.5     -2.43 3.739e-03  1.000e… ns   
+#&gt; 5 happiness is a restra… kebahagi…     0  4.90    -2.36 4.410e-03  1.000e… ns   
+#&gt; 6 happiness is a liquid… kebahagi…    17 29.4     -2.29 5.171e-03  1.000e… ns   
+#&gt; 7 happiness is a locati… kebahagi…    20 31.8     -2.00 9.974e-03  1.000e… ns   </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

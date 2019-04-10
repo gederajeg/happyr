@@ -108,10 +108,11 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>get_lu_submappings_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>word</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>print_all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>metaphor_var</span> <span class='kw'>=</span> <span class='st'>"metaphors"</span>,
-  <span class='kw'>submet_var</span> <span class='kw'>=</span> <span class='st'>"submappings"</span>, <span class='kw'>synonym_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>,
-  <span class='kw'>lexunit_var</span> <span class='kw'>=</span> <span class='st'>"lu"</span>, <span class='kw'>lexunit_gloss_var</span> <span class='kw'>=</span> <span class='st'>"lu_gloss"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_lu_submappings_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>word</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>print_all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>metaphor_var</span> <span class='kw'>=</span> <span class='st'>"metaphors"</span>, <span class='kw'>submet_var</span> <span class='kw'>=</span> <span class='st'>"submappings"</span>,
+  <span class='kw'>synonym_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>, <span class='kw'>lexunit_var</span> <span class='kw'>=</span> <span class='st'>"lu"</span>,
+  <span class='kw'>lexunit_gloss_var</span> <span class='kw'>=</span> <span class='st'>"lu_gloss"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -178,37 +179,37 @@
     <pre class="examples"><div class='input'><span class='co'># for all synonyms</span>
 <span class='fu'>get_lu_submappings_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"liquid in a container"</span>,
                          <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; # A tibble: 37 x 6
-#&gt;    submappings       lu     lu_gloss       n perc_expr_overa… perc_expr_by_sub…
-#&gt;    &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;      &lt;int&gt;            &lt;dbl&gt;             &lt;dbl&gt;
-#&gt;  1 expression of ha… terpa… to be spu…    43            27.6                 43
-#&gt;  2 expression of ha… luapan overflow      25            16.0                 25
-#&gt;  3 expression of ha… panca… to spurt …     9             5.77                 9
-#&gt;  4 expression of ha… salur… to funnel…     4             2.56                 4
-#&gt;  5 expression of ha… panca… a spurtin…     3             1.92                 3
-#&gt;  6 expression of ha… curah… outpouring     2             1.28                 2
-#&gt;  7 expression of ha… tertu… to be pou…     2             1.28                 2
-#&gt;  8 expression of ha… tuang… to pour o…     2             1.28                 2
-#&gt;  9 expression of ha… air b… flood          1             0.64                 1
-#&gt; 10 expression of ha… alirk… to flow a…     1             0.64                 1
-#&gt; # ... with 27 more rows</div><div class='input'>
+#&gt;    submappings       lu     lu_gloss        n perc_expr_overa… perc_expr_by_sub…
+#&gt;    &lt;chr&gt;             &lt;chr&gt;  &lt;chr&gt;       &lt;int&gt;            &lt;dbl&gt;             &lt;dbl&gt;
+#&gt;  1 expression of ha… terpa… to be spur…    43            27.6                 43
+#&gt;  2 expression of ha… luapan overflow       25            16.0                 25
+#&gt;  3 expression of ha… panca… to spurt s…     9             5.77                 9
+#&gt;  4 expression of ha… salur… to funnel …     4             2.56                 4
+#&gt;  5 expression of ha… panca… a spurting…     3             1.92                 3
+#&gt;  6 expression of ha… curah… outpouring      2             1.28                 2
+#&gt;  7 expression of ha… tertu… to be pour…     2             1.28                 2
+#&gt;  8 expression of ha… tuang… to pour ou…     2             1.28                 2
+#&gt;  9 expression of ha… air b… flood           1             0.64                 1
+#&gt; 10 expression of ha… alirk… to flow an…     1             0.64                 1
+#&gt; # … with 27 more rows</div><div class='input'>
 <span class='co'># for \emph{kegembiraan} 'joy'</span>
 <span class='fu'>get_lu_submappings_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"liquid in a container"</span>,
                          <span class='kw'>word</span> <span class='kw'>=</span> <span class='st'>"kegembiraan"</span>,
                          <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; # A tibble: 12 x 7
-#&gt;    synonyms  submappings lu    lu_gloss     n perc_expr_overa… perc_expr_by_su…
-#&gt;    &lt;chr&gt;     &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;    &lt;int&gt;            &lt;dbl&gt;            &lt;dbl&gt;
-#&gt;  1 kegembir… expression… luap… overflow    21            31.3             55.3 
-#&gt;  2 kegembir… expression… terp… to be s…    10            14.9             26.3 
-#&gt;  3 kegembir… expression… tuan… to pour…     2             2.99             5.26
-#&gt;  4 kegembir… expression… air … flood        1             1.49             2.63
-#&gt;  5 kegembir… expression… lamp… to gush…     1             1.49             2.63
-#&gt;  6 kegembir… expression… memb… to over…     1             1.49             2.63
-#&gt;  7 kegembir… expression… panc… to spur…     1             1.49             2.63
-#&gt;  8 kegembir… expression… tert… to be p…     1             1.49             2.63
-#&gt;  9 kegembir… high inten… limp… to brim…     1             1.49           100   
-#&gt; 10 kegembir… intensifie… luap… to boil…    19            28.4             76   
-#&gt; 11 kegembir… intensifie… melu… to boil…     6             8.96            24   
-#&gt; 12 kegembir… preventing… bend… to dam …     3             4.48           100   </div></pre>
+#&gt;    synonyms  submappings  lu    lu_gloss     n perc_expr_overa… perc_expr_by_su…
+#&gt;    &lt;chr&gt;     &lt;chr&gt;        &lt;chr&gt; &lt;chr&gt;    &lt;int&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+#&gt;  1 kegembir… expression … luap… overflow    21            31.3             55.3 
+#&gt;  2 kegembir… expression … terp… to be s…    10            14.9             26.3 
+#&gt;  3 kegembir… expression … tuan… to pour…     2             2.99             5.26
+#&gt;  4 kegembir… expression … air … flood        1             1.49             2.63
+#&gt;  5 kegembir… expression … lamp… to gush…     1             1.49             2.63
+#&gt;  6 kegembir… expression … memb… to over…     1             1.49             2.63
+#&gt;  7 kegembir… expression … panc… to spur…     1             1.49             2.63
+#&gt;  8 kegembir… expression … tert… to be p…     1             1.49             2.63
+#&gt;  9 kegembir… high intens… limp… to brim…     1             1.49           100   
+#&gt; 10 kegembir… intensified… luap… to boil…    19            28.4             76   
+#&gt; 11 kegembir… intensified… melu… to boil…     6             8.96            24   
+#&gt; 12 kegembir… preventing … bend… to dam …     3             4.48           100   </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
