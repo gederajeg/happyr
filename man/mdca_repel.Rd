@@ -5,7 +5,8 @@
 \title{Repelled items from MDCA}
 \usage{
 mdca_repel(df = NULL, filter_by = "cxn", cxn_var = "synonyms",
-  cxn_type = NULL, coll_var = NULL, coll_type = NULL, min_assocstr = -2)
+  cxn_type = NULL, coll_var = NULL, coll_type = NULL,
+  min_assocstr = -2)
 }
 \arguments{
 \item{df}{output data frame from \code{\link{mdca}}.}
