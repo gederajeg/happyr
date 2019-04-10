@@ -7,7 +7,7 @@ happyr
 
 The goal of happyr is to document the R codes and the dataset for the quantitative analyses in Rajeg's ([2019](#ref-rajeg_metaphorical_2018)) PhD thesis (submitted for examination on 27 September 2018 and passed without amendements required for the award of the degree on 1 April 2019). The study focuses on metaphors for <span style="font-variant:small-caps;">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the *Indonesian Leipzig Corpora Collection* (Biemann, Heyer, Quasthoff, & Richter, [2007](#ref-biemann_leipzig_2007); Goldhahn, Eckart, & Quasthoff, [2012](#ref-goldhahn_building_2012); Quasthoff & Goldhahn, [2013](#ref-quasthoff_indonesian_2013)). The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details).
 
-The happyr package is based on the core packages in the [tidyverse](https://www.tidyverse.org), and is built under R version 3.5.1 (2018-07-02) -- "Feather Spray" (see the [**Session Info**](#session-info) section at the bottom of the page for further details on the dependencies).
+The happyr package is based on the core packages in the [tidyverse](https://www.tidyverse.org), and is built under R version 3.5.3 (2019-03-11) -- "Great Truth" (see the [**Session Info**](#session-info) section at the bottom of the page for further details on the dependencies).
 
 Acknowledgement
 ---------------
@@ -499,7 +499,7 @@ devtools::session_info()
 #>  collate  en_US.UTF-8                 
 #>  ctype    en_US.UTF-8                 
 #>  tz       Australia/Melbourne         
-#>  date     2019-04-08                  
+#>  date     2019-04-10                  
 #> 
 #> ─ Packages ──────────────────────────────────────────────────────────────
 #>  package     * version date       lib source        
@@ -595,7 +595,7 @@ Oster, U. (2018). Emotions in motion: Towards a corpus-based description of the 
 
 Quasthoff, U., & Goldhahn, D. (2013). *Indonesian corpora* (Technical report series on corpus building No. 7). Leipzig, Germany: Abteilung Automatische Sprachverarbeitung, Institut für Informatik, Universität Leipzig. Retrieved from <http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf>
 
-Rajeg, G. P. W. (2019). *Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for <span style="font-variant:small-caps;">Happiness</span>* (PhD thesis). Monash University, Australia, Clayton, VIC.
+Rajeg, G. P. W. (2019). *Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for <span style="font-variant:small-caps;">Happiness</span>* (PhD thesis). Monash University, Australia, Clayton, VIC. doi:/[10.26180/5cac231a97fb1](https://doi.org/10.26180/5cac231a97fb1)
 
 Stefanowitsch, A. (2013). Collostructional analysis. In T. Hoffmann & G. Trousdale (Eds.), *The Oxford handbook of Construction Grammar* (pp. 290–306). Oxford: Oxford University Press. doi:[10.1093/oxfordhb/9780195396683.013.0016](https://doi.org/10.1093/oxfordhb/9780195396683.013.0016)
 
