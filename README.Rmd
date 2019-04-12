@@ -43,6 +43,13 @@ if(!require(devtools)) install.packages("devtools")
 devtools::install_github("gederajeg/happyr")
 ```
 
+## Citing *happyr*
+
+```{r happyr-citation, eval = TRUE, echo = TRUE}
+citation("happyr")
+```
+
+
 ## Examples
 
 First, load happyr and tidyverse packages in R.

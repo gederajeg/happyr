@@ -2,20 +2,24 @@ bibentry(
          bibtype = "Manual",
          title = 'happyr: The accompanying R package for Rajeg\'s (2019) PhD Thesis titled "Metaphorical profiles and near synonyms: A corpus-based study of Indonesian words for HAPPINESS"',
          author = person(given = "Gede Primahadi Wijaya", family = "Rajeg", role = c("aut", "cre"), email = c("primahadiwijaya@gmail.com", "primahadi_wijaya@unud.ac.id"), comment = c(ORCID = "0000-0002-2047-8621")),
-         year = "2018",
+         year = "2019",
          url = c("https://gederajeg.github.io/happyr/"),
-         note = "R package version 0.1.0",
-         key = "rajeg_happyr_2018",
-         header = "To cite `happyr` in publication, please use:",
-         textVersion = paste('Rajeg, G. P. W. (2018). happyr: The accompanying R package for Rajeg\'s (2019) PhD Thesis titled \"Metaphorical profiles and near synonyms: A corpus-based study of Indonesian words for HAPPINESS\". R package version 0.1.0. url: https://gederajeg.github.io/happyr/'))
+         note = "R package version 0.1.1",
+         doi = "10.26180/5be404d6336da",
+         key = "rajeg_happyr_2019",
+         header = "To cite `happyr` in publication (if in 'Unified style sheet for linguistics' style), please use:",
+         textVersion = paste('Rajeg, Gede Primahadi Wijaya. 2019. happyr: The accompanying R package for Rajeg\'s (2019) PhD Thesis titled \"Metaphorical profiles and near synonyms: A corpus-based study of Indonesian words for HAPPINESS\". R package version 0.1.1. doi:10.26180/5be404d6336da (URL:http://doi.org/10.26180/5be404d6336da). https://gederajeg.github.io/happyr/'))
 
 bibentry(
         bibtype = "PhdThesis",
         title = "Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS",
         author = person(given = "Gede Primahadi Wijaya", family = "Rajeg", role = c("aut"), comment = c(ORCID = "0000-0002-2047-8621")),
         year = "2019",
+        doi = "10.26180/5cac231a97fb1",
         school = "School of Languages, Literatures, Cultures and Linguistics",
         address = "Monash University, Australia",
         institution = "Monash University, Australia",
-        key = "rajeg_metaphorical_profiles_2018"
+        key = "rajeg_metaphorical_profiles_2019",
+        header = "Please also cite the document (PhD Thesis) associated with the package as follows (still if in 'Unified style sheet for linguistics' style):",
+        textVersion = paste("Rajeg, Gede Primahadi Wijaya. 2019. Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS. Clayton, VIC: Monash University, Australia PhD thesis. doi: 10.26180/5cac231a97fb1 (URL:http://doi.org/10.26180/5cac231a97fb1).")
 )

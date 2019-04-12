@@ -27,6 +27,38 @@ if(!require(devtools)) install.packages("devtools")
 devtools::install_github("gederajeg/happyr")
 ```
 
+Citing *happyr*
+---------------
+
+``` r
+citation("happyr")
+#> 
+#> To cite `happyr` in publication (if in 'Unified style sheet for
+#> linguistics' style), please use:
+#> 
+#>   Rajeg, Gede Primahadi Wijaya. 2019. happyr: The accompanying R
+#>   package for Rajeg's (2019) PhD Thesis titled "Metaphorical
+#>   profiles and near synonyms: A corpus-based study of Indonesian
+#>   words for HAPPINESS". R package version 0.1.1.
+#>   doi:10.26180/5be404d6336da
+#>   (URL:http://doi.org/10.26180/5be404d6336da).
+#>   https://gederajeg.github.io/happyr/
+#> 
+#> Please also cite the document (PhD Thesis) associated with the
+#> package as follows (still if in 'Unified style sheet for
+#> linguistics' style):
+#> 
+#>   Rajeg, Gede Primahadi Wijaya. 2019. Metaphorical profiles and
+#>   near-synonyms: A corpus-based study of Indonesian words for
+#>   HAPPINESS. Clayton, VIC: Monash University, Australia PhD
+#>   thesis. doi: 10.26180/5cac231a97fb1
+#>   (URL:http://doi.org/10.26180/5cac231a97fb1).
+#> 
+#> To see these entries in BibTeX format, use 'print(<citation>,
+#> bibtex=TRUE)', 'toBibtex(.)', or set
+#> 'options(citation.bibtex.max=999)'.
+```
+
 Examples
 --------
 
@@ -522,7 +554,7 @@ devtools::session_info()
 #>  ggplot2     * 3.1.0   2018-10-25 [1] CRAN (R 3.5.0)
 #>  glue          1.3.0   2018-07-17 [1] CRAN (R 3.5.0)
 #>  gtable        0.2.0   2016-02-26 [1] CRAN (R 3.4.0)
-#>  happyr      * 0.1.0   2019-04-12 [1] local         
+#>  happyr      * 0.1.1   2019-04-12 [1] local         
 #>  haven         1.1.2   2018-06-27 [1] CRAN (R 3.5.0)
 #>  highr         0.7     2018-06-09 [1] CRAN (R 3.4.4)
 #>  hms           0.4.2   2018-03-10 [1] CRAN (R 3.4.4)
