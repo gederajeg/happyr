@@ -12,7 +12,7 @@ The happyr package is based on the core packages in the [tidyverse](https://www.
 Acknowledgement
 ---------------
 
-The thesis is supervised by Associate Professor [Alice Gaby](http://profiles.arts.monash.edu.au/alice-gaby/) (main), Dr. [Howard Manns](http://profiles.arts.monash.edu.au/howard-manns/) (associate), and Dr. [Simon Musgrave](http://profiles.arts.monash.edu.au/simon-musgrave/) (associate). The panel members during the author's candidature milestones consist of Dr. [Anna Margetts](http://profiles.arts.monash.edu.au/anna-margetts/), Dr. [Réka Benczes](https://www.researchgate.net/profile/Reka_Benczes), and Prof. [John Newman](http://profiles.arts.monash.edu.au/john-newman/). The thesis is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. *Monash International Postgraduate Research Scholarships* (MIPRS, now MITS) and *Monash Graduate Scholarships* (MGS)). The author also benefits from generous research and travel fundings from the [Monash Arts Graduate Research](https://arts.monash.edu/graduate-research/) and the [Monash Graduate Research Office](https://www.monash.edu/graduate-research).
+The thesis is supervised by Associate Professor [Alice Gaby](https://bit.ly/2D91Lp9) (main), Dr. [Howard Manns](https://bit.ly/2UelYPY) (associate), and Dr. [Simon Musgrave](https://bit.ly/2Z1tCAV) (associate). The panel members during the author's candidature milestones consist of Dr. [Anna Margetts](https://research.monash.edu/en/persons/anna-margetts), Dr. [Réka Benczes](https://www.researchgate.net/profile/Reka_Benczes), and Prof. [John Newman](https://www.johnnewm.org). The thesis is fully funded by [Monash University](https://www.monash.edu), Australia through the [International Graduate Research Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships) schemes (i.e. *Monash International Postgraduate Research Scholarships* (MIPRS, now MITS) and *Monash Graduate Scholarships* (MGS)). The author also benefits from generous research and travel fundings from the [Monash Arts Graduate Research](https://arts.monash.edu/graduate-research/) and the [Monash Graduate Research Office](https://www.monash.edu/graduate-research).
 
 Installation
 ------------
@@ -36,12 +36,12 @@ First, load happyr and tidyverse packages in R.
 # load the required packages
 library(happyr)
 library(tidyverse)
-#> ── Attaching packages ──────────────────────────────────────── tidyverse 1.2.1 ──
+#> ── Attaching packages ───────────────────────────────────────────────────────── tidyverse 1.2.1 ──
 #> ✔ ggplot2 3.1.0       ✔ purrr   0.3.0  
 #> ✔ tibble  2.0.1       ✔ dplyr   0.8.0.1
 #> ✔ tidyr   0.8.3       ✔ stringr 1.4.0  
 #> ✔ readr   1.3.1       ✔ forcats 0.3.0
-#> ── Conflicts ─────────────────────────────────────────── tidyverse_conflicts() ──
+#> ── Conflicts ──────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
 ```
@@ -499,7 +499,7 @@ devtools::session_info()
 #>  collate  en_US.UTF-8                 
 #>  ctype    en_US.UTF-8                 
 #>  tz       Australia/Melbourne         
-#>  date     2019-04-10                  
+#>  date     2019-04-12                  
 #> 
 #> ─ Packages ──────────────────────────────────────────────────────────────
 #>  package     * version date       lib source        
@@ -522,7 +522,7 @@ devtools::session_info()
 #>  ggplot2     * 3.1.0   2018-10-25 [1] CRAN (R 3.5.0)
 #>  glue          1.3.0   2018-07-17 [1] CRAN (R 3.5.0)
 #>  gtable        0.2.0   2016-02-26 [1] CRAN (R 3.4.0)
-#>  happyr      * 0.1.0   2018-09-27 [1] local         
+#>  happyr      * 0.1.0   2019-04-12 [1] local         
 #>  haven         1.1.2   2018-06-27 [1] CRAN (R 3.5.0)
 #>  highr         0.7     2018-06-09 [1] CRAN (R 3.4.4)
 #>  hms           0.4.2   2018-03-10 [1] CRAN (R 3.4.4)
