@@ -9,5 +9,6 @@
 ^_pkgdown\.yml$
 ^docs$
 ^happyr_to_do$
+^old_slow_mdca.R$
 ^apa-old-doi.*\.csl$
 ^appveyor\.yml$
