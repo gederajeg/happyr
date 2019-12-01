@@ -28,7 +28,7 @@
 #'
 #' If \code{concise_output} is \code{FALSE}, \code{mdca} returns the total tokens in the data, total frequency of each collexeme/collocate, total frequency of each construction, the sum of absolute deviation of the collexeme/collocate, the construction name, showing the largest deviation from the expected, co-occurrence frequency with the collexeme, expected probability of the co-occurrence, and the direction of the deviation from the expected frequency (i.e., whether a collexeme is attracted or repelled by a construction).
 #' @details The \code{mdca} function is built on top of the core members of the \code{tidyverse} suit of packages.
-#'     The computation of the \emph{Association Strength} is based on the \code{\link[stats]{binom.test}} function (cf. Hilpert, 2006). The computation of the corrected \emph{p}-value of the one-tailed Binomial Test with Holm's method is performed using \code{\link[stats]{p.adjust}}.
+#'     The computation of the \emph{Association Strength} is based on the \code{\link[stats]{dbinom}} function (Gries, 2009, pp. 41-42; cf. Hilpert, 2006). The computation of the corrected \emph{p}-value of the one-tailed Binomial Test with Holm's method is performed using \code{\link[stats]{p.adjust}}.
 #'
 #'     There is a well-known interactive R script to perform MDCA by Stefan Th. Gries that is called \href{http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html}{\emph{Coll.analysis 3.5}} (Gries, 2014). The script includes the other codes to compute the family of methods of \emph{Collostructional Analyses}. The \code{mdca} function in happyr aims to achieve the same analytical goal as that in \emph{Coll.analysis 3.5}, but is designed differently in terms of its usage and the internal codes, as it is based on the \href{https://www.tidyverse.org/}{tidyverse}.
 #'
@@ -58,8 +58,8 @@
 #' @importFrom dplyr group_by_
 #' @importFrom dplyr if_else
 #' @importFrom tidyr complete_
-#' @importFrom stats binom.test
 #' @importFrom stats p.adjust
+#' @importFrom stats dbinom
 #' @importFrom purrr pmap
 #' @importFrom purrr map_dbl
 #' @importFrom dplyr summarise
@@ -95,12 +95,21 @@ mdca <- function(df = NULL,
 
   assertthat::assert_that(!is.null(df), msg = "The `df` argument is NULL; please specify it with the data frame input!")
 
-  # quiets concerns of R CMD check re: the .'s that appear in pipelines
-  # . <- "shut_up" not needed as all pipes have been removed
-
   # columns names for tidyeval
   cxn_var <- rlang::sym(cxn_var)
   coll_var <- rlang::sym(coll_var)
+  cxn_sum <- dplyr::quo(cxn_sum)
+  colloc_sum <- dplyr::quo(colloc_sum)
+  dbase_token <- dplyr::quo(dbase_token)
+  p_binomial <- dplyr::quo(p_binomial)
+  p_holm <- dplyr::quo(p_holm)
+  dec <- dplyr::quo(dec)
+  assocstr <- dplyr::quo(assocstr)
+  exp <- dplyr::quo(exp)
+  exp_prob <- dplyr::quo(exp_prob)
+  alt <- dplyr::quo(alt)
+  obs_exp <- dplyr::quo(obs_exp)
+  abs_assocstr <- dplyr::quo(abs_assocstr)
 
   # function IF MDCA starts here
   # cross-tab the relevant variables
@@ -111,49 +120,65 @@ mdca <- function(df = NULL,
     co_occ_tb <- tidyr::complete(df, !!coll_var, !!cxn_var, fill = list(n = 0L))
   }
 
-  # get the total freq of the CxN
-  cxn_sum <- dplyr::summarise(dplyr::group_by(co_occ_tb, !!cxn_var), cxn_sum = sum(.data$n))
-
-  # left join the total freq of the CxN to the data base
-  co_occ_tb <- dplyr::left_join(co_occ_tb, cxn_sum, by = dplyr::quo_name(cxn_var))
-
-  # get the total freq of the COLLOCATES
-  colloc_sum <- dplyr::summarise(dplyr::group_by(co_occ_tb, !!coll_var), colloc_sum = sum(.data$n))
-
-  # left join the total freq of the COLLOCATES to the data base
-  co_occ_tb <- dplyr::left_join(co_occ_tb, colloc_sum, by = dplyr::quo_name(coll_var))
-
   # get the total database token/sum of the database
   if (already_count_table == FALSE) {
-    co_occ_tb <- dplyr::mutate(co_occ_tb, dbase_token = dim(df)[1])
+    co_occ_tb <- dplyr::mutate(co_occ_tb, !!dplyr::quo_name(dbase_token) := dim(df)[1])
   } else {
-    co_occ_tb <- dplyr::mutate(co_occ_tb, dbase_token = sum(.data$n))
+    co_occ_tb <- dplyr::mutate(co_occ_tb, !!dplyr::quo_name(dbase_token) := sum(.data$n))
   }
 
-  # get the EXPECTED FREQUENCY, EXPECTED PROBABILITY, OBS_EXP DIFFERENCE, and BINOMIAL ALTERNATIVES
-  co_occ_tb <- dplyr::mutate(co_occ_tb, exp = (cxn_sum * colloc_sum)/.data$dbase_token, # exp.freq
-                             exp_prob = exp/colloc_sum, # exp_prob
-                             obs_exp = '=',
+  # get the total freq. of the construction/node word
+  co_occ_tb <- dplyr::mutate(dplyr::group_by(co_occ_tb, !!cxn_var),
+                             !!dplyr::quo_name(cxn_sum) := sum(.data$n))
+
+  # get the total freq. of the collocates/collexemes/context words
+  co_occ_tb <- dplyr::mutate(dplyr::group_by(co_occ_tb, !!coll_var),
+                             !!dplyr::quo_name(colloc_sum) := sum(.data$n))
+
+  # get the exp.freq and exp.prob
+  co_occ_tb <- dplyr::mutate(dplyr::ungroup(co_occ_tb),
+                             !!dplyr::quo_name(exp) := (cxn_sum * colloc_sum)/.data$dbase_token,
+                             !!dplyr::quo_name(exp_prob) := exp/colloc_sum,
+                             !!dplyr::quo_name(obs_exp) := '=',
                              obs_exp = dplyr::if_else(n > exp, '>', .data$obs_exp), # obs_exp diff.
                              obs_exp = dplyr::if_else(n < exp, '<', .data$obs_exp), # obs_exp diff.
-                             alt = dplyr::if_else(n >= exp, 'greater', 'less')) # obs_exp diff.
+                             !!dplyr::quo_name(alt) := dplyr::if_else(n >= exp, 'greater', 'less'))
 
-  # compute the ONE-TAIL EXACT BINOMIAL TEST and ASSOCIATION STRENGTH VALUE
-  p_binomial <- dplyr::quo(p_binomial)
-  assocstr <- dplyr::quo(assocstr)
-  abs_assocstr <- dplyr::quo(abs_assocstr)
-  co_occ_tb <- tidyr::nest(dplyr::group_by(co_occ_tb, !!coll_var, !!cxn_var),
-                           data = c(.data$n, .data$cxn_sum, .data$colloc_sum, .data$dbase_token,
-                                    .data$exp, .data$exp_prob, .data$obs_exp, .data$alt))
+  # binomial test function
+  binomial_test <- function(n, colloc_sum, exp_prob, alt) {
+    if (alt == "greater") {
+      pbin <- sum(dbinom(n:colloc_sum, colloc_sum, exp_prob))
+    } else {
+      pbin <- sum(dbinom(0:n, colloc_sum, exp_prob))
+    }
+    return(pbin)
+  }
+
+  # association strength function
+  assoc_strength <- function(n, exp, p_binomial, assocstr_digit = assocstr_digit) {
+    assocstr <- dplyr::if_else(n >= exp,
+                               round(-log10(p_binomial), assocstr_digit),
+                               round(log10(p_binomial), assocstr_digit))
+    return(assocstr)
+  }
+
+  # run binomial test, association strength computation, and Holm's adjustment
+  # cf. http://rcompanion.org/rcompanion/f_01.html for example with `p.adjust()`
   co_occ_tb <- dplyr::mutate(co_occ_tb,
-                             !!dplyr::quo_name(p_binomial) := purrr::map_dbl(data, binomial_test)) # binomial test
-  co_occ_tb <- tidyr::nest(dplyr::group_by(tidyr::unnest(co_occ_tb, .data$data), !!coll_var, !!cxn_var),
-                           data = c(.data$n, .data$cxn_sum, .data$colloc_sum, .data$dbase_token,
-                                    .data$exp, .data$exp_prob, .data$obs_exp, .data$alt, .data$p_binomial))
-  co_occ_tb <- dplyr::mutate(co_occ_tb,
-                             !!dplyr::quo_name(assocstr) := purrr::map_dbl(data, assoc_strength, 3L), # association strength
-                             !!dplyr::quo_name(abs_assocstr) := abs(.data$assocstr))
-  co_occ_tb <- tidyr::unnest(co_occ_tb, .data$data)
+                             !!dplyr::quo_name(p_binomial) := purrr::pmap_dbl(list(n, colloc_sum, exp_prob, alt),
+                                                                              binomial_test),
+                             !!dplyr::quo_name(assocstr) := purrr::pmap_dbl(list(n, exp, p_binomial),
+                                                                            assoc_strength, assocstr_digits),
+                             !!dplyr::quo_name(abs_assocstr) := abs(.data$assocstr),
+                             !!dplyr::quo_name(p_holm) := stats::p.adjust(p_binomial, "holm"),
+                             !!dplyr::quo_name(dec) := "ns", # from Gries' (2004) HCFA script
+                             dec = dplyr::if_else(p_holm < 0.1, "ms", dec), # from Gries' (2004) HCFA script
+                             dec = dplyr::if_else(p_holm < 0.05, "*", dec), # from Gries' (2004) HCFA script
+                             dec = dplyr::if_else(p_holm < 0.01, "**", dec), # from Gries' (2004) HCFA script
+                             dec = dplyr::if_else(p_holm < 0.001, "***", dec))
+  # Gries, Stefan Th. 2004. HCFA 3.2. A program for R. URL: <http://www.linguistics.ucsb.edu/faculty/stgries/>
+  # Gries' HCFA script is available from the following book:
+  # Gries, Stefan Th. (2009). Statistics for linguistics with R: A practical introduction. Berlin: Mouton de Gruyter.
 
   # get the sum of absolute deviation
   dbase_to_left_join <- dplyr::group_by(co_occ_tb, !!coll_var)
@@ -177,19 +202,6 @@ mdca <- function(df = NULL,
   co_occ_tb <- dplyr::ungroup(co_occ_tb)
   co_occ_tb <- dplyr::select(co_occ_tb, -!!abs_assocstr)
   co_occ_tb <- dplyr::left_join(co_occ_tb, df_for_largest_dev_res, by = dplyr::quo_name(coll_var))
-
-  # compute HOLM'S ADJUSTED P-VALUE
-  # cf. http://rcompanion.org/rcompanion/f_01.html for example with `p.adjust()`
-  co_occ_tb <- dplyr::mutate(co_occ_tb,
-                             p_holm = stats::p.adjust(p = .data$p_binomial, method = "holm"),
-                             dec = "ns", # from Gries' (2004) HCFA script
-                             dec = dplyr::if_else(.data$p_holm < 0.1, "ms", .data$dec), # from Gries' (2004) HCFA script
-                             dec = dplyr::if_else(.data$p_holm < 0.05, "*", .data$dec), # from Gries' (2004) HCFA script
-                             dec = dplyr::if_else(.data$p_holm < 0.01, "**", .data$dec), # from Gries' (2004) HCFA script
-                             dec = dplyr::if_else(.data$p_holm < 0.001, "***", .data$dec)) # from Gries' (2004) HCFA script
-  # Gries, Stefan Th. 2004. HCFA 3.2. A program for R. URL: <http://www.linguistics.ucsb.edu/faculty/stgries/>
-  # Gries' HCFA script is available from the following book:
-  # Gries, Stefan Th. (2009). Statistics for linguistics with R: A practical introduction. Berlin: Mouton de Gruyter.
 
   # outputting the results
   if (concise_output == TRUE) {
@@ -234,34 +246,4 @@ mdca <- function(df = NULL,
     )
     return(x)
   }
-}
-
-#' Binomial test
-#'
-#' @description A utility function to perform one-tailed Binomial Test in a row-wise, tidy fashion.
-#'     It is called internally by \code{\link{mdca}}.
-#' @param df A nested/list data frame containing input data for the Binomial Test
-#'
-#' @return A double numeric vector of p-value from the Binomial Test
-#' @importFrom stats binom.test
-
-binomial_test <- function(df) {
-  p_binomial <- stats::binom.test(df$n, df$colloc_sum, df$exp_prob, df$alt)$p.value
-  return(p_binomial)
-}
-
-#' Association strength
-#'
-#' @description A utility function to derive association strength value in a row-wise, tidy fashion.
-#'     It is derived via log-transformation to the base of 10L of the Binomial Test p-value.
-#'     The function is called internally by \code{\link{mdca}}.
-#' @param df A nested/list data frame containing input data for transforming the p-value of the Binomial Test into association strength value
-#' @param assocstr_digit Integer for the floating points/digits of the \emph{Association Strength}. The default is \code{3L}, which is passed-on from \code{\link{mdca}}.
-#'
-#' @return A double numeric vector of association strength
-#' @importFrom dplyr if_else
-
-assoc_strength <- function(df, assocstr_digit = assocstr_digit) {
-  assocstr <- dplyr::if_else(df$n >= df$exp, round(-log10(df$p_binomial), assocstr_digit), round(log10(df$p_binomial), assocstr_digit))
-  return(assocstr)
 }

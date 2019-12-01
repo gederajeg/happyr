@@ -50,7 +50,7 @@ Function to perform \emph{Multiple Distinctive Collexeme Analysis} (MDCA) in Raj
 }
 \details{
 The \code{mdca} function is built on top of the core members of the \code{tidyverse} suit of packages.
-    The computation of the \emph{Association Strength} is based on the \code{\link[stats]{binom.test}} function (cf. Hilpert, 2006). The computation of the corrected \emph{p}-value of the one-tailed Binomial Test with Holm's method is performed using \code{\link[stats]{p.adjust}}.
+    The computation of the \emph{Association Strength} is based on the \code{\link[stats]{dbinom}} function (Gries, 2009, pp. 41-42; cf. Hilpert, 2006). The computation of the corrected \emph{p}-value of the one-tailed Binomial Test with Holm's method is performed using \code{\link[stats]{p.adjust}}.
 
     There is a well-known interactive R script to perform MDCA by Stefan Th. Gries that is called \href{http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html}{\emph{Coll.analysis 3.5}} (Gries, 2014). The script includes the other codes to compute the family of methods of \emph{Collostructional Analyses}. The \code{mdca} function in happyr aims to achieve the same analytical goal as that in \emph{Coll.analysis 3.5}, but is designed differently in terms of its usage and the internal codes, as it is based on the \href{https://www.tidyverse.org/}{tidyverse}.
 
