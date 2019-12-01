@@ -72,7 +72,7 @@
 <div id="happyr" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#happyr" class="anchor"></a>happyr</h1></div>
-<p>The goal of happyr is to document the R codes and the dataset for the quantitative analyses in Rajeg’s (<a href="#ref-rajeg_metaphorical_2018">2019</a>) PhD thesis (submitted for examination on 27 September 2018 and passed without amendements required for the award of the degree on 1 April 2019). The study focuses on metaphors for <span style="font-variant:small-caps;">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> (Biemann, Heyer, Quasthoff, &amp; Richter, <a href="#ref-biemann_leipzig_2007">2007</a>; Goldhahn, Eckart, &amp; Quasthoff, <a href="#ref-goldhahn_building_2012">2012</a>; Quasthoff &amp; Goldhahn, <a href="#ref-quasthoff_indonesian_2013">2013</a>). The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details).</p>
+<p>The goal of happyr is to document the R codes and the dataset for the quantitative analyses in Rajeg’s (<a href="#ref-rajeg_metaphorical_2018">2019</a>) PhD thesis (submitted for examination on 27 September 2018 and passed without amendements required for the award of the degree on 1 April 2019). The study focuses on metaphors for <span class="smallcaps">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> (Biemann, Heyer, Quasthoff, &amp; Richter, <a href="#ref-biemann_leipzig_2007">2007</a>; Goldhahn, Eckart, &amp; Quasthoff, <a href="#ref-goldhahn_building_2012">2012</a>; Quasthoff &amp; Goldhahn, <a href="#ref-quasthoff_indonesian_2013">2013</a>). The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details).</p>
 <p>The happyr package is based on the core packages in the <a href="https://www.tidyverse.org">tidyverse</a>, and is built under R version 3.5.3 (2019-03-11) – “Great Truth” (see the <a href="#session-info"><strong>Session Info</strong></a> section at the bottom of the page for further details on the dependencies).</p>
 <div id="acknowledgement" class="section level2">
 <h2 class="hasAnchor">
@@ -127,12 +127,12 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="co"># load the required packages</span></a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(happyr)</a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidyverse)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; ── Attaching packages ───────────────────────────────────────────────────────── tidyverse 1.2.1 ──</span></a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; ✔ ggplot2 3.1.0       ✔ purrr   0.3.0  </span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; ✔ tibble  2.0.1       ✔ dplyr   0.8.0.1</span></a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; ✔ tidyr   0.8.3       ✔ stringr 1.4.0  </span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; ✔ readr   1.3.1       ✔ forcats 0.3.0</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; ── Conflicts ──────────────────────────────────────────────────────────── tidyverse_conflicts() ──</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; ── Attaching packages ───────────────────────────────────────────── tidyverse 1.3.0 ──</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; ✔ ggplot2 3.2.1     ✔ purrr   0.3.3</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; ✔ tibble  2.1.3     ✔ dplyr   0.8.3</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; ✔ tidyr   1.0.0     ✔ stringr 1.4.0</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; ✔ readr   1.3.1     ✔ forcats 0.4.0</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; ── Conflicts ──────────────────────────────────────────────── tidyverse_conflicts() ──</span></a>
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; ✖ dplyr::filter() masks stats::filter()</span></a>
 <a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; ✖ dplyr::lag()    masks stats::lag()</span></a></code></pre></div>
 <div id="chapter-3---interrater-agreement-computation" class="section level3">
@@ -180,7 +180,7 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a possessable object</span></td>
+<td align="left"><span class="smallcaps">happiness is a possessable object</span></td>
 <td align="right">749</td>
 <td align="right">63</td>
 <td align="right">20.59</td>
@@ -189,7 +189,7 @@
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a contained entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a contained entity</span></td>
 <td align="right">358</td>
 <td align="right">26</td>
 <td align="right">9.84</td>
@@ -198,7 +198,7 @@
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a desired goal</span></td>
+<td align="left"><span class="smallcaps">happiness is a desired goal</span></td>
 <td align="right">293</td>
 <td align="right">42</td>
 <td align="right">8.05</td>
@@ -207,7 +207,7 @@
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an (un)veiled object</span></td>
+<td align="left"><span class="smallcaps">happiness is an (un)veiled object</span></td>
 <td align="right">211</td>
 <td align="right">23</td>
 <td align="right">5.80</td>
@@ -216,7 +216,7 @@
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a located object</span></td>
+<td align="left"><span class="smallcaps">happiness is a located object</span></td>
 <td align="right">210</td>
 <td align="right">26</td>
 <td align="right">5.77</td>
@@ -225,7 +225,7 @@
 </tr>
 <tr class="even">
 <td>6</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a location</span></td>
+<td align="left"><span class="smallcaps">happiness is a location</span></td>
 <td align="right">169</td>
 <td align="right">35</td>
 <td align="right">4.65</td>
@@ -234,7 +234,7 @@
 </tr>
 <tr class="odd">
 <td>7</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="right">156</td>
 <td align="right">37</td>
 <td align="right">4.29</td>
@@ -243,7 +243,7 @@
 </tr>
 <tr class="even">
 <td>8</td>
-<td align="left"><span style="font-variant:small-caps;">intensity of happiness is quantity of object</span></td>
+<td align="left"><span class="smallcaps">intensity of happiness is quantity of object</span></td>
 <td align="right">137</td>
 <td align="right">29</td>
 <td align="right">3.77</td>
@@ -252,7 +252,7 @@
 </tr>
 <tr class="odd">
 <td>9</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is food</span></td>
+<td align="left"><span class="smallcaps">happiness is food</span></td>
 <td align="right">108</td>
 <td align="right">17</td>
 <td align="right">2.97</td>
@@ -261,7 +261,7 @@
 </tr>
 <tr class="even">
 <td>10</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a submerged entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a submerged entity</span></td>
 <td align="right">99</td>
 <td align="right">12</td>
 <td align="right">2.72</td>
@@ -270,8 +270,9 @@
 </tr>
 </tbody>
 </table>
+<p>Top-10 most frequent metaphors</p>
 <p>The column <code>token</code> shows the token frequency of a metaphor meanwhile the column <code>type_lu</code> represents the number of different lexical-unit types evoking the source domain frames of the metaphor in the metaphorical expressions. The original values of the <code>type_per_token_lu</code> are normalised into the number of type per 100 tokens (cf. Oster, <a href="#ref-oster_emotions_2018">2018</a>, pp. 206–207). Thus, the closer the TTR of a metaphor to 100, the higher the rate of different lexical-unit type per 100 tokens of the metaphor (see further below) (Oster, <a href="#ref-oster_using_2010">2010</a>, pp. 748–749, <a href="#ref-oster_emotions_2018">2018</a>, p. 206; Stefanowitsch, <a href="#ref-stefanowitsch_corpus_2017">2017</a>, p. 282; Stefanowitsch &amp; Flach, <a href="#ref-stefanowitsch_corpus-based_2016">2016</a>, pp. 118–120).</p>
-<p>Use <code><a href="reference/get_lu_table.html">get_lu_table()</a></code> to retrieve the source frame <em>lexical units</em> in the metaphorical expressions instantiating a given metaphor. It is illustrated here with the linguistic expressions for <span style="font-variant:small-caps;">happiness is a desired goal</span> metaphor (Rajeg, <a href="#ref-rajeg_metaphorical_2018">2019</a>, Ch. 5, Table 5-3):</p>
+<p>Use <code><a href="reference/get_lu_table.html">get_lu_table()</a></code> to retrieve the source frame <em>lexical units</em> in the metaphorical expressions instantiating a given metaphor. It is illustrated here with the linguistic expressions for <span class="smallcaps">happiness is a desired goal</span> metaphor (Rajeg, <a href="#ref-rajeg_metaphorical_2018">2019</a>, Ch. 5, Table 5-3):</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># print the top-10 Lexical Units of the HAPPINESS IS A DESIRED GOAL metaphor</span></a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"><span class="kw"><a href="reference/get_lu_table.html">get_lu_table</a></span>(<span class="dt">metaphor =</span> <span class="st">"is a desired goal$"</span>, </a>
 <a class="sourceLine" id="cb7-3" data-line-number="3">             <span class="dt">top_n_only =</span> <span class="ot">TRUE</span>, </a>
@@ -361,7 +362,8 @@
 </tr>
 </tbody>
 </table>
-<p>The column <code>Perc_overall</code> indicates the percentage of a given LU from the total tokens of the <span style="font-variant:small-caps;">happiness is a desired goal</span> metaphor. More linguistic citations for the metaphorical expressions are presented in the thesis.</p>
+<p>Top-10 most frequent lexical units for <span class="smallcaps">happiness is a desired goal.</span></p>
+<p>The column <code>Perc_overall</code> indicates the percentage of a given LU from the total tokens of the <span class="smallcaps">happiness is a desired goal</span> metaphor. More linguistic citations for the metaphorical expressions are presented in the thesis.</p>
 <p>From the output of <code><a href="reference/ttr.html">ttr()</a></code> above, which is stored in the <code>ttr_metaphor</code> table, we can retrieve the top-10 metaphors with high type frequencies with the following codes (Rajeg, <a href="#ref-rajeg_metaphorical_2018">2019</a>, Ch. 6, Table 6-1); the type frequency of a metaphor indicates the number of different lexical unit types expressing a given metaphor.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="co"># sort by type frequency</span></a>
 <a class="sourceLine" id="cb8-2" data-line-number="2">productive_metaphor &lt;-<span class="st"> </span></a>
@@ -390,7 +392,7 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a possessable object</span></td>
+<td align="left"><span class="smallcaps">happiness is a possessable object</span></td>
 <td align="right">749</td>
 <td align="right">20.59</td>
 <td align="right">63</td>
@@ -398,7 +400,7 @@
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a desired goal</span></td>
+<td align="left"><span class="smallcaps">happiness is a desired goal</span></td>
 <td align="right">293</td>
 <td align="right">8.05</td>
 <td align="right">42</td>
@@ -406,7 +408,7 @@
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="right">156</td>
 <td align="right">4.29</td>
 <td align="right">37</td>
@@ -414,7 +416,7 @@
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a location</span></td>
+<td align="left"><span class="smallcaps">happiness is a location</span></td>
 <td align="right">169</td>
 <td align="right">4.65</td>
 <td align="right">35</td>
@@ -422,7 +424,7 @@
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">intensity of happiness is quantity of object</span></td>
+<td align="left"><span class="smallcaps">intensity of happiness is quantity of object</span></td>
 <td align="right">137</td>
 <td align="right">3.77</td>
 <td align="right">29</td>
@@ -430,7 +432,7 @@
 </tr>
 <tr class="even">
 <td>6</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is light</span></td>
+<td align="left"><span class="smallcaps">happiness is light</span></td>
 <td align="right">43</td>
 <td align="right">1.18</td>
 <td align="right">27</td>
@@ -438,7 +440,7 @@
 </tr>
 <tr class="odd">
 <td>7</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a contained entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a contained entity</span></td>
 <td align="right">358</td>
 <td align="right">9.84</td>
 <td align="right">26</td>
@@ -446,7 +448,7 @@
 </tr>
 <tr class="even">
 <td>8</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a located object</span></td>
+<td align="left"><span class="smallcaps">happiness is a located object</span></td>
 <td align="right">210</td>
 <td align="right">5.77</td>
 <td align="right">26</td>
@@ -454,7 +456,7 @@
 </tr>
 <tr class="odd">
 <td>9</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an (un)veiled object</span></td>
+<td align="left"><span class="smallcaps">happiness is an (un)veiled object</span></td>
 <td align="right">211</td>
 <td align="right">5.80</td>
 <td align="right">23</td>
@@ -462,7 +464,7 @@
 </tr>
 <tr class="even">
 <td>10</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an imperilled entity</span></td>
+<td align="left"><span class="smallcaps">happiness is an imperilled entity</span></td>
 <td align="right">32</td>
 <td align="right">0.88</td>
 <td align="right">21</td>
@@ -470,6 +472,7 @@
 </tr>
 </tbody>
 </table>
+<p>Top-10 metaphors sorted on their type frequency.</p>
 <p>The codes below generates Table 6-2 (Rajeg, <a href="#ref-rajeg_metaphorical_2018">2019</a>, Ch. 6) that ranks metaphors with high type frequency above according to their type/token ratio.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">productive_metaphor <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb9-2" data-line-number="2"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(type_per_token_lu)) <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -489,77 +492,78 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an imperilled entity</span></td>
+<td align="left"><span class="smallcaps">happiness is an imperilled entity</span></td>
 <td align="right">32</td>
 <td align="right">21</td>
 <td align="right">65.62</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is light</span></td>
+<td align="left"><span class="smallcaps">happiness is light</span></td>
 <td align="right">43</td>
 <td align="right">27</td>
 <td align="right">62.79</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="right">156</td>
 <td align="right">37</td>
 <td align="right">23.72</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">intensity of happiness is quantity of object</span></td>
+<td align="left"><span class="smallcaps">intensity of happiness is quantity of object</span></td>
 <td align="right">137</td>
 <td align="right">29</td>
 <td align="right">21.17</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a location</span></td>
+<td align="left"><span class="smallcaps">happiness is a location</span></td>
 <td align="right">169</td>
 <td align="right">35</td>
 <td align="right">20.71</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a desired goal</span></td>
+<td align="left"><span class="smallcaps">happiness is a desired goal</span></td>
 <td align="right">293</td>
 <td align="right">42</td>
 <td align="right">14.33</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a located object</span></td>
+<td align="left"><span class="smallcaps">happiness is a located object</span></td>
 <td align="right">210</td>
 <td align="right">26</td>
 <td align="right">12.38</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an (un)veiled object</span></td>
+<td align="left"><span class="smallcaps">happiness is an (un)veiled object</span></td>
 <td align="right">211</td>
 <td align="right">23</td>
 <td align="right">10.90</td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a possessable object</span></td>
+<td align="left"><span class="smallcaps">happiness is a possessable object</span></td>
 <td align="right">749</td>
 <td align="right">63</td>
 <td align="right">8.41</td>
 </tr>
 <tr class="even">
 <td>10</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a contained entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a contained entity</span></td>
 <td align="right">358</td>
 <td align="right">26</td>
 <td align="right">7.26</td>
 </tr>
 </tbody>
 </table>
-<p>It is clear that the first two metaphors in the table above (i.e. <span style="font-variant:small-caps;">happiness is an imperilled entity</span> and <span style="font-variant:small-caps;">happiness is light</span>) have higher ratio for different types of linguistic instantiations per 100 tokens, despite the vast difference in their token frequencies compared to the remanining metaphors with high token frequencies in the table. This suggests that these two metaphors are expressed with relatively wider range of expressions with respect to their token frequencies, compared to the frequent metaphors.</p>
+<p>Metaphors with high type frequency sorted by their Type/Token Ratio (TTR).</p>
+<p>It is clear that the first two metaphors in the table above (i.e. <span class="smallcaps">happiness is an imperilled entity</span> and <span class="smallcaps">happiness is light</span>) have higher ratio for different types of linguistic instantiations per 100 tokens, despite the vast difference in their token frequencies compared to the remanining metaphors with high token frequencies in the table. This suggests that these two metaphors are expressed with relatively wider range of expressions with respect to their token frequencies, compared to the frequent metaphors.</p>
 <p>Next, a helper function called <code><a href="reference/get_creative_metaphors.html">get_creative_metaphors()</a></code> is available to retrieve the top-10 creative metaphors (Rajeg, <a href="#ref-rajeg_metaphorical_2018">2019</a>, Ch. 6, Table 6-5). I filter and discuss the metaphors with high type/token ratio and occurring at least three tokens in the sample, as shown in the codes below</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">min_freq &lt;-<span class="st"> </span>3L</a>
 <a class="sourceLine" id="cb10-2" data-line-number="2"></a>
@@ -589,81 +593,82 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a harmful agent</span></td>
+<td align="left"><span class="smallcaps">happiness is a harmful agent</span></td>
 <td align="right">11</td>
 <td align="right">11</td>
 <td align="right">100.00</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is drugs</span></td>
+<td align="left"><span class="smallcaps">happiness is drugs</span></td>
 <td align="right">6</td>
 <td align="right">6</td>
 <td align="right">100.00</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a moved entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a moved entity</span></td>
 <td align="right">4</td>
 <td align="right">4</td>
 <td align="right">100.00</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a treatment tool</span></td>
+<td align="left"><span class="smallcaps">happiness is a treatment tool</span></td>
 <td align="right">3</td>
 <td align="right">3</td>
 <td align="right">100.00</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an accompanied object</span></td>
+<td align="left"><span class="smallcaps">happiness is an accompanied object</span></td>
 <td align="right">3</td>
 <td align="right">3</td>
 <td align="right">100.00</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is being soaked</span></td>
+<td align="left"><span class="smallcaps">happiness is being soaked</span></td>
 <td align="right">9</td>
 <td align="right">8</td>
 <td align="right">88.89</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a resource</span></td>
+<td align="left"><span class="smallcaps">happiness is a resource</span></td>
 <td align="right">8</td>
 <td align="right">7</td>
 <td align="right">87.50</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is impediment to motion</span></td>
+<td align="left"><span class="smallcaps">happiness is impediment to motion</span></td>
 <td align="right">6</td>
 <td align="right">5</td>
 <td align="right">83.33</td>
 </tr>
 <tr class="odd">
 <td>9</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a deceiver</span></td>
+<td align="left"><span class="smallcaps">happiness is a deceiver</span></td>
 <td align="right">20</td>
 <td align="right">16</td>
 <td align="right">80.00</td>
 </tr>
 <tr class="even">
 <td>10</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an adversary</span></td>
+<td align="left"><span class="smallcaps">happiness is an adversary</span></td>
 <td align="right">24</td>
 <td align="right">19</td>
 <td align="right">79.17</td>
 </tr>
 </tbody>
 </table>
-<p>One way to interpret the values in the <code>Type/token ratio</code> (TTR) column is to conceive them as representing the number of unique lexical-unit types per 100 tokens of a metaphor. The higher the ratio, the more creative a given metaphor is linguistically expressed. For instance, the TTR value of <span style="font-variant:small-caps;">happiness is an adversary</span> (i.e. 79.17) indicates that there are about 79.17 unique types per 100 tokens of the <span style="font-variant:small-caps;">happiness is an adversary</span>, which is much higher than the TTR value of <span style="font-variant:small-caps;">happiness is a possessable object</span> (i.e. 8.41). The TTR value of a metaphor is used to represent the <em>creativity ratio</em> of a metaphor in its linguistic manifestation (Oster, <a href="#ref-oster_using_2010">2010</a>, pp. 748–749, cf. <a href="#ref-oster_emotions_2018">2018</a>, p. 206).</p>
+<p>Top-10 creative metaphors sorted based on the TTR value and occurring at least three tokens.</p>
+<p>One way to interpret the values in the <code>Type/token ratio</code> (TTR) column is to conceive them as representing the number of unique lexical-unit types per 100 tokens of a metaphor. The higher the ratio, the more creative a given metaphor is linguistically expressed. For instance, the TTR value of <span class="smallcaps">happiness is an adversary</span> (i.e. 79.17) indicates that there are about 79.17 unique types per 100 tokens of the <span class="smallcaps">happiness is an adversary</span>, which is much higher than the TTR value of <span class="smallcaps">happiness is a possessable object</span> (i.e. 8.41). The TTR value of a metaphor is used to represent the <em>creativity ratio</em> of a metaphor in its linguistic manifestation ( cf. Oster, <a href="#ref-oster_emotions_2018">2018</a>, p. 206, <a href="#ref-oster_using_2010">2010</a>, pp. 748–749).</p>
 <div id="retrieving-the-frequency-of-submappings-and-semantic-source-frames-of-the-metaphors" class="section level4">
 <h4 class="hasAnchor">
 <a href="#retrieving-the-frequency-of-submappings-and-semantic-source-frames-of-the-metaphors" class="anchor"></a>Retrieving the frequency of submappings and semantic source frames of the metaphors</h4>
-<p>The data for retrieving the information on the submappings and the source frames of metaphors is contained within <code>phd_data_metaphor</code>. Among the relevant functions for retrieving these information are <code><a href="reference/get_submappings.html">get_submappings()</a></code> and <code><a href="reference/get_frames.html">get_frames()</a></code>. The illustration is based on data for the <span style="font-variant:small-caps;">happiness is liquid in a container</span> metaphor.</p>
+<p>The data for retrieving the information on the submappings and the source frames of metaphors is contained within <code>phd_data_metaphor</code>. Among the relevant functions for retrieving these information are <code><a href="reference/get_submappings.html">get_submappings()</a></code> and <code><a href="reference/get_frames.html">get_frames()</a></code>. The illustration is based on data for the <span class="smallcaps">happiness is liquid in a container</span> metaphor.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co"># get the submappings for the liquid in a container</span></a>
 <a class="sourceLine" id="cb11-2" data-line-number="2"><span class="kw"><a href="reference/get_submappings.html">get_submappings</a></span>(<span class="dt">metaphor =</span> <span class="st">"liquid in a container"</span>, </a>
 <a class="sourceLine" id="cb11-3" data-line-number="3">                <span class="dt">df =</span> phd_data_metaphor) <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -671,10 +676,10 @@
 <a class="sourceLine" id="cb11-5" data-line-number="5"><span class="st">  </span>knitr<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="dt">caption =</span> <span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"Submappings for "</span>, <span class="kw"><a href="reference/scaps.html">scaps</a></span>(<span class="st">"happiness is liquid in a container."</span>), <span class="dt">sep =</span> <span class="st">""</span>), <span class="dt">row.names =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <table class="table">
 <colgroup>
+<col width="0%">
+<col width="80%">
+<col width="2%">
 <col width="3%">
-<col width="76%">
-<col width="3%">
-<col width="4%">
 <col width="4%">
 <col width="8%">
 </colgroup>
@@ -689,7 +694,7 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="right">100</td>
 <td align="right">18</td>
 <td align="right">64.10</td>
@@ -697,7 +702,7 @@
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">intensified happiness is heated liquid</span></td>
+<td align="left"><span class="smallcaps">intensified happiness is heated liquid</span></td>
 <td align="right">32</td>
 <td align="right">4</td>
 <td align="right">20.51</td>
@@ -705,7 +710,7 @@
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span></td>
+<td align="left"><span class="smallcaps">high intensity of happiness is fullness of liquid in a container</span></td>
 <td align="right">11</td>
 <td align="right">6</td>
 <td align="right">7.05</td>
@@ -713,7 +718,7 @@
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">preventing happiness is impeding flowing substance</span></td>
+<td align="left"><span class="smallcaps">preventing happiness is impeding flowing substance</span></td>
 <td align="right">5</td>
 <td align="right">2</td>
 <td align="right">3.21</td>
@@ -721,7 +726,7 @@
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a fluidic motion</span></td>
+<td align="left"><span class="smallcaps">happiness is a fluidic motion</span></td>
 <td align="right">4</td>
 <td align="right">4</td>
 <td align="right">2.56</td>
@@ -729,7 +734,7 @@
 </tr>
 <tr class="even">
 <td>6</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="right">4</td>
 <td align="right">3</td>
 <td align="right">2.56</td>
@@ -737,6 +742,7 @@
 </tr>
 </tbody>
 </table>
+<p>Submappings for <span class="smallcaps">happiness is liquid in a container.</span></p>
 <p>Column <code>n</code> shows the ‘token frequency’ of the submappings (with <code>perc</code> indicates the token’s percentage). Meanwhile <code>type</code> shows the ‘type frequency’ of the submappings (i.e., the number of different lexical unit types evoking the corresponding submappings of a given metaphor).</p>
 <p>Use <code><a href="reference/get_frames.html">get_frames()</a></code> to retrieve frequency profiles of the source frames for a given metaphor:</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co"># get the source frames evoked by the metaphorical expressions for the liquid in a container</span></a>
@@ -756,7 +762,7 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">release liquid</span></td>
+<td align="left"><span class="smallcaps">release liquid</span></td>
 <td align="right">100</td>
 <td align="right">18</td>
 <td align="right">64.10</td>
@@ -764,7 +770,7 @@
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">heating fluid</span></td>
+<td align="left"><span class="smallcaps">heating fluid</span></td>
 <td align="right">32</td>
 <td align="right">4</td>
 <td align="right">20.51</td>
@@ -772,7 +778,7 @@
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">fluid containment</span></td>
+<td align="left"><span class="smallcaps">fluid containment</span></td>
 <td align="right">15</td>
 <td align="right">9</td>
 <td align="right">9.62</td>
@@ -780,7 +786,7 @@
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">stop flow of substance</span></td>
+<td align="left"><span class="smallcaps">stop flow of substance</span></td>
 <td align="right">5</td>
 <td align="right">2</td>
 <td align="right">3.21</td>
@@ -788,7 +794,7 @@
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">fluid motion</span></td>
+<td align="left"><span class="smallcaps">fluid motion</span></td>
 <td align="right">4</td>
 <td align="right">4</td>
 <td align="right">2.56</td>
@@ -796,6 +802,7 @@
 </tr>
 </tbody>
 </table>
+<p>Source frames for <span class="smallcaps">happiness is liquid in a container.</span></p>
 <p>Based on the same data, it is also possible to retrieve a frequency table for the lexical units and the submappings they evoke for a given metaphor. Use <code><a href="reference/get_lu_submappings_table.html">get_lu_submappings_table()</a></code> for this purpose.</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw"><a href="reference/get_lu_submappings_table.html">get_lu_submappings_table</a></span>(<span class="dt">metaphor =</span> <span class="st">"liquid in a container"</span>,</a>
 <a class="sourceLine" id="cb13-2" data-line-number="2">                         <span class="dt">df =</span> phd_data_metaphor) <span class="op">%&gt;%</span><span class="st"> </span></a>
@@ -806,13 +813,13 @@
 <a class="sourceLine" id="cb13-7" data-line-number="7">               <span class="dt">row.names =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <table class="table">
 <colgroup>
-<col width="2%">
-<col width="49%">
-<col width="11%">
-<col width="13%">
-<col width="2%">
-<col width="9%">
+<col width="1%">
+<col width="48%">
 <col width="12%">
+<col width="14%">
+<col width="1%">
+<col width="9%">
+<col width="13%">
 </colgroup>
 <thead><tr class="header">
 <th></th>
@@ -826,7 +833,7 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>terpancar</em></td>
 <td align="left">to be spurted out</td>
 <td align="right">43</td>
@@ -835,7 +842,7 @@
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>luapan</em></td>
 <td align="left">overflow</td>
 <td align="right">25</td>
@@ -844,7 +851,7 @@
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>pancarkan</em></td>
 <td align="left">to spurt sth.</td>
 <td align="right">9</td>
@@ -853,7 +860,7 @@
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>salurkan</em></td>
 <td align="left">to funnel sth.</td>
 <td align="right">4</td>
@@ -862,7 +869,7 @@
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>pancaran</em></td>
 <td align="left">a spurting-out</td>
 <td align="right">3</td>
@@ -871,7 +878,7 @@
 </tr>
 <tr class="even">
 <td>6</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>curahan</em></td>
 <td align="left">outpouring</td>
 <td align="right">2</td>
@@ -880,7 +887,7 @@
 </tr>
 <tr class="odd">
 <td>7</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>tertuang</em></td>
 <td align="left">to be poured out</td>
 <td align="right">2</td>
@@ -889,7 +896,7 @@
 </tr>
 <tr class="even">
 <td>8</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>tuangkan</em></td>
 <td align="left">to pour out sth.</td>
 <td align="right">2</td>
@@ -898,7 +905,7 @@
 </tr>
 <tr class="odd">
 <td>9</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>air bah</em></td>
 <td align="left">flood</td>
 <td align="right">1</td>
@@ -907,7 +914,7 @@
 </tr>
 <tr class="even">
 <td>10</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>alirkan</em></td>
 <td align="left">to flow and drain sth.</td>
 <td align="right">1</td>
@@ -916,7 +923,7 @@
 </tr>
 <tr class="odd">
 <td>11</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>lampiaskan</em></td>
 <td align="left">to gush sth. out</td>
 <td align="right">1</td>
@@ -925,7 +932,7 @@
 </tr>
 <tr class="even">
 <td>12</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>memancar</em></td>
 <td align="left">to spurt</td>
 <td align="right">1</td>
@@ -934,7 +941,7 @@
 </tr>
 <tr class="odd">
 <td>13</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>membual</em></td>
 <td align="left">to overflow/spurt out</td>
 <td align="right">1</td>
@@ -943,7 +950,7 @@
 </tr>
 <tr class="even">
 <td>14</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>pelampiasan</em></td>
 <td align="left">to spurt out sth.</td>
 <td align="right">1</td>
@@ -952,7 +959,7 @@
 </tr>
 <tr class="odd">
 <td>15</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>tercurah</em></td>
 <td align="left">to be poured out</td>
 <td align="right">1</td>
@@ -961,7 +968,7 @@
 </tr>
 <tr class="even">
 <td>16</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>teteskan</em></td>
 <td align="left">to drip sth.</td>
 <td align="right">1</td>
@@ -970,7 +977,7 @@
 </tr>
 <tr class="odd">
 <td>17</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>titikkan</em></td>
 <td align="left">to drip sth.</td>
 <td align="right">1</td>
@@ -979,7 +986,7 @@
 </tr>
 <tr class="even">
 <td>18</td>
-<td align="left"><span style="font-variant:small-caps;">expression of happiness is released liquid</span></td>
+<td align="left"><span class="smallcaps">expression of happiness is released liquid</span></td>
 <td align="left"><em>tumpahkan</em></td>
 <td align="left">to spill sth.</td>
 <td align="right">1</td>
@@ -988,7 +995,7 @@
 </tr>
 <tr class="odd">
 <td>19</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a fluidic motion</span></td>
+<td align="left"><span class="smallcaps">happiness is a fluidic motion</span></td>
 <td align="left"><em>mengalir</em></td>
 <td align="left">to flow</td>
 <td align="right">1</td>
@@ -997,7 +1004,7 @@
 </tr>
 <tr class="even">
 <td>20</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a fluidic motion</span></td>
+<td align="left"><span class="smallcaps">happiness is a fluidic motion</span></td>
 <td align="left"><em>resap.v</em></td>
 <td align="left">to seep into sth.</td>
 <td align="right">1</td>
@@ -1006,7 +1013,7 @@
 </tr>
 <tr class="odd">
 <td>21</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a fluidic motion</span></td>
+<td align="left"><span class="smallcaps">happiness is a fluidic motion</span></td>
 <td align="left"><em>terlarut</em></td>
 <td align="left">to be washed-and-drawn away</td>
 <td align="right">1</td>
@@ -1015,7 +1022,7 @@
 </tr>
 <tr class="even">
 <td>22</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a fluidic motion</span></td>
+<td align="left"><span class="smallcaps">happiness is a fluidic motion</span></td>
 <td align="left"><em>terserap</em></td>
 <td align="left">to be soaked up/absorbed</td>
 <td align="right">1</td>
@@ -1024,7 +1031,7 @@
 </tr>
 <tr class="odd">
 <td>23</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="left"><em>tampung</em></td>
 <td align="left">to collect-in (of liquid)</td>
 <td align="right">2</td>
@@ -1033,7 +1040,7 @@
 </tr>
 <tr class="even">
 <td>24</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="left"><em>dicarikan jalan keluar</em></td>
 <td align="left">to be searched for a way out</td>
 <td align="right">1</td>
@@ -1042,7 +1049,7 @@
 </tr>
 <tr class="odd">
 <td>25</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="left"><em>mendarah daging</em></td>
 <td align="left">to be internalised</td>
 <td align="right">1</td>
@@ -1051,7 +1058,7 @@
 </tr>
 <tr class="even">
 <td>26</td>
-<td align="left"><span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span></td>
+<td align="left"><span class="smallcaps">high intensity of happiness is fullness of liquid in a container</span></td>
 <td align="left"><em>limpahkan</em></td>
 <td align="left">to brim liquid onto sth.</td>
 <td align="right">4</td>
@@ -1060,7 +1067,7 @@
 </tr>
 <tr class="odd">
 <td>27</td>
-<td align="left"><span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span></td>
+<td align="left"><span class="smallcaps">high intensity of happiness is fullness of liquid in a container</span></td>
 <td align="left"><em>berlimpah</em></td>
 <td align="left">to be brimming/aboundant</td>
 <td align="right">2</td>
@@ -1069,7 +1076,7 @@
 </tr>
 <tr class="even">
 <td>28</td>
-<td align="left"><span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span></td>
+<td align="left"><span class="smallcaps">high intensity of happiness is fullness of liquid in a container</span></td>
 <td align="left"><em>limpahi</em></td>
 <td align="left">to brim sth. with liquid</td>
 <td align="right">2</td>
@@ -1078,7 +1085,7 @@
 </tr>
 <tr class="odd">
 <td>29</td>
-<td align="left"><span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span></td>
+<td align="left"><span class="smallcaps">high intensity of happiness is fullness of liquid in a container</span></td>
 <td align="left"><em>aliri</em></td>
 <td align="left">to overflow sth. with liquid</td>
 <td align="right">1</td>
@@ -1087,7 +1094,7 @@
 </tr>
 <tr class="even">
 <td>30</td>
-<td align="left"><span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span></td>
+<td align="left"><span class="smallcaps">high intensity of happiness is fullness of liquid in a container</span></td>
 <td align="left"><em>kelimpahan</em></td>
 <td align="left">the brimming of sth.</td>
 <td align="right">1</td>
@@ -1096,7 +1103,7 @@
 </tr>
 <tr class="odd">
 <td>31</td>
-<td align="left"><span style="font-variant:small-caps;">high intensity of happiness is fullness of liquid in a container</span></td>
+<td align="left"><span class="smallcaps">high intensity of happiness is fullness of liquid in a container</span></td>
 <td align="left"><em>limpahan</em></td>
 <td align="left">the brimming of sth.</td>
 <td align="right">1</td>
@@ -1105,7 +1112,7 @@
 </tr>
 <tr class="even">
 <td>32</td>
-<td align="left"><span style="font-variant:small-caps;">intensified happiness is heated liquid</span></td>
+<td align="left"><span class="smallcaps">intensified happiness is heated liquid</span></td>
 <td align="left"><em>luapkan</em></td>
 <td align="left">to boil sth. over</td>
 <td align="right">21</td>
@@ -1114,7 +1121,7 @@
 </tr>
 <tr class="odd">
 <td>33</td>
-<td align="left"><span style="font-variant:small-caps;">intensified happiness is heated liquid</span></td>
+<td align="left"><span class="smallcaps">intensified happiness is heated liquid</span></td>
 <td align="left"><em>meluap(-luap)</em></td>
 <td align="left">to boil over</td>
 <td align="right">8</td>
@@ -1123,7 +1130,7 @@
 </tr>
 <tr class="even">
 <td>34</td>
-<td align="left"><span style="font-variant:small-caps;">intensified happiness is heated liquid</span></td>
+<td align="left"><span class="smallcaps">intensified happiness is heated liquid</span></td>
 <td align="left"><em>meruap</em></td>
 <td align="left">to boil to froth/bubble</td>
 <td align="right">2</td>
@@ -1132,7 +1139,7 @@
 </tr>
 <tr class="odd">
 <td>35</td>
-<td align="left"><span style="font-variant:small-caps;">intensified happiness is heated liquid</span></td>
+<td align="left"><span class="smallcaps">intensified happiness is heated liquid</span></td>
 <td align="left"><em>membludak</em></td>
 <td align="left">to boil over to overflow</td>
 <td align="right">1</td>
@@ -1141,7 +1148,7 @@
 </tr>
 <tr class="even">
 <td>36</td>
-<td align="left"><span style="font-variant:small-caps;">preventing happiness is impeding flowing substance</span></td>
+<td align="left"><span class="smallcaps">preventing happiness is impeding flowing substance</span></td>
 <td align="left"><em>bendung</em></td>
 <td align="left">to dam up sth.</td>
 <td align="right">3</td>
@@ -1150,7 +1157,7 @@
 </tr>
 <tr class="odd">
 <td>37</td>
-<td align="left"><span style="font-variant:small-caps;">preventing happiness is impeding flowing substance</span></td>
+<td align="left"><span class="smallcaps">preventing happiness is impeding flowing substance</span></td>
 <td align="left"><em>sumbat</em></td>
 <td align="left">to clog sth.</td>
 <td align="right">2</td>
@@ -1159,6 +1166,7 @@
 </tr>
 </tbody>
 </table>
+<p>Evoked submappings for the lexical units of the <span class="smallcaps">happiness is liquid in a container</span> metaphor.</p>
 <p>The column <code>perc_expr_overall</code> indicates the percentages of the token frequencies of the lexical units for the given metaphor. Meanwhile <code>perc_expr_by_submappings</code> indicates the percentages of the lexical units for each submapping of the given metaphor.</p>
 </div>
 <div id="visualising-the-frequency-of-occurrences-for-the-body-part-terms-in-the-metaphorical-expressions" class="section level4">
@@ -1197,79 +1205,80 @@
 <td>1</td>
 <td align="left">
 <em>wajah</em> ‘face’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an (un)veiled object</span></td>
+<td align="left"><span class="smallcaps">happiness is an (un)veiled object</span></td>
 <td align="right">45</td>
 </tr>
 <tr class="even">
 <td>2</td>
 <td align="left">
 <em>wajah</em> ‘face’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="right">27</td>
 </tr>
 <tr class="odd">
 <td>3</td>
 <td align="left">
 <em>hati</em> ‘liver’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a contained entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a contained entity</span></td>
 <td align="right">17</td>
 </tr>
 <tr class="even">
 <td>4</td>
 <td align="left">
 <em>wajah</em> ‘face’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a contained entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a contained entity</span></td>
 <td align="right">12</td>
 </tr>
 <tr class="odd">
 <td>5</td>
 <td align="left">
 <em>wajah</em> ‘face’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a located object</span></td>
+<td align="left"><span class="smallcaps">happiness is a located object</span></td>
 <td align="right">8</td>
 </tr>
 <tr class="even">
 <td>6</td>
 <td align="left">
 <em>wajah</em> ‘face’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an embellishment</span></td>
+<td align="left"><span class="smallcaps">happiness is an embellishment</span></td>
 <td align="right">8</td>
 </tr>
 <tr class="odd">
 <td>7</td>
 <td align="left">
 <em>wajah</em> ‘face’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is light</span></td>
+<td align="left"><span class="smallcaps">happiness is light</span></td>
 <td align="right">8</td>
 </tr>
 <tr class="even">
 <td>8</td>
 <td align="left">
 <em>dada</em> ‘chest/bosom’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a contained entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a contained entity</span></td>
 <td align="right">7</td>
 </tr>
 <tr class="odd">
 <td>9</td>
 <td align="left">
 <em>mata</em> ‘eyes’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="right">7</td>
 </tr>
 <tr class="even">
 <td>10</td>
 <td align="left">
 <em>wajah</em> ‘face’</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a drawing</span></td>
+<td align="left"><span class="smallcaps">happiness is a drawing</span></td>
 <td align="right">7</td>
 </tr>
 </tbody>
 </table>
+<p>The ten most frequent <span class="smallcaps">Body-part</span><code><a href="https://rdrr.io/r/base/Arithmetic.html">*</a></code><span class="smallcaps">Metaphors</span> co-occurrence for <span class="smallcaps">Happiness</span> in Indonesian.</p>
 </div>
 </div>
 <div id="chapter-7---distinctive-metaphors-and-collocates-for-happiness-near-synonyms-in-indonesian" class="section level3">
 <h3 class="hasAnchor">
-<a href="#chapter-7---distinctive-metaphors-and-collocates-for-happiness-near-synonyms-in-indonesian" class="anchor"></a>Chapter 7 - Distinctive metaphors and collocates for <span style="font-variant:small-caps;">happiness</span> near-synonyms in Indonesian</h3>
+<a href="#chapter-7---distinctive-metaphors-and-collocates-for-happiness-near-synonyms-in-indonesian" class="anchor"></a>Chapter 7 - Distinctive metaphors and collocates for <span class="smallcaps">happiness</span> near-synonyms in Indonesian</h3>
 <p>The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using one-tailed, Binomial Test implemented in the <em>Multiple Distinctive Collexeme Analysis</em> (MDCA) (cf., e.g., Hilpert, <a href="#ref-hilpert_distinctive_2006">2006</a>; Stefanowitsch, <a href="#ref-hoffmann_collostructional_2013">2013</a>, pp. 299–300). The function to perform MDCA is <code><a href="reference/mdca.html">mdca()</a></code>.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="co"># MDCA for metaphor * synonyms</span></a>
 <a class="sourceLine" id="cb16-2" data-line-number="2">mdca_res &lt;-<span class="st"> </span><span class="kw"><a href="reference/mdca.html">mdca</a></span>(<span class="dt">df =</span> phd_data_metaphor, </a>
@@ -1304,7 +1313,7 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a desired goal</span></td>
+<td align="left"><span class="smallcaps">happiness is a desired goal</span></td>
 <td align="right">110</td>
 <td align="right">51.625</td>
 <td align="right">15.265</td>
@@ -1314,7 +1323,7 @@
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a deceiver</span></td>
+<td align="left"><span class="smallcaps">happiness is a deceiver</span></td>
 <td align="right">17</td>
 <td align="right">3.524</td>
 <td align="right">9.998</td>
@@ -1324,7 +1333,7 @@
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is food</span></td>
+<td align="left"><span class="smallcaps">happiness is food</span></td>
 <td align="right">44</td>
 <td align="right">19.029</td>
 <td align="right">7.815</td>
@@ -1334,7 +1343,7 @@
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a subjugator</span></td>
+<td align="left"><span class="smallcaps">happiness is a subjugator</span></td>
 <td align="right">13</td>
 <td align="right">3.172</td>
 <td align="right">6.256</td>
@@ -1344,7 +1353,7 @@
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a possessable object</span></td>
+<td align="left"><span class="smallcaps">happiness is a possessable object</span></td>
 <td align="right">183</td>
 <td align="right">131.971</td>
 <td align="right">5.776</td>
@@ -1354,7 +1363,7 @@
 </tr>
 <tr class="even">
 <td>6</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a foundation (of an action)</span></td>
+<td align="left"><span class="smallcaps">happiness is a foundation (of an action)</span></td>
 <td align="right">8</td>
 <td align="right">1.938</td>
 <td align="right">4.036</td>
@@ -1364,7 +1373,7 @@
 </tr>
 <tr class="odd">
 <td>7</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an adversary</span></td>
+<td align="left"><span class="smallcaps">happiness is an adversary</span></td>
 <td align="right">12</td>
 <td align="right">4.229</td>
 <td align="right">3.534</td>
@@ -1374,7 +1383,7 @@
 </tr>
 <tr class="even">
 <td>8</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is impediment to motion</span></td>
+<td align="left"><span class="smallcaps">happiness is impediment to motion</span></td>
 <td align="right">5</td>
 <td align="right">1.057</td>
 <td align="right">3.061</td>
@@ -1384,7 +1393,7 @@
 </tr>
 <tr class="odd">
 <td>9</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a resource</span></td>
+<td align="left"><span class="smallcaps">happiness is a resource</span></td>
 <td align="right">5</td>
 <td align="right">1.410</td>
 <td align="right">2.228</td>
@@ -1394,7 +1403,8 @@
 </tr>
 </tbody>
 </table>
-<p>The <code>p_holm</code> column provides the Holm’s corrected significance level (Gries, <a href="#ref-gries_statistics_2009">2009</a>, pp. 249, 251) of the Binomial Test <em>p</em>-value (<code>p_binomial</code>). The Binomial <em>p</em>-value is used as the basis for the association strength value (<code>assocstr</code>) (cf. Stefanowitsch, <a href="#ref-hoffmann_collostructional_2013">2013</a>, p. 305), which is derived via the log-transformed <em>p</em><sub>Binomial</sub>-value to the base of 10. The <code>dec</code> column indicates the significane of the association between the metaphor and <em>kesenangan</em> ‘pleasure’ at the corrected level. Column <code>exp</code> shows the ‘expected’ co-occurrence frequency of the metaphor with <em>kesenangan</em> while <code>n</code> is the ‘observed’ co-occurrence frequency in the sample.</p>
+<p>Distinctive metaphors for <em>kesenangan</em> ‘pleasure’</p>
+<p>The <code>p_holm</code> column provides the Holm’s corrected significance level (Gries, <a href="#ref-gries_statistics_2009">2009</a>, pp. 249, 251) of the Binomial Test <em>p</em>-value (<code>p_binomial</code>). The Binomial <em>p</em>-value is used as the basis for the association strength value (<code>assocstr</code>) ( cf. Stefanowitsch, <a href="#ref-hoffmann_collostructional_2013">2013</a>, p. 305), which is derived via the log-transformed <em>p</em><sub>Binomial</sub>-value to the base of 10. The <code>dec</code> column indicates the significane of the association between the metaphor and <em>kesenangan</em> ‘pleasure’ at the corrected level. Column <code>exp</code> shows the ‘expected’ co-occurrence frequency of the metaphor with <em>kesenangan</em> while <code>n</code> is the ‘observed’ co-occurrence frequency in the sample.</p>
 <p>The following code shows the use of <code><a href="reference/mdca_repel.html">mdca_repel()</a></code> for retrieving metaphors strongly dissociated with <em>kesenangan</em> ‘pleasure’ (Rajeg, <a href="#ref-rajeg_metaphorical_2018">2019</a>, Ch. 7, Table 7-6):</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1">mdca_res <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb19-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="reference/mdca_repel.html">mdca_repel</a></span>(<span class="dt">filter_by =</span> <span class="st">"cxn"</span>,</a>
@@ -1418,7 +1428,7 @@
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a contained entity</span></td>
+<td align="left"><span class="smallcaps">happiness is a contained entity</span></td>
 <td align="right">16</td>
 <td align="right">63.078</td>
 <td align="right">-13.354</td>
@@ -1428,7 +1438,7 @@
 </tr>
 <tr class="even">
 <td>2</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is an (un)veiled object</span></td>
+<td align="left"><span class="smallcaps">happiness is an (un)veiled object</span></td>
 <td align="right">8</td>
 <td align="right">37.177</td>
 <td align="right">-9.104</td>
@@ -1438,7 +1448,7 @@
 </tr>
 <tr class="odd">
 <td>3</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a liquid in a container</span></td>
+<td align="left"><span class="smallcaps">happiness is a liquid in a container</span></td>
 <td align="right">6</td>
 <td align="right">27.487</td>
 <td align="right">-6.806</td>
@@ -1448,7 +1458,7 @@
 </tr>
 <tr class="even">
 <td>4</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a colour</span></td>
+<td align="left"><span class="smallcaps">happiness is a colour</span></td>
 <td align="right">0</td>
 <td align="right">9.338</td>
 <td align="right">-4.461</td>
@@ -1458,7 +1468,7 @@
 </tr>
 <tr class="odd">
 <td>5</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a located object</span></td>
+<td align="left"><span class="smallcaps">happiness is a located object</span></td>
 <td align="right">19</td>
 <td align="right">37.001</td>
 <td align="right">-3.477</td>
@@ -1468,7 +1478,7 @@
 </tr>
 <tr class="even">
 <td>6</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a sign</span></td>
+<td align="left"><span class="smallcaps">happiness is a sign</span></td>
 <td align="right">1</td>
 <td align="right">8.810</td>
 <td align="right">-3.141</td>
@@ -1478,7 +1488,7 @@
 </tr>
 <tr class="odd">
 <td>7</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is light</span></td>
+<td align="left"><span class="smallcaps">happiness is light</span></td>
 <td align="right">1</td>
 <td align="right">7.576</td>
 <td align="right">-2.611</td>
@@ -1488,7 +1498,7 @@
 </tr>
 <tr class="even">
 <td>8</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is a drawing</span></td>
+<td align="left"><span class="smallcaps">happiness is a drawing</span></td>
 <td align="right">1</td>
 <td align="right">7.224</td>
 <td align="right">-2.461</td>
@@ -1498,7 +1508,7 @@
 </tr>
 <tr class="odd">
 <td>9</td>
-<td align="left"><span style="font-variant:small-caps;">happiness is (un)mixed substance</span></td>
+<td align="left"><span class="smallcaps">happiness is (un)mixed substance</span></td>
 <td align="right">3</td>
 <td align="right">9.867</td>
 <td align="right">-2.164</td>
@@ -1508,6 +1518,7 @@
 </tr>
 </tbody>
 </table>
+<p>Repelled metaphors for <em>kesenangan</em> ‘pleasure’</p>
 <p>Finally, the codes below show how to retrieve the top-20 most distinctive collocates co-occurring with <em>kesenangan</em> ‘pleasure’ within the span of 4 words to the left and right of <em>kesenangan</em> (Rajeg, <a href="#ref-rajeg_metaphorical_2018">2019</a>, Ch. 7, Table 7-7).</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="co"># present the result table for collocational analysis of *kesenangan*</span></a>
 <a class="sourceLine" id="cb20-2" data-line-number="2"><span class="kw"><a href="reference/mdca_attr.html">mdca_attr</a></span>(mdca_colloc, </a>
@@ -1541,7 +1552,7 @@
 <td align="right">10.298</td>
 <td align="right">28.818</td>
 <td align="left">1.520e-29</td>
-<td align="left">1.111e-24</td>
+<td align="left">1.108e-24</td>
 <td align="left">***</td>
 </tr>
 <tr class="even">
@@ -1552,7 +1563,7 @@
 <td align="right">5.994</td>
 <td align="right">16.702</td>
 <td align="left">1.985e-17</td>
-<td align="left">1.450e-12</td>
+<td align="left">1.446e-12</td>
 <td align="left">***</td>
 </tr>
 <tr class="odd">
@@ -1563,7 +1574,7 @@
 <td align="right">17.522</td>
 <td align="right">15.757</td>
 <td align="left">1.748e-16</td>
-<td align="left">1.277e-11</td>
+<td align="left">1.274e-11</td>
 <td align="left">***</td>
 </tr>
 <tr class="even">
@@ -1574,7 +1585,7 @@
 <td align="right">11.835</td>
 <td align="right">10.789</td>
 <td align="left">1.624e-11</td>
-<td align="left">1.187e-06</td>
+<td align="left">1.184e-06</td>
 <td align="left">***</td>
 </tr>
 <tr class="odd">
@@ -1585,7 +1596,7 @@
 <td align="right">2.306</td>
 <td align="right">10.278</td>
 <td align="left">5.277e-11</td>
-<td align="left">3.855e-06</td>
+<td align="left">3.845e-06</td>
 <td align="left">***</td>
 </tr>
 <tr class="even">
@@ -1596,7 +1607,7 @@
 <td align="right">3.996</td>
 <td align="right">10.114</td>
 <td align="left">7.689e-11</td>
-<td align="left">5.617e-06</td>
+<td align="left">5.603e-06</td>
 <td align="left">***</td>
 </tr>
 <tr class="odd">
@@ -1607,7 +1618,7 @@
 <td align="right">2.613</td>
 <td align="right">8.756</td>
 <td align="left">1.756e-09</td>
-<td align="left">1.282e-04</td>
+<td align="left">1.279e-04</td>
 <td align="left">***</td>
 </tr>
 <tr class="even">
@@ -1618,7 +1629,7 @@
 <td align="right">2.152</td>
 <td align="right">7.934</td>
 <td align="left">1.165e-08</td>
-<td align="left">8.510e-04</td>
+<td align="left">8.488e-04</td>
 <td align="left">***</td>
 </tr>
 <tr class="odd">
@@ -1629,7 +1640,7 @@
 <td align="right">2.613</td>
 <td align="right">7.464</td>
 <td align="left">3.438e-08</td>
-<td align="left">2.511e-03</td>
+<td align="left">2.504e-03</td>
 <td align="left">**</td>
 </tr>
 <tr class="even">
@@ -1640,7 +1651,7 @@
 <td align="right">1.691</td>
 <td align="right">7.157</td>
 <td align="left">6.964e-08</td>
-<td align="left">5.085e-03</td>
+<td align="left">5.072e-03</td>
 <td align="left">**</td>
 </tr>
 <tr class="odd">
@@ -1651,7 +1662,7 @@
 <td align="right">18.291</td>
 <td align="right">7.136</td>
 <td align="left">7.312e-08</td>
-<td align="left">5.339e-03</td>
+<td align="left">5.326e-03</td>
 <td align="left">**</td>
 </tr>
 <tr class="even">
@@ -1662,7 +1673,7 @@
 <td align="right">1.230</td>
 <td align="right">6.507</td>
 <td align="left">3.115e-07</td>
-<td align="left">2.274e-02</td>
+<td align="left">2.268e-02</td>
 <td align="left">*</td>
 </tr>
 <tr class="odd">
@@ -1673,7 +1684,7 @@
 <td align="right">1.998</td>
 <td align="right">5.873</td>
 <td align="left">1.341e-06</td>
-<td align="left">9.787e-02</td>
+<td align="left">9.762e-02</td>
 <td align="left">ms</td>
 </tr>
 <tr class="even">
@@ -1684,7 +1695,7 @@
 <td align="right">5.072</td>
 <td align="right">5.844</td>
 <td align="left">1.431e-06</td>
-<td align="left">1.045e-01</td>
+<td align="left">1.042e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="odd">
@@ -1695,7 +1706,7 @@
 <td align="right">1.383</td>
 <td align="right">5.616</td>
 <td align="left">2.421e-06</td>
-<td align="left">1.767e-01</td>
+<td align="left">1.762e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="even">
@@ -1706,7 +1717,7 @@
 <td align="right">7.993</td>
 <td align="right">5.521</td>
 <td align="left">3.016e-06</td>
-<td align="left">2.201e-01</td>
+<td align="left">2.196e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="odd">
@@ -1717,7 +1728,7 @@
 <td align="right">2.152</td>
 <td align="right">5.394</td>
 <td align="left">4.040e-06</td>
-<td align="left">2.948e-01</td>
+<td align="left">2.941e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="even">
@@ -1728,7 +1739,7 @@
 <td align="right">1.844</td>
 <td align="right">5.171</td>
 <td align="left">6.744e-06</td>
-<td align="left">4.921e-01</td>
+<td align="left">4.908e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="odd">
@@ -1739,7 +1750,7 @@
 <td align="right">6.302</td>
 <td align="right">4.896</td>
 <td align="left">1.270e-05</td>
-<td align="left">9.266e-01</td>
+<td align="left">9.242e-01</td>
 <td align="left">ns</td>
 </tr>
 <tr class="even">
@@ -1750,11 +1761,12 @@
 <td align="right">0.922</td>
 <td align="right">4.880</td>
 <td align="left">1.319e-05</td>
-<td align="left">9.619e-01</td>
+<td align="left">9.594e-01</td>
 <td align="left">ns</td>
 </tr>
 </tbody>
 </table>
+<p>The 20 most distinctive, 4-window span collocates for <em>kesenangan</em> ‘pleasure’ in the whole Indonesian Leipzig Corpora collection.</p>
 <p>It appears that <em>kesenangan</em> ‘pleasure’ is strongly associated with negative nuance as it more frequently co-occurs with words, such as <em>dosa</em> ‘sin’, <em>hawa nafsu</em> ‘lust’, <em>nafsu</em> ‘lust’, <em>seksual</em> ‘sexual’, and <em>duniawi</em> ‘worldly; earthly’.</p>
 </div>
 </div>
@@ -1764,106 +1776,201 @@
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1">devtools<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/devtools/man/reexports.html">session_info</a></span>()</a>
 <a class="sourceLine" id="cb21-2" data-line-number="2"><span class="co">#&gt; ─ Session info ──────────────────────────────────────────────────────────</span></a>
 <a class="sourceLine" id="cb21-3" data-line-number="3"><span class="co">#&gt;  setting  value                       </span></a>
-<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="co">#&gt;  version  R version 3.5.3 (2019-03-11)</span></a>
-<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="co">#&gt;  os       macOS Mojave 10.14.4        </span></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4"><span class="co">#&gt;  version  R version 3.6.0 (2019-04-26)</span></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5"><span class="co">#&gt;  os       macOS  10.15.1              </span></a>
 <a class="sourceLine" id="cb21-6" data-line-number="6"><span class="co">#&gt;  system   x86_64, darwin15.6.0        </span></a>
 <a class="sourceLine" id="cb21-7" data-line-number="7"><span class="co">#&gt;  ui       X11                         </span></a>
 <a class="sourceLine" id="cb21-8" data-line-number="8"><span class="co">#&gt;  language (EN)                        </span></a>
 <a class="sourceLine" id="cb21-9" data-line-number="9"><span class="co">#&gt;  collate  en_US.UTF-8                 </span></a>
 <a class="sourceLine" id="cb21-10" data-line-number="10"><span class="co">#&gt;  ctype    en_US.UTF-8                 </span></a>
-<a class="sourceLine" id="cb21-11" data-line-number="11"><span class="co">#&gt;  tz       Australia/Melbourne         </span></a>
-<a class="sourceLine" id="cb21-12" data-line-number="12"><span class="co">#&gt;  date     2019-04-12                  </span></a>
+<a class="sourceLine" id="cb21-11" data-line-number="11"><span class="co">#&gt;  tz       Asia/Makassar               </span></a>
+<a class="sourceLine" id="cb21-12" data-line-number="12"><span class="co">#&gt;  date     2019-12-01                  </span></a>
 <a class="sourceLine" id="cb21-13" data-line-number="13"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb21-14" data-line-number="14"><span class="co">#&gt; ─ Packages ──────────────────────────────────────────────────────────────</span></a>
-<a class="sourceLine" id="cb21-15" data-line-number="15"><span class="co">#&gt;  package     * version date       lib source        </span></a>
-<a class="sourceLine" id="cb21-16" data-line-number="16"><span class="co">#&gt;  assertthat    0.2.0   2017-04-11 [1] CRAN (R 3.4.0)</span></a>
-<a class="sourceLine" id="cb21-17" data-line-number="17"><span class="co">#&gt;  backports     1.1.2   2017-12-13 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-18" data-line-number="18"><span class="co">#&gt;  broom         0.5.1   2018-12-05 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-19" data-line-number="19"><span class="co">#&gt;  callr         3.1.1   2018-12-21 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-20" data-line-number="20"><span class="co">#&gt;  cellranger    1.1.0   2016-07-27 [1] CRAN (R 3.4.0)</span></a>
-<a class="sourceLine" id="cb21-21" data-line-number="21"><span class="co">#&gt;  cli           1.0.1   2018-09-25 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-22" data-line-number="22"><span class="co">#&gt;  colorspace    1.3-2   2016-12-14 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-23" data-line-number="23"><span class="co">#&gt;  crayon        1.3.4   2017-09-16 [1] CRAN (R 3.4.1)</span></a>
-<a class="sourceLine" id="cb21-24" data-line-number="24"><span class="co">#&gt;  desc          1.2.0   2018-05-01 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-25" data-line-number="25"><span class="co">#&gt;  devtools      2.0.1   2018-10-26 [1] CRAN (R 3.5.1)</span></a>
-<a class="sourceLine" id="cb21-26" data-line-number="26"><span class="co">#&gt;  digest        0.6.15  2018-01-28 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-27" data-line-number="27"><span class="co">#&gt;  dplyr       * 0.8.0.1 2019-02-15 [1] CRAN (R 3.5.2)</span></a>
-<a class="sourceLine" id="cb21-28" data-line-number="28"><span class="co">#&gt;  evaluate      0.11    2018-07-17 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-29" data-line-number="29"><span class="co">#&gt;  forcats     * 0.3.0   2018-02-19 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-30" data-line-number="30"><span class="co">#&gt;  fs            1.2.3   2018-06-08 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-31" data-line-number="31"><span class="co">#&gt;  generics      0.0.2   2018-11-29 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-32" data-line-number="32"><span class="co">#&gt;  ggplot2     * 3.1.0   2018-10-25 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-33" data-line-number="33"><span class="co">#&gt;  glue          1.3.0   2018-07-17 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-34" data-line-number="34"><span class="co">#&gt;  gtable        0.2.0   2016-02-26 [1] CRAN (R 3.4.0)</span></a>
-<a class="sourceLine" id="cb21-35" data-line-number="35"><span class="co">#&gt;  happyr      * 0.1.1   2019-04-12 [1] local         </span></a>
-<a class="sourceLine" id="cb21-36" data-line-number="36"><span class="co">#&gt;  haven         1.1.2   2018-06-27 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-37" data-line-number="37"><span class="co">#&gt;  highr         0.7     2018-06-09 [1] CRAN (R 3.4.4)</span></a>
-<a class="sourceLine" id="cb21-38" data-line-number="38"><span class="co">#&gt;  hms           0.4.2   2018-03-10 [1] CRAN (R 3.4.4)</span></a>
-<a class="sourceLine" id="cb21-39" data-line-number="39"><span class="co">#&gt;  htmltools     0.3.6   2017-04-28 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-40" data-line-number="40"><span class="co">#&gt;  httr          1.3.1   2017-08-20 [1] CRAN (R 3.4.1)</span></a>
-<a class="sourceLine" id="cb21-41" data-line-number="41"><span class="co">#&gt;  irr           0.84    2012-07-16 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-42" data-line-number="42"><span class="co">#&gt;  jsonlite      1.5     2017-06-01 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-43" data-line-number="43"><span class="co">#&gt;  knitr         1.20    2018-02-20 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-44" data-line-number="44"><span class="co">#&gt;  labeling      0.3     2014-08-23 [1] CRAN (R 3.4.0)</span></a>
-<a class="sourceLine" id="cb21-45" data-line-number="45"><span class="co">#&gt;  lattice       0.20-38 2018-11-04 [2] CRAN (R 3.5.3)</span></a>
-<a class="sourceLine" id="cb21-46" data-line-number="46"><span class="co">#&gt;  lazyeval      0.2.1   2017-10-29 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-47" data-line-number="47"><span class="co">#&gt;  lpSolve       5.6.13  2015-09-19 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-48" data-line-number="48"><span class="co">#&gt;  lubridate     1.7.4   2018-04-11 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-49" data-line-number="49"><span class="co">#&gt;  magrittr      1.5     2014-11-22 [1] CRAN (R 3.4.0)</span></a>
-<a class="sourceLine" id="cb21-50" data-line-number="50"><span class="co">#&gt;  memoise       1.1.0   2017-04-21 [1] CRAN (R 3.4.0)</span></a>
-<a class="sourceLine" id="cb21-51" data-line-number="51"><span class="co">#&gt;  modelr        0.1.2   2018-05-11 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-52" data-line-number="52"><span class="co">#&gt;  munsell       0.5.0   2018-06-12 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-53" data-line-number="53"><span class="co">#&gt;  nlme          3.1-137 2018-04-07 [2] CRAN (R 3.5.3)</span></a>
-<a class="sourceLine" id="cb21-54" data-line-number="54"><span class="co">#&gt;  pillar        1.3.1   2018-12-15 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-55" data-line-number="55"><span class="co">#&gt;  pkgbuild      1.0.2   2018-10-16 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-56" data-line-number="56"><span class="co">#&gt;  pkgconfig     2.0.2   2018-08-16 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-57" data-line-number="57"><span class="co">#&gt;  pkgload       1.0.2   2018-10-29 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-58" data-line-number="58"><span class="co">#&gt;  plyr          1.8.4   2016-06-08 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-59" data-line-number="59"><span class="co">#&gt;  prettyunits   1.0.2   2015-07-13 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-60" data-line-number="60"><span class="co">#&gt;  processx      3.2.1   2018-12-05 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-61" data-line-number="61"><span class="co">#&gt;  ps            1.3.0   2018-12-21 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-62" data-line-number="62"><span class="co">#&gt;  purrr       * 0.3.0   2019-01-27 [1] CRAN (R 3.5.2)</span></a>
-<a class="sourceLine" id="cb21-63" data-line-number="63"><span class="co">#&gt;  R6            2.3.0   2018-10-04 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-64" data-line-number="64"><span class="co">#&gt;  Rcpp          1.0.0   2018-11-07 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-65" data-line-number="65"><span class="co">#&gt;  readr       * 1.3.1   2018-12-21 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-66" data-line-number="66"><span class="co">#&gt;  readxl        1.2.0   2018-12-19 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-67" data-line-number="67"><span class="co">#&gt;  remotes       2.0.2   2018-10-30 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-68" data-line-number="68"><span class="co">#&gt;  rlang         0.3.1   2019-01-08 [1] CRAN (R 3.5.2)</span></a>
-<a class="sourceLine" id="cb21-69" data-line-number="69"><span class="co">#&gt;  rmarkdown     1.11    2018-12-08 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-70" data-line-number="70"><span class="co">#&gt;  rprojroot     1.3-2   2018-01-03 [1] CRAN (R 3.4.3)</span></a>
-<a class="sourceLine" id="cb21-71" data-line-number="71"><span class="co">#&gt;  rstudioapi    0.7     2017-09-07 [1] CRAN (R 3.4.1)</span></a>
-<a class="sourceLine" id="cb21-72" data-line-number="72"><span class="co">#&gt;  rvest         0.3.2   2016-06-17 [1] CRAN (R 3.4.0)</span></a>
-<a class="sourceLine" id="cb21-73" data-line-number="73"><span class="co">#&gt;  scales        1.0.0   2018-08-09 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-74" data-line-number="74"><span class="co">#&gt;  sessioninfo   1.1.1   2018-11-05 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-75" data-line-number="75"><span class="co">#&gt;  stringi       1.2.4   2018-07-20 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-76" data-line-number="76"><span class="co">#&gt;  stringr     * 1.4.0   2019-02-10 [1] CRAN (R 3.5.2)</span></a>
-<a class="sourceLine" id="cb21-77" data-line-number="77"><span class="co">#&gt;  testthat      2.0.1   2018-10-13 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-78" data-line-number="78"><span class="co">#&gt;  tibble      * 2.0.1   2019-01-12 [1] CRAN (R 3.5.2)</span></a>
-<a class="sourceLine" id="cb21-79" data-line-number="79"><span class="co">#&gt;  tidyr       * 0.8.3   2019-03-01 [1] CRAN (R 3.5.2)</span></a>
-<a class="sourceLine" id="cb21-80" data-line-number="80"><span class="co">#&gt;  tidyselect    0.2.5   2018-10-11 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-81" data-line-number="81"><span class="co">#&gt;  tidyverse   * 1.2.1   2017-11-14 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-82" data-line-number="82"><span class="co">#&gt;  usethis       1.4.0   2018-08-14 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-83" data-line-number="83"><span class="co">#&gt;  withr         2.1.2   2018-03-15 [1] CRAN (R 3.4.4)</span></a>
-<a class="sourceLine" id="cb21-84" data-line-number="84"><span class="co">#&gt;  xml2          1.2.0   2018-01-24 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-85" data-line-number="85"><span class="co">#&gt;  yaml          2.2.0   2018-07-25 [1] CRAN (R 3.5.0)</span></a>
-<a class="sourceLine" id="cb21-86" data-line-number="86"><span class="co">#&gt; </span></a>
-<a class="sourceLine" id="cb21-87" data-line-number="87"><span class="co">#&gt; [1] /Users/Primahadi/Rlibs</span></a>
-<a class="sourceLine" id="cb21-88" data-line-number="88"><span class="co">#&gt; [2] /Library/Frameworks/R.framework/Versions/3.5/Resources/library</span></a></code></pre></div>
+<a class="sourceLine" id="cb21-15" data-line-number="15"><span class="co">#&gt;  package     * version  date       lib source        </span></a>
+<a class="sourceLine" id="cb21-16" data-line-number="16"><span class="co">#&gt;  assertthat    0.2.1    2019-03-21 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-17" data-line-number="17"><span class="co">#&gt;  backports     1.1.4    2019-04-10 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-18" data-line-number="18"><span class="co">#&gt;  broom         0.5.2    2019-04-07 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-19" data-line-number="19"><span class="co">#&gt;  callr         3.2.0    2019-03-15 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-20" data-line-number="20"><span class="co">#&gt;  cellranger    1.1.0    2016-07-27 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-21" data-line-number="21"><span class="co">#&gt;  cli           1.1.0    2019-03-19 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-22" data-line-number="22"><span class="co">#&gt;  colorspace    1.4-1    2019-03-18 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-23" data-line-number="23"><span class="co">#&gt;  crayon        1.3.4    2017-09-16 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-24" data-line-number="24"><span class="co">#&gt;  DBI           1.0.0    2018-05-02 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-25" data-line-number="25"><span class="co">#&gt;  dbplyr        1.4.2    2019-06-17 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-26" data-line-number="26"><span class="co">#&gt;  desc          1.2.0    2018-05-01 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-27" data-line-number="27"><span class="co">#&gt;  devtools      2.0.2    2019-04-08 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-28" data-line-number="28"><span class="co">#&gt;  digest        0.6.19   2019-05-20 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-29" data-line-number="29"><span class="co">#&gt;  dplyr       * 0.8.3    2019-07-04 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-30" data-line-number="30"><span class="co">#&gt;  ellipsis      0.3.0    2019-09-20 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-31" data-line-number="31"><span class="co">#&gt;  evaluate      0.14     2019-05-28 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-32" data-line-number="32"><span class="co">#&gt;  forcats     * 0.4.0    2019-02-17 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-33" data-line-number="33"><span class="co">#&gt;  fs            1.3.1    2019-05-06 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-34" data-line-number="34"><span class="co">#&gt;  generics      0.0.2    2018-11-29 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-35" data-line-number="35"><span class="co">#&gt;  ggplot2     * 3.2.1    2019-08-10 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-36" data-line-number="36"><span class="co">#&gt;  glue          1.3.1    2019-03-12 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-37" data-line-number="37"><span class="co">#&gt;  gtable        0.3.0    2019-03-25 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-38" data-line-number="38"><span class="co">#&gt;  happyr      * 0.1.1    2019-12-01 [1] local         </span></a>
+<a class="sourceLine" id="cb21-39" data-line-number="39"><span class="co">#&gt;  haven         2.2.0    2019-11-08 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-40" data-line-number="40"><span class="co">#&gt;  highr         0.8      2019-03-20 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-41" data-line-number="41"><span class="co">#&gt;  hms           0.5.2    2019-10-30 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-42" data-line-number="42"><span class="co">#&gt;  htmltools     0.3.6    2017-04-28 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-43" data-line-number="43"><span class="co">#&gt;  httr          1.4.1    2019-08-05 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-44" data-line-number="44"><span class="co">#&gt;  irr           0.84.1   2019-01-26 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-45" data-line-number="45"><span class="co">#&gt;  jsonlite      1.6      2018-12-07 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-46" data-line-number="46"><span class="co">#&gt;  knitr         1.23     2019-05-18 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-47" data-line-number="47"><span class="co">#&gt;  labeling      0.3      2014-08-23 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-48" data-line-number="48"><span class="co">#&gt;  lattice       0.20-38  2018-11-04 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-49" data-line-number="49"><span class="co">#&gt;  lazyeval      0.2.2    2019-03-15 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-50" data-line-number="50"><span class="co">#&gt;  lifecycle     0.1.0    2019-08-01 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-51" data-line-number="51"><span class="co">#&gt;  lpSolve       5.6.13.1 2019-05-28 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-52" data-line-number="52"><span class="co">#&gt;  lubridate     1.7.4    2018-04-11 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-53" data-line-number="53"><span class="co">#&gt;  magrittr      1.5      2014-11-22 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-54" data-line-number="54"><span class="co">#&gt;  memoise       1.1.0    2017-04-21 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-55" data-line-number="55"><span class="co">#&gt;  modelr        0.1.5    2019-08-08 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-56" data-line-number="56"><span class="co">#&gt;  munsell       0.5.0    2018-06-12 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-57" data-line-number="57"><span class="co">#&gt;  nlme          3.1-139  2019-04-09 [2] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-58" data-line-number="58"><span class="co">#&gt;  pillar        1.4.2    2019-06-29 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-59" data-line-number="59"><span class="co">#&gt;  pkgbuild      1.0.3    2019-03-20 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-60" data-line-number="60"><span class="co">#&gt;  pkgconfig     2.0.2    2018-08-16 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-61" data-line-number="61"><span class="co">#&gt;  pkgload       1.0.2    2018-10-29 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-62" data-line-number="62"><span class="co">#&gt;  prettyunits   1.0.2    2015-07-13 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-63" data-line-number="63"><span class="co">#&gt;  processx      3.3.1    2019-05-08 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-64" data-line-number="64"><span class="co">#&gt;  ps            1.3.0    2018-12-21 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-65" data-line-number="65"><span class="co">#&gt;  purrr       * 0.3.3    2019-10-18 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-66" data-line-number="66"><span class="co">#&gt;  R6            2.4.0    2019-02-14 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-67" data-line-number="67"><span class="co">#&gt;  Rcpp          1.0.1    2019-03-17 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-68" data-line-number="68"><span class="co">#&gt;  readr       * 1.3.1    2018-12-21 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-69" data-line-number="69"><span class="co">#&gt;  readxl        1.3.1    2019-03-13 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-70" data-line-number="70"><span class="co">#&gt;  remotes       2.0.4    2019-04-10 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-71" data-line-number="71"><span class="co">#&gt;  reprex        0.3.0    2019-05-16 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-72" data-line-number="72"><span class="co">#&gt;  rlang         0.4.2    2019-11-23 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-73" data-line-number="73"><span class="co">#&gt;  rmarkdown     1.13     2019-05-22 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-74" data-line-number="74"><span class="co">#&gt;  rprojroot     1.3-2    2018-01-03 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-75" data-line-number="75"><span class="co">#&gt;  rstudioapi    0.10     2019-03-19 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-76" data-line-number="76"><span class="co">#&gt;  rvest         0.3.5    2019-11-08 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-77" data-line-number="77"><span class="co">#&gt;  scales        1.0.0    2018-08-09 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-78" data-line-number="78"><span class="co">#&gt;  sessioninfo   1.1.1    2018-11-05 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-79" data-line-number="79"><span class="co">#&gt;  stringi       1.4.3    2019-03-12 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-80" data-line-number="80"><span class="co">#&gt;  stringr     * 1.4.0    2019-02-10 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-81" data-line-number="81"><span class="co">#&gt;  testthat      2.1.1    2019-04-23 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-82" data-line-number="82"><span class="co">#&gt;  tibble      * 2.1.3    2019-06-06 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-83" data-line-number="83"><span class="co">#&gt;  tidyr       * 1.0.0    2019-09-11 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-84" data-line-number="84"><span class="co">#&gt;  tidyselect    0.2.5    2018-10-11 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-85" data-line-number="85"><span class="co">#&gt;  tidyverse   * 1.3.0    2019-11-21 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-86" data-line-number="86"><span class="co">#&gt;  usethis       1.5.0    2019-04-07 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-87" data-line-number="87"><span class="co">#&gt;  vctrs         0.2.0    2019-07-05 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-88" data-line-number="88"><span class="co">#&gt;  withr         2.1.2    2018-03-15 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-89" data-line-number="89"><span class="co">#&gt;  xfun          0.8      2019-06-25 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-90" data-line-number="90"><span class="co">#&gt;  xml2          1.2.2    2019-08-09 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-91" data-line-number="91"><span class="co">#&gt;  yaml          2.2.0    2018-07-25 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-92" data-line-number="92"><span class="co">#&gt;  zeallot       0.1.0    2018-01-28 [1] CRAN (R 3.6.0)</span></a>
+<a class="sourceLine" id="cb21-93" data-line-number="93"><span class="co">#&gt; </span></a>
+<a class="sourceLine" id="cb21-94" data-line-number="94"><span class="co">#&gt; [1] /Users/Primahadi/Rlibs</span></a>
+<a class="sourceLine" id="cb21-95" data-line-number="95"><span class="co">#&gt; [2] /Library/Frameworks/R.framework/Versions/3.6/Resources/library</span></a></code></pre></div>
 </div>
 <div id="references" class="section level2">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h2>
-<p>Biemann, C., Heyer, G., Quasthoff, U., &amp; Richter, M. (2007). The Leipzig Corpora Collection: Monolingual corpora of standard size. In M. Davies, P. Rayson, S. Hunston, &amp; P. Danielsson (Eds.), <em>Proceedings of the Corpus Linguistics Conference</em>. University of Birmingham, UK. Retrieved from <a href="http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf" class="uri">http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf</a></p>
-<p>Goldhahn, D., Eckart, T., &amp; Quasthoff, U. (2012). Building large monolingual dictionaries at the Leipzig Corpora Collection: From 100 to 200 languages. In <em>Proceedings of the 8th Language Resources and Evaluation Conference (LREC) 2012</em> (pp. 759–765). Istanbul. Retrieved from <a href="http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf" class="uri">http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf</a></p>
-<p>Gries, S. T. (2009). <em>Statistics for linguistics with R: A practical introduction</em>. Berlin: Mouton de Gruyter.</p>
-<p>Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. <em>Corpus Linguistics and Linguistic Theory</em>, <em>2</em>(2), 243–256.</p>
-<p>Oster, U. (2010). Using corpus methodology for semantic and pragmatic analyses: What can corpora tell us about the linguistic expression of emotions? <em>Cognitive Linguistics</em>, <em>21</em>(4), 727–763. <a href="doi:%5B10.1515/COGL.2010.023%5D(https://doi.org/10.1515/COGL.2010.023)" class="uri">doi:[10.1515/COGL.2010.023](https://doi.org/10.1515/COGL.2010.023)</a></p>
-<p>Oster, U. (2018). Emotions in motion: Towards a corpus-based description of the diachronic evolution of anger words. <em>Review of Cognitive Linguistics</em>, <em>16</em>(1), 191–228. <a href="doi:%5B10.1075/rcl.00008.ost%5D(https://doi.org/10.1075/rcl.00008.ost)" class="uri">doi:[10.1075/rcl.00008.ost](https://doi.org/10.1075/rcl.00008.ost)</a></p>
-<p>Quasthoff, U., &amp; Goldhahn, D. (2013). <em>Indonesian corpora</em> (Technical report series on corpus building No. 7). Leipzig, Germany: Abteilung Automatische Sprachverarbeitung, Institut für Informatik, Universität Leipzig. Retrieved from <a href="http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf" class="uri">http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf</a></p>
-<p>Rajeg, G. P. W. (2019). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for <span style="font-variant:small-caps;">Happiness</span></em> (PhD thesis). Monash University, Australia, Clayton, VIC. <a href="doi:/%5B10.26180/5cac231a97fb1%5D(https://doi.org/10.26180/5cac231a97fb1)" class="uri">doi:/[10.26180/5cac231a97fb1](https://doi.org/10.26180/5cac231a97fb1)</a></p>
-<p>Stefanowitsch, A. (2013). Collostructional analysis. In T. Hoffmann &amp; G. Trousdale (Eds.), <em>The Oxford handbook of Construction Grammar</em> (pp. 290–306). Oxford: Oxford University Press. <a href="doi:%5B10.1093/oxfordhb/9780195396683.013.0016%5D(https://doi.org/10.1093/oxfordhb/9780195396683.013.0016)" class="uri">doi:[10.1093/oxfordhb/9780195396683.013.0016](https://doi.org/10.1093/oxfordhb/9780195396683.013.0016)</a></p>
-<p>Stefanowitsch, A. (2017). <em>Corpus linguistics: A guide to the methodology</em>. Book manuscript, Freie Universität Berlin: Book manuscript. Retrieved from <a href="http://stefanowitsch.net/clm/clmbook-draft.pdf" class="uri">http://stefanowitsch.net/clm/clmbook-draft.pdf</a></p>
-<p>Stefanowitsch, A., &amp; Flach, S. (2016). The corpus-based perspective on entrenchment. In H.-J. Schmid (Ed.), <em>Entrenchment and the psychology of language learning: How we reorganize and adapt linguistic knowledge</em> (pp. 101–128). Berlin, Boston: De Gruyter. <a href="doi:%5B10.1515/9783110341423-006%5D(https://doi.org/10.1515/9783110341423-006)" class="uri">doi:[10.1515/9783110341423-006](https://doi.org/10.1515/9783110341423-006)</a></p>
+<div id="refs" class="references">
+
+<div id="ref-biemann_leipzig_2007">
+
+Biemann, C., Heyer, G., Quasthoff, U., &amp; Richter, M. (2007). The Leipzig
+Corpora Collection: Monolingual corpora of standard size. In M. Davies,
+P. Rayson, S. Hunston, &amp; P. Danielsson (Eds.), *Proceedings of the
+Corpus Linguistics Conference*. University of Birmingham, UK. Retrieved
+from <http:></http:>
+</div>
+
+<div id="ref-goldhahn_building_2012">
+
+Goldhahn, D., Eckart, T., &amp; Quasthoff, U. (2012). Building large
+monolingual dictionaries at the Leipzig Corpora Collection: From 100 to
+200 languages. In *Proceedings of the 8th Language Resources and
+Evaluation Conference (LREC) 2012* (pp. 759–765). Istanbul. Retrieved
+from <http:></http:>
+</div>
+
+<div id="ref-gries_statistics_2009">
+
+Gries, S. T. (2009). *Statistics for linguistics with R: A practical
+introduction*. Berlin: Mouton de Gruyter.
+
+</div>
+
+<div id="ref-hilpert_distinctive_2006">
+
+Hilpert, M. (2006). Distinctive collexeme analysis and diachrony.
+*Corpus Linguistics and Linguistic Theory*, *2*(2), 243–256.
+
+</div>
+
+<div id="ref-oster_using_2010">
+
+Oster, U. (2010). Using corpus methodology for semantic and pragmatic
+analyses: What can corpora tell us about the linguistic expression of
+emotions? *Cognitive Linguistics*, *21*(4), 727–763.
+doi:[10.1515/COGL.2010.023](https://doi.org/10.1515/COGL.2010.023)
+
+</div>
+
+<div id="ref-oster_emotions_2018">
+
+Oster, U. (2018). Emotions in motion: Towards a corpus-based description
+of the diachronic evolution of anger words. *Review of Cognitive
+Linguistics*, *16*(1), 191–228.
+doi:[10.1075/rcl.00008.ost](https://doi.org/10.1075/rcl.00008.ost)
+
+</div>
+
+<div id="ref-quasthoff_indonesian_2013">
+
+Quasthoff, U., &amp; Goldhahn, D. (2013). *Indonesian corpora* (Technical
+report series on corpus building No. 7). Leipzig, Germany: Abteilung
+Automatische Sprachverarbeitung, Institut für Informatik, Universität
+Leipzig. Retrieved from
+<http:></http:>
+</div>
+
+<div id="ref-rajeg_metaphorical_2018">
+
+Rajeg, G. P. W. (2019). *Metaphorical profiles and near-synonyms: A
+corpus-based study of Indonesian words for
+<span class="smallcaps">Happiness</span>* (PhD thesis). Monash
+University, Australia, Clayton, VIC.
+doi:/[10.26180/5cac231a97fb1](https://doi.org/10.26180/5cac231a97fb1)
+
+</div>
+
+<div id="ref-hoffmann_collostructional_2013">
+
+Stefanowitsch, A. (2013). Collostructional analysis. In T. Hoffmann &amp; G.
+Trousdale (Eds.), *The Oxford handbook of Construction Grammar* (pp.
+290–306). Oxford: Oxford University Press.
+doi:[10.1093/oxfordhb/9780195396683.013.0016](https://doi.org/10.1093/oxfordhb/9780195396683.013.0016)
+
+</div>
+
+<div id="ref-stefanowitsch_corpus_2017">
+
+Stefanowitsch, A. (2017). *Corpus linguistics: A guide to the
+methodology*. Book manuscript, Freie Universität Berlin: Book
+manuscript. Retrieved from
+<http:></http:>
+</div>
+
+<div id="ref-stefanowitsch_corpus-based_2016">
+
+Stefanowitsch, A., &amp; Flach, S. (2016). The corpus-based perspective on
+entrenchment. In H.-J. Schmid (Ed.), *Entrenchment and the psychology of
+language learning: How we reorganize and adapt linguistic knowledge*
+(pp. 101–128). Berlin, Boston: De Gruyter.
+doi:[10.1515/9783110341423-006](https://doi.org/10.1515/9783110341423-006)
+
+</div>
+
+</div>
 </div>
 </div>
 
