@@ -48,12 +48,12 @@
 #' # for distinctive 4-window span collocates
 #' data("colloc_input_data")
 #' mdca_colloc <- mdca(df = colloc_input_data,
-#'                     cxn_var = "synonyms",
-#'                     coll_var = "collocates",
-#'                     correct_holm = TRUE,
-#'                     concise_output = TRUE,
-#'                     already_count_table = FALSE,
-#'                     assocstr_digits = 3L)
+#'                    cxn_var = "synonyms",
+#'                    coll_var = "collocates",
+#'                    correct_holm = TRUE,
+#'                    concise_output = TRUE,
+#'                    already_count_table = FALSE,
+#'                    assocstr_digits = 3L)
 
 #' @importFrom dplyr group_by_
 #' @importFrom dplyr if_else
@@ -82,7 +82,7 @@
 #'         \item Gries, S. T. (2009). \emph{Statistics for linguistics with R: A practical introduction}. Berlin: Mouton de Gruyter.
 #'         \item Gries, S. T. (2014). Coll.analysis 3.5. A script for R to compute perform collostructional analyses. \url{http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html}.
 #'         \item Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. \emph{Corpus Linguistics and Linguistic Theory}, \emph{2}(2), 243–256.
-#'         \item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#'         \item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
 #'     }
 #' @export
 mdca <- function(df = NULL,
@@ -142,14 +142,18 @@ mdca <- function(df = NULL,
   p_binomial <- dplyr::quo(p_binomial)
   assocstr <- dplyr::quo(assocstr)
   abs_assocstr <- dplyr::quo(abs_assocstr)
-  co_occ_tb <- tidyr::nest(dplyr::group_by(co_occ_tb, !!coll_var, !!cxn_var))
+  co_occ_tb <- tidyr::nest(dplyr::group_by(co_occ_tb, !!coll_var, !!cxn_var),
+                           data = c(.data$n, .data$cxn_sum, .data$colloc_sum, .data$dbase_token,
+                                    .data$exp, .data$exp_prob, .data$obs_exp, .data$alt))
   co_occ_tb <- dplyr::mutate(co_occ_tb,
                              !!dplyr::quo_name(p_binomial) := purrr::map_dbl(data, binomial_test)) # binomial test
-  co_occ_tb <- tidyr::nest(dplyr::group_by(tidyr::unnest(co_occ_tb), !!coll_var, !!cxn_var))
+  co_occ_tb <- tidyr::nest(dplyr::group_by(tidyr::unnest(co_occ_tb, .data$data), !!coll_var, !!cxn_var),
+                           data = c(.data$n, .data$cxn_sum, .data$colloc_sum, .data$dbase_token,
+                                    .data$exp, .data$exp_prob, .data$obs_exp, .data$alt, .data$p_binomial))
   co_occ_tb <- dplyr::mutate(co_occ_tb,
                              !!dplyr::quo_name(assocstr) := purrr::map_dbl(data, assoc_strength, 3L), # association strength
                              !!dplyr::quo_name(abs_assocstr) := abs(.data$assocstr))
-  co_occ_tb <- tidyr::unnest(co_occ_tb)
+  co_occ_tb <- tidyr::unnest(co_occ_tb, .data$data)
 
   # get the sum of absolute deviation
   dbase_to_left_join <- dplyr::group_by(co_occ_tb, !!coll_var)
@@ -160,8 +164,8 @@ mdca <- function(df = NULL,
 
   ## get the CxN with the largest deviation
   df_for_largest_dev <- split(co_occ_tb, co_occ_tb[, 1])
-  df_for_largest_dev_res <- purrr::map(df_for_largest_dev, function(lrg_dev) dplyr::filter(lrg_dev, lrg_dev$abs_assocstr == max(lrg_dev$abs_assocstr)))
-  df_for_largest_dev_res <- purrr::map_df(df_for_largest_dev_res, function(lrg_dev) dplyr::ungroup(lrg_dev))
+  df_for_largest_dev_res <- purrr::map_df(df_for_largest_dev, function(lrg_dev) dplyr::filter(dplyr::ungroup(lrg_dev), lrg_dev$abs_assocstr == max(lrg_dev$abs_assocstr)))
+  # df_for_largest_dev_res <- purrr::map_df(df_for_largest_dev_res, function(lrg_dev) dplyr::ungroup(lrg_dev))
   vars_to_select <- stringr::str_c(dplyr::quo_name(coll_var), dplyr::quo_name(cxn_var), 'abs_assocstr', sep = '|')
   df_for_largest_dev_res <- dplyr::select(df_for_largest_dev_res,
                                           dplyr::matches(vars_to_select))
