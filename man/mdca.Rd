@@ -69,18 +69,18 @@ mdca_res <- mdca(df = phd_data_metaphor,
 # for distinctive 4-window span collocates
 data("colloc_input_data")
 mdca_colloc <- mdca(df = colloc_input_data,
-                    cxn_var = "synonyms",
-                    coll_var = "collocates",
-                    correct_holm = TRUE,
-                    concise_output = TRUE,
-                    already_count_table = FALSE,
-                    assocstr_digits = 3L)
+                   cxn_var = "synonyms",
+                   coll_var = "collocates",
+                   correct_holm = TRUE,
+                   concise_output = TRUE,
+                   already_count_table = FALSE,
+                   assocstr_digits = 3L)
 }
 \references{
 \itemize{
         \item Gries, S. T. (2009). \emph{Statistics for linguistics with R: A practical introduction}. Berlin: Mouton de Gruyter.
         \item Gries, S. T. (2014). Coll.analysis 3.5. A script for R to compute perform collostructional analyses. \url{http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html}.
         \item Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. \emph{Corpus Linguistics and Linguistic Theory}, \emph{2}(2), 243–256.
-        \item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+        \item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
     }
 }
