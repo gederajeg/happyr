@@ -4,11 +4,11 @@ bibentry(
          author = person(given = "Gede Primahadi Wijaya", family = "Rajeg", role = c("aut", "cre"), email = c("primahadiwijaya@gmail.com", "primahadi_wijaya@unud.ac.id"), comment = c(ORCID = "0000-0002-2047-8621")),
          year = "2019",
          url = c("https://gederajeg.github.io/happyr/"),
-         note = "R package version 0.1.1",
+         note = "R package version 1.0",
          doi = "10.26180/5be404d6336da",
          key = "rajeg_happyr_2019",
          header = "To cite `happyr` in publication (if in 'Unified style sheet for linguistics' style), please use:",
-         textVersion = paste('Rajeg, Gede Primahadi Wijaya. 2019. happyr: The accompanying R package for Rajeg\'s (2019) PhD Thesis titled \"Metaphorical profiles and near synonyms: A corpus-based study of Indonesian words for HAPPINESS\". R package version 0.1.1. doi:10.26180/5be404d6336da (URL:http://doi.org/10.26180/5be404d6336da). https://gederajeg.github.io/happyr/'))
+         textVersion = paste('Rajeg, Gede Primahadi Wijaya. 2019. happyr: The accompanying R package for Rajeg\'s (2019) PhD Thesis titled \"Metaphorical profiles and near synonyms: A corpus-based study of Indonesian words for HAPPINESS\". R package version 1.0. doi:10.26180/5be404d6336da (URL:http://doi.org/10.26180/5be404d6336da). https://gederajeg.github.io/happyr/'))
 
 bibentry(
         bibtype = "PhdThesis",
