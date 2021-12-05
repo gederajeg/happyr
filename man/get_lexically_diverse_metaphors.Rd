@@ -4,8 +4,11 @@
 \alias{get_lexically_diverse_metaphors}
 \title{Retrieve the top-10 lexically diverse metaphors}
 \usage{
-get_lexically_diverse_metaphors(df_ttr_out = NULL, min_token = 3,
-  top_n_limit = 10)
+get_lexically_diverse_metaphors(
+  df_ttr_out = NULL,
+  min_token = 3,
+  top_n_limit = 10
+)
 }
 \arguments{
 \item{df_ttr_out}{the tibble as the output of \code{\link{ttr}}.}

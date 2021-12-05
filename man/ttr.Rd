@@ -4,8 +4,7 @@
 \alias{ttr}
 \title{Perform the frequency profile measures in Chapter 5 and Chapter 6}
 \usage{
-ttr(df = NULL, schema_var = "metaphors", lexunit_var = "lu",
-  float_digits = 2)
+ttr(df = NULL, schema_var = "metaphors", lexunit_var = "lu", float_digits = 2)
 }
 \arguments{
 \item{df}{the raw data frame containing the schemas and their linguistic instantiations (e.g., the \code{phd_data_metaphor.rda} in the case of the thesis).}

@@ -4,10 +4,19 @@
 \alias{get_lu_frame_table}
 \title{Retrieve the (top-n most frequent) Lexical Units evoking the source frames of a metaphor}
 \usage{
-get_lu_frame_table(metaphor = NULL, word = NULL, print_all = FALSE,
-  top_n = FALSE, limit = 10, df = NULL, metaphor_var = "metaphors",
-  frame_var = "source_frames", synonym_var = "synonyms",
-  lexunit_var = "lu", lexunit_gloss_var = "lu_gloss")
+get_lu_frame_table(
+  metaphor = NULL,
+  word = NULL,
+  print_all = FALSE,
+  top_n = FALSE,
+  limit = 10,
+  df = NULL,
+  metaphor_var = "metaphors",
+  frame_var = "source_frames",
+  synonym_var = "synonyms",
+  lexunit_var = "lu",
+  lexunit_gloss_var = "lu_gloss"
+)
 }
 \arguments{
 \item{metaphor}{regular expressions for the relevant metaphor.}

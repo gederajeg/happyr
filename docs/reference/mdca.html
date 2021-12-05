@@ -8,23 +8,29 @@
 
 <title>Multiple distinctive collexeme analysis (MDCA) — mdca • happyr</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -32,10 +38,10 @@
 
 
 
-<meta property="og:title" content="Multiple distinctive collexeme analysis (MDCA) — mdca" />
 
+<meta property="og:title" content="Multiple distinctive collexeme analysis (MDCA) — mdca" />
 <meta property="og:description" content="Function to perform Multiple Distinctive Collexeme Analysis (MDCA) in Rajeg's (2018) Chapter 7." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -52,7 +58,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -74,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -82,11 +88,10 @@
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/gederajeg/happyr">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/gederajeg/happyr/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -109,15 +114,19 @@
     </div>
 
     <div class="ref-description">
-    
     <p>Function to perform <em>Multiple Distinctive Collexeme Analysis</em> (MDCA) in Rajeg's (2018) Chapter 7.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>mdca</span>(<span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>cxn_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>, <span class='kw'>coll_var</span> <span class='kw'>=</span> <span class='st'>"metaphors"</span>,
-  <span class='kw'>already_count_table</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>assocstr_digits</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
-  <span class='kw'>correct_holm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>concise_output</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>mdca</span>(
+  <span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>cxn_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>,
+  <span class='kw'>coll_var</span> <span class='kw'>=</span> <span class='st'>"metaphors"</span>,
+  <span class='kw'>already_count_table</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>assocstr_digits</span> <span class='kw'>=</span> <span class='fl'>3L</span>,
+  <span class='kw'>correct_holm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>concise_output</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -168,18 +177,16 @@ When it is <code>TRUE</code>, it expects tidy co-occurrence count between values
 <p>If <code>concise_output</code> is <code>FALSE</code>, <code>mdca</code> returns the total tokens in the data, total frequency of each collexeme/collocate, total frequency of each construction, the sum of absolute deviation of the collexeme/collocate, the construction name, showing the largest deviation from the expected, co-occurrence frequency with the collexeme, expected probability of the co-occurrence, and the direction of the deviation from the expected frequency (i.e., whether a collexeme is attracted or repelled by a construction).</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tbl_df (cf. the <code>concise_output</code>).</p>
-    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The <code>mdca</code> function is built on top of the core members of the <code>tidyverse</code> suit of packages.
     The computation of the <em>Association Strength</em> is based on the <code><a href='https://rdrr.io/r/stats/Binomial.html'>dbinom</a></code> function (Gries, 2009, pp. 41-42; cf. Hilpert, 2006). The computation of the corrected <em>p</em>-value of the one-tailed Binomial Test with Holm's method is performed using <code><a href='https://rdrr.io/r/stats/p.adjust.html'>p.adjust</a></code>.</p>
 <p>There is a well-known interactive R script to perform MDCA by Stefan Th. Gries that is called <a href='http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html'><em>Coll.analysis 3.5</em></a> (Gries, 2014). The script includes the other codes to compute the family of methods of <em>Collostructional Analyses</em>. The <code>mdca</code> function in happyr aims to achieve the same analytical goal as that in <em>Coll.analysis 3.5</em>, but is designed differently in terms of its usage and the internal codes, as it is based on the <a href='https://www.tidyverse.org/'>tidyverse</a>.</p>
 <p><code>mdca</code> allows users to have input and output data frame directly in the R environment, primarily enabling them to write interactive document in R Markdown in relation to MDCA. Moreover, happyr provides two functions dedicated to handle the output of <code>mdca</code> to retrieve the <em>distinctive/attracted</em> and <em>repelled</em> collexemes/collocates for a given construction. In contrast, Stefan Gries' script has two options to either print the output into (i) terminal or (ii) into external plain text, which requires post-processing of the results, mostly on a spreadsheet.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     
@@ -190,7 +197,6 @@ When it is <code>TRUE</code>, it expects tidy co-occurrence count between values
 <li><p>Rajeg, G. P. W. (2019). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS</em> (PhD Thesis). Monash University. Melbourne, Australia.</p></li>
 </ul>
 
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># for distinctive metaphors</span>
@@ -212,20 +218,10 @@ When it is <code>TRUE</code>, it expects tidy co-occurrence count between values
                    <span class='kw'>already_count_table</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
                    <span class='kw'>assocstr_digits</span> <span class='kw'>=</span> <span class='fl'>3L</span>)</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#details">Details</a></li>
-
-      <li><a href="#references">References</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -236,7 +232,7 @@ When it is <code>TRUE</code>, it expects tidy co-occurrence count between values
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

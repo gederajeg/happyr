@@ -4,11 +4,19 @@
 \alias{get_lu_submappings_table}
 \title{Retrieve the frequency of Lexical units and the evoked submappings}
 \usage{
-get_lu_submappings_table(metaphor = NULL, word = NULL,
-  print_all = FALSE, top_n = FALSE, limit = 10, df = NULL,
-  metaphor_var = "metaphors", submet_var = "submappings",
-  synonym_var = "synonyms", lexunit_var = "lu",
-  lexunit_gloss_var = "lu_gloss")
+get_lu_submappings_table(
+  metaphor = NULL,
+  word = NULL,
+  print_all = FALSE,
+  top_n = FALSE,
+  limit = 10,
+  df = NULL,
+  metaphor_var = "metaphors",
+  submet_var = "submappings",
+  synonym_var = "synonyms",
+  lexunit_var = "lu",
+  lexunit_gloss_var = "lu_gloss"
+)
 }
 \arguments{
 \item{metaphor}{regular expressions for the relevant metaphor.}
@@ -47,7 +55,7 @@ The function generates a table of frequency and percentages of Lexical units evo
 get_lu_submappings_table(metaphor = "liquid in a container",
                          df = phd_data_metaphor)
 
-# for \\emph{kegembiraan} 'joy'
+# for \emph{kegembiraan} 'joy'
 get_lu_submappings_table(metaphor = "liquid in a container",
                          word = "kegembiraan",
                          df = phd_data_metaphor)

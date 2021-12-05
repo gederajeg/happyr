@@ -4,7 +4,9 @@
 \name{colloc_input_data}
 \alias{colloc_input_data}
 \title{Distinctive collocates data}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 27989 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 27989 rows and 2 columns.
+}
 \usage{
 colloc_input_data
 }

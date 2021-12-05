@@ -4,7 +4,9 @@
 \name{df_cxn_pattern}
 \alias{df_cxn_pattern}
 \title{Interrater data for the constructional patterns}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 300 rows and 3 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 300 rows and 3 columns.
+}
 \usage{
 df_cxn_pattern
 }

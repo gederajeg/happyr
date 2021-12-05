@@ -4,7 +4,9 @@
 \name{dist_colloc_gloss}
 \alias{dist_colloc_gloss}
 \title{Gloss for the distinctive collocates}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 234 rows and 2 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 234 rows and 2 columns.
+}
 \usage{
 dist_colloc_gloss
 }

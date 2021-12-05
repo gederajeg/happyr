@@ -4,8 +4,12 @@
 \alias{get_meta_freq_profiles}
 \title{Select a (set of) frequency profile column(s) for a metaphor}
 \usage{
-get_meta_freq_profiles(metaphor = NULL, ...,
-  metaphor_var = "metaphors", df = NULL)
+get_meta_freq_profiles(
+  metaphor = NULL,
+  ...,
+  metaphor_var = "metaphors",
+  df = NULL
+)
 }
 \arguments{
 \item{metaphor}{character string of regular expressions for the metaphors.}

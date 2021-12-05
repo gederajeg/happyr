@@ -4,7 +4,9 @@
 \name{df_meta_use_2nd}
 \alias{df_meta_use_2nd}
 \title{Interrater data for metaphorical usages of the pattern (2nd round)}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 262 rows and 5 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 262 rows and 5 columns.
+}
 \usage{
 df_meta_use_2nd
 }

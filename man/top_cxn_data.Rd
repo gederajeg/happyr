@@ -4,7 +4,9 @@
 \name{top_cxn_data}
 \alias{top_cxn_data}
 \title{Interrater data for the top constructional patterns}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 12 rows and 3 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 12 rows and 3 columns.
+}
 \usage{
 top_cxn_data
 }

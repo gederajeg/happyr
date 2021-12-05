@@ -8,23 +8,29 @@
 
 <title>Retrieve the frequency of Lexical units and the evoked submappings — get_lu_submappings_table • happyr</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -32,10 +38,10 @@
 
 
 
-<meta property="og:title" content="Retrieve the frequency of Lexical units and the evoked submappings — get_lu_submappings_table" />
 
+<meta property="og:title" content="Retrieve the frequency of Lexical units and the evoked submappings — get_lu_submappings_table" />
 <meta property="og:description" content="The function generates a table of frequency and percentages of Lexical units evoking certain submappings of a metaphor." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -52,7 +58,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -74,7 +80,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -82,11 +88,10 @@
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/gederajeg/happyr">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/gederajeg/happyr/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -109,17 +114,23 @@
     </div>
 
     <div class="ref-description">
-    
     <p>The function generates a table of frequency and percentages of Lexical units evoking certain submappings of a metaphor.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>get_lu_submappings_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>word</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>print_all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>metaphor_var</span> <span class='kw'>=</span> <span class='st'>"metaphors"</span>, <span class='kw'>submet_var</span> <span class='kw'>=</span> <span class='st'>"submappings"</span>,
-  <span class='kw'>synonym_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>, <span class='kw'>lexunit_var</span> <span class='kw'>=</span> <span class='st'>"lu"</span>,
-  <span class='kw'>lexunit_gloss_var</span> <span class='kw'>=</span> <span class='st'>"lu_gloss"</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>get_lu_submappings_table</span>(
+  <span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>word</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>print_all</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>top_n</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>limit</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+  <span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>metaphor_var</span> <span class='kw'>=</span> <span class='st'>"metaphors"</span>,
+  <span class='kw'>submet_var</span> <span class='kw'>=</span> <span class='st'>"submappings"</span>,
+  <span class='kw'>synonym_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>,
+  <span class='kw'>lexunit_var</span> <span class='kw'>=</span> <span class='st'>"lu"</span>,
+  <span class='kw'>lexunit_gloss_var</span> <span class='kw'>=</span> <span class='st'>"lu_gloss"</span>
+)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -168,67 +179,57 @@
       <td><p>character string for the column name of the gloss of the lexical units (i.e., <code>"lu_gloss"</code>).</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tibble containing the submappings, LUs and the glosses,
     frequency of each LUs of the metaphor,
     percentage of each LUs in the metaphor,
     and percentage of each LUs by the evoked submappings.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Rajeg, G. P. W. (2018). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS</em>. PhD Thesis. Monash University. Melbourne, Australia.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># for all synonyms</span>
 <span class='fu'>get_lu_submappings_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"liquid in a container"</span>,
-                         <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 37 x 6</span><span>
+                         <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 37 x 6</span><span>
 #&gt;    submappings       lu     lu_gloss        n perc_expr_overa… perc_expr_by_sub…
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>             </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> expression of ha… terpa… to be spur…    43            27.6                 43
-#&gt; </span><span style='color: #555555;'> 2</span><span> expression of ha… luapan overflow       25            16.0                 25
-#&gt; </span><span style='color: #555555;'> 3</span><span> expression of ha… panca… to spurt s…     9             5.77                 9
-#&gt; </span><span style='color: #555555;'> 4</span><span> expression of ha… salur… to funnel …     4             2.56                 4
-#&gt; </span><span style='color: #555555;'> 5</span><span> expression of ha… panca… a spurting…     3             1.92                 3
-#&gt; </span><span style='color: #555555;'> 6</span><span> expression of ha… curah… outpouring      2             1.28                 2
-#&gt; </span><span style='color: #555555;'> 7</span><span> expression of ha… tertu… to be pour…     2             1.28                 2
-#&gt; </span><span style='color: #555555;'> 8</span><span> expression of ha… tuang… to pour ou…     2             1.28                 2
-#&gt; </span><span style='color: #555555;'> 9</span><span> expression of ha… air b… flood           1             0.64                 1
-#&gt; </span><span style='color: #555555;'>10</span><span> expression of ha… alirk… to flow an…     1             0.64                 1
-#&gt; </span><span style='color: #555555;'># … with 27 more rows</span><span></div><div class='input'>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> expression of ha… terpa… to be spur…    43            27.6                 43
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> expression of ha… luapan overflow       25            16.0                 25
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> expression of ha… panca… to spurt s…     9             5.77                 9
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> expression of ha… salur… to funnel …     4             2.56                 4
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> expression of ha… panca… a spurting…     3             1.92                 3
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> expression of ha… curah… outpouring      2             1.28                 2
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> expression of ha… tertu… to be pour…     2             1.28                 2
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> expression of ha… tuang… to pour ou…     2             1.28                 2
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> expression of ha… air b… flood           1             0.64                 1
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> expression of ha… alirk… to flow an…     1             0.64                 1
+#&gt; </span><span style='color: #949494;'># … with 27 more rows</span><span></div><div class='input'>
 <span class='co'># for \emph{kegembiraan} 'joy'</span>
 <span class='fu'>get_lu_submappings_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"liquid in a container"</span>,
                          <span class='kw'>word</span> <span class='kw'>=</span> <span class='st'>"kegembiraan"</span>,
-                         <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 12 x 7</span><span>
+                         <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 12 x 7</span><span>
 #&gt;    synonyms  submappings  lu    lu_gloss     n perc_expr_overa… perc_expr_by_su…
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>            </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> kegembir… expression … luap… overflow    21            31.3             55.3 
-#&gt; </span><span style='color: #555555;'> 2</span><span> kegembir… expression … terp… to be s…    10            14.9             26.3 
-#&gt; </span><span style='color: #555555;'> 3</span><span> kegembir… expression … tuan… to pour…     2             2.99             5.26
-#&gt; </span><span style='color: #555555;'> 4</span><span> kegembir… expression … air … flood        1             1.49             2.63
-#&gt; </span><span style='color: #555555;'> 5</span><span> kegembir… expression … lamp… to gush…     1             1.49             2.63
-#&gt; </span><span style='color: #555555;'> 6</span><span> kegembir… expression … memb… to over…     1             1.49             2.63
-#&gt; </span><span style='color: #555555;'> 7</span><span> kegembir… expression … panc… to spur…     1             1.49             2.63
-#&gt; </span><span style='color: #555555;'> 8</span><span> kegembir… expression … tert… to be p…     1             1.49             2.63
-#&gt; </span><span style='color: #555555;'> 9</span><span> kegembir… high intens… limp… to brim…     1             1.49           100   
-#&gt; </span><span style='color: #555555;'>10</span><span> kegembir… intensified… luap… to boil…    19            28.4             76   
-#&gt; </span><span style='color: #555555;'>11</span><span> kegembir… intensified… melu… to boil…     6             8.96            24   
-#&gt; </span><span style='color: #555555;'>12</span><span> kegembir… preventing … bend… to dam …     3             4.48           100   </div></span></pre>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>            </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> kegembir… expression … luap… overflow    21            31.3             55.3 
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> kegembir… expression … terp… to be s…    10            14.9             26.3 
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> kegembir… expression … tuan… to pour…     2             2.99             5.26
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> kegembir… expression … air … flood        1             1.49             2.63
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> kegembir… expression … lamp… to gush…     1             1.49             2.63
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> kegembir… expression … memb… to over…     1             1.49             2.63
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> kegembir… expression … panc… to spur…     1             1.49             2.63
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> kegembir… expression … tert… to be p…     1             1.49             2.63
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> kegembir… high intens… limp… to brim…     1             1.49           100   
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> kegembir… intensified… luap… to boil…    19            28.4             76   
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> kegembir… intensified… melu… to boil…     6             8.96            24   
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> kegembir… preventing … bend… to dam …     3             4.48           100   </div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#references">References</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -239,7 +240,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

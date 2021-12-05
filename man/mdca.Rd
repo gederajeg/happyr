@@ -4,9 +4,15 @@
 \alias{mdca}
 \title{Multiple distinctive collexeme analysis (MDCA)}
 \usage{
-mdca(df = NULL, cxn_var = "synonyms", coll_var = "metaphors",
-  already_count_table = FALSE, assocstr_digits = 3L,
-  correct_holm = TRUE, concise_output = TRUE)
+mdca(
+  df = NULL,
+  cxn_var = "synonyms",
+  coll_var = "metaphors",
+  already_count_table = FALSE,
+  assocstr_digits = 3L,
+  correct_holm = TRUE,
+  concise_output = TRUE
+)
 }
 \arguments{
 \item{df}{the data frame for the thesis (\code{phd_data_metaphor}) included in the package.}

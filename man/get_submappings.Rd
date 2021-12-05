@@ -4,9 +4,15 @@
 \alias{get_submappings}
 \title{Retrieve the submappings of the metaphors overall or by synonyms/words}
 \usage{
-get_submappings(metaphor = NULL, word = NULL, df = NULL,
-  metaphor_var = "metaphors", submet_var = "submappings",
-  synonym_var = "synonyms", lexunit_var = "lu")
+get_submappings(
+  metaphor = NULL,
+  word = NULL,
+  df = NULL,
+  metaphor_var = "metaphors",
+  submet_var = "submappings",
+  synonym_var = "synonyms",
+  lexunit_var = "lu"
+)
 }
 \arguments{
 \item{metaphor}{character strings of regular expressions for the metaphor.}

@@ -8,23 +8,29 @@
 
 <title>Retrieve the descriptive distributional statistics of source frames — get_frames • happyr</title>
 
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -32,11 +38,11 @@
 
 
 
-<meta property="og:title" content="Retrieve the descriptive distributional statistics of source frames — get_frames" />
 
+<meta property="og:title" content="Retrieve the descriptive distributional statistics of source frames — get_frames" />
 <meta property="og:description" content="A utility function to get the descriptive statistics for the source frames of a metaphor (for the aggregated synonyms data or for a given synonym, if specified).
    This function is used in Rajeg's (2018, Chapter 5 &amp;amp; 6)." />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -53,7 +59,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -75,7 +81,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -83,11 +89,10 @@
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/gederajeg/happyr">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/gederajeg/happyr/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -110,16 +115,20 @@
     </div>
 
     <div class="ref-description">
-    
     <p>A utility function to get the descriptive statistics for the source frames of a metaphor (for the aggregated synonyms data or for a given synonym, if specified).
    This function is used in Rajeg's (2018, Chapter 5 &amp; 6).</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>get_frames</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>word</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>frame_var</span> <span class='kw'>=</span> <span class='st'>"source_frames"</span>, <span class='kw'>metaphor_var</span> <span class='kw'>=</span> <span class='st'>"metaphors"</span>,
-  <span class='kw'>synonym_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>, <span class='kw'>lexunit_var</span> <span class='kw'>=</span> <span class='st'>"lu"</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>get_frames</span>(
+  <span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>word</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>df</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>frame_var</span> <span class='kw'>=</span> <span class='st'>"source_frames"</span>,
+  <span class='kw'>metaphor_var</span> <span class='kw'>=</span> <span class='st'>"metaphors"</span>,
+  <span class='kw'>synonym_var</span> <span class='kw'>=</span> <span class='st'>"synonyms"</span>,
+  <span class='kw'>lexunit_var</span> <span class='kw'>=</span> <span class='st'>"lu"</span>
+)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -152,7 +161,7 @@
       <td><p>character string for the column name of the lexical unit variable (i.e., <code>"lu"</code>).</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A tibble/data frame of the descriptive statistics of the frames,
@@ -160,96 +169,86 @@
     If the <code>word</code> argument is specified,
     both the <code>source_frames</code> and the <code>synonyms</code> variable are grouped
     for calculating the token and type frequencies, while percentages of these are summarised per word.</p>
-    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Rajeg, G. P. W. (2018). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS</em> (PhD Thesis). Monash University. Melbourne, Australia.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># for aggregated data across all synonyms</span>
 <span class='fu'>get_frames</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"desired goal"</span>,
-           <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 11 x 5</span><span>
+           <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 11 x 5</span><span>
 #&gt;    frames                   n  type  perc type_perc
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> pursue                 113    11 38.6      26.2 
-#&gt; </span><span style='color: #555555;'> 2</span><span> arriving                62     6 21.2      14.3 
-#&gt; </span><span style='color: #555555;'> 3</span><span> grasp                   30     3 10.2       7.14
-#&gt; </span><span style='color: #555555;'> 4</span><span> locating                28     4  9.56      9.52
-#&gt; </span><span style='color: #555555;'> 5</span><span> source_path_goal        22     4  7.51      9.52
-#&gt; </span><span style='color: #555555;'> 6</span><span> self motion             11     3  3.75      7.14
-#&gt; </span><span style='color: #555555;'> 7</span><span> access to a location    10     3  3.41      7.14
-#&gt; </span><span style='color: #555555;'> 8</span><span> physical path           10     3  3.41      7.14
-#&gt; </span><span style='color: #555555;'> 9</span><span> guided motion            3     2  1.02      4.76
-#&gt; </span><span style='color: #555555;'>10</span><span> capturing                2     1  0.68      2.38
-#&gt; </span><span style='color: #555555;'>11</span><span> motion impediments       2     2  0.68      4.76</div><div class='input'>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> pursue                 113    11 38.6      26.2 
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> arriving                62     6 21.2      14.3 
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> grasp                   30     3 10.2       7.14
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> locating                28     4  9.56      9.52
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> source_path_goal        22     4  7.51      9.52
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> self motion             11     3  3.75      7.14
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> access to a location    10     3  3.41      7.14
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> physical path           10     3  3.41      7.14
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> guided motion            3     2  1.02      4.76
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> capturing                2     1  0.68      2.38
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> motion impediments       2     2  0.68      4.76</div><div class='input'>
 <span class='co'># for a synonym</span>
 <span class='fu'>get_frames</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"desired goal"</span>,
            <span class='kw'>word</span> <span class='kw'>=</span> <span class='st'>"^kesenangan"</span>,
-           <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 9 x 6</span><span>
+           <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 9 x 6</span><span>
 #&gt;   frames             synonyms       n  type  perc type_perc
-#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span> pursue             kesenangan    70     7 63.6         35
-#&gt; </span><span style='color: #555555;'>2</span><span> arriving           kesenangan    13     3 11.8         15
-#&gt; </span><span style='color: #555555;'>3</span><span> grasp              kesenangan     8     2  7.27        10
-#&gt; </span><span style='color: #555555;'>4</span><span> locating           kesenangan     8     1  7.27         5
-#&gt; </span><span style='color: #555555;'>5</span><span> source_path_goal   kesenangan     6     2  5.45        10
-#&gt; </span><span style='color: #555555;'>6</span><span> motion impediments kesenangan     2     2  1.82        10
-#&gt; </span><span style='color: #555555;'>7</span><span> capturing          kesenangan     1     1  0.91         5
-#&gt; </span><span style='color: #555555;'>8</span><span> guided motion      kesenangan     1     1  0.91         5
-#&gt; </span><span style='color: #555555;'>9</span><span> self motion        kesenangan     1     1  0.91         5</div><div class='input'>
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> pursue             kesenangan    70     7 63.6         35
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> arriving           kesenangan    13     3 11.8         15
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> grasp              kesenangan     8     2  7.27        10
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> locating           kesenangan     8     1  7.27         5
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> source_path_goal   kesenangan     6     2  5.45        10
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> motion impediments kesenangan     2     2  1.82        10
+#&gt; </span><span style='color: #BCBCBC;'>7</span><span> capturing          kesenangan     1     1  0.91         5
+#&gt; </span><span style='color: #BCBCBC;'>8</span><span> guided motion      kesenangan     1     1  0.91         5
+#&gt; </span><span style='color: #BCBCBC;'>9</span><span> self motion        kesenangan     1     1  0.91         5</div><div class='input'>
 <span class='co'># for synonyms with the same root (e.g. "senang" and "kesenangan")</span>
 <span class='fu'>get_frames</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"desired goal"</span>,
            <span class='kw'>word</span> <span class='kw'>=</span> <span class='st'>"senang"</span>,
-           <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 12 x 6</span><span>
+           <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 12 x 6</span><span>
 #&gt;    frames             synonyms       n  type  perc type_perc
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> pursue             kesenangan    70     7 63.6         35
-#&gt; </span><span style='color: #555555;'> 2</span><span> arriving           kesenangan    13     3 11.8         15
-#&gt; </span><span style='color: #555555;'> 3</span><span> grasp              kesenangan     8     2  7.27        10
-#&gt; </span><span style='color: #555555;'> 4</span><span> locating           kesenangan     8     1  7.27         5
-#&gt; </span><span style='color: #555555;'> 5</span><span> source_path_goal   kesenangan     6     2  5.45        10
-#&gt; </span><span style='color: #555555;'> 6</span><span> motion impediments kesenangan     2     2  1.82        10
-#&gt; </span><span style='color: #555555;'> 7</span><span> capturing          kesenangan     1     1  0.91         5
-#&gt; </span><span style='color: #555555;'> 8</span><span> guided motion      kesenangan     1     1  0.91         5
-#&gt; </span><span style='color: #555555;'> 9</span><span> self motion        kesenangan     1     1  0.91         5
-#&gt; </span><span style='color: #555555;'>10</span><span> source_path_goal   senang         3     2 60           50
-#&gt; </span><span style='color: #555555;'>11</span><span> grasp              senang         1     1 20           25
-#&gt; </span><span style='color: #555555;'>12</span><span> pursue             senang         1     1 20           25</div><div class='input'>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> pursue             kesenangan    70     7 63.6         35
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> arriving           kesenangan    13     3 11.8         15
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> grasp              kesenangan     8     2  7.27        10
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> locating           kesenangan     8     1  7.27         5
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> source_path_goal   kesenangan     6     2  5.45        10
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> motion impediments kesenangan     2     2  1.82        10
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> capturing          kesenangan     1     1  0.91         5
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> guided motion      kesenangan     1     1  0.91         5
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> self motion        kesenangan     1     1  0.91         5
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> source_path_goal   senang         3     2 60           50
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> grasp              senang         1     1 20           25
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> pursue             senang         1     1 20           25</div><div class='input'>
 <span class='co'># for synonyms in the nominalised forms</span>
 <span class='fu'>get_frames</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"desired goal"</span>,
            <span class='kw'>word</span> <span class='kw'>=</span> <span class='st'>"^(kesenangan|kegembiraan)"</span>,
-           <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; </span><span style='color: #555555;'># A tibble: 13 x 6</span><span>
+           <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 13 x 6</span><span>
 #&gt;    frames             synonyms        n  type  perc type_perc
-#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'> 1</span><span> locating           kegembiraan     2     2 33.3       33.3
-#&gt; </span><span style='color: #555555;'> 2</span><span> source_path_goal   kegembiraan     2     2 33.3       33.3
-#&gt; </span><span style='color: #555555;'> 3</span><span> grasp              kegembiraan     1     1 16.7       16.7
-#&gt; </span><span style='color: #555555;'> 4</span><span> pursue             kegembiraan     1     1 16.7       16.7
-#&gt; </span><span style='color: #555555;'> 5</span><span> pursue             kesenangan     70     7 63.6       35  
-#&gt; </span><span style='color: #555555;'> 6</span><span> arriving           kesenangan     13     3 11.8       15  
-#&gt; </span><span style='color: #555555;'> 7</span><span> grasp              kesenangan      8     2  7.27      10  
-#&gt; </span><span style='color: #555555;'> 8</span><span> locating           kesenangan      8     1  7.27       5  
-#&gt; </span><span style='color: #555555;'> 9</span><span> source_path_goal   kesenangan      6     2  5.45      10  
-#&gt; </span><span style='color: #555555;'>10</span><span> motion impediments kesenangan      2     2  1.82      10  
-#&gt; </span><span style='color: #555555;'>11</span><span> capturing          kesenangan      1     1  0.91       5  
-#&gt; </span><span style='color: #555555;'>12</span><span> guided motion      kesenangan      1     1  0.91       5  
-#&gt; </span><span style='color: #555555;'>13</span><span> self motion        kesenangan      1     1  0.91       5  </div><div class='input'>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>              </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> locating           kegembiraan     2     2 33.3       33.3
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> source_path_goal   kegembiraan     2     2 33.3       33.3
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> grasp              kegembiraan     1     1 16.7       16.7
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> pursue             kegembiraan     1     1 16.7       16.7
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> pursue             kesenangan     70     7 63.6       35  
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> arriving           kesenangan     13     3 11.8       15  
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> grasp              kesenangan      8     2  7.27      10  
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> locating           kesenangan      8     1  7.27       5  
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> source_path_goal   kesenangan      6     2  5.45      10  
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> motion impediments kesenangan      2     2  1.82      10  
+#&gt; </span><span style='color: #BCBCBC;'>11</span><span> capturing          kesenangan      1     1  0.91       5  
+#&gt; </span><span style='color: #BCBCBC;'>12</span><span> guided motion      kesenangan      1     1  0.91       5  
+#&gt; </span><span style='color: #BCBCBC;'>13</span><span> self motion        kesenangan      1     1  0.91       5  </div><div class='input'>
 </div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      
-      <li><a href="#value">Value</a></li>
-
-      <li><a href="#references">References</a></li>
-      
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -260,7 +259,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
 </div>
 
       </footer>

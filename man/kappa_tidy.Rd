@@ -4,8 +4,12 @@
 \alias{kappa_tidy}
 \title{Calculate Kappas for interrater agreement trial}
 \usage{
-kappa_tidy(df = NULL, var_names = "pattern_(coder|author)",
-  split_by = "synonyms", round = "pre_disc")
+kappa_tidy(
+  df = NULL,
+  var_names = "pattern_(coder|author)",
+  split_by = "synonyms",
+  round = "pre_disc"
+)
 }
 \arguments{
 \item{df}{The input data frame for each interrater trial tasks}

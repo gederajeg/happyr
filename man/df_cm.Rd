@@ -4,7 +4,9 @@
 \name{df_cm}
 \alias{df_cm}
 \title{Interrater data for conceptual metaphors}
-\format{An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 170 rows and 7 columns.}
+\format{
+An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) with 170 rows and 7 columns.
+}
 \usage{
 df_cm
 }

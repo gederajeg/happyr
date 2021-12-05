@@ -4,9 +4,15 @@
 \alias{get_frames}
 \title{Retrieve the descriptive distributional statistics of source frames}
 \usage{
-get_frames(metaphor = NULL, word = NULL, df = NULL,
-  frame_var = "source_frames", metaphor_var = "metaphors",
-  synonym_var = "synonyms", lexunit_var = "lu")
+get_frames(
+  metaphor = NULL,
+  word = NULL,
+  df = NULL,
+  frame_var = "source_frames",
+  metaphor_var = "metaphors",
+  synonym_var = "synonyms",
+  lexunit_var = "lu"
+)
 }
 \arguments{
 \item{metaphor}{character strings of regular expressions for the metaphor.}

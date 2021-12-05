@@ -4,9 +4,14 @@
 \alias{get_lu_table}
 \title{Retrieve the (top-n most frequent) Lexical Units of a metaphor}
 \usage{
-get_lu_table(metaphor = "regular expressions", top_n_only = TRUE,
-  top_n_limit = 10, df = NULL, submapping_perc = FALSE,
-  incl_submappings = FALSE)
+get_lu_table(
+  metaphor = "regular expressions",
+  top_n_only = TRUE,
+  top_n_limit = 10,
+  df = NULL,
+  submapping_perc = FALSE,
+  incl_submappings = FALSE
+)
 }
 \arguments{
 \item{metaphor}{regular expressions for the relevant metaphor.}
