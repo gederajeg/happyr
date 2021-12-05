@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
   out.width = "90%"
 )
 ```
-# happyr
+# happyr <a href='https://gederajeg.github.io/happyr/'><img src='man/figures/happyr-logo.png' align="right" height="139" /></a>
 
 The goal of happyr is to document the R codes and the dataset for the quantitative analyses in Rajeg's [-@rajeg_metaphorical_2018] PhD thesis (submitted for examination on 27 September 2018 and passed without amendements required for the award of the degree on 1 April 2019). The study focuses on metaphors for <span style='font-variant:small-caps;'>happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the *Indonesian Leipzig Corpora Collection* [@quasthoff_indonesian_2013; @goldhahn_building_2012; @biemann_leipzig_2007]. The Leipzig Corpora are freely available for [download](http://wortschatz.uni-leipzig.de/en/download) and their use is licensed under the Creative Common License [CC-BY](https://creativecommons.org/licenses/by/4.0/) (see the [Terms of Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further details). 
 
