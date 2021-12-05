@@ -1,10 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-[![Travis build
-status](https://travis-ci.org/gederajeg/happyr.svg?branch=master)](https://travis-ci.org/gederajeg/happyr)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/gederajeg/happyr?branch=master&svg=true)](https://ci.appveyor.com/project/gederajeg/happyr)
+[![R-CMD-check](https://github.com/gederajeg/happyr/workflows/R-CMD-check/badge.svg)](https://github.com/gederajeg/happyr/actions)
 [![Coverage
 status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](https://codecov.io/github/gederajeg/happyr?branch=master)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2634621.svg)](https://doi.org/10.5281/zenodo.2634621)
