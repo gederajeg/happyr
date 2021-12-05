@@ -73,8 +73,8 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#happyr-" class="anchor"></a>happyr <a href="https://gederajeg.github.io/happyr/"><img src="reference/figures/happyr-logo.png" align="right" height="139"></a>
 </h1></div>
-<p>The goal of happyr is to document the R codes and the dataset for the quantitative analyses in Rajeg’s (<a href="#ref-rajeg_metaphorical_2018">2019</a>) PhD thesis (submitted for examination on 27 September 2018 and passed without amendements required for the award of the degree on 1 April 2019). The study focuses on metaphors for <span class="smallcaps">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> (<a href="#ref-biemann_leipzig_2007">Biemann, Heyer, Quasthoff, &amp; Richter, 2007</a>; <a href="#ref-goldhahn_building_2012">Goldhahn, Eckart, &amp; Quasthoff, 2012</a>; <a href="#ref-quasthoff_indonesian_2013">Quasthoff &amp; Goldhahn, 2013</a>). The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details).</p>
-<p>The happyr package is based on the core packages in the <a href="https://www.tidyverse.org">tidyverse</a>, and is built under R version 3.6.0 (2019-04-26) – “Planting of a Tree” (see the <a href="#session-info"><strong>Session Info</strong></a> section at the bottom of the page for further details on the dependencies).</p>
+<p>The goal of happyr is to document the R codes and the dataset for the quantitative analyses in Rajeg’s (<a href="#ref-rajeg_metaphorical_2018">2019</a>) PhD thesis (submitted for examination on 27 September 2018 and passed without amendements required for the award of the degree on 1 April 2019). The study focuses on metaphors for <span class="smallcaps">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> (<a href="#ref-quasthoff_indonesian_2013">Quasthoff &amp; Goldhahn 2013</a>; <a href="#ref-goldhahn_building_2012">Goldhahn, Eckart &amp; Quasthoff 2012</a>; <a href="#ref-biemann_leipzig_2007">Biemann et al. 2007</a>). The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details).</p>
+<p>The happyr package is based on the core packages in the <a href="https://www.tidyverse.org">tidyverse</a>, and is built under R version 4.0.5 (2021-03-31) – “Shake and Throw” (see the <a href="#session-info"><strong>Session Info</strong></a> section at the bottom of the page for further details on the dependencies).</p>
 <div id="acknowledgement" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgement" class="anchor"></a>Acknowledgement</h2>
@@ -83,12 +83,12 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The happyr package can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/package=devtools">devtools</a> package:</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># Install devtools if needed</span>
-<span class="kw">if</span>(!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="no">devtools</span>)) <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)
+<p>The happyr package can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/web/packages/remotes/index.html">remotes</a> package:</p>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="co"># Install remotes if needed</span>
+<span class="kw">if</span>(!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="no">remotes</span>)) <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"remotes"</span>)
 
 <span class="co"># Then, install the happyr package from GitHub</span>
-<span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html">install_github</a></span>(<span class="st">"gederajeg/happyr"</span>)</pre></div>
+<span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"gederajeg/happyr"</span>)</pre></div>
 </div>
 <div id="citing-happyr" class="section level2">
 <h2 class="hasAnchor">
@@ -102,8 +102,8 @@
 <span class="co">#&gt;   Rajeg, Gede Primahadi Wijaya. 2019. happyr: The accompanying R</span>
 <span class="co">#&gt;   package for Rajeg's (2019) PhD Thesis titled "Metaphorical profiles</span>
 <span class="co">#&gt;   and near synonyms: A corpus-based study of Indonesian words for</span>
-<span class="co">#&gt;   HAPPINESS". R package version 1.0. doi:10.26180/5be404d6336da</span>
-<span class="co">#&gt;   (URL:http://doi.org/10.26180/5be404d6336da).</span>
+<span class="co">#&gt;   HAPPINESS". R package version 1.0.</span>
+<span class="co">#&gt;   http://doi.org/10.5281/zenodo.1436330.</span>
 <span class="co">#&gt;   https://gederajeg.github.io/happyr/</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Please also cite the document (PhD Thesis) associated with the package</span>
@@ -112,8 +112,7 @@
 <span class="co">#&gt;   Rajeg, Gede Primahadi Wijaya. 2019. Metaphorical profiles and</span>
 <span class="co">#&gt;   near-synonyms: A corpus-based study of Indonesian words for</span>
 <span class="co">#&gt;   HAPPINESS. Clayton, VIC: Monash University, Australia PhD thesis.</span>
-<span class="co">#&gt;   doi: 10.26180/5cac231a97fb1</span>
-<span class="co">#&gt;   (URL:http://doi.org/10.26180/5cac231a97fb1).</span>
+<span class="co">#&gt;   http://doi.org/10.26180/5cac231a97fb1.</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; To see these entries in BibTeX format, use 'print(&lt;citation&gt;,</span>
 <span class="co">#&gt; bibtex=TRUE)', 'toBibtex(.)', or set</span>
@@ -162,7 +161,7 @@
                     <span class="kw">schema_var</span> <span class="kw">=</span> <span class="st">"metaphors"</span>, <span class="co"># specify col.name of the metaphor variable</span>
                     <span class="kw">lexunit_var</span> <span class="kw">=</span> <span class="st">"lu"</span>, <span class="co"># specify col.name of the lexical unit variable</span>
                     <span class="kw">float_digits</span> <span class="kw">=</span> <span class="fl">2</span>)</pre></div>
-<p>The following code retrieves the top-10 metaphors sorted according to their token frequencies (<a href="#ref-rajeg_metaphorical_2018">Rajeg, 2019</a>, Ch. 5, Table 5-1). A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as <code><a href="reference/scaps.html">scaps()</a></code>; keyboard shortcut to produce the so-called “pipe” <code>%&gt;%</code> in the code-chunk below is <code>Ctrl + Shift + M</code> (on Windows) or <code>Cmd + Shift + M</code> (on macOS).</p>
+<p>The following code retrieves the top-10 metaphors sorted according to their token frequencies (<a href="#ref-rajeg_metaphorical_2018">Rajeg 2019</a>, Ch. 5, Table 5-1). A function for rendering the metaphors strings as small-capital in the MS Word output is available in the package as <code><a href="reference/scaps.html">scaps()</a></code>; keyboard shortcut to produce the so-called “pipe” <code>%&gt;%</code> in the code-chunk below is <code>Ctrl + Shift + M</code> (on Windows) or <code>Cmd + Shift + M</code> (on macOS).</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="fu">top_n</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">ttr_metaphor</span>, <span class="kw">n</span> <span class="kw">=</span> <span class="fl">10L</span>, <span class="kw">wt</span> <span class="kw">=</span> <span class="no">token</span>) <span class="kw">%&gt;%</span>
   <span class="fu">mutate</span>(<span class="kw">metaphors</span> <span class="kw">=</span> <span class="fu"><a href="reference/scaps.html">scaps</a></span>(<span class="no">metaphors</span>)) <span class="kw">%&gt;%</span> <span class="co"># render the metaphors into small capitals to be printed in MS Word output</span>
   <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="kw">caption</span> <span class="kw">=</span> <span class="st">"Top-10 most frequent metaphors"</span>, <span class="kw">row.names</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></div>
@@ -270,8 +269,8 @@
 </tbody>
 </table>
 <p>Top-10 most frequent metaphors</p>
-<p>The column <code>token</code> shows the token frequency of a metaphor meanwhile the column <code>type_lu</code> represents the number of different lexical-unit types evoking the source domain frames of the metaphor in the metaphorical expressions. The original values of the <code>type_per_token_lu</code> are normalised into the number of type per 100 tokens (cf. <a href="#ref-oster_emotions_2018">Oster, 2018, pp. 206–207</a>). Thus, the closer the TTR of a metaphor to 100, the higher the rate of different lexical-unit type per 100 tokens of the metaphor (see further below) (<a href="#ref-oster_using_2010">Oster, 2010, pp. 748–749</a>; <a href="#ref-oster_emotions_2018">2018, p. 206</a>; <a href="#ref-stefanowitsch_corpus_2017">Stefanowitsch, 2017, p. 282</a>; <a href="#ref-stefanowitsch_corpus-based_2016">Stefanowitsch &amp; Flach, 2016, pp. 118–120</a>).</p>
-<p>Use <code><a href="reference/get_lu_table.html">get_lu_table()</a></code> to retrieve the source frame <em>lexical units</em> in the metaphorical expressions instantiating a given metaphor. It is illustrated here with the linguistic expressions for <span class="smallcaps">happiness is a desired goal</span> metaphor (<a href="#ref-rajeg_metaphorical_2018">Rajeg, 2019</a>, Ch. 5, Table 5-3):</p>
+<p>The column <code>token</code> shows the token frequency of a metaphor meanwhile the column <code>type_lu</code> represents the number of different lexical-unit types evoking the source domain frames of the metaphor in the metaphorical expressions. The original values of the <code>type_per_token_lu</code> are normalised into the number of type per 100 tokens (cf. <a href="#ref-oster_emotions_2018">Oster 2018: 206–207</a>). Thus, the closer the TTR of a metaphor to 100, the higher the rate of different lexical-unit type per 100 tokens of the metaphor (see further below) (<a href="#ref-stefanowitsch_corpus-based_2016">Stefanowitsch &amp; Flach 2016: 118–120</a>; <a href="#ref-stefanowitsch_corpus_2017">Stefanowitsch 2017: 282</a>; <a href="#ref-oster_emotions_2018">Oster 2018: 206</a>; <a href="#ref-oster_using_2010">Oster 2010: 748–749</a>).</p>
+<p>Use <code><a href="reference/get_lu_table.html">get_lu_table()</a></code> to retrieve the source frame <em>lexical units</em> in the metaphorical expressions instantiating a given metaphor. It is illustrated here with the linguistic expressions for <span class="smallcaps">happiness is a desired goal</span> metaphor (<a href="#ref-rajeg_metaphorical_2018">Rajeg 2019</a>, Ch. 5, Table 5-3):</p>
 <div class="sourceCode" id="cb7"><pre class="r"><span class="co"># print the top-10 Lexical Units of the HAPPINESS IS A DESIRED GOAL metaphor</span>
 <span class="fu"><a href="reference/get_lu_table.html">get_lu_table</a></span>(<span class="kw">metaphor</span> <span class="kw">=</span> <span class="st">"is a desired goal$"</span>,
              <span class="kw">top_n_only</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
@@ -363,7 +362,7 @@
 </table>
 <p>Top-10 most frequent lexical units for <span class="smallcaps">happiness is a desired goal.</span></p>
 <p>The column <code>Perc_overall</code> indicates the percentage of a given LU from the total tokens of the <span class="smallcaps">happiness is a desired goal</span> metaphor. More linguistic citations for the metaphorical expressions are presented in the thesis.</p>
-<p>From the output of <code><a href="reference/ttr.html">ttr()</a></code> above, which is stored in the <code>ttr_metaphor</code> table, we can retrieve the top-10 metaphors with high type frequencies with the following codes (<a href="#ref-rajeg_metaphorical_2018">Rajeg, 2019</a>, Ch. 6, Table 6-1); the type frequency of a metaphor indicates the number of different lexical unit types expressing a given metaphor.</p>
+<p>From the output of <code><a href="reference/ttr.html">ttr()</a></code> above, which is stored in the <code>ttr_metaphor</code> table, we can retrieve the top-10 metaphors with high type frequencies with the following codes (<a href="#ref-rajeg_metaphorical_2018">Rajeg 2019</a>, Ch. 6, Table 6-1); the type frequency of a metaphor indicates the number of different lexical unit types expressing a given metaphor.</p>
 <div class="sourceCode" id="cb8"><pre class="r"><span class="co"># sort by type frequency</span>
 <span class="no">productive_metaphor</span> <span class="kw">&lt;-</span>
   <span class="no">ttr_metaphor</span> <span class="kw">%&gt;%</span>
@@ -472,7 +471,7 @@
 </tbody>
 </table>
 <p>Top-10 metaphors sorted on their type frequency.</p>
-<p>The codes below generates Table 6-2 (<a href="#ref-rajeg_metaphorical_2018">Rajeg, 2019</a>, Ch. 6) that ranks metaphors with high type frequency above according to their type/token ratio.</p>
+<p>The codes below generates Table 6-2 (<a href="#ref-rajeg_metaphorical_2018">Rajeg 2019</a>, Ch. 6) that ranks metaphors with high type frequency above according to their type/token ratio.</p>
 <div class="sourceCode" id="cb9"><pre class="r"><span class="no">productive_metaphor</span> <span class="kw">%&gt;%</span>
   <span class="fu">arrange</span>(<span class="fu">desc</span>(<span class="no">type_per_token_lu</span>)) <span class="kw">%&gt;%</span>
   <span class="fu">select</span>(<span class="kw">Metaphors</span> <span class="kw">=</span> <span class="no">metaphors</span>,
@@ -563,7 +562,7 @@
 </table>
 <p>Metaphors with high type frequency sorted by their Type/Token Ratio (TTR).</p>
 <p>It is clear that the first two metaphors in the table above (i.e. <span class="smallcaps">happiness is an imperilled entity</span> and <span class="smallcaps">happiness is light</span>) have higher ratio for different types of linguistic instantiations per 100 tokens, despite the vast difference in their token frequencies compared to the remanining metaphors with high token frequencies in the table. This suggests that these two metaphors are expressed with relatively wider range of expressions with respect to their token frequencies, compared to the frequent metaphors.</p>
-<p>Next, a helper function called <code><a href="reference/get_creative_metaphors.html">get_creative_metaphors()</a></code> is available to retrieve the top-10 creative metaphors (<a href="#ref-rajeg_metaphorical_2018">Rajeg, 2019</a>, Ch. 6, Table 6-5). I filter and discuss the metaphors with high type/token ratio and occurring at least three tokens in the sample, as shown in the codes below</p>
+<p>Next, a helper function called <code><a href="reference/get_creative_metaphors.html">get_creative_metaphors()</a></code> is available to retrieve the top-10 creative metaphors (<a href="#ref-rajeg_metaphorical_2018">Rajeg 2019</a>, Ch. 6, Table 6-5). I filter and discuss the metaphors with high type/token ratio and occurring at least three tokens in the sample, as shown in the codes below</p>
 <div class="sourceCode" id="cb10"><pre class="r"><span class="no">min_freq</span> <span class="kw">&lt;-</span> <span class="fl">3L</span>
 
 <span class="no">table_caption</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">'Top-10 creative metaphors sorted based on the TTR value and occurring at least '</span>, <span class="kw pkg">happyr</span><span class="kw ns">::</span><span class="fu"><a href="reference/numbers2words.html">numbers2words</a></span>(<span class="no">min_freq</span>), <span class="st">' tokens.'</span>, <span class="kw">sep</span> <span class="kw">=</span> <span class="st">""</span>)
@@ -663,7 +662,7 @@
 </tbody>
 </table>
 <p>Top-10 creative metaphors sorted based on the TTR value and occurring at least three tokens.</p>
-<p>One way to interpret the values in the <code>Type/token ratio</code> (TTR) column is to conceive them as representing the number of unique lexical-unit types per 100 tokens of a metaphor. The higher the ratio, the more creative a given metaphor is linguistically expressed. For instance, the TTR value of <span class="smallcaps">happiness is an adversary</span> (i.e. 79.17) indicates that there are about 79.17 unique types per 100 tokens of the <span class="smallcaps">happiness is an adversary</span>, which is much higher than the TTR value of <span class="smallcaps">happiness is a possessable object</span> (i.e. 8.41). The TTR value of a metaphor is used to represent the <em>creativity ratio</em> of a metaphor in its linguistic manifestation (<a href="#ref-oster_using_2010">Oster, 2010, pp. 748–749</a>; cf. <a href="#ref-oster_emotions_2018">2018, p. 206</a>).</p>
+<p>One way to interpret the values in the <code>Type/token ratio</code> (TTR) column is to conceive them as representing the number of unique lexical-unit types per 100 tokens of a metaphor. The higher the ratio, the more creative a given metaphor is linguistically expressed. For instance, the TTR value of <span class="smallcaps">happiness is an adversary</span> (i.e. 79.17) indicates that there are about 79.17 unique types per 100 tokens of the <span class="smallcaps">happiness is an adversary</span>, which is much higher than the TTR value of <span class="smallcaps">happiness is a possessable object</span> (i.e. 8.41). The TTR value of a metaphor is used to represent the <em>creativity ratio</em> of a metaphor in its linguistic manifestation (cf. <a href="#ref-oster_emotions_2018">Oster 2018: 206</a>; <a href="#ref-oster_using_2010">Oster 2010: 748–749</a>).</p>
 <div id="retrieving-the-frequency-of-submappings-and-semantic-source-frames-of-the-metaphors" class="section level4">
 <h4 class="hasAnchor">
 <a href="#retrieving-the-frequency-of-submappings-and-semantic-source-frames-of-the-metaphors" class="anchor"></a>Retrieving the frequency of submappings and semantic source frames of the metaphors</h4>
@@ -1278,7 +1277,7 @@
 <div id="chapter-7---distinctive-metaphors-and-collocates-for-happiness-near-synonyms-in-indonesian" class="section level3">
 <h3 class="hasAnchor">
 <a href="#chapter-7---distinctive-metaphors-and-collocates-for-happiness-near-synonyms-in-indonesian" class="anchor"></a>Chapter 7 - Distinctive metaphors and collocates for <span class="smallcaps">happiness</span> near-synonyms in Indonesian</h3>
-<p>The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using one-tailed, Binomial Test implemented in the <em>Multiple Distinctive Collexeme Analysis</em> (MDCA) (cf., e.g., <a href="#ref-hilpert_distinctive_2006">Hilpert, 2006</a>; <a href="#ref-hoffmann_collostructional_2013">Stefanowitsch, 2013, pp. 299–300</a>). The function to perform MDCA is <code><a href="reference/mdca.html">mdca()</a></code>.</p>
+<p>The distinctiveness of a given metaphor and collocate with each happiness synonym is measured using one-tailed, Binomial Test implemented in the <em>Multiple Distinctive Collexeme Analysis</em> (MDCA) (cf., e.g., <a href="#ref-hilpert_distinctive_2006">Hilpert 2006</a>; <a href="#ref-hoffmann_collostructional_2013">Stefanowitsch 2013: 299–300</a>). The function to perform MDCA is <code><a href="reference/mdca.html">mdca()</a></code>.</p>
 <div class="sourceCode" id="cb16"><pre class="r"><span class="co"># MDCA for metaphor * synonyms</span>
 <span class="no">mdca_res</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/mdca.html">mdca</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">phd_data_metaphor</span>,
                  <span class="kw">cxn_var</span> <span class="kw">=</span> <span class="st">"synonyms"</span>, <span class="co"># `cxn_var` = constructions column</span>
@@ -1288,7 +1287,7 @@
 <span class="no">mdca_colloc</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/mdca.html">mdca</a></span>(<span class="kw">df</span> <span class="kw">=</span> <span class="no">colloc_input_data</span>,
                     <span class="kw">cxn_var</span> <span class="kw">=</span> <span class="st">"synonyms"</span>,
                     <span class="kw">coll_var</span> <span class="kw">=</span> <span class="st">"collocates"</span>)</pre></div>
-<p>The package also provides two related functions to retrieve the <em>attracted</em>/<em>distinctive</em> and the <em>repelled</em> items from the results of MDCA. They are <code><a href="reference/mdca_attr.html">mdca_attr()</a></code> and <code><a href="reference/mdca_repel.html">mdca_repel()</a></code>. The following example shows how to get the distinctive metaphors for <em>kesenangan</em> ‘pleasure; happiness’ having the association strength of equal to, or greater than, two (i.e. <em>p</em><sub>binomial</sub> &lt; 0.01) (<a href="#ref-rajeg_metaphorical_2018">Rajeg, 2019</a>, Ch. 7, Table 7-5):</p>
+<p>The package also provides two related functions to retrieve the <em>attracted</em>/<em>distinctive</em> and the <em>repelled</em> items from the results of MDCA. They are <code><a href="reference/mdca_attr.html">mdca_attr()</a></code> and <code><a href="reference/mdca_repel.html">mdca_repel()</a></code>. The following example shows how to get the distinctive metaphors for <em>kesenangan</em> ‘pleasure; happiness’ having the association strength of equal to, or greater than, two (i.e. <em>p</em><sub>binomial</sub> &lt; 0.01) (<a href="#ref-rajeg_metaphorical_2018">Rajeg 2019</a>, Ch. 7, Table 7-5):</p>
 <div class="sourceCode" id="cb18"><pre class="r"><span class="no">mdca_res</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/mdca_attr.html">mdca_attr</a></span>(<span class="kw">filter_by</span> <span class="kw">=</span> <span class="st">"cxn"</span>,
             <span class="kw">cxn_type</span> <span class="kw">=</span> <span class="st">"kesenangan"</span>,
@@ -1403,8 +1402,8 @@
 </tbody>
 </table>
 <p>Distinctive metaphors for <em>kesenangan</em> ‘pleasure’</p>
-<p>The <code>p_holm</code> column provides the Holm’s corrected significance level (<a href="#ref-gries_statistics_2009">Gries, 2009, pp. 249, 251</a>) of the Binomial Test <em>p</em>-value (<code>p_binomial</code>). The Binomial <em>p</em>-value is used as the basis for the association strength value (<code>assocstr</code>) (cf. <a href="#ref-hoffmann_collostructional_2013">Stefanowitsch, 2013, p. 305</a>), which is derived via the log-transformed <em>p</em><sub>Binomial</sub>-value to the base of 10. The <code>dec</code> column indicates the significane of the association between the metaphor and <em>kesenangan</em> ‘pleasure’ at the corrected level. Column <code>exp</code> shows the ‘expected’ co-occurrence frequency of the metaphor with <em>kesenangan</em> while <code>n</code> is the ‘observed’ co-occurrence frequency in the sample.</p>
-<p>The following code shows the use of <code><a href="reference/mdca_repel.html">mdca_repel()</a></code> for retrieving metaphors strongly dissociated with <em>kesenangan</em> ‘pleasure’ (<a href="#ref-rajeg_metaphorical_2018">Rajeg, 2019</a>, Ch. 7, Table 7-6):</p>
+<p>The <code>p_holm</code> column provides the Holm’s corrected significance level (<a href="#ref-gries_statistics_2009">Gries 2009: 249, 251</a>) of the Binomial Test <em>p</em>-value (<code>p_binomial</code>). The Binomial <em>p</em>-value is used as the basis for the association strength value (<code>assocstr</code>) (cf. <a href="#ref-hoffmann_collostructional_2013">Stefanowitsch 2013: 305</a>), which is derived via the log-transformed <em>p</em><sub>Binomial</sub>-value to the base of 10. The <code>dec</code> column indicates the significane of the association between the metaphor and <em>kesenangan</em> ‘pleasure’ at the corrected level. Column <code>exp</code> shows the ‘expected’ co-occurrence frequency of the metaphor with <em>kesenangan</em> while <code>n</code> is the ‘observed’ co-occurrence frequency in the sample.</p>
+<p>The following code shows the use of <code><a href="reference/mdca_repel.html">mdca_repel()</a></code> for retrieving metaphors strongly dissociated with <em>kesenangan</em> ‘pleasure’ (<a href="#ref-rajeg_metaphorical_2018">Rajeg 2019</a>, Ch. 7, Table 7-6):</p>
 <div class="sourceCode" id="cb19"><pre class="r"><span class="no">mdca_res</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/mdca_repel.html">mdca_repel</a></span>(<span class="kw">filter_by</span> <span class="kw">=</span> <span class="st">"cxn"</span>,
              <span class="kw">cxn_type</span> <span class="kw">=</span> <span class="st">"kesenangan"</span>,
@@ -1518,7 +1517,7 @@
 </tbody>
 </table>
 <p>Repelled metaphors for <em>kesenangan</em> ‘pleasure’</p>
-<p>Finally, the codes below show how to retrieve the top-20 most distinctive collocates co-occurring with <em>kesenangan</em> ‘pleasure’ within the span of 4 words to the left and right of <em>kesenangan</em> (<a href="#ref-rajeg_metaphorical_2018">Rajeg, 2019</a>, Ch. 7, Table 7-7).</p>
+<p>Finally, the codes below show how to retrieve the top-20 most distinctive collocates co-occurring with <em>kesenangan</em> ‘pleasure’ within the span of 4 words to the left and right of <em>kesenangan</em> (<a href="#ref-rajeg_metaphorical_2018">Rajeg 2019</a>, Ch. 7, Table 7-7).</p>
 <div class="sourceCode" id="cb20"><pre class="r"><span class="co"># present the result table for collocational analysis of *kesenangan*</span>
 <span class="fu"><a href="reference/mdca_attr.html">mdca_attr</a></span>(<span class="no">mdca_colloc</span>,
           <span class="kw">cxn_type</span> <span class="kw">=</span> <span class="st">'^kesenangan'</span>) <span class="kw">%&gt;%</span>
@@ -1813,7 +1812,7 @@
 <span class="co">#&gt;  ggplot2     * 3.3.3   2020-12-30 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  glue          1.4.1   2020-05-13 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  gtable        0.3.0   2019-03-25 [1] CRAN (R 4.0.0)</span>
-<span class="co">#&gt;  happyr      * 1.0     2020-07-02 [1] local         </span>
+<span class="co">#&gt;  happyr      * 1.0     2021-12-05 [1] local         </span>
 <span class="co">#&gt;  haven         2.4.0   2021-04-14 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  highr         0.8     2019-03-20 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  hms           1.0.0   2021-01-13 [1] CRAN (R 4.0.2)</span>
@@ -1872,39 +1871,39 @@
 <div id="references" class="section level2">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
+<div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-biemann_leipzig_2007" class="csl-entry">
-Biemann, C., Heyer, G., Quasthoff, U., &amp; Richter, M. (2007). The Leipzig Corpora Collection: Monolingual corpora of standard size. In M. Davies, P. Rayson, S. Hunston, &amp; P. Danielsson (Eds.), <em>Proceedings of the Corpus Linguistics Conference</em>. University of Birmingham, UK. Retrieved from <a href="http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf" class="uri">http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf</a>
+Biemann, Chris, Gerhard Heyer, Uwe Quasthoff &amp; Matthias Richter. 2007. The Leipzig Corpora Collection: Monolingual corpora of standard size. In Matthew Davies, Paul Rayson, Susan Hunston &amp; Pernilla Danielsson (eds.), <em>Proceedings of the Corpus Linguistics Conference</em>. University of Birmingham, UK. <a href="http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf" class="uri">http://ucrel.lancs.ac.uk/publications/CL2007/paper/190_Paper.pdf</a> (5 March, 2014).
 </div>
 <div id="ref-goldhahn_building_2012" class="csl-entry">
-Goldhahn, D., Eckart, T., &amp; Quasthoff, U. (2012). Building large monolingual dictionaries at the Leipzig Corpora Collection: From 100 to 200 languages. In <em>Proceedings of the 8th Language Resources and Evaluation Conference (LREC) 2012</em> (pp. 759–765). Istanbul. Retrieved from <a href="http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf" class="uri">http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf</a>
+Goldhahn, Dirk, Thomas Eckart &amp; Uwe Quasthoff. 2012. Building large monolingual dictionaries at the Leipzig Corpora Collection: From 100 to 200 languages. In <em>Proceedings of the 8th Language Resources and Evaluation Conference (LREC) 2012</em>, 759–765. Istanbul. <a href="http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf" class="uri">http://www.lrec-conf.org/proceedings/lrec2012/pdf/327_Paper.pdf</a> (5 March, 2014).
 </div>
 <div id="ref-gries_statistics_2009" class="csl-entry">
-Gries, S. Th. (2009). <em>Statistics for linguistics with R: A practical introduction</em>. Berlin: Mouton de Gruyter.
+Gries, Stefan Th. 2009. <em>Statistics for linguistics with R: A practical introduction</em>. Berlin: Mouton de Gruyter.
 </div>
 <div id="ref-hilpert_distinctive_2006" class="csl-entry">
-Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. <em>Corpus Linguistics and Linguistic Theory</em>, <em>2</em>(2), 243–256.
+Hilpert, Martin. 2006. Distinctive collexeme analysis and diachrony. <em>Corpus Linguistics and Linguistic Theory</em> 2(2). 243–256.
 </div>
 <div id="ref-oster_using_2010" class="csl-entry">
-Oster, U. (2010). Using corpus methodology for semantic and pragmatic analyses: What can corpora tell us about the linguistic expression of emotions? <em>Cognitive Linguistics</em>, <em>21</em>(4), 727–763. <a href="doi:%5B10.1515/COGL.2010.023" class="uri">doi:[10.1515/COGL.2010.023</a>](<a href="https://doi.org/10.1515/COGL.2010.023" class="uri">https://doi.org/10.1515/COGL.2010.023</a>)
+Oster, Ulrike. 2010. Using corpus methodology for semantic and pragmatic analyses: What can corpora tell us about the linguistic expression of emotions? <em>Cognitive Linguistics</em> 21(4). 727–763. <a href="https://doi.org/10.1515/COGL.2010.023" class="uri">https://doi.org/10.1515/COGL.2010.023</a>.
 </div>
 <div id="ref-oster_emotions_2018" class="csl-entry">
-Oster, U. (2018). Emotions in motion: Towards a corpus-based description of the diachronic evolution of anger words. <em>Review of Cognitive Linguistics</em>, <em>16</em>(1), 191–228. <a href="doi:%5B10.1075/rcl.00008.ost" class="uri">doi:[10.1075/rcl.00008.ost</a>](<a href="https://doi.org/10.1075/rcl.00008.ost" class="uri">https://doi.org/10.1075/rcl.00008.ost</a>)
+Oster, Ulrike. 2018. Emotions in motion: Towards a corpus-based description of the diachronic evolution of anger words. <em>Review of Cognitive Linguistics</em> 16(1). 191–228. <a href="https://doi.org/10.1075/rcl.00008.ost" class="uri">https://doi.org/10.1075/rcl.00008.ost</a>.
 </div>
 <div id="ref-quasthoff_indonesian_2013" class="csl-entry">
-Quasthoff, U., &amp; Goldhahn, D. (2013). <em>Indonesian corpora</em> (Technical report series on corpus building No. 7). Leipzig, Germany: Abteilung Automatische Sprachverarbeitung, Institut für Informatik, Universität Leipzig. Retrieved from <a href="http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf" class="uri">http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf</a>
+Quasthoff, Uwe &amp; Dirk Goldhahn. 2013. <em>Indonesian corpora</em>. Leipzig, Germany: Abteilung Automatische Sprachverarbeitung, Institut für Informatik, Universität Leipzig. <a href="http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf" class="uri">http://asvdoku.informatik.uni-leipzig.de/corpora/data/uploads/corpus-building-vol7-ind.pdf</a> (26 July, 2015).
 </div>
 <div id="ref-rajeg_metaphorical_2018" class="csl-entry">
-Rajeg, G. P. W. (2019). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for <span class="smallcaps">Happiness</span></em> (PhD thesis). Monash University, Australia, Clayton, VIC. <a href="doi:/%5B10.26180/5cac231a97fb1" class="uri">doi:/[10.26180/5cac231a97fb1</a>](<a href="https://doi.org/10.26180/5cac231a97fb1" class="uri">https://doi.org/10.26180/5cac231a97fb1</a>)
+Rajeg, Gede Primahadi Wijaya. 2019. <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for <span class="smallcaps">Happiness</span></em>. Clayton, VIC: Monash University, Australia PhD thesis. <a href="https://doi.org/10.26180/5cac231a97fb1" class="uri">https://doi.org/10.26180/5cac231a97fb1</a>.
 </div>
 <div id="ref-hoffmann_collostructional_2013" class="csl-entry">
-Stefanowitsch, A. (2013). Collostructional analysis. In T. Hoffmann &amp; G. Trousdale (Eds.), <em>The Oxford handbook of Construction Grammar</em> (pp. 290–306). Oxford: Oxford University Press. <a href="doi:%5B10.1093/oxfordhb/9780195396683.013.0016" class="uri">doi:[10.1093/oxfordhb/9780195396683.013.0016</a>](<a href="https://doi.org/10.1093/oxfordhb/9780195396683.013.0016" class="uri">https://doi.org/10.1093/oxfordhb/9780195396683.013.0016</a>)
+Stefanowitsch, Anatol. 2013. Collostructional analysis. In Thomas Hoffmann &amp; Graeme Trousdale (eds.), <em>The Oxford handbook of Construction Grammar</em> (Oxford Handbooks Online), 290–306. Oxford: Oxford University Press. <a href="https://doi.org/10.1093/oxfordhb/9780195396683.013.0016" class="uri">https://doi.org/10.1093/oxfordhb/9780195396683.013.0016</a>.
 </div>
 <div id="ref-stefanowitsch_corpus_2017" class="csl-entry">
-Stefanowitsch, A. (2017). <em>Corpus linguistics: A guide to the methodology</em>. Book manuscript, Freie Universität Berlin: Book manuscript. Retrieved from <a href="http://stefanowitsch.net/clm/clmbook-draft.pdf" class="uri">http://stefanowitsch.net/clm/clmbook-draft.pdf</a>
+Stefanowitsch, Anatol. 2017. Corpus linguistics: A guide to the methodology. Book manuscript. Freie Universität Berlin: Book manuscript, ms. <a href="http://stefanowitsch.net/clm/clmbook-draft.pdf" class="uri">http://stefanowitsch.net/clm/clmbook-draft.pdf</a>.
 </div>
 <div id="ref-stefanowitsch_corpus-based_2016" class="csl-entry">
-Stefanowitsch, A., &amp; Flach, S. (2016). The corpus-based perspective on entrenchment. In H.-J. Schmid (Ed.), <em>Entrenchment and the psychology of language learning: How we reorganize and adapt linguistic knowledge</em> (pp. 101–128). Berlin, Boston: De Gruyter. <a href="doi:%5B10.1515/9783110341423-006" class="uri">doi:[10.1515/9783110341423-006</a>](<a href="https://doi.org/10.1515/9783110341423-006" class="uri">https://doi.org/10.1515/9783110341423-006</a>)
+Stefanowitsch, Anatol &amp; Susanne Flach. 2016. The corpus-based perspective on entrenchment. In Hans-Jörg Schmid (ed.), <em>Entrenchment and the psychology of language learning: How we reorganize and adapt linguistic knowledge</em>, 101–128. Berlin, Boston: De Gruyter. <a href="https://doi.org/10.1515/9783110341423-006" class="uri">https://doi.org/10.1515/9783110341423-006</a> (6 June, 2017).
 </div>
 </div>
 </div>
@@ -1949,8 +1948,7 @@ Stefanowitsch, A., &amp; Flach, S. (2016). The corpus-based perspective on entre
 <ul class="list-unstyled">
 <li><a href="https://github.com/gederajeg/happyr/actions"><img src="https://github.com/gederajeg/happyr/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a></li>
 <li><a href="https://codecov.io/github/gederajeg/happyr?branch=master"><img src="https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg" alt="Coverage status"></a></li>
-<li><a href="https://doi.org/10.5281/zenodo.2634621"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.2634621.svg" alt="DOI"></a></li>
-<li><a href="http://dx.doi.org/10.26180/5be404d6336da"><img src="https://img.shields.io/badge/doi-10.26180/5be404d6336da-blue.svg?style=flat&amp;labelColor=gainsboro&amp;logoWidth=40&amp;logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAFAAAAAZCAYAAACmRqkJAAAKi0lEQVR4Ae3ZaVBUV97H8evuE0EfH32MmkcfoyAuGjXKgkvMaFRAFuiloemWvRuEXlgEBREXBYJiXAQUFeKocUniQiKogAJhQWwWENDEjLNYvjFLzUzNkplEZb5kTme6nCRjKlOpSZlb9SmL2%2Ffcuv3re87%2FnKP0TYfOcslqPMbt63xBKuh09MTxgi7HKT1Sj1TvKp%2BMkZB6%2FXT8c4AjUYPyVdfb7Qs6HTIJ8EHe7Ul%2B152CphDabRQ0uMr7%2FRQgh%2B8qU6%2FBiPDVGv0jq0uGE94b0ZZ3j%2B25MTetoMsh%2FWD91OBqT9%2Fsehd5EqGV17nKMzTqOHvaRMMLEp7qACfinq%2FW1BBx5ZxB13x5X3Jr1v%2Fz9pUcaHU63PiicjrhvXfNRbY1Th49Q6Y1vu6zyqSjzX3aVIgf4OkKToxhgxpd5OMzV0bYE4CRN1Chu34pnTfwnV03FiTlfzDRXBHo6dfgIq8sX6ByV6vjthGc0UdrrPPVGFQBxlSjzJQWENVUZkebceiLpyM8IZSx7O7Zl4JivUNMZX5h8Rt4%2B2L0llKfgu6JKa%2BXvpB5bZ48%2Ba3F6lil2pDkE2rODzCsU0VUnNFHNZQqdS3lx3Utl%2FMILQcfYt5TEeC1GSprgAq0XlgYGLQyxJTlr0uK0DVX7E5s2ZtOgHvLw5fLK9xVmcqguEj%2F2LXbwsvPBkZZKl4j5NcIKinaUsLbejFWZ7m8Do2cmwnb4cFqArRwx3TEYzi%2Bz7DTD0uhxnj8cAEWWUZK%2BTcdhh4pmTWUsW01Y1uCUmNY7Rtqzo5svJSS0poVXtg6yVj7sn9qunek3j8xPVXXeMFoaDkev6lDF7ene7Y5r2taNAXmEBXaP69zevaOjuUeeZ0zhzJuPsM5CdYvOhZVqBMhBqIVDt8zwGdQjR4of9AA%2BXJjUFpww7GodnHAQca4srDAWCXjW3pETal%2BbfumuOLKqSm17vIQtWr1Uu3JYy6JbXuXFbRN1R8pm5byxtG5CcdOz9EUVc7I5IeQEWQ7wWVwzwrsRn%2BbAFeiCxNsKv5Y9P03BFgjAlT90AGOQy2T47fObl00ocFZHl%2B2UGXw0RjzNUWHTPFthckHWh18al8KsGuaFigVVzlKuY%2BG9z37qvuoGlelpsJVldrgrFjbOE%2BeWe8uW18W84qCqc4s7tmCIgzI75hs%2FaJKNFu7rF%2BIIIhr%2BmIQ%2Btn8LQkDMQOeWAYnDHgsQI3NNU7W9j4h5t72o%2FEyvLEQ%2F%2Bu7ymzbOxbCAeOxAgtghz6YgOVYiufEOUlqu0M37ho%2BYn%2FnpJT8bsejVSt90uqdFdlGmV7hF7cuWXetNCShLX%2BI3nKhN%2ByvCs%2Bs6GQpWB33fzKNQR%2BqWr022yvc94q7spBCY%2Bbzkou6ZfJNPf89ZN%2FdidYHnIsKfIzjCMIc7MAwSJiMPFxGMcKQixGwx07R%2FiEe4CNsxFCbAJvwifj8LkIgYRHa8Lm47jNY8AokmMS5NryPh%2FijOB%2BOX4h7foEuyPHlisMtylJpzu1YspkQ36YbLqnx8F1X4abaqmYs9DGmLlrk4CE9XlHlKZskxfpt%2FUJLzyhV23dG%2BITF72fqo9njEaokwIu8lSbG1N4wx273CrP%2B%2BjniQVZhGrzQjlEioFIRcjDM6MIdjBVtHogvl4W9qIX8sTfwU5SgU%2FzdhdGYLcJ9BzvRID6vgx2SxN8PUI9KnIEWH4n7FuIo%2FoRfYV5vMMV4wHRFs%2BvG%2FKl05ZrDVdP11T7eulK3oNQcz%2FAXcj3DpMePjO44KetDL2lDh%2FmV1S3nNoeWnJb7RSXmMJl%2BI0GmH13rKs8lvEdQwfoWKmCxdmGbAEdgAW5jFiQhBb8WXSYTPSjGCBHaMPR5LMANkOCM%2B%2FgD3MS5Z8W1ElzwW3HNJCSI9tcw2ub%2BO8T5LPTBQBy1nusNcB7ztximI1sIsSSzXb04v3vyusJmx63nMufHXlV6LvpEShDd9x%2FHFYWXVPuSX7%2FD7zmpcjuWRupbyvaHnj8Z7BNsUFCArm70iTRcd5bFEN7oxwJs%2FpoA%2FwfBaLJ2Z2EFbmEsNKL7fYYPUI9DIqj%2Fsgkw0CasW%2BL6RbBDFI7gTZSKzz6Gk02AJ23G3QF4xybYU8INce6s5CJNlTyXhYwKv%2FRWMiEeimquzIhrPpGzuSNCsbvLec2%2Brpmh2e0yu%2FxOp96wv6p8X0xeIZW5Bo2%2F6ucdvb%2FdMWVDm8lX11pRpD16OJ6VyZsrQ8yK%2BVFJ9h4UhwEHDj5JgGE23UkSfoZujMMzSESNCPBT9KAFjqi2rcIYZRPgYmzDQ9xDLSz4%2FGsCPIE%2BNkWrTJy%2FhRrRthpVyJJExbnmG2I%2B6x%2BT%2FHxYyQkzQfJGlufpWy6bYlvPUEgu%2BHlHJA5boo7rE3blnBR7r6mv%2BvCBMYEag%2Faqsyr1%2BIk5a%2Fd2z9zGBDpZ31qulCWk9443Hfg5BuJJAgxAG0ZBEmS4DZ7RKIliMVi0d8UvRUCeuPoNAf4Z%2FmgV13pAwiwR3iffFKBQJM5noB%2F6Y5h45v7Wwf0cDtD1DlMIeiugWmZOy5Cv3RgjX7%2FF4GdMXasOjgurmqdafqpojltml9IjvOJ8NMu9lNL5gQmXdMu0BTefz8loMyoJvivs3VMZvhpjqaig%2FZ8gwJGYIsIKRh%2FY4wh%2Bg%2FGQoxYbREgZ%2BB3uww1V3xKgN%2BrwCNtF4Pvx8NveQCEYX%2BAukhCIYuHZLy%2FyDjHbJQfo7PTK1dEBWqPBX2vS%2B2hNW1XquDURypiwXStCjVWuyrSKQC%2FdoUaHtOT2HENoyal4b40x7rK7ylip9NIV3Jy0P6fD24fl3Ra6uoe3PNqOH2Pw3x%2FC8K8CHIU%2BIpQ7OI8yNOJ9TMJO%2FAU9Nn6PjRiGmm%2FpwgsRLQpKjwjuU%2Fz1CQK0R4G4T4%2FwCHWYKlmcA6xr4SA2EzobXeUa9vh21LgpdKxK8hqd5RsaXWS7S9YvlhU2O7ya3ekXrm%2B9lK3KzFH6a4y5V92Ve5hkM4d02EShMestZekE2IxZX7MWdkAgBtmsi9U2lXEwliAOK%2BGLTowThWIZkrEVSSKYgegPOUxwtFmdaBGLsRgg2qeKtosQDh2GYzbisUIEaPvcQ8T5VGzCKowBk2I3mTVALe4wd4tumKcoaZirSKte4RtVrvXwLrw%2BJXV%2F18Ts3BtLEmOaS0yRtRdMfpGJhTKNMbDJWR5V7eEbUNDtcIQAd1PJMwnuJl6E9KQHY7AAHkzQoBkj8B%2B%2FpTWQ4Maezne1P3x1esLBuqmB%2BbccNhJMGetbM%2BGZIi1V%2FoRyOXB77sKVWuPmrd4RBvYQm9ihVue%2F7xDPGljB50MoJmO%2By36gCGsQovCyCGwOarD9R7PLLXZOJjKZvse%2FDQQSvffG7F1rWrZPiLKUX2DPr1hbfHAKb0kDBSeTed5MQj94Pn1xBMvA%2B2IDYTAkcXzXANPRjHq04ACeFeH9aAIcBC3LOq%2FY5pPDeYtO4yRTmzUhbx9LozCEea8ybaHoxDNmVtPltxSVzxhCm3Asg4Tvs683Aa5wwkD8qP9XbgQqUbb6Tp09U5Os3rWiV4jZv2OuvxPdvht70RfST8fjATZd7P33OYzxZ%2FdF7FwcgqPU0yMR2vMYDulpDfBvw%2BGCdBePpq8AAAAASUVORK5CYII%3D" alt="DOI"></a></li>
+<li><a href="https://doi.org/10.5281/zenodo.1436330"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1436330.svg" alt="DOI"></a></li>
 </ul>
 </div>
 </div>
