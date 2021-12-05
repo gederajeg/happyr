@@ -14,3 +14,4 @@
 ^appveyor\.yml$
 ^README.knit.md$
 ^README.utf8.md$
+^\.github$

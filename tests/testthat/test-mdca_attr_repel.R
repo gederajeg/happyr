@@ -47,3 +47,8 @@ test_that("`mdca_attr()` and `mdca_repel()` do not output the Holm's correction 
   expect_output(str(mdca_attr(mdca_res_uncorrected, cxn_type = "kesenangan")), "(\\$ (p_binomial|assocstr)|tbl(_df)?|6 variables)", all = TRUE, perl = TRUE)
   expect_output(str(mdca_repel(mdca_res_uncorrected, cxn_type = "kesenangan")), "(\\$ (p_binomial|assocstr)|tbl(_df)?|6 variables)", all = TRUE, perl = TRUE)
 })
+
+test_that("`mdca_attr()` and `mdca_repel()` can filter by collocates/collexeme types", {
+  expect_output(str(mdca_attr(mdca_res, filter_by = "colloc", coll_var = "metaphors", coll_type = "desired")), "(data\\.frame|tbl_df|tbl)")
+  expect_output(str(mdca_repel(mdca_res, filter_by = "colloc", coll_var = "metaphors", coll_type = "desired")), "(data\\.frame|tbl_df|tbl)")
+})

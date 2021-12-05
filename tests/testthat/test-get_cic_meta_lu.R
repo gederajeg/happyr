@@ -11,6 +11,6 @@ ttr_metaphor <- ttr(df = phd_data_metaphor,
 cic <- get_cic_meta_lu("desired goal", df_ttr_out = ttr_metaphor)
 
 test_that("the correct columns output of `get_cic_meta_lu()`", {
-  expect_output(str(cic), "4 variables", all = FALSE, perl = TRUE)
+  expect_equal(object = dim(cic)[2], expected = 4L)
   expect_output(str(cic), "\\$ (Lexical_units|Gloss|N|Perc_overall)", all = TRUE, perl = TRUE)
 })

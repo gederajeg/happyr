@@ -13,6 +13,6 @@ creative_metaphors <- get_creative_metaphors(df_ttr_out = ttr_metaphor,
                                                       top_n_limit = 10)
 
 test_that("the correct columns output of `get_cic_meta_lu()`", {
-  expect_output(str(creative_metaphors), "6 variables", all = FALSE, perl = TRUE)
+  expect_equal(object = dim(creative_metaphors)[2], expected = 6)
   expect_output(str(creative_metaphors), "\\$ ((type_(lu|per_token_lu))|(perc_)?(token|type_lu))", all = TRUE, perl = TRUE)
 })
