@@ -40,7 +40,7 @@ plot_cxn_interrater <- function(df = NULL) {
     ggplot2::scale_fill_grey(start = 0.1, end = 0.95) +
     ggplot2::geom_text(ggplot2::aes(label = n),
                        position = ggplot2::position_fill(0.9),
-                       colour = rep(c('black', 'black', 'black', 'white'), 3),
+                       colour = rep(c('white', 'black', 'black', 'black'), 3),
                        vjust = 1.5,
                        size = 2.35)
 }

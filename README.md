@@ -11,11 +11,10 @@ status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](h
 The goal of happyr is to document the R codes and the dataset for the
 quantitative analyses in Rajeg’s ([2019](#ref-rajeg_metaphorical_2018))
 PhD thesis (submitted for examination on 27 September 2018 and passed
-without amendements required for the award of the degree on 1 April
-2019). The study focuses on metaphors for <span
-class="smallcaps">happiness</span> near-synonyms in Indonesian. The
-corpus data for the study mainly come from the *Indonesian Leipzig
-Corpora Collection* ([Quasthoff & Goldhahn
+without amendments for the award of the degree on 1 April 2019). The
+study focuses on metaphors for <span class="smallcaps">happiness</span>
+near-synonyms in Indonesian. The corpus data for the study mainly come
+from the *Indonesian Leipzig Corpora Collection* ([Quasthoff & Goldhahn
 2013](#ref-quasthoff_indonesian_2013); [Goldhahn, Eckart & Quasthoff
 2012](#ref-goldhahn_building_2012); [Biemann et al.
 2007](#ref-biemann_leipzig_2007)). The Leipzig Corpora are freely
@@ -713,7 +712,7 @@ devtools::session_info()
 #>  collate  en_US.UTF-8                 
 #>  ctype    en_US.UTF-8                 
 #>  tz       Asia/Makassar               
-#>  date     2021-12-05                  
+#>  date     2021-12-06                  
 #> 
 #> ─ Packages ───────────────────────────────────────────────────────────────────
 #>  package     * version date       lib source        
@@ -743,7 +742,7 @@ devtools::session_info()
 #>  ggplot2     * 3.3.3   2020-12-30 [1] CRAN (R 4.0.2)
 #>  glue          1.4.1   2020-05-13 [1] CRAN (R 4.0.0)
 #>  gtable        0.3.0   2019-03-25 [1] CRAN (R 4.0.0)
-#>  happyr      * 1.0     2021-12-05 [1] local         
+#>  happyr      * 1.0     2021-12-06 [1] local         
 #>  haven         2.4.0   2021-04-14 [1] CRAN (R 4.0.2)
 #>  highr         0.8     2019-03-20 [1] CRAN (R 4.0.0)
 #>  hms           1.0.0   2021-01-13 [1] CRAN (R 4.0.2)
