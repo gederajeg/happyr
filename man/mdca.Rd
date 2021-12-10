@@ -52,7 +52,7 @@ If \code{concise_output} is \code{FALSE}, \code{mdca} returns the total tokens i
 A tbl_df (cf. the \code{concise_output}).
 }
 \description{
-Function to perform \emph{Multiple Distinctive Collexeme Analysis} (MDCA) in Rajeg's (2018) Chapter 7.
+Function to perform \emph{Multiple Distinctive Collexeme Analysis} (MDCA) in Rajeg (2019, Chapter 7).
 }
 \details{
 The \code{mdca} function is built on top of the core members of the \code{tidyverse} suit of packages.
@@ -87,6 +87,6 @@ mdca_colloc <- mdca(df = colloc_input_data,
         \item Gries, S. T. (2009). \emph{Statistics for linguistics with R: A practical introduction}. Berlin: Mouton de Gruyter.
         \item Gries, S. T. (2014). Coll.analysis 3.5. A script for R to compute perform collostructional analyses. \url{http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html}.
         \item Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. \emph{Corpus Linguistics and Linguistic Theory}, \emph{2}(2), 243–256.
-        \item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+        \item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
     }
 }

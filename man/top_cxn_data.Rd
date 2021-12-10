@@ -11,10 +11,10 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 top_cxn_data
 }
 \description{
-The input data for \emph{Figure 3-1} in Rajeg (2018).
+The input data for \emph{Figure 3-1} in Rajeg (2019).
 The barplot shows the distribution of constructional patterns during interrater agreement trial whose frequency of occurrences are at least five (5).
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia. https://doi.org/10.26180/5cac231a97fb1
 }
 \keyword{datasets}

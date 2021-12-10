@@ -1,6 +1,6 @@
 #' Top constructional patterns
 #'
-#' @description A function to generate Figure 3.1 in Rajeg (2018).
+#' @description A function to generate Figure 3.1 in Rajeg (2019).
 #'     The figure shows the proportion of the most frequent
 #'     constructional patterns agreed during the interrater agreement trial.
 #' @param df data frame for the plot included in the package, that is \code{top_cxn_data}.
@@ -22,7 +22,7 @@
 #' @importFrom ggplot2 position_fill
 #' @importFrom stats reorder
 #'
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 
 plot_cxn_interrater <- function(df = NULL) {
   synonyms <- dplyr::quo(synonyms)

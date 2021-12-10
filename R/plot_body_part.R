@@ -1,6 +1,6 @@
 #' Plot most frequent body-part terms
 #'
-#' @description A function to call the script to generate the Body-part barplot in Rajeg (2018, Chapter 5).
+#' @description A function to call the script to generate the Body-part barplot in Rajeg (2019, p. 163, Figure 5-1).
 #' @param df the data frame for the thesis (\code{phd_data_metaphor}).
 #'
 #' @return Barplot based on \code{ggplot2} package
@@ -26,7 +26,7 @@
 #' @importFrom stringr str_c
 #' @importFrom rlang .data
 #' @importFrom tibble tibble
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 plot_body_part <- function(df = NULL) {
   bp_gloss <- tibble::tibble(gloss = c('chest/bosom', 'self', 'liver', 'eyes', 'face', 'body', 'face', 'face', 'deepest part of the heart', 'lips', 'mouth', 'body; bodily'),
                              body_part_terms = c('dada', 'diri', 'hati', 'mata', 'muka', 'tubuh', 'wajah', 'paras', 'lubuk kalbu', 'bibir', 'mulut', 'jasmani'))

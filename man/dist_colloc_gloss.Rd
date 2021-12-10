@@ -11,9 +11,9 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 dist_colloc_gloss
 }
 \description{
-A tibble data frame containing gloss for the distinctive collocates of the synonyms presented in Rajeg (2018, Ch.7).
+A tibble data frame containing gloss for the distinctive collocates of the synonyms presented in Rajeg (2019, Ch.7).
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. https://doi.org/10.26180/5cac231a97fb1
 }
 \keyword{datasets}

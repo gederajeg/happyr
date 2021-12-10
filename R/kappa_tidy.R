@@ -2,7 +2,7 @@
 #'
 #' @description The function performs Kappas for interrater agreement between two-raters, the author of the thesis and one other coder.
 #'     The calculation is based on the \code{\link[irr]{kappa2}} function from the \emph{irr} package (Gamer et al, 2012).
-#'     All scripts to use this function to perform the calculation for each interrater agreement trial in Rajeg (2018, Ch. 3) are shown in the \strong{Examples} section below.
+#'     All scripts to use this function to perform the calculation for each interrater agreement trial in Rajeg (2019, Chapter 3) are shown in the \strong{Examples} section below.
 #' @param df The input data frame for each interrater trial tasks
 #' @param var_names character strings of regular expressions for the columns involved in the calculation of the Kappa score (i.e. the interrater agreement score).
 #' @param split_by by default it is specified by "synonyms" since Kappas are computed for classification for data per synonyms included in the trial.
@@ -21,7 +21,7 @@
 #' @references
 #'     \itemize{
 #'         \item Gamer, M., Lemon, J., & Singh, P. (2012). irr: Various Coefficients of Interrater Reliability and Agreement. R package version 0.84.
-#'         \item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#'         \item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 #'     }
 #' @examples
 #'

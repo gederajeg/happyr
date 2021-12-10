@@ -26,7 +26,7 @@ A tibble/data frame
 \description{
 The function performs Kappas for interrater agreement between two-raters, the author of the thesis and one other coder.
     The calculation is based on the \code{\link[irr]{kappa2}} function from the \emph{irr} package (Gamer et al, 2012).
-    All scripts to use this function to perform the calculation for each interrater agreement trial in Rajeg (2018, Ch. 3) are shown in the \strong{Examples} section below.
+    All scripts to use this function to perform the calculation for each interrater agreement trial in Rajeg (2019, Chapter 3) are shown in the \strong{Examples} section below.
 }
 \examples{
 
@@ -74,6 +74,6 @@ sd(irr_cm_2[["kappa"]]) # SD
 \references{
 \itemize{
         \item Gamer, M., Lemon, J., & Singh, P. (2012). irr: Various Coefficients of Interrater Reliability and Agreement. R package version 0.84.
-        \item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+        \item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
     }
 }

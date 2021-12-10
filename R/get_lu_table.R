@@ -1,6 +1,6 @@
 #' Retrieve the (top-n most frequent) Lexical Units of a metaphor
 #'
-#' @description The function is designed to easily retrieve a tibble data frame of the top-n most frequent Lexical Units (LU) of the prominent metaphors discussed in Chapter 5 and 6.
+#' @description The function is designed to easily retrieve a tibble data frame of the top-n most frequent Lexical Units (LU) of the prominent metaphors discussed in Rajeg (2019, Chapter 5 and 6).
 #' @param metaphor regular expressions for the relevant metaphor.
 #' @param top_n_only logical; the default is \code{TRUE} with the number specified in \code{top_n_limit} argument. If \code{FALSE}, it prints all the LU for the metaphor.
 #' @param top_n_limit integer; how many most frequent LU should be printed? The default is \code{10}.
@@ -10,7 +10,7 @@
 #' @param incl_submappings logical; whether to include the submappings inferred from the LU (\code{TRUE}) or not (\code{FALSE} -- the default).
 #' @return A tbl_df.
 #' @examples
-#' get_lu_table(metaphor = "destination", df = phd_data_metaphor)
+#' get_lu_table(metaphor = "desired goal$", df = phd_data_metaphor)
 #' @importFrom stringr regex
 #' @importFrom dplyr top_n
 #' @importFrom dplyr %>%
@@ -18,7 +18,7 @@
 #' @importFrom rlang .data
 #' @importFrom rlang :=
 #' @export
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 #'
 get_lu_table <- function(metaphor = "regular expressions",
                          top_n_only = TRUE,

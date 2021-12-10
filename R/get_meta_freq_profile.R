@@ -24,7 +24,7 @@
 #' @importFrom dplyr filter
 #' @importFrom dplyr select
 #' @importFrom stringr str_detect
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 get_meta_freq_profiles <- function(metaphor = NULL, ..., metaphor_var = "metaphors", df = NULL) {
   m_var <- rlang::sym(metaphor_var)
   freq_profiles <- dplyr::quos(...)

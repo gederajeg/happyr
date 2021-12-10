@@ -40,7 +40,7 @@
 
 
 <meta property="og:title" content="Retrieve the (top-n most frequent) Lexical Units of a metaphor — get_lu_table" />
-<meta property="og:description" content="The function is designed to easily retrieve a tibble data frame of the top-n most frequent Lexical Units (LU) of the prominent metaphors discussed in Chapter 5 and 6." />
+<meta property="og:description" content="The function is designed to easily retrieve a tibble data frame of the top-n most frequent Lexical Units (LU) of the prominent metaphors discussed in Rajeg (2019, Chapter 5 and 6)." />
 
 
 
@@ -114,7 +114,7 @@
     </div>
 
     <div class="ref-description">
-    <p>The function is designed to easily retrieve a tibble data frame of the top-n most frequent Lexical Units (LU) of the prominent metaphors discussed in Chapter 5 and 6.</p>
+    <p>The function is designed to easily retrieve a tibble data frame of the top-n most frequent Lexical Units (LU) of the prominent metaphors discussed in Rajeg (2019, Chapter 5 and 6).</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_lu_table</span>(
@@ -161,12 +161,22 @@ To include the submapping types, specify the <code>incl_submappings</code> argum
     <p>A tbl_df.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Rajeg, G. P. W. (2018). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS</em>. PhD Thesis. Monash University. Melbourne, Australia.</p>
+    <p>Rajeg, G. P. W. (2019). <em>Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS</em>. PhD Thesis. Monash University. Melbourne, Australia. <a href='https://doi.org/10.26180/5cac231a97fb1'>https://doi.org/10.26180/5cac231a97fb1</a>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>get_lu_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"destination"</span>, <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 0 x 4</span><span>
-#&gt; </span><span style='color: #949494;'># … with 4 variables: Lexical_units &lt;chr&gt;, Gloss &lt;chr&gt;, N &lt;int&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   Perc_overall &lt;dbl&gt;</span><span></div></span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>get_lu_table</span>(<span class='kw'>metaphor</span> <span class='kw'>=</span> <span class='st'>"desired goal$"</span>, <span class='kw'>df</span> <span class='kw'>=</span> <span class='no'>phd_data_metaphor</span>)</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 10 x 4</span><span>
+#&gt;    Lexical_units Gloss                                   N Perc_overall
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                               </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> *cari*        to search/look for                     74        25.3 
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> *capai*       to reach                               51        17.4 
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> *raih*        to pull/reach sth. towards the body    27         9.22
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> *kejar*       to chase                               24         8.19
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> *temukan*     to find                                24         8.19
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> *tujuan*      destination/goal                       13         4.44
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> *menuju*      to head to                              9         3.07
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> *jalan*       way                                     8         2.73
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> *kunci*       key                                     8         2.73
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> *gapai*       to reach out                            6         2.05</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

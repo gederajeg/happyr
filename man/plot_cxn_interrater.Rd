@@ -13,7 +13,7 @@ plot_cxn_interrater(df = NULL)
 A ggplot image
 }
 \description{
-A function to generate Figure 3.1 in Rajeg (2018).
+A function to generate Figure 3.1 in Rajeg (2019).
     The figure shows the proportion of the most frequent
     constructional patterns agreed during the interrater agreement trial.
 }
@@ -23,5 +23,5 @@ plot_cxn_interrater(df = top_cxn_data)
 
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 }

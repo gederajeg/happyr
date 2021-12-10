@@ -1,6 +1,6 @@
 #' The main metaphor data frame
 #'
-#' This data is used for the \emph{token frequency}, \emph{type frequency} and \emph{type-per-token ratio} analyses in Rajeg (2018, Ch. 5 and Ch. 6), and for the \emph{Multiple Distinctive Collexeme Analysis} in Rajeg (2018, Ch. 7). The data consists of the following variables:
+#' This data is used for the \emph{token frequency}, \emph{type frequency} and \emph{type-per-token ratio} analyses in Rajeg (2019, Ch. 5 and Ch. 6), and for the \emph{Multiple Distinctive Collexeme Analysis} in Rajeg (2019, Ch. 7). The data consists of the following variables:
 #' \describe{
 #' \item{corpus}{Name of the corpus files}
 #' \item{sentence_id}{Character strings of the sentence id (or line id for \emph{WebCorp} and \emph{Sketch Engine} data) in which the happiness synonyms are found in the corpus}
@@ -19,28 +19,28 @@
 #' \item{sentence_match}{The sentence-match from which the metaphorical patterns of the synonyms are extracted}
 #' }
 #' @references
-#' Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#' Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. https://doi.org/10.26180/5cac231a97fb1
 "phd_data_metaphor"
 
 #' Gloss for the distinctive collocates
 #'
-#' A tibble data frame containing gloss for the distinctive collocates of the synonyms presented in Rajeg (2018, Ch.7).
+#' A tibble data frame containing gloss for the distinctive collocates of the synonyms presented in Rajeg (2019, Ch.7).
 #' @references
-#' Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#' Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. https://doi.org/10.26180/5cac231a97fb1
 "dist_colloc_gloss"
 
 #' Distinctive collocates data
 #'
-#' The input data for distinctive collocates analysis in Rajeg (2018, Ch.7). The collocates data are words co-occurring within the span of 4 words to the right and left of the happiness near-synonyms. Following Gevaert (2007, p. 197), the collocates that are part of the studied synonyms are excluded because they may neutralise the distinctive features of the near-synonyms when the goal is to find semantic differences between these near-synonyms.
+#' The input data for distinctive collocates analysis in Rajeg (2019, Ch.7). The collocates data are words co-occurring within the span of 4 words to the right and left of the happiness near-synonyms. Following Gevaert (2007, p. 197), the collocates that are part of the studied synonyms are excluded because they may neutralise the distinctive features of the near-synonyms when the goal is to find semantic differences between these near-synonyms.
 #'
 #' The data consists of the following two variables:
 #' \describe{
-#' \item{synonyms}{The ten near-synonyms under studied. Note that only results of the nominalised, \emph{ke- -an} forms are presented in the thesis, but not the root forms.}
+#' \item{synonyms}{The ten near-synonyms under study. Note that only results of the nominalised, \emph{ke- -an} forms are presented in the thesis, but not the root forms.}
 #' \item{collocates}{The window-span collocates of the synonyms}
 #' }
 #' @references
 #' \itemize{
-#' \item{Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.}
+#' \item{Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. https://doi.org/10.26180/5cac231a97fb1}
 #' \item{Gevaert, C. (2007). \emph{The history of ANGER: The lexical field of ANGER from Old to Early Modern English} (PhD thesis). Katholieke Universiteit Leuven, Leuven.
 #'}
 #'}
@@ -73,9 +73,9 @@
 
 #' Interrater data for the top constructional patterns
 #'
-#' The input data for \emph{Figure 3-1} in Rajeg (2018).
+#' The input data for \emph{Figure 3-1} in Rajeg (2019).
 #' The barplot shows the distribution of constructional patterns during interrater agreement trial whose frequency of occurrences are at least five (5).
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia. https://doi.org/10.26180/5cac231a97fb1
 "top_cxn_data"
 
 

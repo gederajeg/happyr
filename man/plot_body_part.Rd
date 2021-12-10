@@ -13,12 +13,12 @@ plot_body_part(df = NULL)
 Barplot based on \code{ggplot2} package
 }
 \description{
-A function to call the script to generate the Body-part barplot in Rajeg (2018, Chapter 5).
+A function to call the script to generate the Body-part barplot in Rajeg (2019, p. 163, Figure 5-1).
 }
 \examples{
 plot_body_part(df = phd_data_metaphor)
 
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 }

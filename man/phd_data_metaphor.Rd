@@ -11,7 +11,7 @@ An object of class \code{tbl_df} (inherits from \code{tbl}, \code{data.frame}) w
 phd_data_metaphor
 }
 \description{
-This data is used for the \emph{token frequency}, \emph{type frequency} and \emph{type-per-token ratio} analyses in Rajeg (2018, Ch. 5 and Ch. 6), and for the \emph{Multiple Distinctive Collexeme Analysis} in Rajeg (2018, Ch. 7). The data consists of the following variables:
+This data is used for the \emph{token frequency}, \emph{type frequency} and \emph{type-per-token ratio} analyses in Rajeg (2019, Ch. 5 and Ch. 6), and for the \emph{Multiple Distinctive Collexeme Analysis} in Rajeg (2019, Ch. 7). The data consists of the following variables:
 \describe{
 \item{corpus}{Name of the corpus files}
 \item{sentence_id}{Character strings of the sentence id (or line id for \emph{WebCorp} and \emph{Sketch Engine} data) in which the happiness synonyms are found in the corpus}
@@ -31,6 +31,6 @@ This data is used for the \emph{token frequency}, \emph{type frequency} and \emp
 }
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. https://doi.org/10.26180/5cac231a97fb1
 }
 \keyword{datasets}

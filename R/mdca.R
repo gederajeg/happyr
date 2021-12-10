@@ -1,6 +1,6 @@
 #' Multiple distinctive collexeme analysis (MDCA)
 #'
-#' @description Function to perform \emph{Multiple Distinctive Collexeme Analysis} (MDCA) in Rajeg's (2018) Chapter 7.
+#' @description Function to perform \emph{Multiple Distinctive Collexeme Analysis} (MDCA) in Rajeg (2019, Chapter 7).
 #' @param df the data frame for the thesis (\code{phd_data_metaphor}) included in the package.
 #' @param cxn_var character strings for the column name for the \code{constructions} variable, in this case, the "\code{synonyms}" column.
 #' @param coll_var character strings for the column name for the \code{collocates} variable, in this case, the "\code{metaphors}" column.
@@ -82,7 +82,7 @@
 #'         \item Gries, S. T. (2009). \emph{Statistics for linguistics with R: A practical introduction}. Berlin: Mouton de Gruyter.
 #'         \item Gries, S. T. (2014). Coll.analysis 3.5. A script for R to compute perform collostructional analyses. \url{http://www.linguistics.ucsb.edu/faculty/stgries/teaching/groningen/index.html}.
 #'         \item Hilpert, M. (2006). Distinctive collexeme analysis and diachrony. \emph{Corpus Linguistics and Linguistic Theory}, \emph{2}(2), 243–256.
-#'         \item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#'         \item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 #'     }
 #' @export
 mdca <- function(df = NULL,

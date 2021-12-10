@@ -1,6 +1,6 @@
 #' Retrieve the (top-n most frequent) Lexical Units evoking the source frames of a metaphor
 #'
-#' @description The function is designed to easily retrieve a tibble data frame of the top-n most frequent frame-evoking Lexical Units (LU) of the prominent metaphors discussed in Chapter 5 and 6.
+#' @description The function is designed to easily retrieve a tibble data frame of the top-n most frequent frame-evoking Lexical Units (LU) of the prominent metaphors discussed in Rajeg (2019, Chapter 5 and 6).
 #' @param metaphor regular expressions for the relevant metaphor.
 #' @param word character strings of regular expressions for the HAPPINESS synonyms.
 #' @param print_all logical; print all output
@@ -31,7 +31,7 @@
 #'                    top_n = TRUE,
 #'                    limit = 20,
 #'                    df = phd_data_metaphor)
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 get_lu_frame_table <- function(metaphor = NULL,
                                word = NULL,
                                print_all = FALSE,

@@ -45,7 +45,7 @@ get_lu_frame_table(
 A tibble/data frame of the descriptive statistics of the LUs and the frames, including the gloss of the LUs.
 }
 \description{
-The function is designed to easily retrieve a tibble data frame of the top-n most frequent frame-evoking Lexical Units (LU) of the prominent metaphors discussed in Chapter 5 and 6.
+The function is designed to easily retrieve a tibble data frame of the top-n most frequent frame-evoking Lexical Units (LU) of the prominent metaphors discussed in Rajeg (2019, Chapter 5 and 6).
 }
 \examples{
 # for the aggregated data
@@ -62,5 +62,5 @@ get_lu_frame_table(metaphor = "possessable",
                    df = phd_data_metaphor)
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 }

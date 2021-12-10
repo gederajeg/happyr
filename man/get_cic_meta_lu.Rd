@@ -28,7 +28,7 @@ get_cic_meta_lu("possessable", ttr_metaphor)
 }
 \references{
 \itemize{
-\item Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+\item Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 \item Vergara Wilson, D. (2014). \emph{Categorization and Constructional Change in Spanish Expressions of "becoming"}. Leiden: Brill.
 }
 }

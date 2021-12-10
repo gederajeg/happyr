@@ -34,12 +34,12 @@ A tibble/data frame of the descriptive statistics of the submappings, namely the
 }
 \description{
 A utility function to get the descriptive data for the submappings of a metaphor (for the aggregated synonyms data or for a given synonym, if specified).
-   This function is used in Rajeg's (2018, Chapter 5 & 6).
+   This function is used in Rajeg (2019, Chapter 5 & 6).
 }
 \examples{
 submet <- get_submappings(metaphor = "possessable object$", df = phd_data_metaphor)
 
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 }

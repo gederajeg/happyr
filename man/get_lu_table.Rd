@@ -31,11 +31,11 @@ To include the submapping types, specify the \code{incl_submappings} argument to
 A tbl_df.
 }
 \description{
-The function is designed to easily retrieve a tibble data frame of the top-n most frequent Lexical Units (LU) of the prominent metaphors discussed in Chapter 5 and 6.
+The function is designed to easily retrieve a tibble data frame of the top-n most frequent Lexical Units (LU) of the prominent metaphors discussed in Rajeg (2019, Chapter 5 and 6).
 }
 \examples{
-get_lu_table(metaphor = "destination", df = phd_data_metaphor)
+get_lu_table(metaphor = "desired goal$", df = phd_data_metaphor)
 }
 \references{
-Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia.
+Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS}. PhD Thesis. Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 }

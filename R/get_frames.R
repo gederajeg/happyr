@@ -1,7 +1,7 @@
 #' Retrieve the descriptive distributional statistics of source frames
 #'
 #' @description A utility function to get the descriptive statistics for the source frames of a metaphor (for the aggregated synonyms data or for a given synonym, if specified).
-#'    This function is used in Rajeg's (2018, Chapter 5 & 6).
+#'    This function is used in Rajeg (2019, Chapter 5 & 6).
 #' @param metaphor character strings of regular expressions for the metaphor.
 #' @param word character strings of regular expressions for the happiness synonyms.
 #' @param df the data frame (\code{phd_data_metaphor}).
@@ -37,7 +37,7 @@
 #'            word = "^(kesenangan|kegembiraan)",
 #'            df = phd_data_metaphor)
 #'
-#' @references Rajeg, G. P. W. (2018). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia.
+#' @references Rajeg, G. P. W. (2019). \emph{Metaphorical profiles and near-synonyms: A corpus-based study of Indonesian words for HAPPINESS} (PhD Thesis). Monash University. Melbourne, Australia. \url{https://doi.org/10.26180/5cac231a97fb1}.
 #' @importFrom dplyr enquo
 #' @importFrom dplyr quo_name
 #' @importFrom dplyr quo
