@@ -11,6 +11,7 @@
 ^happyr_to_do$
 ^old_slow_mdca.R$
 ^apa-old-doi.*\.csl$
+^unified-style-sheet.*\.csl$
 ^appveyor\.yml$
 ^README.knit.md$
 ^README.utf8.md$
