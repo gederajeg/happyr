@@ -5,8 +5,8 @@ Date: 2019-12-02
 Version: 1.0
 Authors@R: person(given = "Gede Primahadi Wijaya", family = "Rajeg", email = "primahadiwijaya@gmail.com",
                role = c("aut", "cre"), comment = c(ORCID = "0000-0002-2047-8621"))
-Description: An accompanying package containing the R functions and data for the quantitative analyses in Chapter 3, 5, 6, and 7 in Rajeg's (2019) PhD thesis. 
-    The thesis was submitted for examination on 27 September 2018 at Monash University, Australia, and was passed without amendements required for the award of the degree on 1 April 2019. 
+Description: An accompanying R package containing the R functions and data for the quantitative analyses in Chapter 3, 5, 6, and 7 in Rajeg's (2019) PhD thesis. 
+    The thesis was submitted for examination on 27 September 2018 at Monash University, Australia, and was passed without amendments required for the award of the PhD degree on 1 April 2019. 
 License: MIT + file LICENSE
 Depends: R (>= 3.1)
 Encoding: UTF-8
@@ -23,7 +23,7 @@ Imports:
     irr (>= 0.84),
     assertthat (>= 0.2.0)
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.2
 Suggests:
     testthat,
     covr
