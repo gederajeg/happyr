@@ -8,13 +8,14 @@ status](https://codecov.io/gh/gederajeg/happyr/branch/master/graph/badge.svg)](h
 
 # happyr <a href='https://gederajeg.github.io/happyr/'><img src='man/figures/happyr-logo.png' align="right" height="139" /></a>
 
-The goal of happyr is to document the R codes and the dataset for the
-quantitative analyses in Rajeg’s ([2019](#ref-rajeg_metaphorical_2018))
-PhD thesis (submitted for examination on 27 September 2018 and passed
-without amendments for the award of the degree on 1 April 2019). The
-study focuses on metaphors for <span class="smallcaps">happiness</span>
-near-synonyms in Indonesian. The corpus data for the study mainly come
-from the *Indonesian Leipzig Corpora Collection* ([Quasthoff & Goldhahn
+The goal of **happyr** is to document the R codes and the dataset for
+the quantitative analyses in Rajeg’s
+([2019](#ref-rajeg_metaphorical_2018)) PhD thesis (submitted for
+examination on 27 September 2018 and passed without amendments for the
+award of the degree on 1 April 2019). The study focuses on metaphors for
+<span class="smallcaps">happiness</span> near-synonyms in Indonesian.
+The corpus data for the study mainly come from the *Indonesian Leipzig
+Corpora Collection* ([Quasthoff & Goldhahn
 2013](#ref-quasthoff_indonesian_2013); [Goldhahn, Eckart & Quasthoff
 2012](#ref-goldhahn_building_2012); [Biemann et al.
 2007](#ref-biemann_leipzig_2007)). The Leipzig Corpora are freely
@@ -24,7 +25,7 @@ and their use is licensed under the Creative Common License
 Usage](http://wortschatz.uni-leipzig.de/en/usage) page for further
 details).
 
-The happyr package is based on the core packages in the
+The **happyr** package is based on the core packages in the
 [tidyverse](https://www.tidyverse.org), and is built under R version
 4.0.5 (2021-03-31) – “Shake and Throw” (see the [**Session
 Info**](#session-info) section at the bottom of the page for further
@@ -32,32 +33,32 @@ details on the dependencies).
 
 ## Acknowledgement
 
-The thesis is supervised by Associate Professor [Alice
+The thesis was supervised by Associate Professor [Alice
 Gaby](https://bit.ly/2D91Lp9) (main), Dr. [Howard
 Manns](https://bit.ly/2UelYPY) (associate), and Dr. [Simon
 Musgrave](https://bit.ly/2Z1tCAV) (associate). The panel members during
-the author’s candidature milestones consist of Dr. [Anna
+the author’s candidature milestones consisted of Dr. [Anna
 Margetts](https://research.monash.edu/en/persons/anna-margetts),
 Dr. [Réka Benczes](https://www.researchgate.net/profile/Reka_Benczes),
 and Prof. [John Newman](https://www.johnnewm.org). The two external
-examiners of the thesis are Prof. [Martin
+examiners of the thesis were Prof. [Martin
 Hilpert](http://members.unine.ch/martin.hilpert/) (Université de
 Neuchâtel, Switzerland) and Dr. [Karen
 Sullivan](https://languages-cultures.uq.edu.au/profile/1106/kari-sullivan)
-(The University of Queensland, Australia) The thesis is fully funded by
-[Monash University](https://www.monash.edu), Australia through the
-[International Graduate Research
+(The University of Queensland, Australia) The PhD research of the author
+was fully funded by [Monash University](https://www.monash.edu),
+Australia through the [International Graduate Research
 Scholarships](https://www.monash.edu/graduate-research/future-students/scholarships)
 schemes (i.e. *Monash International Postgraduate Research Scholarships*
 (MIPRS, now MITS) and *Monash Graduate Scholarships* (MGS)). The author
-also benefits from generous research and travel fundings from the
+also benefited from generous research and travel funding provided by the
 [Monash Arts Graduate
 Research](https://arts.monash.edu/graduate-research/) and the [Monash
 Graduate Research Office](https://www.monash.edu/graduate-research).
 
 ## Installation
 
-The happyr package can be installed from
+The **happyr** package can be installed from
 [GitHub](https://github.com/gederajeg/happyr) with the
 [remotes](https://cran.r-project.org/web/packages/remotes/index.html)
 package:
@@ -100,7 +101,8 @@ citation("happyr")
 
 ## Examples
 
-First, load happyr and tidyverse packages in R.
+First, load the **happyr** and **tidyverse** packages using the
+`library()` function.
 
 ``` r
 # load the required packages
@@ -712,7 +714,7 @@ devtools::session_info()
 #>  collate  en_US.UTF-8                 
 #>  ctype    en_US.UTF-8                 
 #>  tz       Asia/Makassar               
-#>  date     2021-12-06                  
+#>  date     2021-12-11                  
 #> 
 #> ─ Packages ───────────────────────────────────────────────────────────────────
 #>  package     * version date       lib source        
@@ -728,7 +730,7 @@ devtools::session_info()
 #>  DBI           1.1.0   2019-12-15 [1] CRAN (R 4.0.0)
 #>  dbplyr        2.1.1   2021-04-06 [1] CRAN (R 4.0.2)
 #>  desc          1.4.0   2021-09-28 [1] CRAN (R 4.0.2)
-#>  devtools      2.3.0   2020-04-10 [1] CRAN (R 4.0.0)
+#>  devtools      2.4.3   2021-11-30 [1] CRAN (R 4.0.2)
 #>  digest        0.6.25  2020-02-23 [1] CRAN (R 4.0.0)
 #>  dplyr       * 1.0.5   2021-03-05 [1] CRAN (R 4.0.2)
 #>  ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.0)
@@ -737,7 +739,7 @@ devtools::session_info()
 #>  farver        2.0.3   2020-01-16 [1] CRAN (R 4.0.0)
 #>  fastmap       1.1.0   2021-01-25 [1] CRAN (R 4.0.2)
 #>  forcats     * 0.5.1   2021-01-27 [1] CRAN (R 4.0.2)
-#>  fs            1.4.1   2020-04-04 [1] CRAN (R 4.0.0)
+#>  fs            1.5.1   2021-11-30 [1] CRAN (R 4.0.2)
 #>  generics      0.0.2   2018-11-29 [1] CRAN (R 4.0.0)
 #>  ggplot2     * 3.3.3   2020-12-30 [1] CRAN (R 4.0.2)
 #>  glue          1.4.1   2020-05-13 [1] CRAN (R 4.0.0)
@@ -760,9 +762,9 @@ devtools::session_info()
 #>  modelr        0.1.8   2020-05-19 [1] CRAN (R 4.0.0)
 #>  munsell       0.5.0   2018-06-12 [1] CRAN (R 4.0.0)
 #>  pillar        1.6.0   2021-04-13 [1] CRAN (R 4.0.2)
-#>  pkgbuild      1.0.8   2020-05-07 [1] CRAN (R 4.0.0)
+#>  pkgbuild      1.3.0   2021-12-09 [1] CRAN (R 4.0.5)
 #>  pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.0.0)
-#>  pkgload       1.1.0   2020-05-29 [1] CRAN (R 4.0.0)
+#>  pkgload       1.2.4   2021-11-30 [1] CRAN (R 4.0.2)
 #>  prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.0.0)
 #>  processx      3.5.1   2021-04-04 [1] CRAN (R 4.0.2)
 #>  ps            1.6.0   2021-02-28 [1] CRAN (R 4.0.2)
@@ -771,7 +773,7 @@ devtools::session_info()
 #>  Rcpp          1.0.7   2021-07-07 [1] CRAN (R 4.0.2)
 #>  readr       * 1.4.0   2020-10-05 [1] CRAN (R 4.0.2)
 #>  readxl        1.3.1   2019-03-13 [1] CRAN (R 4.0.0)
-#>  remotes       2.1.1   2020-02-15 [1] CRAN (R 4.0.0)
+#>  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.0.2)
 #>  reprex        2.0.0   2021-04-02 [1] CRAN (R 4.0.2)
 #>  rlang         0.4.11  2021-04-30 [1] CRAN (R 4.0.2)
 #>  rmarkdown     2.11    2021-09-14 [1] CRAN (R 4.0.2)

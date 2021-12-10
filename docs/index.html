@@ -73,17 +73,17 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#happyr-" class="anchor"></a>happyr <a href="https://gederajeg.github.io/happyr/"><img src="reference/figures/happyr-logo.png" align="right" height="139"></a>
 </h1></div>
-<p>The goal of happyr is to document the R codes and the dataset for the quantitative analyses in Rajeg’s (<a href="#ref-rajeg_metaphorical_2018">2019</a>) PhD thesis (submitted for examination on 27 September 2018 and passed without amendments for the award of the degree on 1 April 2019). The study focuses on metaphors for <span class="smallcaps">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> (<a href="#ref-quasthoff_indonesian_2013">Quasthoff &amp; Goldhahn 2013</a>; <a href="#ref-goldhahn_building_2012">Goldhahn, Eckart &amp; Quasthoff 2012</a>; <a href="#ref-biemann_leipzig_2007">Biemann et al. 2007</a>). The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details).</p>
-<p>The happyr package is based on the core packages in the <a href="https://www.tidyverse.org">tidyverse</a>, and is built under R version 4.0.5 (2021-03-31) – “Shake and Throw” (see the <a href="#session-info"><strong>Session Info</strong></a> section at the bottom of the page for further details on the dependencies).</p>
+<p>The goal of <strong>happyr</strong> is to document the R codes and the dataset for the quantitative analyses in Rajeg’s (<a href="#ref-rajeg_metaphorical_2018">2019</a>) PhD thesis (submitted for examination on 27 September 2018 and passed without amendments for the award of the degree on 1 April 2019). The study focuses on metaphors for <span class="smallcaps">happiness</span> near-synonyms in Indonesian. The corpus data for the study mainly come from the <em>Indonesian Leipzig Corpora Collection</em> (<a href="#ref-quasthoff_indonesian_2013">Quasthoff &amp; Goldhahn 2013</a>; <a href="#ref-goldhahn_building_2012">Goldhahn, Eckart &amp; Quasthoff 2012</a>; <a href="#ref-biemann_leipzig_2007">Biemann et al. 2007</a>). The Leipzig Corpora are freely available for <a href="http://wortschatz.uni-leipzig.de/en/download">download</a> and their use is licensed under the Creative Common License <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY</a> (see the <a href="http://wortschatz.uni-leipzig.de/en/usage">Terms of Usage</a> page for further details).</p>
+<p>The <strong>happyr</strong> package is based on the core packages in the <a href="https://www.tidyverse.org">tidyverse</a>, and is built under R version 4.0.5 (2021-03-31) – “Shake and Throw” (see the <a href="#session-info"><strong>Session Info</strong></a> section at the bottom of the page for further details on the dependencies).</p>
 <div id="acknowledgement" class="section level2">
 <h2 class="hasAnchor">
 <a href="#acknowledgement" class="anchor"></a>Acknowledgement</h2>
-<p>The thesis is supervised by Associate Professor <a href="https://bit.ly/2D91Lp9">Alice Gaby</a> (main), Dr. <a href="https://bit.ly/2UelYPY">Howard Manns</a> (associate), and Dr. <a href="https://bit.ly/2Z1tCAV">Simon Musgrave</a> (associate). The panel members during the author’s candidature milestones consist of Dr. <a href="https://research.monash.edu/en/persons/anna-margetts">Anna Margetts</a>, Dr. <a href="https://www.researchgate.net/profile/Reka_Benczes">Réka Benczes</a>, and Prof. <a href="https://www.johnnewm.org">John Newman</a>. The two external examiners of the thesis are Prof. <a href="http://members.unine.ch/martin.hilpert/">Martin Hilpert</a> (Université de Neuchâtel, Switzerland) and Dr. <a href="https://languages-cultures.uq.edu.au/profile/1106/kari-sullivan">Karen Sullivan</a> (The University of Queensland, Australia) The thesis is fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a> schemes (i.e. <em>Monash International Postgraduate Research Scholarships</em> (MIPRS, now MITS) and <em>Monash Graduate Scholarships</em> (MGS)). The author also benefits from generous research and travel fundings from the <a href="https://arts.monash.edu/graduate-research/">Monash Arts Graduate Research</a> and the <a href="https://www.monash.edu/graduate-research">Monash Graduate Research Office</a>.</p>
+<p>The thesis was supervised by Associate Professor <a href="https://bit.ly/2D91Lp9">Alice Gaby</a> (main), Dr. <a href="https://bit.ly/2UelYPY">Howard Manns</a> (associate), and Dr. <a href="https://bit.ly/2Z1tCAV">Simon Musgrave</a> (associate). The panel members during the author’s candidature milestones consisted of Dr. <a href="https://research.monash.edu/en/persons/anna-margetts">Anna Margetts</a>, Dr. <a href="https://www.researchgate.net/profile/Reka_Benczes">Réka Benczes</a>, and Prof. <a href="https://www.johnnewm.org">John Newman</a>. The two external examiners of the thesis were Prof. <a href="http://members.unine.ch/martin.hilpert/">Martin Hilpert</a> (Université de Neuchâtel, Switzerland) and Dr. <a href="https://languages-cultures.uq.edu.au/profile/1106/kari-sullivan">Karen Sullivan</a> (The University of Queensland, Australia) The PhD research of the author was fully funded by <a href="https://www.monash.edu">Monash University</a>, Australia through the <a href="https://www.monash.edu/graduate-research/future-students/scholarships">International Graduate Research Scholarships</a> schemes (i.e. <em>Monash International Postgraduate Research Scholarships</em> (MIPRS, now MITS) and <em>Monash Graduate Scholarships</em> (MGS)). The author also benefited from generous research and travel funding provided by the <a href="https://arts.monash.edu/graduate-research/">Monash Arts Graduate Research</a> and the <a href="https://www.monash.edu/graduate-research">Monash Graduate Research Office</a>.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>The happyr package can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/web/packages/remotes/index.html">remotes</a> package:</p>
+<p>The <strong>happyr</strong> package can be installed from <a href="https://github.com/gederajeg/happyr">GitHub</a> with the <a href="https://cran.r-project.org/web/packages/remotes/index.html">remotes</a> package:</p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="co"># Install remotes if needed</span>
 <span class="kw">if</span>(!<span class="fu"><a href="https://rdrr.io/r/base/library.html">require</a></span>(<span class="no">remotes</span>)) <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"remotes"</span>)
 
@@ -121,7 +121,7 @@
 <div id="examples" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h2>
-<p>First, load happyr and tidyverse packages in R.</p>
+<p>First, load the <strong>happyr</strong> and <strong>tidyverse</strong> packages using the <code>library()</code> function.</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="co"># load the required packages</span>
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">happyr</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">tidyverse</span>)
@@ -1782,7 +1782,7 @@
 <span class="co">#&gt;  collate  en_US.UTF-8                 </span>
 <span class="co">#&gt;  ctype    en_US.UTF-8                 </span>
 <span class="co">#&gt;  tz       Asia/Makassar               </span>
-<span class="co">#&gt;  date     2021-12-06                  </span>
+<span class="co">#&gt;  date     2021-12-11                  </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; ─ Packages ───────────────────────────────────────────────────────────────────</span>
 <span class="co">#&gt;  package     * version date       lib source        </span>
@@ -1798,7 +1798,7 @@
 <span class="co">#&gt;  DBI           1.1.0   2019-12-15 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  dbplyr        2.1.1   2021-04-06 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  desc          1.4.0   2021-09-28 [1] CRAN (R 4.0.2)</span>
-<span class="co">#&gt;  devtools      2.3.0   2020-04-10 [1] CRAN (R 4.0.0)</span>
+<span class="co">#&gt;  devtools      2.4.3   2021-11-30 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  digest        0.6.25  2020-02-23 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  dplyr       * 1.0.5   2021-03-05 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  ellipsis      0.3.1   2020-05-15 [1] CRAN (R 4.0.0)</span>
@@ -1807,7 +1807,7 @@
 <span class="co">#&gt;  farver        2.0.3   2020-01-16 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  fastmap       1.1.0   2021-01-25 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  forcats     * 0.5.1   2021-01-27 [1] CRAN (R 4.0.2)</span>
-<span class="co">#&gt;  fs            1.4.1   2020-04-04 [1] CRAN (R 4.0.0)</span>
+<span class="co">#&gt;  fs            1.5.1   2021-11-30 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  generics      0.0.2   2018-11-29 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  ggplot2     * 3.3.3   2020-12-30 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  glue          1.4.1   2020-05-13 [1] CRAN (R 4.0.0)</span>
@@ -1830,9 +1830,9 @@
 <span class="co">#&gt;  modelr        0.1.8   2020-05-19 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  munsell       0.5.0   2018-06-12 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  pillar        1.6.0   2021-04-13 [1] CRAN (R 4.0.2)</span>
-<span class="co">#&gt;  pkgbuild      1.0.8   2020-05-07 [1] CRAN (R 4.0.0)</span>
+<span class="co">#&gt;  pkgbuild      1.3.0   2021-12-09 [1] CRAN (R 4.0.5)</span>
 <span class="co">#&gt;  pkgconfig     2.0.3   2019-09-22 [1] CRAN (R 4.0.0)</span>
-<span class="co">#&gt;  pkgload       1.1.0   2020-05-29 [1] CRAN (R 4.0.0)</span>
+<span class="co">#&gt;  pkgload       1.2.4   2021-11-30 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  prettyunits   1.1.1   2020-01-24 [1] CRAN (R 4.0.0)</span>
 <span class="co">#&gt;  processx      3.5.1   2021-04-04 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  ps            1.6.0   2021-02-28 [1] CRAN (R 4.0.2)</span>
@@ -1841,7 +1841,7 @@
 <span class="co">#&gt;  Rcpp          1.0.7   2021-07-07 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  readr       * 1.4.0   2020-10-05 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  readxl        1.3.1   2019-03-13 [1] CRAN (R 4.0.0)</span>
-<span class="co">#&gt;  remotes       2.1.1   2020-02-15 [1] CRAN (R 4.0.0)</span>
+<span class="co">#&gt;  remotes       2.4.2   2021-11-30 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  reprex        2.0.0   2021-04-02 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  rlang         0.4.11  2021-04-30 [1] CRAN (R 4.0.2)</span>
 <span class="co">#&gt;  rmarkdown     2.11    2021-09-14 [1] CRAN (R 4.0.2)</span>
